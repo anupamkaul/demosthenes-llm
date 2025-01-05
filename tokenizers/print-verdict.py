@@ -21,6 +21,6 @@ for arg in arguements[1:]:
 
 if (len(sys.argv) > 1):
     num_chars = arguements[1]
-    print(raw_text[:num_chars])
+    print(raw_text[:num_chars]) #adding variable doesn't work for the array, use arg_parse.py instead
 else:
     print(raw_text[:500])
