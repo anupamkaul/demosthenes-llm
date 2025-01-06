@@ -13,3 +13,4 @@ if __name__ == "__main__":
     main()
 
 # usage: python arg_parse.py -n 500 the-verdict.txt
+# usage: python arg_parse.py the-verdict.txt -n=10000
