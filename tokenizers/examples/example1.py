@@ -26,6 +26,8 @@ vocab = { token: integer for integer,token in enumerate(all_words)  }
 
 import SimpleTokenizerV1 as t
 
+# Example 1:
+
 tokenizer = t.SimpleTokenizerV1(vocab)
 text = """It's the last he painted, you know,"
        Mrs Gisburn said with pardonable pride."""
@@ -34,6 +36,35 @@ ids = tokenizer.encode(text)
 print(ids)
 
 print(tokenizer.decode(ids))
+
+# Example 2: 
+
+text = " you like to have some tea ?"
+print(tokenizer.encode(text))
+print(tokenizer.decode(tokenizer.encode(text)))
+
+# Example 3: 
+
+text = "like you like to have some tea ?"
+print(tokenizer.encode(text))
+print(tokenizer.decode(tokenizer.encode(text)))
+
+'''
+# Example 4:  (Key-Error as "Like" is not in vocab, but like is)
+
+text = "Like you like to have some tea ?"
+print(tokenizer.encode(text))
+print(tokenizer.decode(tokenizer.encode(text)))
+
+# Example 5: (Key-Error as "Would" is not in vocab. Vocab was generated from "the-verdict.txt")  
+
+text = "Would you like to have some tea ?"
+print(tokenizer.encode(text))
+print(tokenizer.decode(tokenizer.encode(text)))
+'''
+
+
+
 
 
 
