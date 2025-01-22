@@ -36,11 +36,11 @@ exit
 # create links of files from parent folder whose modules are to be imported here
 # i.e. ln -s <path to original file> <path to link>
 
-import SimpleTokenizerV1 as t
+import SimpleTokenizerV2 as t
 
 # Example 1:
 
-tokenizer = t.SimpleTokenizerV1(vocab)
+tokenizer = t.SimpleTokenizerV2(vocab)
 text = """It's the last he painted, you know,"
        Mrs Gisburn said with pardonable pride."""
 
@@ -61,7 +61,6 @@ text = "like you like to have some tea ?"
 print(tokenizer.encode(text))
 print(tokenizer.decode(tokenizer.encode(text)))
 
-'''
 # Example 4:  (Key-Error as "Like" is not in vocab, but like is)
 
 text = "Like you like to have some tea ?"
@@ -73,7 +72,6 @@ print(tokenizer.decode(tokenizer.encode(text)))
 text = "Would you like to have some tea ?"
 print(tokenizer.encode(text))
 print(tokenizer.decode(tokenizer.encode(text)))
-'''
 
 
 
