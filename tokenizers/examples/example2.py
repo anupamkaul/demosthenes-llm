@@ -1,5 +1,8 @@
 # create vocabulary (from a reference text, or actually via a trained model)
 
+# this example shows how the LLM (the tokenizer) will handle words it doesn't
+# recognize in its vocabulary
+
 '''
 ToDo: The Vocab code can be containerized as a class (filepath) that returns a vocab object
 '''
@@ -14,12 +17,21 @@ preprocessed = [item for item in preprocessed if item.strip()] # remove extra wh
 # next I will assign every unique token to its vocabulary (token id structure)
 
 all_words = sorted(set(preprocessed))
+all_words.extend(["<|endoftext|>" , "<|unk|>"])
+
 vocab_size = len(all_words)
-#print(vocab_size) # 1130 exactly from "the-verdict" story
+print(vocab_size) # 1130 + 2 exactly from "the-verdict" story (the extra 2 being endoftext and unk)
+
 #print(all_words) # sorted list of all unique words
 
 # create the vocabulary (python map)
 vocab = { token: integer for integer,token in enumerate(all_words)  }
+
+#print the last 5
+for i, item in enumerate(list(vocab.items())[-5:]):
+    print(item)
+
+exit
 
 # create links of files from parent folder whose modules are to be imported here
 # i.e. ln -s <path to original file> <path to link>
@@ -49,6 +61,7 @@ text = "like you like to have some tea ?"
 print(tokenizer.encode(text))
 print(tokenizer.decode(tokenizer.encode(text)))
 
+'''
 # Example 4:  (Key-Error as "Like" is not in vocab, but like is)
 
 text = "Like you like to have some tea ?"
@@ -60,6 +73,7 @@ print(tokenizer.decode(tokenizer.encode(text)))
 text = "Would you like to have some tea ?"
 print(tokenizer.encode(text))
 print(tokenizer.decode(tokenizer.encode(text)))
+'''
 
 
 
