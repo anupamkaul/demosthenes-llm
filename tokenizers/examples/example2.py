@@ -61,17 +61,32 @@ text = "like you like to have some tea ?"
 print(tokenizer.encode(text))
 print(tokenizer.decode(tokenizer.encode(text)))
 
-# Example 4:  (Key-Error as "Like" is not in vocab, but like is)
+# Example 4 Fixed:  (Key-Error as "Like" is not in vocab, but like is) (replace with <|unk|>)
 
 text = "Like you like to have some tea ?"
 print(tokenizer.encode(text))
 print(tokenizer.decode(tokenizer.encode(text)))
 
-# Example 5: (Key-Error as "Would" is not in vocab. Vocab was generated from "the-verdict.txt")  
+# Example 5: Fixed :(Key-Error as "Would" is not in vocab. Vocab was generated from "the-verdict.txt")  (replace with |<unk>|)
 
 text = "Would you like to have some tea ?"
 print(tokenizer.encode(text))
 print(tokenizer.decode(tokenizer.encode(text)))
+
+# Example 6 : use <|endoftext?>
+print("\nexample of endoftext\n")
+text1 = "Hello Anupam, do you like tea?" # "Hello" and "Anupam" not in vocab
+text2 = "In the sunlit bodaceaous terraces of the palace" # the b word is not even a word
+text = "<|endoftext|>".join((text1, text2)) # replicating logic that would isolate unrelated documents of text (or of context)
+print(text, "\n")
+
+import SimpleTokenizerV2 as V2
+tokenizer = V2.SimpleTokenizerV2(vocab)
+print("encoded: ")
+print(tokenizer.encode(text))
+print("decoded: ")
+print(tokenizer.decode(tokenizer.encode(text)))
+
 
 
 
