@@ -5,9 +5,10 @@
 
 from importlib.metadata import version
 import tiktoken
-print("tiktoken version: ", version("tiktoken"))
+print("tiktoken version: ", version("tiktoken"), "\n")
 
 # instantiate the BPE tokenizer from tiktoken
+print("instantiating Byte Pair Encoding tokenization (tiktoken)..\n")
 tokenizer = tiktoken.get_encoding("gpt2")
 
 # usage is similar to SimpleTokenizerV2
