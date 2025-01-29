@@ -26,7 +26,17 @@ print("decoding ..\n")
 strings = tokenizer.decode(integers)
 print(strings)
 
+# can see that endoftext is assigned id 50256. Total vocab is 50257
 
+text = "Akwiewier"
+
+print("\nencoding unknown words (Akwiewier)..\n")
+integers = tokenizer.encode(text, allowed_special={"<|endoftext|>"})
+print(integers)
+
+print("decoding ..\n")
+strings = tokenizer.decode(integers)
+print(strings)
 
 
 
