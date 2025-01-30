@@ -1,8 +1,10 @@
 '''
+Data Sampling with a sliding window on the input text
+
 Given a text sample, extract input blockers as subsamples
 that serve as input to the LLM. The LLM's prediction task
 during training is to predict the next word that follows the
-input block. During training, we mask out all workds that are
+input block. During training, we mask out all words that are
 past the target. The text first undergoes tokenization
 '''
 
