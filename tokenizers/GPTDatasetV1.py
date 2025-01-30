@@ -97,6 +97,12 @@ print("batch 1: ", first_batch)
 second_batch = next(data_iter)
 print("batch 2: ", second_batch)
 
+# let's increase the batch size to 8 and stride to 4
+dataloader = create_dataloader_v1(raw_text, batch_size=8, max_length=4, stride=4, shuffle=False)
 
+data_iter = iter(dataloader)
+inputs, targets = next(data_iter)
+print("Inputs:\n", inputs)
+print("Targets:\n", targets)
 
 
