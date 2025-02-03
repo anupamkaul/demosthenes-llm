@@ -1,0 +1,12 @@
+python
+Python 3.11.7 (main, Dec 15 2023, 12:09:04) [Clang 14.0.6 ] on darwin
+Type "help", "copyright", "credits" or "license" for more information.
+>>> import torch
+>>> print(torch.__file__)
+/opt/anaconda3/lib/python3.11/site-packages/torch/__init__.py
+
+https://pytorch.org/docs/stable/generated/torch.nn.Embedding.html#torch.nn.Embedding
+
+https://github.com/pytorch/pytorch?tab=readme-ov-file#installation
+
+
