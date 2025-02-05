@@ -9,4 +9,10 @@ https://pytorch.org/docs/stable/generated/torch.nn.Embedding.html#torch.nn.Embed
 
 https://github.com/pytorch/pytorch?tab=readme-ov-file#installation
 
+the actual torch.embedding definition (called from Sparse and FF classes) is in native:
+
+https://github.com/pytorch/pytorch/blob/b85568a54a9c60986235ad1e0cc5dffc71b9d5b1/aten/src/ATen/native/Embedding.cpp#L14
+
+
+
 
