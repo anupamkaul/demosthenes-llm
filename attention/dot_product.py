@@ -44,9 +44,9 @@ print("calculate attn_scores of input token 2:")
 
 for i,x_i in enumerate(inputs):
     print("i=", i, " x_i = ", x_i)
-    attn_scores_2 = torch.dot(x_i, query)
+    attn_scores_2[i] = torch.dot(x_i, query)
 
-print("\nattn score of query element 2 is the dot product of itself with each input token : ", attn_scores_2, "\n")
+print("\nattn score of query element 2 is the dot product of itself with each input token shown below : \n", attn_scores_2, "\n")
 
 # here is how I validate what exactly does a dot product do:
 # see if my hypothesis for a dot product's result matches tensor.dot's definition
