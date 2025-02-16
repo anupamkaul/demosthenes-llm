@@ -79,10 +79,27 @@ obrain attention weights that sum up to 1. This normalization is a convention th
 training stability in an LLM. Here is a straight fwd way for normalization:
 
 '''
-
 attn_weights_2_tmp = attn_scores_2 / attn_scores_2.sum()
-print("Normalization\n Attention weights:", attn_weights_2_tmp)
+
+print("Normalization: based on divide by sum\n")
+print("Attention weights:", attn_weights_2_tmp)
 print("Sum:", attn_weights_2_tmp.sum()) # this should be 1, per what I did above
 
+'''
 
+In practice, it's more common/advisable to use the softmax function for normalization.
+This approach is better at managing extreme values and offers more favorable gradient 
+properties during training. Following is a basic implementation of softmax for normalizing 
+the attention scores of a query.
+
+'''
+
+def softmax_naive(x):
+    return torch.exp(x) / torch.exp(x).sum(dim=0)
+
+attn_weights_2_naive = softmax_naive(attn_scores_2)
+
+print("\nNormalization: based on naive softmax\n")
+print("Attention weights:", attn_weights_2_naive)
+print("Sum:", attn_weights_2_naive.sum()) # this should also be 1 if softmax_naive implements normalization
 
