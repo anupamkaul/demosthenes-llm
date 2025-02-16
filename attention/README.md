@@ -8,7 +8,7 @@ Implement 4 different tyles of attention mechanisms:
 
 2. Self-attention : Self-attention with trainable weights that forms the basis of the mechanism used in LLMs
 
-3. Causal attention : A type of self-attention used in LLMs tht allows a modek to consider only previous and current inputs in a sequence,
+3. Causal attention : A type of self-attention used in LLMs tht allows a model to consider only previous and current inputs in a sequence,
                       ensuring a temporal order during the text generation.
 
 4. Multi-head attention : An extension of self-attention and causal attention that enables the model to simultaneously attend to information

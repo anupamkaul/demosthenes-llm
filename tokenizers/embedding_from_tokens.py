@@ -1,6 +1,15 @@
 '''
 Takeaway: 
 
+Embedding is basically creating a dimensioned-vector of a singular token so
+that the vector can be used "normally" during back propagation. This is so
+that the LLM can better understand the relationships between tokens. Basically
+so that back-prop and optimizations works. Its a higher dimensional representation
+for machine language understanding. 
+
+Initially all that an embedding layer is a set of randomized values associated
+to the numer of dimensions of that vector. So: 
+
 The embedding layer is essentially a lookup operation that retrieves rows
 from the embedding layer's WEIGHT MATRIX via a Token ID
 '''
