@@ -81,9 +81,9 @@ training stability in an LLM. Here is a straight fwd way for normalization:
 '''
 attn_weights_2_tmp = attn_scores_2 / attn_scores_2.sum()
 
-print("Normalization: based on divide by sum\n")
+print("Normalization: based on divide by sum")
 print("Attention weights:", attn_weights_2_tmp)
-print("Sum:", attn_weights_2_tmp.sum()) # this should be 1, per what I did above
+print("Sum:", attn_weights_2_tmp.sum(), "\n") # this should be 1, per what I did above
 
 '''
 
@@ -99,9 +99,20 @@ def softmax_naive(x):
 
 attn_weights_2_naive = softmax_naive(attn_scores_2)
 
-print("\nNormalization: based on naive softmax\n")
+print("\nNormalization: based on naive softmax")
 print("Attention weights:", attn_weights_2_naive)
-print("Sum:", attn_weights_2_naive.sum()) # this should also be 1 if softmax_naive implements normalization
+print("Sum:", attn_weights_2_naive.sum(), "\n") # this should also be 1 if softmax_naive implements normalization
+
+'''
+Note that this naive softmax implementation (softmax_naive) may encounter numerical instability problems, such as overlow
+and underflow, when dealing with large or small input values. In practice its advisable to use the Pytorch implementation
+of softmax (study it), which has been extensively optimized for performance
+'''
+
+attn_weights_2 = torch.softmax(attn_scores_2, dim=0)
+print("Normalization: based on Pytorch's softmax")
+print("Attention weights:", attn_weights_2)
+print("Sum:", attn_weights_2.sum(), "\n")
 
 '''
 Now that we have computed the normalized attentio weights, we are ready for the final step: calculate the context vector z(2)
