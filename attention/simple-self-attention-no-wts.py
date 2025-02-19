@@ -103,3 +103,19 @@ print("\nNormalization: based on naive softmax\n")
 print("Attention weights:", attn_weights_2_naive)
 print("Sum:", attn_weights_2_naive.sum()) # this should also be 1 if softmax_naive implements normalization
 
+'''
+Now that we have computed the normalized attentio weights, we are ready for the final step: calculate the context vector z(2)
+by multiplying the embedded tokens, x(i), with the corresponding attention weights and then summing the resulting vectors. Thus,
+context vector is the weighted sum of all input vectors, obtained by multiplying each input vector by its corresponding attention weight.
+
+'''
+
+query = inputs[1]
+context_vec_2 = torch.zeros(query.shape) # initialize with zero to same shape as query
+
+for i, x_i in enumerate(inputs):
+    context_vec_2 += attn_weights_2_naive[i]*x_i
+
+print("context_vector: ", context_vec_2)
+
+
