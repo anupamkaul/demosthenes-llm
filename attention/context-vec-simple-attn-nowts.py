@@ -51,6 +51,8 @@ The file simple-self-attention-no-wts.py shows code for calculating context vect
 the attention score vector for query2. From here the code diverges to first simultaneously calculate attention scores of
 every input token, and then calculate context vectors for every token (embedded vector format as starting points) 
 
+Step 1 is we calculate attention scores for every input token that was expressed as an embedded tensor
+
 '''
 
 #normally we calculate intermediate attention scores between a query token (of the input sentence)
@@ -79,16 +81,44 @@ and the operator @ as follows:
 '''
 
 attn_scores = inputs @ inputs.T
+
 print("mat mul based attention scores: \n", attn_scores)
 
 '''
+
+Step 2: 
+
 In the next step we Normalize each of the attention scores we computed previously. The main goal behind normalization is to 
 obrain attention weights that sum up to 1. This normalization is a convention that is useful for interpretation and maintaining 
 training stability in an LLM. Here is a straight fwd way for normalization:
 '''
 
-attn_weights = torch.softmax(attn_scores, dim=1)
-print("Normalization: based on Pytorch's softmax")
-print("Attention weights:", attn_weights)
-print("Sum:", attn_weights.sum(), "\n")
+attn_weights = torch.softmax(attn_scores, dim=-1)
 
+print("\nNormalization: based on Pytorch's softmax")
+print("Normalized Attention weights:\n", attn_weights)
+
+'''
+Verify that the above is normalized, i.e. all of the row values add up to 1
+'''
+print("All row sums:\n", attn_weights.sum(dim=-1)) 
+
+'''
+Note on usage of dim=-1 above:
+
+By setting dim=-1, we are instructing the softmax (and sum) function to apply the normalizatio (and sum)
+along the last dimension of the attn_scores tensor. If this tensor is a 2-dim tensor (e.g. shape of [rows, col]),
+it will normalize across the cols, so that the values in each row (summing over the col dimension) sum up to 1
+
+'''
+
+'''
+
+Step 3: We calculate the Context Vector for every input token
+Use matmul with attn_weights tensor and the inputs tensor basically
+
+'''
+
+all_context_vec = attn_weights @ inputs
+
+print("\nContext Vectors:\n", all_context_vec)
