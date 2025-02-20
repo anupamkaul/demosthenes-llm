@@ -57,9 +57,6 @@ every input token, and then calculate context vectors for every token (embedded 
 # with each input token. We determine these scores by computing the dot product of the query (for every x(i))
 # with every other input token
 
-#query = inputs[1]  # first element is inputs[0]
-#print(query)
-
 # attention scores of every query (like x^2) 
 # this will be a 6 * 6 array with every row corresponding to an input query and every row's 6 cols representing
 # the attention scores of that row's input query
@@ -75,6 +72,15 @@ for i,x_i in enumerate(inputs):
         attn_scores[i, j] = torch.dot(x_i, x_j)
 
 print("\nattn score of query element is the dot product of itself with each input token shown below : \n", attn_scores, "\n")
+
+'''
+for loops are generally slow in the above calc. I can also do the same attention score calculation by using matrix multiplication,
+and the operator @ as follows:
+'''
+
+attn_scores_matmul = inputs @ inputs.T
+print("mat mul based attention scores: \n", attn_scores_matmul)
+
 exit
 
 '''

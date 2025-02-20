@@ -21,4 +21,8 @@ the model to capture various aspects of the input data in parallel.
 With these 4, goal would be to arrive at a compact and efficient implementation of multi-headed attention that we can then plug into the 
 LLM architecture that we will code up next.
 
+File order for perusal:
+dot_product.py
+simple-self-attention-no-wts.py
+context-vec-simple-attn-nowts.py
 
