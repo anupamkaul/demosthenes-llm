@@ -47,31 +47,35 @@ that maps a similarity-index relationship between an input token and another in 
 In self-atttention, our goal is to calculate context-vectors z(i) for eaxh element x(i) in the input sequence.
 A context vector can be interpreted as an enriched embedding vector. 
 
-To illustrate this, let's focus on the embedding vector of second input element x(2) and proceed thusly 
-
-To get to z(2) the context vector of x(2) first we compte intermediate values (w) referred to as attention scores.
+The file simple-self-attention-no-wts.py shows code for calculating context vector for element x(2) by first calculating
+the attention score vector for query2. From here the code diverges to first simultaneously calculate attention scores of
+every input token, and then calculate context vectors for every token (embedded vector format as starting points) 
 
 '''
 
 #normally we calculate intermediate attention scores between a query token (of the input sentence)
-# with each input token. We determine these scores by computing the dot product of the query (x^2 here)
+# with each input token. We determine these scores by computing the dot product of the query (for every x(i))
 # with every other input token
 
-query = inputs[1]  # first element is inputs[0]
+#query = inputs[1]  # first element is inputs[0]
 #print(query)
 
-# the second input token (represented as embeddings) serves as the query
+# attention scores of every query (like x^2) 
+# this will be a 6 * 6 array with every row corresponding to an input query and every row's 6 cols representing
+# the attention scores of that row's input query
+attn_scores = torch.empty(6, 6)  
 
-# attention scores of query (x^2) would be:
-attn_scores_2 = torch.empty(inputs.shape[0])  # initialize with the same shape as each element of inputs
-
-print("calculate attn_scores of input token 2:")
+print("calculate attn_scores of all 6 input tokens:")
+# basically replace query with x_j and run an additional internal for loop
 
 for i,x_i in enumerate(inputs):
     print("i=", i, " x_i = ", x_i)
-    attn_scores_2[i] = torch.dot(x_i, query)
+    for j, x_j in enumerate(inputs):
+        print("    j=", j, " x_j = ", x_j)
+        attn_scores[i, j] = torch.dot(x_i, x_j)
 
-print("\nattn score of query element 2 is the dot product of itself with each input token shown below : \n", attn_scores_2, "\n")
+print("\nattn score of query element is the dot product of itself with each input token shown below : \n", attn_scores, "\n")
+exit
 
 '''
 In the next step we Normalize each of the attention scores we computed previously. The main goal behind normalization is to 
@@ -79,7 +83,7 @@ obrain attention weights that sum up to 1. This normalization is a convention th
 training stability in an LLM. Here is a straight fwd way for normalization:
 
 '''
-attn_weights_2_tmp = attn_scores_2 / attn_scores_2.sum()
+attn_weights_2_tmp = attn_scores / attn_scores.sum()
 
 print("Normalization: based on divide by sum")
 print("Attention weights:", attn_weights_2_tmp)
@@ -97,7 +101,7 @@ the attention scores of a query.
 def softmax_naive(x):
     return torch.exp(x) / torch.exp(x).sum(dim=0)
 
-attn_weights_2_naive = softmax_naive(attn_scores_2)
+attn_weights_2_naive = softmax_naive(attn_scores)
 
 print("\nNormalization: based on naive softmax")
 print("Attention weights:", attn_weights_2_naive)
@@ -109,7 +113,7 @@ and underflow, when dealing with large or small input values. In practice its ad
 of softmax (study it), which has been extensively optimized for performance
 '''
 
-attn_weights_2 = torch.softmax(attn_scores_2, dim=0)
+attn_weights_2 = torch.softmax(attn_scores, dim=0)
 print("Normalization: based on Pytorch's softmax")
 print("Attention weights:", attn_weights_2)
 print("Sum:", attn_weights_2.sum(), "\n")
@@ -132,5 +136,5 @@ print("context_vector: ", context_vec_2)
 '''
 
 Next I will generate context vectors for every input token (calculate all context vectors simultaneously)
-(file context_vec...)
+
 '''
