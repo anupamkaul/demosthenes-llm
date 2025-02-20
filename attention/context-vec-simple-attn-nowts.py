@@ -60,7 +60,7 @@ every input token, and then calculate context vectors for every token (embedded 
 # attention scores of every query (like x^2) 
 # this will be a 6 * 6 array with every row corresponding to an input query and every row's 6 cols representing
 # the attention scores of that row's input query
-attn_scores = torch.empty(6, 6)  
+attn_scores_forloop = torch.empty(6, 6)  
 
 print("calculate attn_scores of all 6 input tokens:")
 # basically replace query with x_j and run an additional internal for loop
@@ -69,78 +69,26 @@ for i,x_i in enumerate(inputs):
     print("i=", i, " x_i = ", x_i)
     for j, x_j in enumerate(inputs):
         print("    j=", j, " x_j = ", x_j)
-        attn_scores[i, j] = torch.dot(x_i, x_j)
+        attn_scores_forloop[i, j] = torch.dot(x_i, x_j)
 
-print("\nattn score of query element is the dot product of itself with each input token shown below : \n", attn_scores, "\n")
+print("\nattn score of query element is the dot product of itself with each input token shown below : \n", attn_scores_forloop, "\n")
 
 '''
 for loops are generally slow in the above calc. I can also do the same attention score calculation by using matrix multiplication,
 and the operator @ as follows:
 '''
 
-attn_scores_matmul = inputs @ inputs.T
-print("mat mul based attention scores: \n", attn_scores_matmul)
-
-exit
+attn_scores = inputs @ inputs.T
+print("mat mul based attention scores: \n", attn_scores)
 
 '''
 In the next step we Normalize each of the attention scores we computed previously. The main goal behind normalization is to 
 obrain attention weights that sum up to 1. This normalization is a convention that is useful for interpretation and maintaining 
 training stability in an LLM. Here is a straight fwd way for normalization:
-
-'''
-attn_weights_2_tmp = attn_scores / attn_scores.sum()
-
-print("Normalization: based on divide by sum")
-print("Attention weights:", attn_weights_2_tmp)
-print("Sum:", attn_weights_2_tmp.sum(), "\n") # this should be 1, per what I did above
-
 '''
 
-In practice, it's more common/advisable to use the softmax function for normalization.
-This approach is better at managing extreme values and offers more favorable gradient 
-properties during training. Following is a basic implementation of softmax for normalizing 
-the attention scores of a query.
-
-'''
-
-def softmax_naive(x):
-    return torch.exp(x) / torch.exp(x).sum(dim=0)
-
-attn_weights_2_naive = softmax_naive(attn_scores)
-
-print("\nNormalization: based on naive softmax")
-print("Attention weights:", attn_weights_2_naive)
-print("Sum:", attn_weights_2_naive.sum(), "\n") # this should also be 1 if softmax_naive implements normalization
-
-'''
-Note that this naive softmax implementation (softmax_naive) may encounter numerical instability problems, such as overlow
-and underflow, when dealing with large or small input values. In practice its advisable to use the Pytorch implementation
-of softmax (study it), which has been extensively optimized for performance
-'''
-
-attn_weights_2 = torch.softmax(attn_scores, dim=0)
+attn_weights = torch.softmax(attn_scores, dim=1)
 print("Normalization: based on Pytorch's softmax")
-print("Attention weights:", attn_weights_2)
-print("Sum:", attn_weights_2.sum(), "\n")
+print("Attention weights:", attn_weights)
+print("Sum:", attn_weights.sum(), "\n")
 
-'''
-Now that we have computed the normalized attentio weights, we are ready for the final step: calculate the context vector z(2)
-by multiplying the embedded tokens, x(i), with the corresponding attention weights and then summing the resulting vectors. Thus,
-context vector is the weighted sum of all input vectors, obtained by multiplying each input vector by its corresponding attention weight.
-
-'''
-
-query = inputs[1]
-context_vec_2 = torch.zeros(query.shape) # initialize with zero to same shape as query
-
-for i, x_i in enumerate(inputs):
-    context_vec_2 += attn_weights_2_naive[i]*x_i
-
-print("context_vector: ", context_vec_2)
-
-'''
-
-Next I will generate context vectors for every input token (calculate all context vectors simultaneously)
-
-'''
