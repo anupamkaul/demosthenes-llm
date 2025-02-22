@@ -122,3 +122,23 @@ First let's compute attention score w22:
 keys_2 = keys[1]
 attn_score_22 = q_2.dot(keys_2)  # note that q_2 was x_2 @ W_query ...
 print("attn_score_22: \n", attn_score_22, "\n")
+
+# generalize this computation for all attention scores via matmul
+
+attn_scores_2 = q_2 @ keys.T  # all attention scores for a given query
+print("attn scores for element 2: \n", attn_scores_2, "\n")
+
+'''
+Step 3: Go from attention_scores to attention_weights. We compute the attention_weights by scaling the attention_scores and using
+the softmax function as we did previously. However, now, we scale the attention scores by dividing them by the sq-root of the embedding
+dimension of the keys. Note that taking sq-root is mathematically the same as exponentiating by 0.5. 
+
+The reason for normalization by the embedding dimension size is to improve the training performance by avoiding small gradients. For instance,
+when scaling up the embedding dimension, which is typically greater than 1000 for GPT-like LLMs, large dot products can result in very small
+gradients during back propagation due to the softmax applied to them. As dot products increase, the softmax function behaves
+more like a step function, resulting in gradients nearing zero (vanishing gradients problem). Gradient calculation are the lifeline of neural network training so small gradients can drastically slow down learning or cause training to stagnate. The scaling by the square root of the embedding dimension is the reason why this self-attention mechanism is also called scaled-dot product attention.
+'''
+
+d_k = keys.shape[-1]  # get the embedding dimension
+attn_weights_2 = torch.softmax(attn_scores_2 / d_k**0.5, dim=-1)
+print("attn weight (scaled and adding to 1 : obtained also by div with sq_root(emb-dim of keys)) for element 2: \n", attn_weights_2, "\n")
