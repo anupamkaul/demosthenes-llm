@@ -90,4 +90,35 @@ the network's connections (neural) while attention weights are dynamic, context 
 
 '''
 
+'''
 
+Now let's compute the key and value elements for all input elements as they are involved in computing the attention weights with 
+respect to the query q_2 later. We can obtain all keys and values via matmul
+
+'''
+
+keys = inputs @ W_key
+values = inputs @W_value
+
+print("keys.shape:", keys.shape) # should be torch.Size([6, 2])
+print("keys: \n", keys)
+
+print("values.shape:", values.shape) # should be torch.Size([6, 2])
+print("values: \n", values)
+
+'''
+now we have calculated keys and values of all 6 tokens and these are stored in key and value tensors (6, 2). Remember that they were 
+calculated with matmuls with the standard W_query, W_key, W_values which contain randomized weights but iteratively would contain learned
+weights based on training. 
+
+Step 2: compute the attention scores for every input. The unscaled and non-normalized attention score is computed as a dot product between
+the query and the key vectors only. In order to compute the context vector for the 2nd input token, the query is derived from the 2nd input token. Note that this attention score computation as a dot-product computation is similar to what I used in Simple.. the new aspect is that we are not 
+directly computing the dot-product between the input elements, but using the query and key (projections) obtained in transforming the inputs via the respective Weight Matrices
+
+First let's compute attention score w22:
+
+''' 
+
+keys_2 = keys[1]
+attn_score_22 = q_2.dot(keys_2)  # note that q_2 was x_2 @ W_query ...
+print("attn_score_22: \n", attn_score_22, "\n")
