@@ -142,3 +142,22 @@ more like a step function, resulting in gradients nearing zero (vanishing gradie
 d_k = keys.shape[-1]  # get the embedding dimension
 attn_weights_2 = torch.softmax(attn_scores_2 / d_k**0.5, dim=-1)
 print("attn weight (scaled and adding to 1 : obtained also by div with sq_root(emb-dim of keys)) for element 2: \n", attn_weights_2, "\n")
+
+'''
+
+Step 4: final step is to calculate the context vector. Up until now we've only used keys not values. The last step is multiplying each attention weight with the value vector, and summing them up to obtain the context vector (for that input token). 
+
+'''
+
+context_vec_2 = attn_weights_2 @ values
+print("Context Vector for token 2 (as a function of weights) : \n", context_vec_2, "\n")
+
+'''
+
+Similar to when we computed the context vector as a weighted sum over the input vectors (in Simple..) we have now computed the context vector
+as a weighted sum over the value vectors. Here, the attention weights serve as a weighting factor that weighs the respective importance of each
+value vector.
+
+'''
+
+
