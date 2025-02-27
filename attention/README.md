@@ -26,4 +26,8 @@ dot_product.py
 simple-self-attention-no-wts.py
 context-vec-simple-attn-nowts.py
 self-attention-trainable-wts.py
+SelfAttentionV1.py
+test_SelfAttentionV1.py
+SelfAttentionV2.py
+test_SelfAttentionV2.py
 

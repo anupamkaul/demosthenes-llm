@@ -13,9 +13,9 @@ inputs = torch.tensor(
 
 torch.manual_seed(789)
 
-sa_v2 = SelfAttn.SelfAttention_v2(3, 2)
+#sa_v2 = SelfAttn.SelfAttention_v2(3, 2)
 #sa_v2 = SelfAttn.SelfAttention_v2(3, 3)
-#sa_v2 = SelfAttn.SelfAttention_v2(3, 10)
+sa_v2 = SelfAttn.SelfAttention_v2(3, 10)
 
 print(sa_v2(inputs)) # this should print out the 6-row tensor of context vectors of the 6 tokens described above
 
