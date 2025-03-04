@@ -7,7 +7,7 @@ it adjusts these trainable wts (as we will see later)
 
 We can improve SelfAttention_v1 impl by utilizing PyTorch's nn.Linear layers, which effectively perform matrix multiplication
 when the bias units are disabled. Additionally, a signf adv of using nn.Linear instead of manually impl (torch.rand(...)) is that
-nn.Linear has an optimized wt initialization scheme, contrubuting to more stasble and effective model training.
+nn.Linear has an optimized wt initialization scheme, contributing to more stable and effective model training.
 '''
 
 import torch

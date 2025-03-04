@@ -22,6 +22,7 @@ With these 4, goal would be to arrive at a compact and efficient implementation 
 LLM architecture that we will code up next.
 
 File order for perusal (in order):
+
 dot_product.py
 simple-self-attention-no-wts.py
 context-vec-simple-attn-nowts.py
@@ -30,4 +31,8 @@ SelfAttentionV1.py
 test_SelfAttentionV1.py
 SelfAttentionV2.py
 test_SelfAttentionV2.py
+causal_mask_attn.py
+SelfAttentionV2Causal.py
+test_SelfAttentionV2Causal.py
+
 
