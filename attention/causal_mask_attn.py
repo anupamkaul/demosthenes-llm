@@ -88,6 +88,14 @@ tensor([[1.0000, 0.0000, 0.0000, 0.0000, 0.0000, 0.0000],
         [0.2019, 0.2085, 0.2075, 0.1979, 0.1841, 0.0000],
         [0.1681, 0.1648, 0.1649, 0.1675, 0.1682, 0.1665]],
        grad_fn=<DivBackward0>)
+
 '''
 
+'''
+Apply dropout to the attention weights (as is usually done in GPT models) and 
+check the impact (check dropout_example.py as reference)
+'''
 
+torch.manual_seed(123)
+dropout = torch.nn.Dropout(0.5)
+print("Applying dropout on masked_simple_norm: \n", dropout(masked_simple_norm))
