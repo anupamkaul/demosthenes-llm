@@ -22,7 +22,7 @@ class SelfAttentionV2Causal(nn.Module):
     def __init__(self, d_in, d_out, context_length, dropout, qkv_bias=False):
         super().__init__()
 
-        # explcit init`
+        # explcit init
         self.d_out = d_out
 
         self.W_query = nn.Linear(d_in, d_out, bias = qkv_bias) # use Linear instead of Parameters for better optimized inits
@@ -33,7 +33,7 @@ class SelfAttentionV2Causal(nn.Module):
         self.dropout = nn.Dropout(dropout)
 
         '''
-        we add a register buffer call in __init__ method. While usage of register_bufffer in Pytorch is not necessary for all
+        we add a register buffer call in __init__ method. While usage of register_buffer in Pytorch is not necessary for all
         usecases, for LLMs the adv is: when we use SelAttentionV2Causal class buffers are automatically moved to the appropriate
         device (CPU or GPU or something unique), which will be relevant when training our LLM. This means I don't need to manually
         ensure these tensors are on the same device as my model parameters, avoiding device mismatch errors.
@@ -56,6 +56,8 @@ class SelfAttentionV2Causal(nn.Module):
         
         # When calculating attention scores we now transpose dimensions 1 and 2, keeping the batch dimension in the first position (0)
         attn_scores  = queries @ keys.transpose(1, 2)
+
+        print("\nclass SelfAttentionV2Causal: attn_scores pre Mask:\n", attn_scores)
 
         # now we apply the mask to attn_scores (code is different from causal_mask_attn.py) 
         attn_scores.masked_fill(
