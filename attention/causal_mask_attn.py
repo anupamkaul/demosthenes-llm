@@ -22,6 +22,7 @@ sa_v2 = SelfAttn.SelfAttention_v2(3, 2)
 
 queries = sa_v2.W_query(inputs)
 keys    = sa_v2.W_key(inputs)
+values  = sa_v2.W_value(inputs)
 
 # step 1 : apply softmax 
 attn_scores = queries @ keys.T
@@ -92,10 +93,36 @@ tensor([[1.0000, 0.0000, 0.0000, 0.0000, 0.0000, 0.0000],
 '''
 
 '''
-Apply dropout to the attention weights (as is usually done in GPT models) and 
+
+Improve the above implementation:
+
+Softmax converts its inputs into a probability distribution. When negative
+infinity values (-inf) are present in a row, softmax treats them as zero prob.
+(Mathametically, because e^^(-inf) approaches 0)
+
+We implement this masking trick by first creating a mask with 1s above the diagonal,
+then replace the ones with -inf, and finally apply Softmax to the masked results
+
+'''
+
+print("\napply the -inf trick and then apply softmax:\n")
+mask = torch.triu(torch.ones(context_length, context_length), diagonal=1)
+masked = attn_scores.masked_fill(mask.bool(), -torch.inf) # note that assignment is important else it doesn't take effect
+print(masked)
+
+attn_weights = torch.softmax(masked / keys.shape[-1]**0.5, dim=1)
+print(attn_weights)
+
+
+'''
+Next, apply dropout to the attention weights (as is usually done in GPT models) and 
 check the impact (check dropout_example.py as reference)
 '''
 
 torch.manual_seed(123)
 dropout = torch.nn.Dropout(0.5)
-print("Applying dropout on masked_simple_norm: \n", dropout(masked_simple_norm))
+print("Applying dropout on attn_weights: \n", dropout(attn_weights))
+
+# finally we compute context_vector 
+context_vec = attn_weights @ values
+print("\ncontext vec: \n", context_vec)
