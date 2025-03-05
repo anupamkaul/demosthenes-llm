@@ -29,7 +29,7 @@ context_length = batch.shape[1]
 d_in = 3
 d_out = 3 # 3 works best here
 
-ca = SelfAttn.SelfAttentionV2Causal(d_in, d_out, context_length, 0.0)
+ca = SelfAttn.SelfAttentionV2Causal(d_in, d_out, context_length, 0.2) # use a 0.2 dropout
 context_vecs = ca(batch)
 print("context_vecs.shape:", context_vecs.shape)
 print("context vecs:\n", context_vecs)
