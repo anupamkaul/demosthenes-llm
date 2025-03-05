@@ -60,11 +60,12 @@ class SelfAttentionV2Causal(nn.Module):
         print("\nclass SelfAttentionV2Causal: attn_scores pre Mask:\n", attn_scores)
 
         # now we apply the mask to attn_scores (code is different from causal_mask_attn.py) 
-        attn_scores.masked_fill(
+        m = attn_scores.masked_fill(
             self.mask.bool()[:num_tokens, :num_tokens], -torch.inf
         )
 
         print("\nclass SelfAttentionV2Causal: attn_scores post Mask:\n", attn_scores)
+        print("\nclass SelfAttentionV2Causal: attn_scores post Mask:\n", m)
 
         attn_weights = torch.softmax( attn_scores / keys.shape[-1]**0.5, dim=-1 ) # scaled dot product to avoid vanishing gradients
         print("\nclass SelfAttentionV2Causal: att_wts post scaled dot:\n", attn_weights)
