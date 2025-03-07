@@ -24,7 +24,9 @@ context_length = batch.shape[1] # this is the number of tokens
 d_in, d_out = 3, 2
 
 mha = MhaAttnWrapper.MultiHeadAttentionWrapper(
-    d_in, d_out, context_length, dropout=0.2, num_heads=2
+    #d_in, d_out, context_length, dropout=0.2, num_heads=2
+    #d_in, d_out, context_length, dropout=0.2, num_heads=12
+    d_in, d_out, context_length, dropout=0.2, num_heads=25
 )
 
 context_vecs = mha(batch)
