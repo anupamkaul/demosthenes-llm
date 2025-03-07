@@ -157,3 +157,10 @@ context vecs:
          [-0.4849, -0.0705,  0.3442,  0.2237]]], grad_fn=<CatBackward0>)
 context vecs shape:  torch.Size([2, 6, 4])
 
+(This was the case of a batch of 2 similar inputs and num_heads = 2 in MHA)
+
+The first dim of the resulting context_vecs tensor is 2 since we have 2 input texts
+(the input texts are duplicated, which is why the context vectors are exactly the samee
+for those). The second dim refers to the 6 tokens in each input. The third dim
+refers to the 4-dim embedding of each token.
+
