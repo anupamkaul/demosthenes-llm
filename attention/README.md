@@ -35,5 +35,7 @@ causal_mask_attn.py
 SelfAttentionV2Causal.py
 test_SelfAttentionV2Causal.py
 MultiHeadAttn_StackedCausalSA.py
+views_example.py
+MultiHeadAttention.py
 
 
