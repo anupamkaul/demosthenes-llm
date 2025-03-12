@@ -70,7 +70,8 @@ class MultiHeadAttention(nn.Module):
         values = values.view(b, num_tokens, self.num_heads, self.head_dim)
         queries = queries.view(b, num_tokens, self.num_heads, self.head_dim)
 
-        # now we use the .transpose operator
+        # now we use the .transpose operator to transpose the 1 and 2 dimensions 
+        # (see transpose_example.py, category is tensor.transpose
         keys = keys.transpose(1, 2)
         values = values.transpose(1, 2)
         queries = queries.transpose(1, 2)

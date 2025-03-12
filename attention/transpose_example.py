@@ -66,4 +66,31 @@ shape of a:  torch.Size([2, 3, 4])
 shape of b:  torch.Size([2, 4, 3])
 '''
 
+# above showed torch.transpose. Now some examples with tensor.transpose
+print(x, "\n")
 
+z = x.transpose(0, 1)
+print(z, "\n")
+
+w = x.T
+print(w, "\n")
+
+v = torch.t(x)
+print(v, "\n")
+
+'''
+tensor([[-0.5430,  1.4257,  0.8486],
+        [ 0.1295, -0.6650, -0.0504]]) 
+
+tensor([[-0.5430,  0.1295],
+        [ 1.4257, -0.6650],
+        [ 0.8486, -0.0504]]) 
+
+tensor([[-0.5430,  0.1295],
+        [ 1.4257, -0.6650],
+        [ 0.8486, -0.0504]]) 
+
+tensor([[-0.5430,  0.1295],
+        [ 1.4257, -0.6650],
+        [ 0.8486, -0.0504]]) 
+'''
