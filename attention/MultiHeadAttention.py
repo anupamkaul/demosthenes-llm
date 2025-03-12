@@ -76,5 +76,19 @@ class MultiHeadAttention(nn.Module):
         values = values.transpose(1, 2)
         queries = queries.transpose(1, 2)
 
-        context_vec = 0
+        # calculate attention score
+        attn_scores = queries @ keys.transpose(2, 3)
+        mask_bool = self.mask.bool()[:num_tokens, :num_tokens]
+        print(mask_bool)
+
+        attn_scores.masked_fill (mask_bool, -torch.inf)
+
+        attn_weights = torch.softmax (attn_scores / keys.shape[-1]**0.5, dim = -1)
+        attn_weights = self.dropout(attn_weights)
+
+        context_vec = (attn_weights @ values).transpose(1, 2)
+
+        context_vec = context_vec.contiguous().view(b, tokens, self.d_out) # this is the reconstruction
+        context_vec = self.out_proj(context_vec)
+
         return context_vec
