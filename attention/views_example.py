@@ -28,6 +28,53 @@ tensor([[ 1,  2,  3,  4],
         [13, 14, 15, 16]])
 '''
 
+# we can use -1 to infer dimension like so:
+
+z = x.view(2, -1, 2)
+print(z)
+
+'''
+tensor([[[ 1,  2],
+         [ 3,  4],
+         [ 5,  6],
+         [ 7,  8]],
+
+        [[ 9, 10],
+         [11, 12],
+         [13, 14],
+         [15, 16]]])
+'''
+
+# Incorrect usage (will raise an error)
+#w = x.view(3, 3)
+#print(w)
+
+# RuntimeError: shape '[3, 3]' is invalid for input of size 16
+
+# Modifying a view also modifies the original tensor as it is in-situ
+
+b = x.view(4, 4)
+print(b)
+
+b[0, 0] = 101
+
+print(x)
+print(y) # was also a 4 * 4 view of x
+
+'''
+tensor([[ 1,  2,  3,  4],
+        [ 5,  6,  7,  8],
+        [ 9, 10, 11, 12],
+        [13, 14, 15, 16]])
+tensor([101,   2,   3,   4,   5,   6,   7,   8,   9,  10,  11,  12,  13,  14,
+         15,  16])
+tensor([[101,   2,   3,   4],
+        [  5,   6,   7,   8],
+        [  9,  10,  11,  12],
+        [ 13,  14,  15,  16]])
+'''
+
+
 
 
 

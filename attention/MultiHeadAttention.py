@@ -62,6 +62,18 @@ class MultiHeadAttention(nn.Module):
         query matrix, but then we split the query matrix into 2 (Q1 and Q2). We use the .views operator to do these
         matrix transformations (see views_example.py)
 
+        We use .view and we implicitly split the matrix by adding a "num_heads" dimension. Then we unroll the last dim
+        (b, num_tokens, d_out) --> (b, num_tokens, num_heads, heads_dim)
         '''
+
+        keys   = keys.view(b, num_tokens, self.num_heads, self.head_dim)
+        values = values.view(b, num_tokens, self.num_heads, self.head_dim)
+        queries = queries.view(b, num_tokens, self.num_heads, self.head_dim)
+
+        # now we use the .transpose operator
+        keys = keys.transpose(1, 2)
+        values = values.transpose(1, 2)
+        queries = queries.transpose(1, 2)
+
         context_vec = 0
         return context_vec
