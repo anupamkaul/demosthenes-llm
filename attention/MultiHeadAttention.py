@@ -11,6 +11,7 @@ Unlike the previous approach where SelfAttentionV2Causal implemented a single at
 
 '''
 
+import torch
 import torch.nn as nn
 
 class MultiHeadAttention(nn.Module):
@@ -33,7 +34,7 @@ class MultiHeadAttention(nn.Module):
         self.W_value = nn.Linear(d_in, d_out, qkv_bias)
 
         # use a linear layer to combine the head outputs
-        self.out_proj = nn.Linear(d_in, d_out)
+        self.out_proj = nn.Linear(d_out, d_out)
 
         self.dropout = nn.Dropout(dropout)
 
@@ -66,9 +67,9 @@ class MultiHeadAttention(nn.Module):
         (b, num_tokens, d_out) --> (b, num_tokens, num_heads, heads_dim)
         '''
 
-        keys   = keys.view(b, num_tokens, self.num_heads, self.head_dim)
-        values = values.view(b, num_tokens, self.num_heads, self.head_dim)
-        queries = queries.view(b, num_tokens, self.num_heads, self.head_dim)
+        keys   = keys.view(b, num_tokens, self.num_heads, self.heads_dim)
+        values = values.view(b, num_tokens, self.num_heads, self.heads_dim)
+        queries = queries.view(b, num_tokens, self.num_heads, self.heads_dim)
 
         # now we use the .transpose operator to transpose the 1 and 2 dimensions 
         # (see transpose_example.py, category is tensor.transpose
@@ -79,17 +80,23 @@ class MultiHeadAttention(nn.Module):
         # calculate attention score
         attn_scores = queries @ keys.transpose(2, 3)
         mask_bool = self.mask.bool()[:num_tokens, :num_tokens]
-        print(mask_bool)
+        print("causal masked bool tensor:\n", mask_bool)
 
-        attn_scores.masked_fill (mask_bool, -torch.inf)
+        attn_scores.masked_fill_(mask_bool, -torch.inf)
+        print("attn scores masked causal:\n", attn_scores)
 
         attn_weights = torch.softmax (attn_scores / keys.shape[-1]**0.5, dim = -1)
         attn_weights = self.dropout(attn_weights)
+        print("attn weights tensor:\n", attn_scores)
 
         context_vec = (attn_weights @ values).transpose(1, 2)
+        print("context_vec step1:\n", context_vec)
 
-        context_vec = context_vec.contiguous().view(b, tokens, self.d_out) # this is the reconstruction
+        context_vec = context_vec.contiguous().view(b, num_tokens, self.d_out) # this is the reconstruction
+        print("context_vec step2:\n", context_vec)
+
         context_vec = self.out_proj(context_vec)
+        print("context_vec step3:\n", context_vec)
 
         return context_vec
 
@@ -98,8 +105,8 @@ On a big-picture level, in the previous MultiHeadAttentionWrapper, we stacked mu
 
 aThe splitting of the query, key, and value tensors is achieved through tensor reshaping and transposing operations using PyTorch’s .view and .transpose methods. The input is first transformed (via linear layers for queries, keys, and values) and then reshaped to represent multiple heads.
 
-The key operation is to split the d_out dimension into num_heads and head_dim, where head_dim = d_out / num_heads. This splitting is then achieved using the .view method: a tensor of dimensions (b, num_tokens, d_out) is reshaped to dimension (b, num_tokens, num_heads, head_dim).
+The key operation is to split the d_out dimension into num_heads and heads_dim, where heads_dim = d_out / num_heads. This splitting is then achieved using the .view method: a tensor of dimensions (b, num_tokens, d_out) is reshaped to dimension (b, num_tokens, num_heads, heads_dim).
 
-The tensors are then transposed to bring the num_heads dimension before the num_ tokens dimension, resulting in a shape of (b, num_heads, num_tokens, head_dim). This transposition is crucial for correctly aligning the queries, keys, and values across the different heads and performing batched matrix multiplications efficiently
+The tensors are then transposed to bring the num_heads dimension before the num_ tokens dimension, resulting in a shape of (b, num_heads, num_tokens, heads_dim). This transposition is crucial for correctly aligning the queries, keys, and values across the different heads and performing batched matrix multiplications efficiently
 
 '''
