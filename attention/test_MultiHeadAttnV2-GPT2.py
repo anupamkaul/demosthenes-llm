@@ -34,7 +34,9 @@ torch.manual_seed(123)
 batch_size, context_length, d_in = batch.shape
 d_out = 768 
 #mha = MhaAttn.MultiHeadAttention(d_in, d_out, context_length, 0.0, num_heads = 2)
+
 mha = MhaAttn.MultiHeadAttention(d_in, d_out, 1024, 0.0, 12)
 context_vec = mha(batch)  # calls the forward method of MultiHeadAttention class (MultiHeadAttention.py)
 print("context vecs:\n", context_vec)
+print("\nshape of context vec: ", context_vec.shape)
 
