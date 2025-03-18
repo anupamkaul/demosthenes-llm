@@ -78,7 +78,7 @@ class MultiHeadAttention(nn.Module):
         queries = queries.transpose(1, 2)
 
         # calculate attention score
-        attn_scores = queries @ keys.transpose(2, 3)
+        attn_scores = queries @ keys.transpose(2, 3) # see test on batch multiplication
         mask_bool = self.mask.bool()[:num_tokens, :num_tokens]
         print("causal masked bool tensor:\n", mask_bool)
 
