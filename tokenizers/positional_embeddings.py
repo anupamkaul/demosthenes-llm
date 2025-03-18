@@ -108,7 +108,8 @@ each of the 8 batches:
 '''
 
 input_embeddings = token_embeddings + pos_embeddings
-print(input_embeddings.shape)
+print("input embeddings are now (with positional embedding inserted) : \n", input_embeddings, "\n")
+print("input_embeddings shape (adding positional embeddings) is \n", input_embeddings.shape)
 
 '''
 This returns torch.Size([8, 4, 256]).
