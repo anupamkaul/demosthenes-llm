@@ -78,7 +78,7 @@ print(token_embeddings.shape)  # returns torch.Size([8, 4, 256])
 # print("token embeddings: \n", token_embeddings)
 
 '''
-Tghe 8 * 4 * 256 dim vector tensor output shows that each token ID is 
+The 8 * 4 * 256 dim vector tensor output shows that each token ID is 
 now embedded as a 256 dimensional vector.
 
 For a GPT model's absolute embedding approach, we jsut need to create
