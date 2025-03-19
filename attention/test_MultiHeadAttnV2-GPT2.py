@@ -6,7 +6,8 @@ import MultiHeadAttention as MhaAttn
 '''
 Using the MultiHeadAttention class, initialize a multi-head attention module that has the same number of attention heads 
 as the smallest GPT-2 model (12 attention heads). 
-Also ensure that you use the respective input and output embedding sizes similar to GPT-2 (768 dimensions). 
+
+In this test ensure that you use the respective input and output embedding sizes similar to GPT-2 (768 dimensions). 
 Note that the smallest GPT-2 model supports a context length of 1,024 tokens.
 
 '''
@@ -59,6 +60,7 @@ dataloader = dataloaderV1.create_dataloader_v1(
 
 data_iter = iter(dataloader)
 inputs, target = next(data_iter)
+
 print("Token IDs:\n", inputs)
 print("\nInputs shape:\n", inputs.shape)
 
@@ -87,7 +89,7 @@ print("token embedding shape: ", token_embeddings.shape)  # returns torch.Size([
 The 8 * 4 * 768 dim vector tensor output shows that each token ID is 
 now embedded as a 768 dimensional vector.
 
-For a GPT model's absolute embedding approach, we jsut need to create
+For a GPT model's absolute embedding approach, we just need to create
 another embedding layer that has the same embedding dim as the 
 token_embedding_layer
 
@@ -108,7 +110,11 @@ for causal and multi headed self attention we assume code can handle batches of 
 '''
 
 #batch = torch.stack((inputs, inputs), dim=0)
-batch = torch.stack((input_embeddings, input_embeddings), dim=0)
+#batch = torch.stack((input_embeddings, input_embeddings), dim=0)
+
+#batch = torch.stack((input_embeddings, input_embeddings, input_embeddings, input_embeddings, input_embeddings), dim=0)
+
+batch = input_embeddings
 print("batch shape: ", batch.shape, "\n")
 print("batch: \n", batch)
 
