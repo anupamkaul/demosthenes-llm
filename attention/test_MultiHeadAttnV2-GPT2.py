@@ -74,18 +74,18 @@ print("weights of this layer: \n", token_embedding_layer.weight, "\n")
 We can see that token ID tensor is 8 * 4 dim, meaning that the data
 batch consists of eight text samples with 4 tokens each
 
-Let us now use the embedding layer to embed these token IDs into 256-dim
+Let us now use the embedding layer to embed these token IDs into 768-dim
 vectors:
 '''
 
 token_embeddings = token_embedding_layer(inputs)
 
-print(token_embeddings.shape)  # returns torch.Size([8, 4, 256])
+print("token embedding shape: ", token_embeddings.shape)  # returns torch.Size([8, 4, 768])
 # print("token embeddings: \n", token_embeddings)
 
 '''
-The 8 * 4 * 256 dim vector tensor output shows that each token ID is 
-now embedded as a 256 dimensional vector.
+The 8 * 4 * 768 dim vector tensor output shows that each token ID is 
+now embedded as a 768 dimensional vector.
 
 For a GPT model's absolute embedding approach, we jsut need to create
 another embedding layer that has the same embedding dim as the 
@@ -93,10 +93,10 @@ token_embedding_layer
 
 '''
 
-context_length = 1024
+context_length = 4 # this length has to match the max length of token_embedding_layer
 pos_embedding_layer = torch.nn.Embedding(context_length, output_dim)
 pos_embeddings = pos_embedding_layer( torch.arange(context_length) )
-print(pos_embeddings.shape)
+print("shape of positional embedding: ", pos_embeddings.shape)
 
 input_embeddings = token_embeddings + pos_embeddings
 
