@@ -1,9 +1,20 @@
+I have already covered several aspects of the LLM architecture, such as input tokenization and embedding 
+and the masked multi-head attention module. Now, I will implement the core structure of the GPT model, 
+including its transformer blocks, which I will later train to generate human-like text.
+
+Also scale up params from previous Attention chapter. Smallest GPT2 model has 124M params, GPT3 is 175B params.
+Params are the trainable weghts of the model (all of them). 
+
 Overall infrastructure for a GPT like LLM
 
 - Coding a GPT-like large language model (LLM) that can be trained to generate human-like text
+
 - Normalizing layer activations to stabilize neural network training
+
 - Adding shortcut connections in deep neural networks
+
 - Implementing transformer blocks to create GPT models of various sizes
+
 - Computing the number of parameters and storage requirements of GPT models
 
 Perusal:
