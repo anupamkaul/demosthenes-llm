@@ -47,6 +47,25 @@ logits = model(batch)
 print("Output share: ", logits.shape)
 print(logits)
 
+'''
+Outputs (usually referred to as logits) are as follows:
 
+Output share:  torch.Size([2, 4, 50257])
+
+(2 rows, each for 1 text. 4 tokens per text (4 words in each text), and each token is a 50257 dim vector
+which matches the size of the tokenizer's vocab)
+
+tensor([[[-0.9289,  0.2748, -0.7557,  ..., -1.6070,  0.2702, -0.5888],
+         [-0.4476,  0.1726,  0.5354,  ..., -0.3932,  1.5285,  0.8557],
+         [ 0.5680,  1.6053, -0.2155,  ...,  1.1624,  0.1380,  0.7425],
+         [ 0.0447,  2.4787, -0.8843,  ...,  1.3219, -0.0864, -0.5856]],
+
+        [[-1.5474, -0.0542, -1.0571,  ..., -1.8061, -0.4494, -0.6747],
+         [-0.8422,  0.8243, -0.1098,  ..., -0.1434,  0.2079,  1.2046],
+         [ 0.1355,  1.1858, -0.1453,  ...,  0.0869, -0.1590,  0.1552],
+         [ 0.1666, -0.8138,  0.2307,  ...,  2.5035, -0.3055, -0.3083]]],
+       grad_fn=<UnsafeViewBackward0>)
+
+'''
 
 
