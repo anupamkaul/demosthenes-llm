@@ -25,11 +25,11 @@ class DummyGPTModel(nn.Module):
         # get values from the config file
         self.tok_emb  = nn.Embedding(cfg["vocab_size"], cfg["emb_dim"])  
         self.pos_emb  = nn.Embedding(cfg["context_length"], cfg["emb_dim"])
-        self.drop_emb = nn.Embedding(cfg["drop_rate"])
+        self.drop_emb = nn.Dropout(cfg["drop_rate"])
 
         # using a placeholder for TransformerBlock
-        self.trf_blocks = mm.Sequential(
-            *[DummyTransformerBlock(cfg)
+        self.trf_blocks = nn.Sequential(
+             *[DummyTransformerBlock(cfg)
               for _ in range(cfg["n_layers"])]
         )
 
@@ -68,14 +68,14 @@ and DummyLayerNorm
 
 class DummyTransformerBlock(nn.Module):
     def __init__(self, cfg):
-        super.__init__()
+        super().__init__()
 
     def forward(self, x):
         return x
 
 class DummyLayerNorm(nn.Module):
     def __init__(self, cfg):
-        super.__init__()
+        super().__init__()
 
     def forward(self, x):
         return x
