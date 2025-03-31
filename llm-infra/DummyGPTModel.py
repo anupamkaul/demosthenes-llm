@@ -61,6 +61,26 @@ class DummyGPTModel(nn.Module):
         logits = self.out_head(x)
         return logits
 
+'''
+Placeholders for DummyTransformerBlock 
+and DummyLayerNorm
+'''
+
+class DummyTransformerBlock(nn.Module):
+    def __init__(self, cfg):
+        super.__init__()
+
+    def forward(self, x):
+        return x
+
+class DummyLayerNorm(nn.Module):
+    def __init__(self, cfg):
+        super.__init__()
+
+    def forward(self, x):
+        return x
+
+
 
         
 
