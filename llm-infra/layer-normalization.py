@@ -28,6 +28,14 @@ torch.manual_seed(123)
 batch_example = torch.randn(2, 5)
 print("batch example: \n", batch_example, "\n")
 
+'''
+batch example: 
+ tensor([[-0.1115,  0.1204, -0.3696, -0.2404, -1.1969],
+        [ 0.2093, -0.9724, -0.7550,  0.3239, -0.1085]]) 
+
+We implement a neural network layer with five inputs and six outputs that we apply to two input examples: 
+'''
+
 layer = nn.Sequential(nn.Linear(5, 6), nn.ReLU())
 
 '''
@@ -38,13 +46,10 @@ does not contain any negative values. Later, we will use another, more sophistic
 '''
 
 out = layer(batch_example)
-print(out)
+print("out: \n", out)
 
 '''
-batch example: 
- tensor([[-0.1115,  0.1204, -0.3696, -0.2404, -1.1969],
-        [ 0.2093, -0.9724, -0.7550,  0.3239, -0.1085]]) 
-
+out: 
 tensor([[0.2260, 0.3470, 0.0000, 0.2216, 0.0000, 0.0000],
         [0.2133, 0.2394, 0.0000, 0.5198, 0.3297, 0.0000]],
        grad_fn=<ReluBackward0>)
@@ -84,10 +89,14 @@ out_norm = (out - mean) / torch.sqrt(var)
 mean = out_norm.mean(dim=-1, keepdim=True)
 var  = out_norm.var (dim=-1, keepdim=True)
 
+print("out_norm: \n", out_norm)
 print("Mean (normalized):\n", mean)
 print("Variance (normalized):\n", var)
 
 '''
+out_norm: 
+ tensor([[ 0.6159,  1.4126, -0.8719,  0.5872, -0.8719, -0.8719],
+        [-0.0189,  0.1121, -1.0876,  1.5173,  0.5647, -1.0876]],
 Mean (normalized):
  tensor([[9.9341e-09],
         [0.0000e+00]], grad_fn=<MeanBackward1>)
@@ -97,6 +106,8 @@ Variance (normalized):
 
 and these are the closest Mean = 0 and Variance = 1 values ! 
 
+Notes on keepdim=True and dim param
+-----------------------------------
 Using keepdim=True in operations like mean or variance calculation ensures that the output tensor 
 retains the same number of dimensions as the input tensor, even though the operation reduces the 
 tensor along the dimension specified via dim. For instance, without keepdim=True, the returned mean tensor 
@@ -109,6 +120,7 @@ which corresponds to the columns i a two-dimensional tensor. Later, when adding 
 which produces three-dimensional tensors with the shape [batch_size, num_tokens, embedding_size], we can still use dim=-1 
 for normalization across the last dimension, avoiding a change from dim=1 to dim=2
 
+To clean up the output of the scientific precisions: 
 '''
 
 torch.set_printoptions(sci_mode=False)
