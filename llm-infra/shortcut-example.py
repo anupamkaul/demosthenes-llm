@@ -66,10 +66,12 @@ class ExampleDeepNeuralNetwork(nn.Module):
 layer_sizes = [3, 3, 3, 3, 3, 1]
 
 sample_input = torch.tensor( [[1., 0., -1.]] )
-torch.manual_seed(123)
 
 # models without and with shortcut
+torch.manual_seed(123)
 model_1 = ExampleDeepNeuralNetwork(layer_sizes, use_shortcut=False)
+
+torch.manual_seed(123)
 model_2 = ExampleDeepNeuralNetwork(layer_sizes, use_shortcut=True)
 
 def print_gradients(model, x):
