@@ -54,9 +54,9 @@ class ExampleDeepNeuralNetwork(nn.Module):
             layer_output = layer(x)
 
             if self.use_shortcut and x.shape == layer_output.shape:
-                x = x + layer_output
+                x = x + layer_output # add the input of the block (x) to its output (layer_output)
             else:
-                x = layer_output
+                x = layer_output # if no shortcut then simply grab the output
       
         return x
 

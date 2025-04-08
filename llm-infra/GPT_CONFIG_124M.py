@@ -9,13 +9,16 @@ GPT_CONFIG_124M = {
 
 }
 
+def get_GPT_CONFIG_124M():
+    return GPT_CONFIG_124M
+
 '''
 notes:
 
 - vocab_size refers to a vocabulary of 50.527 words, as used by the BPE tokenizer from pytorch that we have
 been using previously
 
-- context_length denotes the maximum number of input tokens that he model can handle via positional embeddings
+- context_length denotes the maximum number of input tokens that the model can handle via positional embeddings
 that we have used previously
 
 - emb_dim represents the embedding size, transforming each token into a 768-dimension vector
