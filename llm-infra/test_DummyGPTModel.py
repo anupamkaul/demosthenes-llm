@@ -7,18 +7,7 @@ Lets tokenize a batch consisting of 2 text inputs for the GPT model, using the t
 import torch
 import tiktoken
 import DummyGPTModel as gpt
-#import GPT_CONFIG_124M
-
-GPT_CONFIG_124M = {
-    "vocab_size"     : 50257,       # vocabulary size
-    "context_length" : 1024,        # context length
-    "emb_dim"        : 768,         # embedding dimension
-    "n_heads"        : 12,          # number of attention heads
-    "n_layers"       : 12,          # number of layers
-    "drop_rate"      : 0.1,         # dropout rate
-    "qkv_bias"       : False       # query-key-value bias
-
-}
+import GPT_CONFIG_124M as gpt2_cfg
 
 tokenizer = tiktoken.get_encoding("gpt2")
 batch = []
@@ -41,7 +30,7 @@ and feed it this tokenized batch
 '''
 
 torch.manual_seed(123)
-model = gpt.DummyGPTModel(GPT_CONFIG_124M)
+model = gpt.DummyGPTModel(gpt2_cfg.get_GPT_CONFIG_124M())
 logits = model(batch)
 
 print("Output share: ", logits.shape)

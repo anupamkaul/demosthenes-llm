@@ -5,7 +5,7 @@ GPT_CONFIG_124M = {
     "n_heads"        : 12,          # number of attention heads
     "n_layers"       : 12,          # number of layers
     "drop_rate"      : 0.1,         # dropout rate
-    "qkv_bias"       : False       # query-key-value bias
+    "qkv_bias"       : False        # query-key-value bias
 
 }
 
