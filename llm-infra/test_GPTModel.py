@@ -63,6 +63,7 @@ We can use the numel (number of elements) method to collect total number of para
 in the model's parameter tensors so lets start with that
 
 '''
+print("\n\nModel Analysis (params and size)\n")
 
 total_params = sum(p.numel() for p in model.parameters()) # we need to sum numel always..
 print(f"Total number of parameters: {total_params:,}")
@@ -76,8 +77,8 @@ Basically GPT2 re-uses the wts from the token embedding layer in its output laye
 
 '''
 
-print("Token embedding layer shape:", model.tok_emb.weight.shape)
-print("Output layer shape:", model.out_head.weight.shape)
+print("\tToken embedding layer shape:", model.tok_emb.weight.shape)
+print("\tOutput layer shape:", model.out_head.weight.shape)
 
 '''
 Token embedding layer shape: torch.Size([50257, 768])
@@ -87,17 +88,18 @@ To test the weight typing theory let's remove weights of the output_layer (out_h
 from the total params and see what we land with:
 '''
 
-total_params_gpt2 = {
-    total_params - sum(p.numel() for p in model.out_head.parameters())
-}
+total_params_gpt2 = { total_params - sum(p.numel() for p in model.out_head.parameters()) }
 
 print("Number of trainable parameters considering weight tying: ", total_params_gpt2)
+#print(f"Number of trainable parameters considering weight tying: {total_params_gpt2:,"})
 
 '''
-debug: not printing out total_params_gpt2 as an f-string:
+Number of trainable parameters considering weight tying:  {124412160}
+
+debug the next section hence commented: not printing out total_params_gpt2 as an f-string:
 
 # for better formatting:
-print(f"Total number of parameters: {total_params:,}")
+#print(f"Total number of parameters: {total_params:,}")
 print(f"Total number of parameters: {total_params_gpt2:,}")
 
 print(f"Number of trainable parameters "
@@ -108,6 +110,34 @@ In Python, the print(f"...") syntax, available from Python 3.6 onwards, utilizes
 to embed expressions inside string literals for formatting. The f before the opening quote signifies that it's an f-string. 
 Inside the string, expressions enclosed in curly braces {} are evaluated and their values are inserted into the string.
 '''
+
+'''
+Continue: 
+
+Let's also find number of params in the multihead attention module a
+and in the feed forward network and compare/contrast them against the 124M params total
+'''
+
+params_out_head = sum(p.numel() for p in model.out_head.parameters()) 
+#print("params of the out_head piece of the model: ", params_out_head)
+print(f"params of the out_head piece of the model: {params_out_head:,}")
+
+'''
+params of the out_head piece of the model:  38597376 
+'''
+
+params_final_norm = sum(p.numel() for p in model.final_norm.parameters()) 
+print("params of the final_norm piece of the model: ", params_final_norm)
+
+'''
+Too less so probably incorrect calculation:
+params of the final_norm piece of the model:  1536 
+
+(interestingly that is 768 * 2 (or the emb_dim value coming into the LayerNorm class, so these could
+be the "scale" and the "shift" values of LayerNorm, each with 768 wts)
+
+'''
+
 
 
 
