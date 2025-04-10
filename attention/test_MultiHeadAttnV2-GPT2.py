@@ -130,3 +130,14 @@ context_vec = mha(batch)  # calls the forward method of MultiHeadAttention class
 print("context vecs:\n", context_vec)
 print("\nshape of context vec: ", context_vec.shape)
 
+'''
+Let's analyze the MultiHeadAttention module
+and find out how many params (weights) does it have
+'''
+
+params_mha = sum(p.numel() for p in mha.parameters()) 
+print(f"params of the MultiHeadAttention GPT class: {params_mha:,}")
+
+'''
+params of the MultiHeadAttention GPT class: 2,360,064
+'''
