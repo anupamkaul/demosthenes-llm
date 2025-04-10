@@ -18,7 +18,30 @@ Overall infrastructure for a GPT like LLM
 - Computing the number of parameters and storage requirements of GPT models
 
 Perusal:
-After Tokenizers and Attention
+After Tokenizers and Attention:
+
+GPT_CONFIG_124M.py
+DummyGPTModel.py
+dump_DummyGPTModel.txt
+test_DummyGPTModel.py
+layer-normalization-example.py
+LayerNorm.py
+test_LayerNorm.py
+GELU.py
+test_GELU.py
+gelu_relu.png
+FeedForward.py
+dump_FeedForward.txt
+test_FeedForward.py
+shortcut-example.py
+TransformerBlock.py
+test_TransformerBlocker.py
+dump_TransformerBlock.txt
+GPT-Model-Arch.png
+GPTModel.py
+test_GPTModel.py
+dump_GPTModel.txt
+
 
 
 
