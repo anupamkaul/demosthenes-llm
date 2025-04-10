@@ -401,3 +401,4 @@ Transformer Output:
          [ 0.9275,  0.4203,  0.3183,  ...,  0.3771,  0.7190, -0.1205],
          [ 0.6035,  0.5767,  0.3411,  ...,  1.3798,  1.2683,  0.3916]]],
        grad_fn=<AddBackward0>)
+params of a single transformer block: 7,085,568

@@ -30,6 +30,13 @@ block will make up the main component of the GPT architecture.
 
 '''
 
+'''
+block analysis:
+calculate the number of parameters (wts) of the transformer block
+(note that GPT2 uses 12 of these blocks (as specified by cfg["n_layers"]
+'''
 
+params_trf = sum(p.numel() for p in block.parameters()) 
+print(f"params of a single transformer block: {params_trf:,}")
 
 
