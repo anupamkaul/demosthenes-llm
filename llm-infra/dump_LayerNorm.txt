@@ -1,0 +1,14 @@
+batch example: 
+ tensor([[ 0.3374, -0.1778, -0.3035,  ..., -0.3181, -1.3936,  0.5226],
+        [ 0.2579,  0.3420, -0.8168,  ..., -0.4098,  0.4978, -0.3721]])
+out layer normalized:
+ tensor([[ 0.3611, -0.1578, -0.2845,  ..., -0.2992, -1.3826,  0.5478],
+        [ 0.2488,  0.3327, -0.8229,  ..., -0.4170,  0.4881, -0.3794]],
+       grad_fn=<AddBackward0>)
+Mean:
+ tensor([[1.2418e-08],
+        [6.8297e-09]], grad_fn=<MeanBackward1>)
+Variance:
+ tensor([[1.0000],
+        [1.0000]], grad_fn=<VarBackward0>)
+params of the LayerNorm class: 1,536
