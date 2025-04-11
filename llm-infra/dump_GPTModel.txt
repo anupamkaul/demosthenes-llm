@@ -4301,3 +4301,14 @@ tensor([[[ 0.1381,  0.0077, -0.1963,  ..., -0.0222, -0.1060,  0.1717],
          [ 0.6091,  0.4702, -0.4094,  ...,  0.7688,  0.3787, -0.1974],
          [-0.0612, -0.0737,  0.4751,  ...,  1.2463, -0.3834,  0.0609]]],
        grad_fn=<UnsafeViewBackward0>)
+
+
+Model Analysis (params and size)
+
+Total number of parameters: 163,009,536
+	Token embedding layer shape: torch.Size([50257, 768])
+	Output layer shape: torch.Size([50257, 768])
+Number of trainable parameters considering weight tying:  {124412160}
+params of the out_head piece of the model: 38,597,376
+params of the final_norm piece of the model:  1536
+Total size of the model: 621.83 MB

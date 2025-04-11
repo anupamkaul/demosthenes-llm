@@ -138,6 +138,25 @@ be the "scale" and the "shift" values of LayerNorm, each with 768 wts)
 
 '''
 
+'''
+Now that I have been able to calculate parameter values of LayerNorm, MultiHeadAttention, FeedForward
+and the TransformerBlock (single unit) -- see the associated class tests - let's figure out the memory
+needed for the GPT module based on 163,009,536 params (including weight tying of token to output layer)
+'''
 
+total_size_bytes = total_params * 4
+total_size_mb = total_size_bytes / (1024 * 1024)
+print(f"Total size of the model: {total_size_mb:.2f} MB") # and now I understand what the post :, was, it was the formating :) 
 
+'''
+Model Analysis (params and size)
+
+Total number of parameters: 163,009,536
+	Token embedding layer shape: torch.Size([50257, 768])
+	Output layer shape: torch.Size([50257, 768])
+Number of trainable parameters considering weight tying:  {124412160}
+params of the out_head piece of the model: 38,597,376
+params of the final_norm piece of the model:  1536
+Total size of the model: 621.83 MB
+'''
 
