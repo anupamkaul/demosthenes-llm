@@ -23,7 +23,7 @@ GPT_CONFIG_GPT2_SMALL = {
 GPT_CONFIG_GPT2_MEDIUM = {
     "vocab_size"     : 50257,       # vocabulary size
     "context_length" : 1024,        # context length
-    "emb_dim"        : 1024,         # embedding dimension
+    "emb_dim"        : 1024,        # embedding dimension
     "n_heads"        : 16,          # number of attention heads
     "n_layers"       : 24,          # number of layers
     "drop_rate"      : 0.1,         # dropout rate
@@ -34,7 +34,7 @@ GPT_CONFIG_GPT2_MEDIUM = {
 GPT_CONFIG_GPT2_LARGE = {
     "vocab_size"     : 50257,       # vocabulary size
     "context_length" : 1024,        # context length
-    "emb_dim"        : 1280,         # embedding dimension
+    "emb_dim"        : 1280,        # embedding dimension
     "n_heads"        : 20,          # number of attention heads
     "n_layers"       : 36,          # number of layers
     "drop_rate"      : 0.1,         # dropout rate
@@ -45,7 +45,7 @@ GPT_CONFIG_GPT2_LARGE = {
 GPT_CONFIG_GPT2_XLARGE = {
     "vocab_size"     : 50257,       # vocabulary size
     "context_length" : 1024,        # context length
-    "emb_dim"        : 1600,         # embedding dimension
+    "emb_dim"        : 1600,        # embedding dimension
     "n_heads"        : 25,          # number of attention heads
     "n_layers"       : 48,          # number of layers
     "drop_rate"      : 0.1,         # dropout rate

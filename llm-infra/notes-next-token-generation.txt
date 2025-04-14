@@ -1,0 +1,36 @@
+'''
+Notes on how the next token is exactly generated in LLM
+
+(see next-token-generation.png)
+
+We’ve seen that our current GPTModel implementation outputs tensors with shape [batch_size, num_token, vocab_size]. 
+Now the question is: How does a GPT model go from these output tensors to the generated text?
+
+The process by which a GPT model goes from output tensors to generated text involves several steps, as illustrated in the png. 
+These steps include decoding the output tensors, selecting tokens based on a probability distribution, and converting these tokens 
+into human-readable text.
+
+As next-token-generation.png illustrates:
+
+1. Encode the text token (here it was 2 text inputs - a batch of 2 texts each of 4 tokens) -- so encoded into 4 (separate 4 each) token IDs
+2. The GPTModel returns a matrix consisting of 4 vectors (row) where each vector has 50257 (vocab) dimensions (columns)
+3. Now we extract the "last" vector (the last row). This corresponds to the next token that the GPT model is supposed to generate
+4. We convert the logits into a probability distributing using softmax
+5. Identify the index position of the largest value in the PD, which represents the tokenID for the next token
+6. This tokenID is then decoded back into text
+
+Additional Details:
+
+The next-token generation process detailed above illustrates a SINGLE STEP where the GPT model generates the next token given its input. 
+In each step, the model outputs a matrix with vectors representing potential next tokens. 
+The vector corresponding to the next token is extracted and converted into a probability distribution via the softmax function. 
+Within the vector containing the resulting probability scores, the index of the highest value is located, which translates to the token ID. 
+This token ID is then decoded back into text, producing the next token in the sequence. 
+Finally, this token is appended to the previous inputs, forming a new input sequence for the subsequent iteration. 
+This step-by-step process enables the model to generate text sequentially, building coherent phrases and sentences from the initial input context.
+
+In practice, we repeat this process over many iterations until we reach a user-specified number of generated tokens
+
+'''
+
+
