@@ -35,7 +35,7 @@ and feed it this tokenized batch
 '''
 
 torch.manual_seed(123)
-model = gpt.GPTModel(gpt2_cfg.get_GPT_CONFIG_124M())
+model = gpt.GPTModel(gpt2_cfg.get_GPT_CONFIG_GPT2_SMALL()) 
 logits = model(batch)
 
 print("Output shape: ", logits.shape)

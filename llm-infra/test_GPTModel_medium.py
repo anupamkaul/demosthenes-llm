@@ -35,7 +35,7 @@ and feed it this tokenized batch
 '''
 
 torch.manual_seed(123)
-model = gpt.GPTModel(gpt2_cfg.get_GPT_CONFIG_124M())
+model = gpt.GPTModel(gpt2_cfg.get_GPT_CONFIG_GPT2_MEDIUM()) 
 logits = model(batch)
 
 print("Output shape: ", logits.shape)
@@ -145,8 +145,8 @@ needed for the GPT module based on 163,009,536 params (including weight tying of
 '''
 
 total_size_bytes = total_params * 4
-total_size_mb = total_size_bytes / (1024 * 1024)
-print(f"Total size of the model: {total_size_mb:.2f} MB") # and now I understand what the post :, was, it was the formating :) 
+total_size_gb = total_size_bytes / (1024 * 1024 * 1024)
+print(f"Total size of the model: {total_size_gb:.2f} GB") # and now I understand what the post :, was, it was the formating :) 
 
 '''
 Model Analysis (params and size)
