@@ -34,7 +34,9 @@ import GPTModel as gpt
 import GPT_CONFIG_124M as gpt2_cfg
 
 torch.manual_seed(123)
-model = gpt.GPTModel(gpt2_cfg.get_GPT_CONFIG_GPT2_SMALL()) 
+#model = gpt.GPTModel(gpt2_cfg.get_GPT_CONFIG_GPT2_SMALL()) # Hello I am feature
+model = gpt.GPTModel(gpt2_cfg.get_GPT_CONFIG_GPT2_MEDIUM()) # Hello I am turnover
+#model = gpt.GPTModel(gpt2_cfg.get_GPT_CONFIG_GPT2_LARGE())  # Hello I amironically
 
 model.eval()
 out = generate_text_simple(
@@ -42,6 +44,7 @@ out = generate_text_simple(
         idx=encoded_tensor,
         max_new_tokens=6,
         context_size=gpt2_cfg.get_GPT_CONFIG_GPT2_SMALL()["context_length"]  # or, 1024
+        #context_size=1024
 )
 
 print("Output: ", out)
