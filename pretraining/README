@@ -15,6 +15,10 @@ for optimizing the LLM during the training process).
 Finally load pretrained weights (instead of spending time on training or showing it here how its done)
 This preps my LLM for fine tuning next.
 
+Note that with llm-infra the entire flow has already been coded for the LLM. The strategy is to now
+hone in on how the weights (be it in the attention module (q,k,v weights) or in the feed forward network or in the 
+layer norm layer or overall in the transformer block, are actually obtained)
+
 3 main steps in the pre-training process:
 
 1. training loop (core)
