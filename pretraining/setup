@@ -1,0 +1,5 @@
+#Following things needs to be in the system to use open source weights
+
+pip install tensorflow>=2.15.0  tqdm>=4.66
+
+
