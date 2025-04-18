@@ -1,0 +1,28 @@
+Thus far I have implemented the data sampling and attention mechanism and coded the LLM architecture:
+
+1. tokenizers
+2. attention
+3. llm-infra
+
+Now implement a training function and pretrain the LLM. Walk through and code all concepts.
+(training, or "pre-training" of a model w.r.t post optimizations)
+
+4. pretraining (this)
+
+Follow up with basic model evaluation techniques to measure the quality of the generated text (which is a requirement 
+for optimizing the LLM during the training process). 
+
+Finally load pretrained weights (instead of spending time on training or showing it here how its done)
+This preps my LLM for fine tuning next.
+
+3 main steps in the pre-training process:
+
+1. training loop (core)
+2. model evaluation (feedback loop)
+3. load pre-trained weights (and make this scalable)
+
+Order of perusal:
+
+
+
+
