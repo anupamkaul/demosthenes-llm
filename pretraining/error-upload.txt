@@ -1,0 +1,90 @@
+ pretraining % git push origin main
+Uploading LFS objects: 100% (3/3), 1.5 MB | 0 B/s, done.                                                                                           
+Enumerating objects: 15, done.
+Counting objects: 100% (15/15), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (12/12), done.
+Writing objects: 100% (13/13), 441.31 MiB | 12.37 MiB/s, done.
+Total 13 (delta 2), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (2/2), completed with 2 local objects.
+remote: error: Trace: e6d589836957ed4e0f1d4fd62ab7641483dab19b0ab06785027a592324a5b642
+remote: error: See https://gh.io/lfs for more information.
+remote: error: File pretraining/gpt2/124M/model.ckpt.data-00000-of-00001 is 474.70 MB; this exceeds GitHub's file size limit of 100.00 MB
+remote: error: GH001: Large files detected. You may want to try Git Large File Storage - https://git-lfs.github.com.
+To https://github.com/anupamkaul/demosthenes-llm.git
+ ! [remote rejected] main -> main (pre-receive hook declined)
+error: failed to push some refs to 'https://github.com/anupamkaul/demosthenes-llm.git'
+
+https://github.com/git-lfs/git-lfs/issues/434
+
+https://stackoverflow.com/questions/63145101/after-installing-git-lfs-master-pre-receive-hook-declined
+
+https://docs.github.com/en/repositories/working-with-files/managing-large-files/resolving-git-large-file-storage-upload-failures
+
+https://www.geeksforgeeks.org/how-to-fix-git-error-pre-receive-hook-declined/
+
+maybe github requires a "git lfs push" ..
+
+interesting, this:
+git lfs push --all --dry-run origin
+push 196139668be63f3b5d6574427317ae82f612a97c5d1cdaf36ed2256dbf636783 => pretraining/gpt2/124M/encoder.json
+push d9d56e4121c427164e0c55c6f03c08e1daf9002b9b672825112d19097b680318 => pretraining/gpt2/124M/hparams.json
+push 1ce1664773c50f3e0cc8842619a93edc4624525b728b188a9e0be33b7726adc5 => pretraining/gpt2/124M/vocab.bpe
+
+(previously): 
+git lfs push --all origin
+Uploading LFS objects: 100% (3/3), 1.5 MB | 0 B/s, done
+
+need to try:
+https://docs.github.com/en/repositories/working-with-files/managing-large-files/moving-a-file-in-your-repository-to-git-large-file-storage
+(if you get an error that "this exceeds Git LFS's file size limit of 100 MiB" when you try to push files to Git, 
+you can use git lfs migrate instead of filter-repo, to move the large file to Git Large File Storage. 
+For more information about the git lfs migrate command, see the Git LFS 2.2.0 release announcement.)
+
+the theory being that github's recieve hook refuses the large file because it hasn't been "migrated" first to LFS format
+(its more than the tracking part)..
+
+-- this is what I did ---
+(First): 
+
+git lfs migrate info
+migrate: Fetching remote refs: ..., done.                                                                                                          
+migrate: Sorting commits: ..., done.                                                                                                               
+migrate: Examining commits: 100% (1/1), done.                                                                                                      
+*.data-00000-of-00001	498 MB	  1/1 file 	100%
+*.pdf                	12 MB 	  2/2 files	100%
+*.txt                	3.6 MB	21/21 files	100%
+*.meta               	471 KB	  1/1 file 	100%
+*.png                	344 KB	  3/3 files	100%
+
+LFS Objects          	1.5 MB	  3/3 files	100%
+
+(Second): 
+
+(base) anupkaul@147dda4c0851 pretraining % git lfs migrate import --include="*.data-00000-of-00001"
+migrate: override changes in your working copy?  All uncommitted changes will be lost! [y/N] N
+migrate: working copy must not be dirty
+(base) anupkaul@147dda4c0851 pretraining % git lfs migrate import --include="*.data-00000-of-00001"
+migrate: override changes in your working copy?  All uncommitted changes will be lost! [y/N] y
+migrate: changes in your working copy will be overridden ...
+migrate: Fetching remote refs: ..., done.                                                                                                          
+migrate: Sorting commits: ..., done.                                                                                                               
+migrate: Rewriting commits: 100% (1/1), done.                                                                                                      
+  main	2484ac62459d61e77b294ee200c8e116df26fddf -> 7ce89f56b6900e2faa9ee28975640bf7462e98da
+migrate: Updating refs: ..., done.                                                                                                                 
+migrate: checkout: ..., done.                                                                                                                      
+(base) anupkaul@147dda4c0851 pretraining % git push origin main
+Uploading LFS objects: 100% (4/4), 499 MB | 0 B/s, done.                                                                                           
+Enumerating objects: 16, done.
+Counting objects: 100% (16/16), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (13/13), done.
+Writing objects: 100% (14/14), 44.36 KiB | 3.41 MiB/s, done.
+Total 14 (delta 2), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (2/2), completed with 2 local objects.
+To https://github.com/anupamkaul/demosthenes-llm.git
+   3ee87b4..7ce89f5  main -> main
+
+(thanks to the 2 commands described in https://github.blog/open-source/git/git-lfs-2-2-0-released/) 
+
+
