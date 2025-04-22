@@ -1,0 +1,10 @@
+Weight parameters
+
+In the context of LLMs and other deep learning models, weights refer to the trainable parameters that the learning process adjusts.
+These weights are also known as weight parameters or simply parameters. In frameworks like PyTorch, these weights are stored in 
+linear layers; we used these to implement the multi-head attention module in "attention" and the GPTModel in "llm-infra". 
+After initializing a layer (new_layer = torch.nn.Linear(...)), we can access its weights through the .weight attribute, new_layer.weight. 
+Additionally, for convenience, PyTorch allows direct access to all a model’s trainable parameters, including weights and biases, through 
+the method model.parameters(), which we will use later when implementing the model training.
+
+

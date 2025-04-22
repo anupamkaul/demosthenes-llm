@@ -26,6 +26,9 @@ layer norm layer or overall in the transformer block, are actually obtained)
 3. load pre-trained weights (and make this scalable)
 
 Order of perusal:
+textgenerate.py
+
+
 
 
 
