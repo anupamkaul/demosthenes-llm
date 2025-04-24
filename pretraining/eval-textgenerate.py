@@ -75,4 +75,55 @@ in a sequence.
 targets = torch.tensor([[3626, 6100, 345  ],  # [" effort moves you",
                         [1107, 588, 11311]])  #  " really like chocolate"]
 
+'''
+Step 2: Obtain seven-dim probability row vector for each input token via the Softmax function
+'''
 
+with torch.no_grad():
+    logits = model(inputs)
+
+probas = torch.softmax(logits, dim=-1)
+print(probas.shape)
+
+'''
+torch.Size([2, 3, 50257])
+the first number 2 corresponds to the two examples (rows) in the inputs, also known as batch size
+the second number 3 corresponds to the number of tokens in each row
+the last number corresponds to the embedding dimensionality, which is determined by vocabulary size
+''' 
+
+'''
+Step 3: Locate the index position with the highest probability value in each row vector (done via argmax fn)
+Step 4: Obtain thus all predicted tokenIDs as the index positions with the highest probabilities
+'''
+token_ids = torch.argmax( probas, dim=-1, keepdim=True )
+print("Token IDs:\n", token_ids)
+
+'''
+Token IDs:
+ tensor([[[16657],
+         [  339],
+         [42826]],
+
+        [[49906],
+         [29669],
+         [41751]]])
+'''
+
+'''
+Convert token IDs back to text
+'''
+print(f"Targets batch 1: {token_ids_to_text(targets[0], tokenizer)}")
+print(f"Outputs batch 1:"
+      f" {token_ids_to_text(token_ids[0].flatten(), tokenizer)}")
+
+'''
+Targets batch 1:  effort moves you
+Outputs batch 1:  Armed heNetflix
+
+The model produces random text that is different from the target text because it has not been trained yet. We now want to 
+evaluate the performance of the model’s generated text numerically via a loss. Not only is this useful for measuring the quality
+of the generated text, but it’s also a building block for implementing the training function, which we will use to update the 
+model’s weight to improve the generated text.
+
+'''
