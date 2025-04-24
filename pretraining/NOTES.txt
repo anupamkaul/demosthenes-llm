@@ -7,4 +7,17 @@ After initializing a layer (new_layer = torch.nn.Linear(...)), we can access its
 Additionally, for convenience, PyTorch allows direct access to all a model’s trainable parameters, including weights and biases, through 
 the method model.parameters(), which we will use later when implementing the model training.
 
+pip show torch
+Name: torch
+Version: 2.2.2
+Summary: Tensors and Dynamic neural networks in Python with strong GPU acceleration
+Home-page: https://pytorch.org/
+Author: PyTorch Team
+Author-email: packages@pytorch.org
+License: BSD-3
+Location: /opt/anaconda3/lib/python3.11/site-packages
+Requires: filelock, fsspec, jinja2, networkx, sympy, typing-extensions
+Required-by: accelerate, bertviz, deepspeed, peft
+
+
 
