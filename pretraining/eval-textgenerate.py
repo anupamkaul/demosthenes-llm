@@ -76,14 +76,19 @@ targets = torch.tensor([[3626, 6100, 345  ],  # [" effort moves you",
                         [1107, 588, 11311]])  #  " really like chocolate"]
 
 '''
-Step 2: Obtain seven-dim probability row vector for each input token via the Softmax function
+Step 2: Obtain vocab-size-dim (50257) probability row vector for each input token via the Softmax function
 '''
 
 with torch.no_grad():
     logits = model(inputs)
 
 probas = torch.softmax(logits, dim=-1)
-print(probas.shape)
+
+print("shape of softmax probability tensor: ", probas.shape)
+print("value of the softmax tensor: \n", probas)
+# these will be really small values as the embedding is 50257, not 7 ! 
+
+# see https://pytorch.org/docs/stable/generated/torch.nn.Softmax.html
 
 '''
 torch.Size([2, 3, 50257])
@@ -126,4 +131,32 @@ evaluate the performance of the model’s generated text numerically via a loss.
 of the generated text, but it’s also a building block for implementing the training function, which we will use to update the 
 model’s weight to improve the generated text.
 
+See loss-calc.png. The steps are:
+1. Get the logits
+2. Use softmax to get the probabilities
+3. Get the target probabilities (ought to be)
+4. Now get the log probabilities
+5. Average the log probability
+6. Take the negative average log probability
+
+(6) is what needs to go to zero, via backpropagation applied during training
 '''
+
+# now for each of the 2 text inputs I will print out the initial softmax probabilities
+# corresponding to the target tokens : :
+
+text_idx = 0
+target_probas_1 = probas(text_idx, [0, 1, 2], targets[text_idx])
+'''
+TypeError: 'Tensor' object is not callable
+'''
+
+#target_probas_1 = torch.softmax(text_idx, [0, 1, 2], targets[text_idx])
+'''
+TypeError: softmax() received an invalid combination of arguments - got (int, list, Tensor), but expected one of:
+ * (Tensor input, int dim, torch.dtype dtype, *, Tensor out)
+ * (Tensor input, name dim, *, torch.dtype dtype)
+'''
+
+print("Text 1:", target_probas_1)
+
