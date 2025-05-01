@@ -152,3 +152,40 @@ print("Text 1:", target_probas_1)
 text_idx = 1
 target_probas_2 = probas[text_idx, [0, 1, 2], targets[text_idx]]
 print("Text 2:", target_probas_2)
+
+'''
+Text 1: tensor([7.4541e-05, 3.1061e-05, 1.1563e-05])
+Text 2: tensor([1.0337e-05, 5.6776e-05, 4.7559e-06])
+
+Next, we will calculate the loss for the probability scores of the two example batches, target_probas_1 and target_probas_2. 
+The main steps are illustrated in loss-calc.png. Since we already applied steps 1 to 3 to obtain target_probas_1 and target_ probas_2, 
+we proceed with step 4, applying the logarithm to the probability scores:
+'''
+
+# get the log probabilities of the 2 sample batches (step4):
+
+log_probas = torch.log(torch.cat((target_probas_1, target_probas_2)))
+print("log of probabilities: ", log_probas)
+
+'''
+log of probabilities:  tensor([ -9.5042, -10.3796, -11.3677, -11.4798,  -9.7764, -12.2561])
+
+Next, Step5 and Step6: we combine the above 3 + 3 values into a single value (negative average)
+and this is the metric that we then need to get to zero via backprop used in the training loop
+
+'''
+
+avg_log_probas = torch.mean(log_probas)
+print("average log: ", avg_log_probas)
+
+'''
+The goal is to get the average log probability as close to 0 as possible by updating the model’s weights as part of the training process. 
+However, in deep learning, the common practice isn’t to push the average log probability up to 0 but rather to bring the negative average 
+log probability down to 0. The negative average log probability is simply the average log probability multiplied by –1, which corresponds to step 6
+'''
+
+neg_avg_log_probas = avg_log_probas * -1
+print("negative average log probability: ", neg_avg_log_probas)
+
+
+
