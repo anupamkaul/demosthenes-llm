@@ -143,20 +143,12 @@ See loss-calc.png. The steps are:
 '''
 
 # now for each of the 2 text inputs I will print out the initial softmax probabilities
-# corresponding to the target tokens : :
+# corresponding to the target tokens (the first 3 as found out by argmax, assuming these were trained correctly)
 
 text_idx = 0
-target_probas_1 = probas(text_idx, [0, 1, 2], targets[text_idx])
-'''
-TypeError: 'Tensor' object is not callable
-'''
-
-#target_probas_1 = torch.softmax(text_idx, [0, 1, 2], targets[text_idx])
-'''
-TypeError: softmax() received an invalid combination of arguments - got (int, list, Tensor), but expected one of:
- * (Tensor input, int dim, torch.dtype dtype, *, Tensor out)
- * (Tensor input, name dim, *, torch.dtype dtype)
-'''
-
+target_probas_1 = probas[text_idx, [0, 1, 2], targets[text_idx]]
 print("Text 1:", target_probas_1)
 
+text_idx = 1
+target_probas_2 = probas[text_idx, [0, 1, 2], targets[text_idx]]
+print("Text 2:", target_probas_2)
