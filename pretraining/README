@@ -25,6 +25,9 @@ layer norm layer or overall in the transformer block, are actually obtained)
 2. model evaluation (feedback loop)
 3. load pre-trained weights (and make this scalable)
 
+an alternative to 3 would be to implement training myself with appdx-D and Gutenberg
+(see template-gutenberg.py)
+
 Order of perusal:
 textgenerate.py
 
