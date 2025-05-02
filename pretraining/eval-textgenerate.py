@@ -235,7 +235,36 @@ torch.Size([6])
 loss = torch.nn.functional.cross_entropy(logits_flat, targets_flat)
 print("cross entropy loss: ", loss)
 
+'''
+cross entropy loss:  tensor(10.7940)
+This is the same as the negative average log probability
+'''
 
+perplexity = torch.exp(loss)
+print("perplexity: ", perplexity)
+
+'''
+perplexity:  tensor(48725.8203)
+
+Perplexity is a measure often used alongside cross entropy loss to evaluate the performance of models in tasks 
+like language modeling. It can provide a more interpretable way to understand the uncertainty of a model in predicting 
+the next token in a sequence.
+
+Perplexity measures how well the probability distribution predicted by the model matches the actual distribution of the 
+words in the dataset. Similar to the loss, a lower perplexity indicates that the model predictions are closer to the actual 
+distribution.
+
+Perplexity can be calculated as perplexity = torch.exp(loss), which returns tensor(48725.8203) when applied to the previously 
+calculated loss.
+
+Perplexity is often considered more interpretable than the raw loss value because it signifies the effective vocabulary size about 
+which the model is uncertain at each step. In the given example, this would translate to the model being unsure about which among 
+48,725 tokens in the vocabulary to generate as the next token.
+
+With this I show 2 types of losses : cross_entropy (negative average log of probability) and perplexity (e^ n.a.l.p) with perplexity
+intuitively showing the data size that has uncertainty. The lower the perplexity the better.
+
+'''
 
 
 
