@@ -30,6 +30,7 @@ an alternative to 3 would be to implement training myself with appdx-D and Guten
 
 Order of perusal:
 textgenerate.py
+eval-textgenerate.py
 
 
 
