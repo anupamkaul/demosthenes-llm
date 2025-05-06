@@ -1,0 +1,16 @@
+Characters: 20479
+Tokens: 5145
+90% of the split is from index  18431
+Train loader:
+torch.Size([2, 256]) torch.Size([2, 256])
+torch.Size([2, 256]) torch.Size([2, 256])
+torch.Size([2, 256]) torch.Size([2, 256])
+torch.Size([2, 256]) torch.Size([2, 256])
+torch.Size([2, 256]) torch.Size([2, 256])
+torch.Size([2, 256]) torch.Size([2, 256])
+torch.Size([2, 256]) torch.Size([2, 256])
+torch.Size([2, 256]) torch.Size([2, 256])
+torch.Size([2, 256]) torch.Size([2, 256])
+
+Validation loader:
+torch.Size([2, 256]) torch.Size([2, 256])
