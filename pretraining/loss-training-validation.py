@@ -111,6 +111,9 @@ print("\nValidation loader:")
 for x, y in val_loader:
     print(x.shape, y.shape)
 
+# train_data and val_data are not encoded..
+#print("Validation data: \n", val_data)
+
 '''
 
 We can see the shapes are divided roughly into 9 chunks for the training
@@ -132,8 +135,90 @@ torch.Size([2, 256]) torch.Size([2, 256])
 
 '''
 
+'''
+Implement a utility function to calculate the cross entropy loss
+of a given batch returned via the training and validation loader
+'''
+
+def calc_loss_batch(input_batch, target_batch, model, device):
+
+    input_batch =  input_batch.to(device) # optimize
+    target_batch = target_batch.to(device)
+    logits = model(input_batch)
+    loss = torch.nn.functional.cross_entropy(
+        logits.flatten(0, 1), target_batch.flatten()
+    )
+
+    return loss
+
+'''
+We now use the above loss utility function and implement the following
+calc_loss_loader function that computes the loss over all the batches
+that are sampled by a given data loader
+'''
+
+def calc_loss_loader(data_loader, model, device, num_batches=None):
+
+    total_loss = 0
+
+    # sanity checks
+    if len(data_loader) == 0:
+        return float("nan")
+    elif num_batches is None:
+        num_batches = len(data_loader)
+    else:
+        num_batches = min(num_batches, len(data_loader))
+
+    for i, (input_batch, target_batch) in enumerate(data_loader):
+        if i < num_batches:
+            loss = calc_loss_batch(input_batch, target_batch, model, device)    
+            total_loss += loss.item() # sum the loss for each batch
+        else:
+            break
+
+    # return the average loss over all batches
+    return total_loss / num_batches 
 
 
+# now check the calc_loss_loader function in action, applying it to the training
+# and validation set loaders
 
+import sys, os
+sys.path.append( os.path.join( os.path.dirname(os.path.abspath(__file__)),  '../llm-infra/') )
 
+from GPTModel import GPTModel
 
+GPT_CONFIG_124M = {
+    "vocab_size": 50257,
+    "context_length": 256,
+    "emb_dim": 768,
+    "n_heads": 12, 
+    "n_layers": 12,
+    "drop_rate": 0.1,
+    "qkv_bias": False
+}       
+    
+torch.manual_seed(123)
+model = GPTModel(GPT_CONFIG_124M)
+model.eval()
+print(model)
+
+device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+print("device: ", device)
+
+model.to(device)
+
+with torch.no_grad():
+    train_loss = calc_loss_loader(train_loader, model, device)
+    val_loss   = calc_loss_loader(val_loader,   model, device)  
+
+print("Training loss: ", train_loss)
+print("Validation loss: ", val_loss)
+
+'''
+Training loss:  10.987583584255642
+Validation loss:  10.98110580444336
+
+The loss is high (and not zero) since the model hasn't been trained yet
+
+'''

@@ -37,6 +37,7 @@ class GPTDatasetV1(Dataset):
 
         for i in range(0, len(token_ids) - max_length, stride):
 
+            # target_check is 1 element ahead..
             input_chunk  = token_ids[i : i + max_length]
             target_chunk = token_ids[i+1 : i + max_length + 1]
 
