@@ -3,6 +3,8 @@ Now that we know how to calculate losses across the batch-sets of training and v
 data (see loss-training-validation.py) we will implement the code for pretraining my LLM (GPTModel)
 '''
 
+import torch
+
 def train_model_simple(model, train_loader, val_loader, optimizer, device, num_epochs,
                        eval_freq, eval_iter, start_context, tokenizer):
 
@@ -11,15 +13,21 @@ def train_model_simple(model, train_loader, val_loader, optimizer, device, num_e
 
     for epoch in range(num_epochs):
 
+        # see parent-child-basics.py : 
+        # train is a method of nn (parent of GPTModel, see GPTModel.py in llm-infra)
+
         model.train()
     
         for input_batch, target_batch in train_loader:
+ 
+            # reset the loss gradient from the previous batch iteration
+            optimizer.zero_grad() 
 
-            optimizer.zero_grad()
             loss = calc_loss_batch(
                 input_batch, target_batch, model, device
             )
 
+            # calculate new gradients using back-prop
             loss.backward()
 
             optimizer.step()
@@ -27,6 +35,7 @@ def train_model_simple(model, train_loader, val_loader, optimizer, device, num_e
             tokens_seen += input_batch.numel()
             global_step += 1
 
+            # optional evaluation step
             if global_step % eval_freq == 0:
 
                 train_loss, val_loss = evaluate_model(
@@ -39,12 +48,67 @@ def train_model_simple(model, train_loader, val_loader, optimizer, device, num_e
                       f"Val loss {val_loss:.3f}"
                      )
 
+            # print a sample text after each iteration to show visual/understandable progress (!) 
             generate_and_print_sample(model, tokenizer, device, start_context)
 
     return train_losses, val_losses, track_tokens_seen
 
-     
 
+def evaluate_model(model, train_loader, val_loader, device, eval_iter):
 
-            
+    model.eval()
+ 
+    with torch.no_grad():
+        train_loss = calc_loss_loader(
+            train_loader, model, device, num_batches=eval_iter
+        )    
+
+    with torch.no_grad():
+        val_loss = calc_loss_loader(
+            val_loader, model, device, num_batches=eval_iter
+        )    
     
+    model.train()
+    
+    return train_loss, val_loss
+
+
+def generate_and_print_sample(model, tokenizer, device, start_context):
+
+    model.eval()
+
+    context_size = model.pos_emb_weight.shape(0)
+    encoded = text_to_token_ids(start_context, tokenizer).to(device)
+    
+    with torch.no_grad():
+        token_ids = generate_text_simple(
+            model=model, idx=encoded,
+            max_new_tokens=50, context_size=context_size
+        )
+            
+    decoded_text = token_ids_to_text(token_ids, tokenizer)
+    print(decoded_text.replace("\n", " "))
+   
+    model.train()
+
+# main
+
+torch.manual_seed(123)
+
+model = GPTModel(GPT_CONFIG_124M)
+model.to(device)
+
+optimizer = torch.optim.AdamW(
+    model.parameters(),
+    lr=0.0004, weight_decay=0.1     
+)
+
+num_epochs=10
+
+train_losses, val_losses, tokens_seen = train_model_simple(
+    model, train_loader, val_loader, optimizer, device,
+    num_epochs=num_epochs, eval_freq=5, eval_iter=5,
+    start_context="Every effort moves you", tokenizer=tokenizer
+)
+
+

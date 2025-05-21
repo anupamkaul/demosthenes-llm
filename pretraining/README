@@ -32,6 +32,7 @@ Order of perusal:
 textgenerate.py
 eval-textgenerate.py
 loss-training-validation.py
+training.py
 
 
 
