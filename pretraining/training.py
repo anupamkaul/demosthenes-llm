@@ -48,8 +48,13 @@ def train_model_simple(model, train_loader, val_loader, optimizer, device, num_e
                       f"Val loss {val_loss:.3f}"
                      )
 
+                # pause for user to ack and continue (just because I am printing a lot of stuff currently)
+                input("Press enter to continue..")
+
             # print a sample text after each iteration to show visual/understandable progress (!) 
             generate_and_print_sample(model, tokenizer, device, start_context)
+
+            input("Press enter to continue..")
 
     return train_losses, val_losses, track_tokens_seen
 
@@ -77,7 +82,7 @@ def generate_and_print_sample(model, tokenizer, device, start_context):
 
     model.eval()
 
-    context_size = model.pos_emb_weight.shape(0)
+    context_size = model.pos_emb.weight.shape[0]
     encoded = text_to_token_ids(start_context, tokenizer).to(device)
     
     with torch.no_grad():
@@ -92,10 +97,28 @@ def generate_and_print_sample(model, tokenizer, device, start_context):
     model.train()
 
 # main
+import sys, os
+sys.path.append( os.path.join( os.path.dirname(os.path.abspath(__file__)),  '../llm-infra/') )
+
+from GPTModel import GPTModel
+
+GPT_CONFIG_124M = {
+    "vocab_size": 50257,
+    "context_length": 256,
+    "emb_dim": 768,
+    "n_heads": 12,
+    "n_layers": 12, 
+    "drop_rate": 0.1,
+    "qkv_bias": False
+}
 
 torch.manual_seed(123)
 
 model = GPTModel(GPT_CONFIG_124M)
+
+device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+print("device: ", device)
+
 model.to(device)
 
 optimizer = torch.optim.AdamW(
@@ -104,6 +127,17 @@ optimizer = torch.optim.AdamW(
 )
 
 num_epochs=10
+
+# import everything that I need for this code to compile..
+
+import ltv # had to shorten the name loss-training-validation for python import syntax 
+from ltv import train_loader, val_loader, calc_loss_batch, calc_loss_loader
+
+import textgenerate
+from textgenerate import text_to_token_ids, generate_text_simple, token_ids_to_text
+
+import tiktoken
+tokenizer = tiktoken.get_encoding("gpt2")
 
 train_losses, val_losses, tokens_seen = train_model_simple(
     model, train_loader, val_loader, optimizer, device,
