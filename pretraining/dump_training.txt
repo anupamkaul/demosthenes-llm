@@ -1,0 +1,21 @@
+Output text: 
+ Every effort moves you rentingetic wasnم refres RexMeCHicular stren
+Ep 1 (Step 000000): Train loss 9.983, Val loss 9.939
+Every effort moves you,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+Every effort moves you                                                  
+Every effort moves you                                                  
+Every effort moves you the the the the the the the.                                          
+Every effort moves you,,,,,,,,,,,,,,,,,,,,,,,,,,,,, the,,,,,,,,,,,,,,,,,,,,
+Ep 1 (Step 000005): Train loss 8.095, Val loss 8.300
+Every effort moves you,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+Every effort moves you,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+Every effort moves you, the,,,,,,,,,,,,,,,,,,,,,,,,,,, the,,,,,,, the,,, the,,,,,,,,
+Every effort moves you.                                                 
+Every effort moves you.                                                 
+Ep 2 (Step 000010): Train loss 6.773, Val loss 7.032
+Every effort moves you.                                                 
+Every effort moves you the the, the, the.                                           
+Every effort moves you, the, the, the, the, the, the, the, the, the, the, the, the, the, the, the, the, the, the, the, the, the, the, the, the, the
+Every effort moves you, the, the, the, the, the,, the, the, the, the,,, the,, the,,, the,, the,, the, the,,, the,, the,, the, the
+Every effort moves you, the, the, the, the, the,, the, the, the,, the,, the,,, the,, the,, the,, the, the,,, the,, the,,, the,
+Ep 2 (Step 000015): Train loss 6.083, Val loss 6.559

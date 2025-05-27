@@ -49,12 +49,15 @@ def train_model_simple(model, train_loader, val_loader, optimizer, device, num_e
                      )
 
                 # pause for user to ack and continue (just because I am printing a lot of stuff currently)
-                input("Press enter to continue..")
+ 
+                # TODO : good inspection to evaluate training outputs per steps of epoch. Disabling for now
+                # This pause should be configurable in the code
+                # input("Press enter to continue..")
 
             # print a sample text after each iteration to show visual/understandable progress (!) 
             generate_and_print_sample(model, tokenizer, device, start_context)
 
-            input("Press enter to continue..")
+            # input("Press enter to continue..")
 
     return train_losses, val_losses, track_tokens_seen
 

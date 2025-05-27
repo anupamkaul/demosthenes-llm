@@ -53,6 +53,10 @@ class MultiHeadAttention(nn.Module):
         # calculate queries, keys and values 
         # the tensor shape of the following is (b, num_tokens, d_out)
 
+        # TODO: the prints in this function are useful for debugging how
+        # the attention weights actually get trained. Turning them off and will
+        # need a config param to manage logging
+
         keys = self.W_key(x)
         values = self.W_value(x)
         queries = self.W_query(x)
@@ -80,23 +84,23 @@ class MultiHeadAttention(nn.Module):
         # calculate attention score
         attn_scores = queries @ keys.transpose(2, 3) # see test on batch multiplication
         mask_bool = self.mask.bool()[:num_tokens, :num_tokens]
-        print("causal masked bool tensor:\n", mask_bool)
+        #print("causal masked bool tensor:\n", mask_bool)
 
         attn_scores.masked_fill_(mask_bool, -torch.inf)
-        print("attn scores masked causal:\n", attn_scores)
+        #print("attn scores masked causal:\n", attn_scores)
 
         attn_weights = torch.softmax (attn_scores / keys.shape[-1]**0.5, dim = -1)
         attn_weights = self.dropout(attn_weights)
-        print("attn weights tensor:\n", attn_scores)
+        #print("attn weights tensor:\n", attn_scores)
 
         context_vec = (attn_weights @ values).transpose(1, 2)
-        print("context_vec step1:\n", context_vec)
+        #print("context_vec step1:\n", context_vec)
 
         context_vec = context_vec.contiguous().view(b, num_tokens, self.d_out) # this is the reconstruction
-        print("context_vec step2:\n", context_vec)
+        #print("context_vec step2:\n", context_vec)
 
         context_vec = self.out_proj(context_vec)
-        print("context_vec step3:\n", context_vec)
+        #print("context_vec step3:\n", context_vec)
 
         return context_vec
 
