@@ -52,6 +52,7 @@ def train_model_simple(model, train_loader, val_loader, optimizer, device, num_e
  
                 # TODO : good inspection to evaluate training outputs per steps of epoch. Disabling for now
                 # This pause should be configurable in the code
+
                 # input("Press enter to continue..")
 
             # print a sample text after each iteration to show visual/understandable progress (!) 
