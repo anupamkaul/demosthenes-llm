@@ -539,14 +539,77 @@ Ep 3 (Step 000025): Train loss 5.668, Val loss 6.479
 Every effort moves you the!isburn, and the! his the his a.                                     
 Every effort moves you the"I that, and the"-- to the . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
 Every effort moves you and the                                                
-Traceback (most recent call last):
-  File "/Users/anupkaul/akaul_git/demosthenes-llm/pretraining/training.py", line 146, in <module>
-    train_losses, val_losses, tokens_seen = train_model_simple(
-                                            ^^^^^^^^^^^^^^^^^^^
-  File "/Users/anupkaul/akaul_git/demosthenes-llm/pretraining/training.py", line 31, in train_model_simple
-    loss.backward()
-  File "/opt/anaconda3/lib/python3.11/site-packages/torch/_tensor.py", line 522, in backward
-    torch.autograd.backward(
-  File "/opt/anaconda3/lib/python3.11/site-packages/torch/autograd/__init__.py", line 266, in backward
-    Variable._execution_engine.run_backward(  # Calls into the C++ engine to run the backward pass
-KeyboardInterrupt
+Every effort moves you and the                                                
+Every effort moves you know the                                                
+Ep 4 (Step 000030): Train loss 5.434, Val loss 6.420
+Every effort moves you know the                                                
+Every effort moves you the                                                 
+Every effort moves you the                                                 
+Every effort moves you the " " "                                              
+Every effort moves you the " " ""I had been.                                         
+Ep 4 (Step 000035): Train loss 5.081, Val loss 6.345
+Every effort moves you. "I"I had been. Gisburn. Gisburn, and I had been his I had I had been, and the, and I had been the his of the of the of the of the of the of the of
+Every effort moves you. Gisburn, and a--I had been to a of the of the, and I had been to have to the of the of the, and I had been of the of the of the of the of the of the of the of
+Every effort moves you. Gisburn, and I had been to the to a of the of the to have to a, and I had been to have of the, and I had to the, and I had been that, and I had been. Gis
+Every effort moves you. "I"I had been. I had been. I had been. I was his I had been. "I had been the, and I had been that he had been I had been, and I had been to the of
+Every effort moves you.  "I had been--I had the--as my I had been to the--and I was the, and I had been the, and I had been the my I had been, and I had been the, and I had
+Ep 5 (Step 000040): Train loss 4.339, Val loss 6.286
+Every effort moves you, and I had been the, and the, and as a, and my.           "I had been the donkey, and my the his I had the, and my, and I had the
+Every effort moves you, and as.                                              
+Every effort moves you.                                                 
+Every effort moves you, with a.                                              
+Every effort moves you, with a, in the a--and a, with a me--and a, I had been--I                           
+Ep 6 (Step 000045): Train loss 4.506, Val loss 6.323
+Every effort moves you know the, in the donkey, in the donkey, with a, in a little, in the, in the fact, in the man of the, in the donkey, in the donkey, in the donkey, in the, in a, in
+Every effort moves you, in the donkey, in the donkey, in the donkey, in the donkey, in the donkey, in the fact, in the, in the, in the donkey, in the donkey, in the donkey, in the, in the, in
+Every effort moves you, in the, in the donkey, in the, in the, in the donkey, in the, in the fact, in the, in the, in the, in the donkey, in the, in the, in the, in the of
+Every effort moves you know the donkey, and I felt. "I had been his painting.  "Oh, and I felt's had been, in the donkey, I felt to have. "I had the donkey, and I felt it was his
+Every effort moves you know the donkey, and I felt. "I had been his painting him.    "I was's had been, and I felt it was dead he had been; and I saw that, and myroud. "I
+Ep 6 (Step 000050): Train loss 3.735, Val loss 6.164
+Every effort moves you know the donkey, and I felt. "I had been the fact--as, and I was, and I was, and, and I felt it was the donkey, and I was I had the donkey, and I had been the first
+Every effort moves you know the donkey.   "Oh, and I had been. Gisburn, and I felt to have to have to have of the fact--as Jack's it. Gisburn, and, and my work, and I had
+Every effort moves you know the, and my the fact--as to the fact of the fact, and I had been, and the fact, and that, and I had been the fact, and as a little, and the, and my of the picture, I
+Every effort moves you know the, and my the fact, and to the fact of the fact, and, I had been, the fact, and to see of the, and I had been the donkey, and I had the, and my of the picture, I
+Every effort moves you know the fact, and I felt. Gisburn--as of the fact--as, I had been the fact, and to see of the fact of his painting, and as a little. Gisburn, and, and in the first
+Ep 7 (Step 000055): Train loss 3.407, Val loss 6.265
+Every effort moves you know the end.         "I turned. Gisburn's--I turned, and that, and I had been his pictures--as. Gisburn, and, and my work, and I had
+Every effort moves you know the end.         "I turned. Gisburn's--I turned, and to see. Gisburn's an--as. Gisburn, and, and--because he had not--
+Every effort moves you know the end.      "--as such--his.           "I turned back his pictures--I had the donkey, and Mrs.       
+Every effort moves you know the fact up-stream stroke.     "I turned.           "I turned back his pictures--I had the donkey, and the donkey, and, and in the first
+Every effort moves you know the fact up-stream stroke.     "I turned back to my work, and went on groping and m, the fact--as Jack's the donkey again, I saw that, and my work, I had the
+Ep 7 (Step 000060): Train loss 3.069, Val loss 6.142
+Every effort moves you know the fact up-stream stroke.  "I had the last--his, I had been--I looked, and to see a little, and I looked at the donkey again, I saw that, and my work, I had the
+Every effort moves you know the fact up-stream stroke.  "I had the last--his, I had a little to see it was to see of the moment--as Jack's an him.  "I looked, androud laid in the first
+Every effort moves you know the fact up-stream of his eyes to the fact of the last of the house of the fact of the fact, and to see of the picture of his glory, I had been. "I looked, and I had been I had
+Every effort moves you know the picture, and I felt--I had the fact of the last--his, I had been--and, I had to see. "--as I had been his pictures--the, and, and "There were, I had
+Every effort moves you know the picture, and I felt.  "--as such--had not to my work, and went on groping and to my work, and I had to the donkey--and I had the picture, and I had been I had
+Ep 8 (Step 000065): Train loss 2.467, Val loss 6.121
+Every effort moves you know the picture to the picture to the picture to the fact of the last of the house of the fact--and, I had to see.           "I turned, and I had married her-
+Every effort moves you know the picture to the picture to the picture to the fact of the last of the house."           "Oh, and my dear. Gisburn, and, and my dear--and I had
+Every effort moves you know the picture to the picture to the picture to the fact of the last of the house of the fact--and here of the picture to the picture, and I had been, and he was his own the picture. "There were, with a
+Every effort moves you know the picture.      "I had the last--and it was no I had the fact, and to see. I had been his head to the donkey. Gisburn's his pictures--because he had always his
+Every effort moves you know the picture.      "I had the last--and it was no he was the fact, and he was, and threw back his head to the donkey. Gisburn's his pictures--because he had always his
+Ep 8 (Step 000070): Train loss 2.201, Val loss 6.150
+Every effort moves you know the picture.      "--as such--had not till my work, and went on groping and Mrs. I was his pictures--and I had the picture. I had been the man of the hour. 
+Every effort moves you know the picture.      "--as such--had not till he was a--and by a--and by a smile; then I looked at the donkey.            
+Every effort moves you?"  "Yes--quite insensible to the fact a me--had not till he had a year after Jack's resolve had been his pictures, the his glory, he had been his painting, the donkey.      
+Every effort moves you?"  "Yes--quite insensible to the fact with a little a flash that he had been his pictures, I had been his pictures--his back his head to have him.  "I had been his pictures--and I had
+Every effort moves you?"  "Yes--I glanced after him, I had the last word. "--as of the fact, the fact, in the moment--as Jack himself, the fact--the his pictures, when Stroud--I had the
+Ep 9 (Step 000075): Train loss 1.878, Val loss 6.184
+Every effort moves you know the fact, and I felt able to the fact--as such--had not to my work, and went on groping and muddling; then I looked at the donkey again. "I had been the fact--I had been
+Every effort moves you know the fact, and I felt able to the fact--as such--had not to my work, and went on groping and muddling; then I looked at the donkey again. I saw that, and "There were days when I
+Every effort moves you know the fact, and I felt able to the fact--as such--had not to my work, and went on groping and muddling; then I looked at the donkey again.           
+Every effort moves you know the fact, and I felt able to the fact--as such--had not to my work, and went on groping and muddling; then I looked at the donkey again. I saw that, and down the picture to the first
+Every effort moves you know the fact, and I felt able to the fact--as such--had not to my work, and went on groping and Mrs.                     
+Ep 9 (Step 000080): Train loss 1.464, Val loss 6.206
+Every effort moves you know."        "--as such--had not--as I said, one, I had a you in the moment--as.                
+Every effort moves you know."    I glanced after him, and a me in a flash that he--as of the fact, and.   "--as Jack himself, and he--the, a little a--because he didn't want
+Every effort moves you know," was not that the picture for a smile that lifted the tips of a flash that he was's an awful simpleton, and muddling; then I looked at the donkey again.  "Oh, and were, and in his
+Every effort moves you know," was not that the picture for a smile that lifted the tips of a flash that he was's an awful simpleton, and muddling; then I looked at the donkey again. "I didn't--because he didn't want
+Every effort moves you know," was not that my hostess was "interesting--as such--had not existed till nearly a year after Jack's resolve had been taken. It might be that he had married her--the, had been the man of the hour. 
+Ep 10 (Step 000085): Train loss 1.123, Val loss 6.244
+Every effort moves you know," was not that the axi was "interesting--as such--had not existed till nearly a year after Jack's resolve had been taken. It might be that he had married her--the, had been the man of the hour. 
+Every effort moves you?"  "Yes--quite insensible to the irony. Gisburn's it was no great, one of Jack's the man of the moment--as Jack himself at my elbow and as I had been the man of the hour. 
+Every effort moves you?"            "I turned back to my work, and went on groping and muddling; then I looked at the donkey again. I saw that, and down the room, I had
+Every effort moves you?"            "I turned back to my work, and went on groping and muddling; then I looked at the donkey again. I saw that, and down the room, I had
+Every effort moves you?"            "I turned back to my work, and went on groping and muddling; then I looked at the donkey again. I saw that, and down the room, I had

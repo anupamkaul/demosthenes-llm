@@ -34,6 +34,7 @@ eval-textgenerate.py
 loss-training-validation.py
 parent-child-basics.py
 training.py
+dual_writer.py (sample code to show how to dump and print, for training.py)
 
 
 
