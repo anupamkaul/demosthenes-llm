@@ -1,0 +1,14 @@
+Traceback (most recent call last):
+  File "/Users/anupkaul/akaul_git/demosthenes-llm/pretraining/training.py", line 180, in <module>
+    plot_losses(epochs_tensor, tokens_seen, train_losses, val_losses)
+  File "/Users/anupkaul/akaul_git/demosthenes-llm/pretraining/training.py", line 174, in plot_losses
+    ax2.plot(tokens_seen, train_losses, alpha=0)
+  File "/opt/anaconda3/lib/python3.11/site-packages/matplotlib/axes/_axes.py", line 1721, in plot
+    lines = [*self._get_lines(self, *args, data=data, **kwargs)]
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.11/site-packages/matplotlib/axes/_base.py", line 303, in __call__
+    yield from self._plot_args(
+               ^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.11/site-packages/matplotlib/axes/_base.py", line 499, in _plot_args
+    raise ValueError(f"x and y must have same first dimension, but "
+ValueError: x and y must have same first dimension, but have shapes (0,) and (18,)

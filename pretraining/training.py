@@ -20,7 +20,7 @@ def train_model_simple(model, train_loader, val_loader, optimizer, device, num_e
         # see parent-child-basics.py : 
         # train is a method of nn (parent of GPTModel, see GPTModel.py in llm-infra)
 
-        model.train()
+        model.train() # set up training mode, i.e. enable dropouts, batch normalization (more memory computes)
     
         for input_batch, target_batch in train_loader:
  
@@ -69,7 +69,7 @@ def train_model_simple(model, train_loader, val_loader, optimizer, device, num_e
 
 def evaluate_model(model, train_loader, val_loader, device, eval_iter):
 
-    model.eval()
+    model.eval() # turn off training mode (disable dropout, batch normalization for better calc efficiency, lower mem)
  
     with torch.no_grad():
         train_loss = calc_loss_loader(
@@ -81,14 +81,14 @@ def evaluate_model(model, train_loader, val_loader, device, eval_iter):
             val_loader, model, device, num_batches=eval_iter
         )    
     
-    model.train()
+    model.train() # turn training mode back on
     
     return train_loss, val_loss
 
 
 def generate_and_print_sample(model, tokenizer, device, start_context):
 
-    model.eval()
+    model.eval() # turn off training mode (see above)
 
     context_size = model.pos_emb.weight.shape[0]
     encoded = text_to_token_ids(start_context, tokenizer).to(device)
@@ -102,7 +102,7 @@ def generate_and_print_sample(model, tokenizer, device, start_context):
     decoded_text = token_ids_to_text(token_ids, tokenizer)
     print(decoded_text.replace("\n", " "))
    
-    model.train()
+    model.train() # turn back training mode
 
 # main
 import sys, os
@@ -152,5 +152,31 @@ train_losses, val_losses, tokens_seen = train_model_simple(
     num_epochs=num_epochs, eval_freq=5, eval_iter=5,
     start_context="Every effort moves you", tokenizer=tokenizer
 )
+
+# plot out a graph that shows training and validation losses side by side
+# (to help detect if we are overfitting etc)
+
+import matplotlib.pyplot as plt
+from matplotlib.ticker import MaxNLocator
+
+def plot_losses(epochs_seen, tokens_seen, train_losses, val_losses):
+
+    fig, ax1 = plt.subplots(figsize=(5, 3))
+    ax1.plot(epochs_seen, train_losses, label="Training loss")
+    ax1.plot(
+        epochs_seen, val_losses, linestyle="-.", label="Validation loss"
+    )
+    ax1.set_xlabel("Epochs")
+    ax1.set_ylabel("Loss")
+    ax1.legend(loc="upper right")
+    ax1.xaxis.set_major_locator(MaxNLocator(integer=True))
+    ax2 = ax1.twiny()
+    ax2.plot(tokens_seen, train_losses, alpha=0)
+    ax2.set_xlabel("Tokens seen")
+    fig.tight_layout()
+    plt.show()
+
+epochs_tensor = torch.linspace(0, num_epochs, len(train_losses))
+plot_losses(epochs_tensor, tokens_seen, train_losses, val_losses)
 
 sys.stdout.close() # Close the file at the end
