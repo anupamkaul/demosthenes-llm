@@ -665,4 +665,26 @@ Every effort moves you.
 Epoch 2 (Step 000010): Train loss 6.773, Val loss 7.032
 Epoch 2 (Step 000015): Train loss 6.083, Val loss 6.559
 Every effort moves you.                                                 
-tokens seen:  [512, 3072, 5632, 8192]
+Epoch 3 (Step 000020): Train loss 13.400, Val loss 13.963
+Epoch 3 (Step 000025): Train loss 5.668, Val loss 6.479
+Every effort moves you the"I that, and the"-- to the . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+Epoch 4 (Step 000030): Train loss 5.434, Val loss 6.420
+Epoch 4 (Step 000035): Train loss 5.081, Val loss 6.345
+Every effort moves you. "I"I had been. Gisburn. Gisburn, and I had been his I had I had been, and the, and I had been the his of the of the of the of the of the of the of
+Epoch 5 (Step 000040): Train loss 4.339, Val loss 6.286
+Every effort moves you, with a, in the a--and a, with a me--and a, I had been--I                           
+Epoch 6 (Step 000045): Train loss 4.506, Val loss 6.323
+Epoch 6 (Step 000050): Train loss 3.735, Val loss 6.164
+Every effort moves you know the, and my the fact, and to the fact of the fact, and, I had been, the fact, and to see of the, and I had been the donkey, and I had the, and my of the picture, I
+Epoch 7 (Step 000055): Train loss 3.407, Val loss 6.265
+Epoch 7 (Step 000060): Train loss 3.069, Val loss 6.142
+Every effort moves you know the fact up-stream of his eyes to the fact of the last of the house of the fact of the fact, and to see of the picture of his glory, I had been. "I looked, and I had been I had
+Epoch 8 (Step 000065): Train loss 2.467, Val loss 6.121
+Epoch 8 (Step 000070): Train loss 2.201, Val loss 6.150
+Every effort moves you know the picture.      "--as such--had not till he was a--and by a--and by a smile; then I looked at the donkey.            
+Epoch 9 (Step 000075): Train loss 1.878, Val loss 6.184
+Epoch 9 (Step 000080): Train loss 1.464, Val loss 6.206
+Every effort moves you know."        "--as such--had not--as I said, one, I had a you in the moment--as.                
+Epoch 10 (Step 000085): Train loss 1.123, Val loss 6.244
+Every effort moves you?"            "I turned back to my work, and went on groping and muddling; then I looked at the donkey again. I saw that, and down the room, I had
+tokens seen:  [512, 3072, 5632, 8192, 10752, 13312, 15872, 18432, 20992, 23552, 26112, 28672, 31232, 33792, 36352, 38912, 41472, 44032]
