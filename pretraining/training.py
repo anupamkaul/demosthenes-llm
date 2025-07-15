@@ -12,10 +12,10 @@ sys.stdout = DualWriter("dump_training.txt")
 def train_model_simple(model, train_loader, val_loader, optimizer, device, num_epochs,
                        eval_freq, eval_iter, start_context, tokenizer):
 
-    train_losses, val_losses, track_tokens_seen = [], [], []
+    train_losses, val_losses, track_tokens_seen = [], [], []  # initialize lists to track losses and tokens seen
     tokens_seen, global_step = 0, -1
 
-    for epoch in range(num_epochs):
+    for epoch in range(num_epochs):                           # main training loop
 
         # see parent-child-basics.py : 
         # train is a method of nn (parent of GPTModel, see GPTModel.py in llm-infra)
@@ -25,28 +25,31 @@ def train_model_simple(model, train_loader, val_loader, optimizer, device, num_e
         for input_batch, target_batch in train_loader:
  
             # reset the loss gradient from the previous batch iteration
-            optimizer.zero_grad() 
+            optimizer.zero_grad()                             # reset loss gradients from previous batch iteration
 
             loss = calc_loss_batch(
                 input_batch, target_batch, model, device
             )
 
             # calculate new gradients using back-prop
-            loss.backward()
+            loss.backward()                                   # calculate loss gradients
 
-            optimizer.step()
+            optimizer.step()                                  # update weight model using loss gradients
+
+            #print("input batch's numel : ", input_batch.numel(), "\n") (this is normally 512)
 
             tokens_seen += input_batch.numel()
             global_step += 1
 
             # optional evaluation step
-            if global_step % eval_freq == 0:
+            if global_step % eval_freq == 0:                  # optional evaluation step
 
                 train_loss, val_loss = evaluate_model(
                     model, train_loader, val_loader, device, eval_iter 
                 )
                 train_losses.append(train_loss)
                 val_losses.append(val_loss)
+                track_tokens_seen.append(tokens_seen)
 
                 print(f"Epoch {epoch+1} (Step {global_step:06d}): "
                       f"Train loss {train_loss:.3f}, "
@@ -59,10 +62,10 @@ def train_model_simple(model, train_loader, val_loader, optimizer, device, num_e
 
                 # input("Press enter to continue..")
 
-            # print a sample text after each iteration to show visual/understandable progress (!) 
-            generate_and_print_sample(model, tokenizer, device, start_context)
+        # print a sample text after each iteration to show visual/understandable progress (!) 
+        generate_and_print_sample(model, tokenizer, device, start_context) # print a sample text after each epoch
 
-            # input("Press enter to continue..")
+        # input("Press enter to continue..")
 
     return train_losses, val_losses, track_tokens_seen
 
@@ -154,6 +157,8 @@ train_losses, val_losses, tokens_seen = train_model_simple(
     start_context="Every effort moves you", tokenizer=tokenizer
 )
 
+print("tokens seen: ", tokens_seen)  # debug why tokens_seen is incorrect
+
 # plot out a graph that shows training and validation losses side by side
 # (to help detect if we are overfitting etc)
 
@@ -162,18 +167,24 @@ from matplotlib.ticker import MaxNLocator
 
 def plot_losses(epochs_seen, tokens_seen, train_losses, val_losses):
 
+    #print("In plot_losses\n")
+    #print("len of epochs seen (X of 1st axis)", epochs_seen.shape)
+    #print("len of tokens seen (X of 2nd axis)", len(tokens_seen))
+    #print("len of train_losses(Y of twiny)", len(train_losses))
+    #print("len of val_losses(Y of twiny)", len(val_losses))
+   
+
     fig, ax1 = plt.subplots(figsize=(5, 3))
     ax1.plot(epochs_seen, train_losses, label="Training loss")
-    ax1.plot(
-        epochs_seen, val_losses, linestyle="-.", label="Validation loss"
-    )
+    ax1.plot(epochs_seen, val_losses, linestyle="-.", label="Validation loss")
     ax1.set_xlabel("Epochs")
     ax1.set_ylabel("Loss")
     ax1.legend(loc="upper right")
     ax1.xaxis.set_major_locator(MaxNLocator(integer=True))
 
-    ax2 = ax1.twiny()
-    #ax2.plot(tokens_seen, train_losses, alpha=0)
+    ax2 = ax1.twiny()    # twiny in pyplot creates a second axis object that shares the y-axis with existing axes object
+                         # so the y-axis have to be the same
+    ax2.plot(tokens_seen, train_losses, alpha=0)
     ax2.set_xlabel("Tokens seen")
     fig.tight_layout()
 
