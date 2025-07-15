@@ -137,7 +137,8 @@ optimizer = torch.optim.AdamW(
     lr=0.0004, weight_decay=0.1     
 )
 
-num_epochs=10
+#num_epochs=10
+num_epochs=20
 #num_epochs=2 # just to debug plot_losses 
 
 # import everything that I need for this code to compile..
