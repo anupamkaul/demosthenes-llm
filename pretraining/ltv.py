@@ -47,7 +47,7 @@ print("90% of the split is from index ", split_idx)
 train_data = text_data[:split_idx]
 val_data = text_data[split_idx:]
 
-#print("raw training data: \n", train_data)
+print("raw training data: \n", train_data)
 
 '''
 Now we use dataloaders (from my code) and create 

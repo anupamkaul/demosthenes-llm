@@ -47,13 +47,13 @@ def train_model_simple(model, train_loader, val_loader, optimizer, device, num_e
                 )
                 train_losses.append(train_loss)
                 val_losses.append(val_loss)
-                print(f"Ep {epoch+1} (Step {global_step:06d}): "
+
+                print(f"Epoch {epoch+1} (Step {global_step:06d}): "
                       f"Train loss {train_loss:.3f}, "
                       f"Val loss {val_loss:.3f}"
                      )
 
                 # pause for user to ack and continue (just because I am printing a lot of stuff currently)
- 
                 # TODO : good inspection to evaluate training outputs per steps of epoch. Disabling for now
                 # This pause should be configurable in the code
 
@@ -134,7 +134,8 @@ optimizer = torch.optim.AdamW(
     lr=0.0004, weight_decay=0.1     
 )
 
-num_epochs=10
+#num_epochs=10
+num_epochs=2 # just to debug plot_losses for now..
 
 # import everything that I need for this code to compile..
 
@@ -170,13 +171,18 @@ def plot_losses(epochs_seen, tokens_seen, train_losses, val_losses):
     ax1.set_ylabel("Loss")
     ax1.legend(loc="upper right")
     ax1.xaxis.set_major_locator(MaxNLocator(integer=True))
+
     ax2 = ax1.twiny()
-    ax2.plot(tokens_seen, train_losses, alpha=0)
+    #ax2.plot(tokens_seen, train_losses, alpha=0)
     ax2.set_xlabel("Tokens seen")
     fig.tight_layout()
+
     plt.show()
 
-epochs_tensor = torch.linspace(0, num_epochs, len(train_losses))
-plot_losses(epochs_tensor, tokens_seen, train_losses, val_losses)
+epochs_tensor = torch.linspace(0, num_epochs, len(train_losses)) 
+#linspace creates 1 dim tensor (start, end, steps=STEPS, out=None, dtype=None, ..etc)
 
 sys.stdout.close() # Close the file at the end
+
+plot_losses(epochs_tensor, tokens_seen, train_losses, val_losses)
+
