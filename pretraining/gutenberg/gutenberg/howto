@@ -1,3 +1,78 @@
 rsync -amv --include */ --include [p123456789][g0123456789]*[.-][t0][x.]t[x.]*[t8] --exclude * aleph.gutenberg.org::gutenberg data/.mirror/
 
+# firewall is off:
+/usr/libexec/ApplicationFirewall/socketfilterfw --getglobalstate --getblockall --getallowsigned --getstealthmode
+Firewall is disabled. (State = 0)
+Firewall has block all state set to disabled.
+Automatically allow built-in signed software ENABLED.
+Automatically allow downloaded signed software ENABLED.
+Firewall stealth mode is off
+
+# hmm ..
+ping aleph.gutenberg.org
+PING aleph.gutenberg.org (69.55.231.8): 56 data bytes
+64 bytes from 69.55.231.8: icmp_seq=0 ttl=52 time=20.958 ms
+64 bytes from 69.55.231.8: icmp_seq=1 ttl=52 time=21.977 ms
+64 bytes from 69.55.231.8: icmp_seq=2 ttl=52 time=20.514 ms
+64 bytes from 69.55.231.8: icmp_seq=3 ttl=52 time=19.877 ms
+
+https://www.gutenberg.org/help/mirroring.html
+
+rsync is working with gutenberg site ! (taking an example from mirroring to a local folder):
+
+rsync -v -a  --del aleph.gutenberg.org::gutenberg ./dumptest
+Transfer starting: 6382186 files
+./
+GUTINDEX.1996
+GUTINDEX.1997
+GUTINDEX.1998
+GUTINDEX.1999
+GUTINDEX.2000
+GUTINDEX.2001
+GUTINDEX.2002
+GUTINDEX.2003
+GUTINDEX.2004
+GUTINDEX.2005
+GUTINDEX.2006
+GUTINDEX.2007
+GUTINDEX.2008
+GUTINDEX.2009
+GUTINDEX.2010
+GUTINDEX.2011
+GUTINDEX.2012
+GUTINDEX.2013
+GUTINDEX.2014
+GUTINDEX.2015
+GUTINDEX.2016
+GUTINDEX.2017
+GUTINDEX.2018
+GUTINDEX.2019
+GUTINDEX.2020
+GUTINDEX.2021
+GUTINDEX.2022
+GUTINDEX.2023
+GUTINDEX.2024
+GUTINDEX.2025
+GUTINDEX.ALL
+GUTINDEX.AUS
+GUTINDEX.zip
+README
+README~
+donate-howto.txt
+du-sk.cache
+du-sk.cache~
+du-sk.static
+du-sk.static~
+favicon.ico
+gutenberg.dcs
+gutenberg.dcs~
+hosted_by_ibiblio.png
+ls-R
+ls-R~
+ls-lR
+
+
+
+
+
 
