@@ -97,6 +97,8 @@ def populate_raw_from_mirror(mirror_dir=None,
         Files in this list are not copied into raw.
 
     """
+    print("populate_raw_from_mirror")
+
     for dirName, subdirList, fileList in os.walk(mirror_dir):
         # patterns to match are 12345-0.txt or pg12345.txt.utf8
         for matchpath in glob.iglob(os.path.join(dirName, "[p123456789][g0123456789][0-9]*")):

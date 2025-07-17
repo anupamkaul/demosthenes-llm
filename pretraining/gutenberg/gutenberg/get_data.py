@@ -71,6 +71,7 @@ if __name__ == '__main__':
 
     # create the parser
     args = parser.parse_args()
+    print("args: ", args)
 
     # check that all dirs exist
     if not os.path.isdir(args.mirror):
@@ -99,13 +100,23 @@ if __name__ == '__main__':
     # + 12345 -   0   .  t x                 t 
     #---------------------------------------------
     #        [.-][t0][x.]t[x.]    *         [t8]
-    sp_args = ["rsync", "-am%s" % vstring,
+    sp_args = ["rsync",
+               "-v",
+               "--ignore-existing", 
+               "-am%s" % vstring,
                "--include", "*/",
                "--include", "[p123456789][g0123456789]%s[.-][t0][x.]t[x.]*[t8]" % args.pattern,
                "--exclude", "*",
                "aleph.gutenberg.org::gutenberg", args.mirror
                ]
+
+    print("get-data: ", sp_args)
+
+    # this is a blocking call, why use this and not run() or POpen() ?
     subprocess.call(sp_args)
+    #subprocess.run(sp_args)
+
+    print("finshed with rsync\n")
 
     # Get rid of duplicates
     # ---------------------
@@ -119,6 +130,8 @@ if __name__ == '__main__':
     # We populate 'raw_dir' hardlinking to
     # the hidden 'mirror_dir'. Names are standarized
     # into PG12345_raw.txt form.
+
+    print("populate raw from mirror")
     populate_raw_from_mirror(
         mirror_dir=args.mirror,
         raw_dir=args.raw,
@@ -131,6 +144,8 @@ if __name__ == '__main__':
     # ---------------
     # By default, update the whole metadata csv
     # file each time new data is downloaded.
+
+    print("update the metadata csv file every time new data is downloaded")
     make_df_metadata(
         path_xml=os.path.join(args.metadata, 'rdf-files.tar.bz2'),
         path_out=os.path.join(args.metadata, 'metadata.csv'),
@@ -140,7 +155,12 @@ if __name__ == '__main__':
     # Bookshelves
     # -----------
     # Get bookshelves and their respective books and titles as dicts
+
+    print("Get bookshelves and their respective books and titles as dicts")
+
     BS_dict, BS_num_to_category_str_dict = parse_bookshelves()
+    print("Bookshelf dict (BS_dict): ", BS_dict)
+
     with open("metadata/bookshelves_ebooks_dict.pkl", 'wb') as fp:
         pickle.dump(BS_dict, fp)
     with open("metadata/bookshelves_categories_dict.pkl", 'wb') as fp:

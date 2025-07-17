@@ -18,6 +18,8 @@ def get_bookshelves():
     are stored in `metadata/bookshelves`.
 
     """
+    print("\ngetting books (wget) from gutenbergs wiki\n")
+
     sp_args = ["wget",
                "--random-wait", "-r", 
                "-p", "--no-parent", 

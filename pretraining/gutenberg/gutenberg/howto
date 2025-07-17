@@ -1,0 +1,3 @@
+rsync -amv --include */ --include [p123456789][g0123456789]*[.-][t0][x.]t[x.]*[t8] --exclude * aleph.gutenberg.org::gutenberg data/.mirror/
+
+
