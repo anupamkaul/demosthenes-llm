@@ -81,3 +81,8 @@ other than gutenberg:
 1. fineweb (1.5T tokens) : get using huggingface to train demosthenes
 2. Dolma
 3. 
+
+> after break at 4/x downloads:
+rsync -v --ignore-existing --delete -amv --include */ --include [p123456789][g0123456789]*[.-][t0][x.]t[x.]*[t8] --exclude * aleph.gutenberg.org::gutenberg data/.mirror/
+
+

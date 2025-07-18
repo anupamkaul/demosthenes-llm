@@ -1,0 +1,4 @@
+1. gutenberg (75K books)
+2. fineweb (1.5T tokens) : get using huggingface to train demosthenes
+3. Dolma
+4. 

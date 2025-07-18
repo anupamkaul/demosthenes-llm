@@ -102,7 +102,8 @@ if __name__ == '__main__':
     #        [.-][t0][x.]t[x.]    *         [t8]
     sp_args = ["rsync",
                "-v",
-    #           "--ignore-existing", 
+               "--ignore-existing", 
+               "--delete",
                "-am%s" % vstring,
                "--include", "*/",
                "--include", "[p123456789][g0123456789]%s[.-][t0][x.]t[x.]*[t8]" % args.pattern,
