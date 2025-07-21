@@ -739,6 +739,15 @@ update the metadata csv file every time new data is downloaded
 Get bookshelves and their respective books and titles as dicts
 Bookshelf dict (BS_dict):  {}
 
+# sizes of the data dumps from running get_data.py:
+
+cd data
+du -sh ./raw
+ 18G	./raw
+
+(base) anupkaul@147dda4c0851 data % du -sh ./.mirror
+ 29G	./.mirror
+
 
 
 
