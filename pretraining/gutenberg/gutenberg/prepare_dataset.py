@@ -11,7 +11,7 @@ import argparse
 import os
 import re
 from tqdm import tqdm
-from gutenberg.src.cleanup import strip_headers
+from src.cleanup import strip_headers
 
 
 def is_english(text, threshold=0.9):
@@ -68,14 +68,15 @@ if __name__ == "__main__":
 
     parser = argparse.ArgumentParser(description="Preprocess and combine text files for pretraining")
 
-    parser.add_argument("--data_dir", type=str, default="../gutenberg/data/raw.0",
+    parser.add_argument("--data_dir", type=str, default="data/raw.0",
                         help="Directory containing the downloaded raw training data")
     parser.add_argument("--max_size_mb", type=int, default=500,
                         help="The maximum file size for each concatenated file in megabytes")
-    parser.add_argument("--output_dir", type=str, default="gutenberg_preprocessed",
+    parser.add_argument("--output_dir", type=str, default="data/preprocessed.0",
                         help="Directory where the preprocessed data will be saved")
 
     args = parser.parse_args()
+    print("args for file combines: ", args)
 
     all_files = [os.path.join(path, name) for path, subdirs, files in os.walk(args.data_dir)
                  for name in files if name.endswith((".txt", ".txt.utf8"))]

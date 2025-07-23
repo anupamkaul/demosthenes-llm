@@ -3,5 +3,9 @@
 
 # first constrain the process strip to understand what and how it does things
 
-python process_data.py --raw data/raw.0 --output_text data/text.0 --output_tokens data/tokens.0 --output_counts data/counts.0 --pattern 66540 --log_file process.log
+# process a single file
+#python process_data.py --raw data/raw.0 --output_text data/text.0 --output_tokens data/tokens.0 --output_counts data/counts.0 --pattern 66540 --log_file process.log
+
+# process a larger set of files
+python process_data.py --raw data/raw.0 --output_text data/text.0 --output_tokens data/tokens.0 --output_counts data/counts.0 --pattern 6654* --log_file process.log
 
