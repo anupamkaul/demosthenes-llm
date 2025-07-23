@@ -69,6 +69,9 @@ if __name__ == '__main__':
     # add arguments to parser
     args = parser.parse_args()
 
+    #print arg values
+    print("processs data args : ", args)
+
     # check whether the out-put directories exist
     if os.path.isdir(args.output_text) is False:
         raise ValueError("The directory for output of texts '%s' "

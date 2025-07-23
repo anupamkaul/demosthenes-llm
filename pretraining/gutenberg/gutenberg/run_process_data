@@ -1,0 +1,7 @@
+# ideally use process_data to strip out headers and footers
+# the tokenization & embedding will come in from BPE used with demosthenes
+
+# first constrain the process strip to understand what and how it does things
+
+python process_data.py --raw data/raw.0 --output_text data/text.0 --output_tokens data/tokens.0 --output_counts data/counts.0 --pattern 66540 --log_file process.log
+
