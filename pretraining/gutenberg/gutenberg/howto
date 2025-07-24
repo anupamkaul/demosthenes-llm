@@ -1,3 +1,23 @@
+1. rsync to populate data/.mirror and data/raw
+2. process_data (only the strip headers part, remove tokenizers and count, keep the logging) : to strip out the headers
+3. test in isolation with .0 folders and options in run_process script
+4. prepare_data to combine smaller files into 500MB max sized files to optimize training
+5. turn on prepare_data on data/raw (instead of raw.0) and start creating "combine_".xx files, each 0.5G (or 500MB). Skip non english files.
+   (expect about 35 or 36 such 0.5G english text files with stripped headers). These will be used for creating embeddings and training
+   demosthenes (based on gutenberg)
+
+e.g. with 4 combined files created:
+du -sh ./data/preprocessed.0
+2.0G	./data/preprocessed.0
+
+combined_3.txt, combined_6.txt has a bug : I see non english text, so the isEnglish fn is buggy
+and needs to be fixed. Else I am training my llm on incorrect data (its not english)
+
+likewise combined_17.txt has table of contents, some BS errata and tables, and mostly non-colloquial english
+which won't be useful for training
+
+
+
 rsync -amv --include */ --include [p123456789][g0123456789]*[.-][t0][x.]t[x.]*[t8] --exclude * aleph.gutenberg.org::gutenberg data/.mirror/
 
 # firewall is off:

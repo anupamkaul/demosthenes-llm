@@ -68,7 +68,7 @@ if __name__ == "__main__":
 
     parser = argparse.ArgumentParser(description="Preprocess and combine text files for pretraining")
 
-    parser.add_argument("--data_dir", type=str, default="data/raw.0",
+    parser.add_argument("--data_dir", type=str, default="data/raw",
                         help="Directory containing the downloaded raw training data")
     parser.add_argument("--max_size_mb", type=int, default=500,
                         help="The maximum file size for each concatenated file in megabytes")
