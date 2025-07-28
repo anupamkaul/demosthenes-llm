@@ -13,6 +13,7 @@ the actual torch.embedding definition (called from Sparse and FF classes) is in 
 
 https://github.com/pytorch/pytorch/blob/b85568a54a9c60986235ad1e0cc5dffc71b9d5b1/aten/src/ATen/native/Embedding.cpp#L14
 
-
+#locally on my mac:
+/opt/anaconda3/lib/python3.11/site-packages/tokenizers
 
 

@@ -103,6 +103,10 @@ def train_model_simple(model, optimizer, device, n_epochs,
                 text_data = read_text_file(file_path) + " <|endoftext|> "
                 print(f"Tokenizing file {index} of {total_files}: {file_path}")
 
+                # tokenization happens in create_dataloaders, which calls create_dataloader_v1
+                # (defined in tokenizers/dataloaderV1.py) which calls GPTDatasetV1
+                # (defined in tokenizers/GPTDatsetV1.py) and this class (GPTDatasetV1) tokenizes the text
+
                 # Initialize new data loaders for each book
                 train_loader, val_loader = create_dataloaders(
                     text_data,
@@ -139,16 +143,29 @@ def train_model_simple(model, optimizer, device, n_epochs,
                         )
 
                 if global_step % save_ckpt_freq:
+
                     file_name = output_dir / f"model_pg_{global_step}.pth"
                     torch.save(model.state_dict(), file_name)
+
+                    # save the model
+                    model_file_name = output_dir / "model_pg_final.pth"
+                    torch.save(model.state_dict(), model_file_name)
+
                     print(f"Saved {file_name}")
+                    print(f"Saved {model_file_name}")
 
                 print_eta(start_time, book_start_time, index, total_files)
 
     except KeyboardInterrupt:
+
         file_name = output_dir / f"model_pg_{global_step}_interrupted.pth"
         torch.save(model.state_dict(), file_name)
         print(f"Saved {file_name}")
+
+        # save the model
+        model_file_name = output_dir / "model_pg_final.pth"
+        torch.save(model.state_dict(), model_file_name)
+        print(f"Saved {model_file_name}")
 
     return train_losses, val_losses, track_tokens_seen
 
@@ -204,10 +221,21 @@ if __name__ == "__main__":
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
     print("device for training: ", device)
 
+    # https://pytorch.org/blog/introducing-accelerated-pytorch-training-on-mac/
+    print("is MPS available: ", torch.backends.mps.is_available())
+
     torch.manual_seed(123)
     model = GPTModel(GPT_CONFIG_124M)
+
+    # load previously saved instance of the model (to continue training)
+    # enable this once I save it first time (I don't know the format, so let the output drive the input)
+
+    # model.load_state_dict(torch.load("model_checkpoints/model_pg_final.pth", map_location=device))
+
     model.to(device)
     optimizer = torch.optim.AdamW(model.parameters(), lr=args.lr, weight_decay=0.1)
+    # TODO : need to save optimizer state (dict) separately from the entire model itself
+
     tokenizer = tiktoken.get_encoding("gpt2")
 
     data_dir = args.data_dir
@@ -243,5 +271,6 @@ if __name__ == "__main__":
     epochs_tensor = torch.linspace(0, args.n_epochs, len(train_losses))
     plot_losses(epochs_tensor, tokens_seen, train_losses, val_losses, output_dir)
 
+    # save the model
     torch.save(model.state_dict(), output_dir / "model_pg_final.pth")
     print(f"Maximum GPU memory allocated: {torch.cuda.max_memory_allocated() / 1e9:.2f} GB")
