@@ -30,6 +30,7 @@ sys.path.append( os.path.join( os.path.dirname(os.path.abspath(__file__)),  '../
 sys.path.append( os.path.join( os.path.dirname(os.path.abspath(__file__)),  '../../../llm-infra/') )
 
 from GPTModel import GPTModel
+from dataloaderV1 import create_dataloader_v1
 
 
 def read_text_file(file_path):
@@ -96,18 +97,23 @@ def train_model_simple(model, optimizer, device, n_epochs,
 
     try:
         for epoch in range(n_epochs):
+            print("\ntraining for epoch ", epoch, "\n")
 
             # Iterate over the books in the training corpus
             for index, file_path in enumerate(all_files, 1):
                 book_start_time = time.time()
                 text_data = read_text_file(file_path) + " <|endoftext|> "
-                print(f"Tokenizing file {index} of {total_files}: {file_path}")
+
+                print(f"\nSplitting file {index} of {total_files}: {file_path} into a {train_ratio} split between train and validation")
+                print(f"\nand Tokenizing file {index} of {total_files}: {file_path}")
 
                 # tokenization happens in create_dataloaders, which calls create_dataloader_v1
                 # (defined in tokenizers/dataloaderV1.py) which calls GPTDatasetV1
                 # (defined in tokenizers/GPTDatsetV1.py) and this class (GPTDatasetV1) tokenizes the text
 
                 # Initialize new data loaders for each book
+                # 90% of this file is for training and 10% is retained for validation
+
                 train_loader, val_loader = create_dataloaders(
                     text_data,
                     train_ratio=train_ratio,
@@ -116,8 +122,11 @@ def train_model_simple(model, optimizer, device, n_epochs,
                     stride=GPT_CONFIG_124M["context_length"],
                     num_workers=0
                 )
+
                 print("Training ...")
-                model.train()
+                model.train()  # set up training params
+
+                # training loop
                 for input_batch, target_batch in train_loader:
                     optimizer.zero_grad()
                     loss = calc_loss_batch(input_batch, target_batch, model, device)
@@ -253,7 +262,7 @@ if __name__ == "__main__":
     output_dir = Path(args.output_dir)
     output_dir.mkdir(parents=True, exist_ok=True)
 
-    sys.exit()
+    #sys.exit()
 
     train_losses, val_losses, tokens_seen = train_model_simple(
         model, optimizer, device,

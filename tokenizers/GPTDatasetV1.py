@@ -26,7 +26,14 @@ class GPTDatasetV1(Dataset):
 
         # tokenize the entire set
 
-        token_ids = tokenizer.encode(txt)  
+        #token_ids = tokenizer.encode(txt) 
+
+        # see actual tiktoken/core.py's definitions of treating end of file special markers
+        # (/opt/anaconda3/lib/python3.11/site-packages/tiktoken/core.py)
+        # this is used for e.g. with gutenberg training (in the pretraining folder)
+ 
+        token_ids = tokenizer.encode(txt, allowed_special={"<|endoftext|>"})  
+        print("generated token IDs !")
 
         # use a sliding window to chunk the text into overlapping 
         # sequences of max_length. Stride controls the overlap amount
@@ -34,6 +41,8 @@ class GPTDatasetV1(Dataset):
         # the samples are of (max-length) where the next sequence moves
         # up by stride. If stride < max-length we have overlaps - this helps
         # control the prediction granularity
+
+        print("now chunking tokens for max_length = ", max_length, " stride = ", stride)
 
         for i in range(0, len(token_ids) - max_length, stride):
 
@@ -43,6 +52,8 @@ class GPTDatasetV1(Dataset):
 
             self.input_ids.append(torch.tensor(input_chunk))
             self.target_ids.append(torch.tensor(target_chunk))
+
+        print("tokenization done!")
 
     # return total number of rows in dataset
     def __len__(self):
