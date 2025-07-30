@@ -241,7 +241,8 @@ if __name__ == "__main__":
     # load previously saved instance of the model (to continue training)
     # enable this once I save it first time (I don't know the format, so let the output drive the input)
 
-    # model.load_state_dict(torch.load("model_checkpoints/model_pg_final.pth", map_location=device))
+    model.load_state_dict(torch.load("model_checkpoints/model_pg_final.pth", map_location=device))
+    print("loaded previously saved model to continue training..")
 
     model.to(device)
     optimizer = torch.optim.AdamW(model.parameters(), lr=args.lr, weight_decay=0.1)
@@ -280,7 +281,9 @@ if __name__ == "__main__":
     )
 
     epochs_tensor = torch.linspace(0, args.n_epochs, len(train_losses))
-    plot_losses(epochs_tensor, tokens_seen, train_losses, val_losses, output_dir)
+
+    #plot_losses(epochs_tensor, tokens_seen, train_losses, val_losses, output_dir)
+    plot_losses(epochs_tensor, tokens_seen, train_losses, val_losses)
 
     # save the model
     torch.save(model.state_dict(), output_dir / "model_pg_final.pth")
