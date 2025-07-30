@@ -8,6 +8,8 @@ import torch
 '''
 Implement a utility function to calculate the cross entropy loss
 of a given batch returned via the training and validation loader
+
+(This is where the model's forward is called for the AI processing)
 '''
 
 def calc_loss_batch(input_batch, target_batch, model, device):

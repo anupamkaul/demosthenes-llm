@@ -99,7 +99,7 @@ def train_model_simple(model, optimizer, device, n_epochs,
 
     try:
         for epoch in range(n_epochs):
-            print("\ntraining for epoch ", epoch, "\n")
+            print("\ntraining for epoch ", epoch, " of ", n_epochs, "\n")
 
             # Iterate over the books in the training corpus
             for index, file_path in enumerate(all_files, 1):
@@ -125,20 +125,24 @@ def train_model_simple(model, optimizer, device, n_epochs,
                     num_workers=0
                 )
 
-                print("Training ...")
+                print("\nTraining ...")
                 model.train()  # set up training params
 
                 # training loop
+
                 for input_batch, target_batch in train_loader:
+                    print("debug: len input_batch: ", len(input_batch), "len target_batch: ", len(target_batch), "len train_loader: ", len(train_loader))
                     optimizer.zero_grad()
                     loss = calc_loss_batch(input_batch, target_batch, model, device)
                     loss.backward()
                     optimizer.step()
                     tokens_seen += input_batch.numel()
                     global_step += 1
+                    print("global step: ", global_step, " tokens seen: ", tokens_seen)
 
                     # Optional evaluation step
                     if global_step % eval_freq == 0:
+                        print("evaluating model, noting train + validation loss (interim)")
                         train_loss, val_loss = evaluate_model(
                             model, train_loader, val_loader, device, eval_iter)
                         train_losses.append(train_loss)
@@ -155,6 +159,7 @@ def train_model_simple(model, optimizer, device, n_epochs,
 
                 if global_step % save_ckpt_freq:
 
+                    print("saving model (interim)")
                     file_name = output_dir / f"model_pg_{global_step}.pth"
                     torch.save(model.state_dict(), file_name)
 
@@ -165,6 +170,7 @@ def train_model_simple(model, optimizer, device, n_epochs,
                     print(f"Saved {file_name}")
                     print(f"Saved {model_file_name}")
 
+                print("some stats: ")
                 print_eta(start_time, book_start_time, index, total_files)
 
     except KeyboardInterrupt:
@@ -185,17 +191,18 @@ if __name__ == "__main__":
 
     parser = argparse.ArgumentParser(description='GPT Model Training Configuration')
 
+    # modified these training params for a CPU friendly debug
     parser.add_argument('--data_dir', type=str, default='data/preprocessed.0',
                         help='Directory containing the training data')
     parser.add_argument('--output_dir', type=str, default='model_checkpoints',
                         help='Directory where the model checkpoints will be saved')
-    parser.add_argument('--n_epochs', type=int, default=1,
+    parser.add_argument('--n_epochs', type=int, default=10,
                         help='Number of epochs to train the model')
-    parser.add_argument('--print_sample_iter', type=int, default=1000,
+    parser.add_argument('--print_sample_iter', type=int, default=5,
                         help='Iterations between printing sample outputs')
-    parser.add_argument('--eval_freq', type=int, default=100,
+    parser.add_argument('--eval_freq', type=int, default=5,
                         help='Frequency of evaluations during training')
-    parser.add_argument('--save_ckpt_freq', type=int, default=100_000,
+    parser.add_argument('--save_ckpt_freq', type=int, default=10,
                         help='Frequency of saving model checkpoints during training')
     parser.add_argument('--lr', type=float, default=5e-4,
                         help='Learning rate for the optimizer')
@@ -276,7 +283,7 @@ if __name__ == "__main__":
         print_sample_iter=args.print_sample_iter,
         output_dir=output_dir,
         save_ckpt_freq=args.save_ckpt_freq,
-        start_context="Every effort moves you",
+        start_context="Every effort moves you", # once trained this can be user input
         tokenizer=tokenizer
     )
 
