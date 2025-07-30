@@ -1,0 +1,139 @@
+python pretraining_simple.py                      
+pretraining args:  Namespace(data_dir='data/preprocessed.0', output_dir='model_checkpoints', n_epochs=1, print_sample_iter=1000, eval_freq=100, save_ckpt_freq=100000, lr=0.0005, batch_size=4, debug=False)
+device for training:  cpu
+is MPS available:  False
+Total files for training: 36
+Files:
+ ['data/preprocessed.0/combined_9.txt', 'data/preprocessed.0/combined_21.txt', 'data/preprocessed.0/combined_35.txt', 'data/preprocessed.0/combined_34.txt', 'data/preprocessed.0/combined_20.txt', 'data/preprocessed.0/combined_8.txt', 'data/preprocessed.0/combined_36.txt', 'data/preprocessed.0/combined_22.txt', 'data/preprocessed.0/combined_23.txt', 'data/preprocessed.0/combined_33.txt', 'data/preprocessed.0/combined_27.txt', 'data/preprocessed.0/combined_26.txt', 'data/preprocessed.0/combined_32.txt', 'data/preprocessed.0/combined_18.txt', 'data/preprocessed.0/combined_24.txt', 'data/preprocessed.0/combined_30.txt', 'data/preprocessed.0/combined_31.txt', 'data/preprocessed.0/combined_25.txt', 'data/preprocessed.0/combined_19.txt', 'data/preprocessed.0/combined_14.txt', 'data/preprocessed.0/combined_28.txt', 'data/preprocessed.0/combined_29.txt', 'data/preprocessed.0/combined_15.txt', 'data/preprocessed.0/combined_1.txt', 'data/preprocessed.0/combined_3.txt', 'data/preprocessed.0/combined_17.txt', 'data/preprocessed.0/combined_16.txt', 'data/preprocessed.0/combined_2.txt', 'data/preprocessed.0/combined_6.txt', 'data/preprocessed.0/combined_12.txt', 'data/preprocessed.0/combined_13.txt', 'data/preprocessed.0/combined_7.txt', 'data/preprocessed.0/combined_5.txt', 'data/preprocessed.0/combined_11.txt', 'data/preprocessed.0/combined_10.txt', 'data/preprocessed.0/combined_4.txt']
+
+training for epoch  0 
+
+Tokenizing file 1 of 36: data/preprocessed.0/combined_9.txt
+Traceback (most recent call last):
+  File "/Users/anupkaul/akaul_git/demosthenes-llm/pretraining/gutenberg/gutenberg/pretraining_simple.py", line 260, in <module>
+    train_losses, val_losses, tokens_seen = train_model_simple(
+                                            ^^^^^^^^^^^^^^^^^^^
+  File "/Users/anupkaul/akaul_git/demosthenes-llm/pretraining/gutenberg/gutenberg/pretraining_simple.py", line 113, in train_model_simple
+    train_loader, val_loader = create_dataloaders(
+                               ^^^^^^^^^^^^^^^^^^^
+  File "/Users/anupkaul/akaul_git/demosthenes-llm/pretraining/gutenberg/gutenberg/pretraining_simple.py", line 44, in create_dataloaders
+    train_loader = create_dataloader_v1(
+                   ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/anupkaul/akaul_git/demosthenes-llm/pretraining/gutenberg/gutenberg/../../../tokenizers/dataloaderV1.py", line 17, in create_dataloader_v1
+    dataset = GPTDatasetV1.GPTDatasetV1(txt, tokenizer, max_length, stride)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/anupkaul/akaul_git/demosthenes-llm/pretraining/gutenberg/gutenberg/../../../tokenizers/GPTDatasetV1.py", line 29, in __init__
+    token_ids = tokenizer.encode(txt)  
+                ^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.11/site-packages/tiktoken/core.py", line 117, in encode
+    raise_disallowed_special_token(match.group())
+  File "/opt/anaconda3/lib/python3.11/site-packages/tiktoken/core.py", line 400, in raise_disallowed_special_token
+    raise ValueError(
+ValueError: Encountered text corresponding to disallowed special token '<|endoftext|>'.
+If you want this text to be encoded as a special token, pass it to `allowed_special`, e.g. `allowed_special={'<|endoftext|>', ...}`.
+If you want this text to be encoded as normal text, disable the check for this token by passing `disallowed_special=(enc.special_tokens_set - {'<|endoftext|>'})`.
+To disable this check for all special tokens, pass `disallowed_special=()`.
+
+--> FIXED, next error:
+
+python pretraining_simple.py 
+pretraining args:  Namespace(data_dir='data/preprocessed.0', output_dir='model_checkpoints', n_epochs=1, print_sample_iter=1000, eval_freq=100, save_ckpt_freq=100000, lr=0.0005, batch_size=4, debug=False)
+device for training:  cpu
+is MPS available:  False
+Total files for training: 36
+Files:
+ ['data/preprocessed.0/combined_9.txt', 'data/preprocessed.0/combined_21.txt', 'data/preprocessed.0/combined_35.txt', 'data/preprocessed.0/combined_34.txt', 'data/preprocessed.0/combined_20.txt', 'data/preprocessed.0/combined_8.txt', 'data/preprocessed.0/combined_36.txt', 'data/preprocessed.0/combined_22.txt', 'data/preprocessed.0/combined_23.txt', 'data/preprocessed.0/combined_33.txt', 'data/preprocessed.0/combined_27.txt', 'data/preprocessed.0/combined_26.txt', 'data/preprocessed.0/combined_32.txt', 'data/preprocessed.0/combined_18.txt', 'data/preprocessed.0/combined_24.txt', 'data/preprocessed.0/combined_30.txt', 'data/preprocessed.0/combined_31.txt', 'data/preprocessed.0/combined_25.txt', 'data/preprocessed.0/combined_19.txt', 'data/preprocessed.0/combined_14.txt', 'data/preprocessed.0/combined_28.txt', 'data/preprocessed.0/combined_29.txt', 'data/preprocessed.0/combined_15.txt', 'data/preprocessed.0/combined_1.txt', 'data/preprocessed.0/combined_3.txt', 'data/preprocessed.0/combined_17.txt', 'data/preprocessed.0/combined_16.txt', 'data/preprocessed.0/combined_2.txt', 'data/preprocessed.0/combined_6.txt', 'data/preprocessed.0/combined_12.txt', 'data/preprocessed.0/combined_13.txt', 'data/preprocessed.0/combined_7.txt', 'data/preprocessed.0/combined_5.txt', 'data/preprocessed.0/combined_11.txt', 'data/preprocessed.0/combined_10.txt', 'data/preprocessed.0/combined_4.txt']
+
+training for epoch  0 
+
+
+Splitting file 1 of 36: data/preprocessed.0/combined_9.txt into a 0.9 split between train and validation
+
+and Tokenizing file 1 of 36: data/preprocessed.0/combined_9.txt
+generated token IDs !
+now chunking tokens for max_length =  1024  stride =  1024
+tokenization done!
+generated token IDs !
+now chunking tokens for max_length =  1024  stride =  1024
+tokenization done!
+Training ...
+Traceback (most recent call last):
+  File "/Users/anupkaul/akaul_git/demosthenes-llm/pretraining/gutenberg/gutenberg/pretraining_simple.py", line 267, in <module>
+    train_losses, val_losses, tokens_seen = train_model_simple(
+                                            ^^^^^^^^^^^^^^^^^^^
+  File "/Users/anupkaul/akaul_git/demosthenes-llm/pretraining/gutenberg/gutenberg/pretraining_simple.py", line 132, in train_model_simple
+    loss = calc_loss_batch(input_batch, target_batch, model, device)
+           ^^^^^^^^^^^^^^^
+NameError: name 'calc_loss_batch' is not defined
+
+--> 
+
+FIXED, next:
+
+python pretraining_simple.py 
+pretraining args:  Namespace(data_dir='data/preprocessed.0', output_dir='model_checkpoints', n_epochs=1, print_sample_iter=1000, eval_freq=100, save_ckpt_freq=100000, lr=0.0005, batch_size=4, debug=False)
+device for training:  cpu
+is MPS available:  False
+Total files for training: 36
+Files:
+ ['data/preprocessed.0/combined_9.txt', 'data/preprocessed.0/combined_21.txt', 'data/preprocessed.0/combined_35.txt', 'data/preprocessed.0/combined_34.txt', 'data/preprocessed.0/combined_20.txt', 'data/preprocessed.0/combined_8.txt', 'data/preprocessed.0/combined_36.txt', 'data/preprocessed.0/combined_22.txt', 'data/preprocessed.0/combined_23.txt', 'data/preprocessed.0/combined_33.txt', 'data/preprocessed.0/combined_27.txt', 'data/preprocessed.0/combined_26.txt', 'data/preprocessed.0/combined_32.txt', 'data/preprocessed.0/combined_18.txt', 'data/preprocessed.0/combined_24.txt', 'data/preprocessed.0/combined_30.txt', 'data/preprocessed.0/combined_31.txt', 'data/preprocessed.0/combined_25.txt', 'data/preprocessed.0/combined_19.txt', 'data/preprocessed.0/combined_14.txt', 'data/preprocessed.0/combined_28.txt', 'data/preprocessed.0/combined_29.txt', 'data/preprocessed.0/combined_15.txt', 'data/preprocessed.0/combined_1.txt', 'data/preprocessed.0/combined_3.txt', 'data/preprocessed.0/combined_17.txt', 'data/preprocessed.0/combined_16.txt', 'data/preprocessed.0/combined_2.txt', 'data/preprocessed.0/combined_6.txt', 'data/preprocessed.0/combined_12.txt', 'data/preprocessed.0/combined_13.txt', 'data/preprocessed.0/combined_7.txt', 'data/preprocessed.0/combined_5.txt', 'data/preprocessed.0/combined_11.txt', 'data/preprocessed.0/combined_10.txt', 'data/preprocessed.0/combined_4.txt']
+
+training for epoch  0 
+
+
+Splitting file 1 of 36: data/preprocessed.0/combined_9.txt into a 0.9 split between train and validation
+
+and Tokenizing file 1 of 36: data/preprocessed.0/combined_9.txt
+generated token IDs !
+now chunking tokens for max_length =  1024  stride =  1024
+tokenization done!
+generated token IDs !
+now chunking tokens for max_length =  1024  stride =  1024
+tokenization done!
+Training ...
+Ep 1 (Step 0): Train loss 7.914, Val loss 10.214
+Traceback (most recent call last):
+  File "/Users/anupkaul/akaul_git/demosthenes-llm/pretraining/gutenberg/gutenberg/pretraining_simple.py", line 269, in <module>
+    train_losses, val_losses, tokens_seen = train_model_simple(
+                                            ^^^^^^^^^^^^^^^^^^^
+  File "/Users/anupkaul/akaul_git/demosthenes-llm/pretraining/gutenberg/gutenberg/pretraining_simple.py", line 152, in train_model_simple
+    generate_and_print_sample(
+  File "/Users/anupkaul/akaul_git/demosthenes-llm/pretraining/gutenberg/gutenberg/../../../pretraining/utils_loss.py", line 77, in generate_and_print_sample
+    encoded = text_to_token_ids(start_context, tokenizer).to(device)
+              ^^^^^^^^^^^^^^^^^
+NameError: name 'text_to_token_ids' is not defined
+
+--> FIXED and Training now works, interrupted and see model is saved. One error with plot_losses
+
+python pretraining_simple.py 
+pretraining args:  Namespace(data_dir='data/preprocessed.0', output_dir='model_checkpoints', n_epochs=1, print_sample_iter=1000, eval_freq=100, save_ckpt_freq=100000, lr=0.0005, batch_size=4, debug=False)
+device for training:  cpu
+is MPS available:  False
+Total files for training: 36
+Files:
+ ['data/preprocessed.0/combined_9.txt', 'data/preprocessed.0/combined_21.txt', 'data/preprocessed.0/combined_35.txt', 'data/preprocessed.0/combined_34.txt', 'data/preprocessed.0/combined_20.txt', 'data/preprocessed.0/combined_8.txt', 'data/preprocessed.0/combined_36.txt', 'data/preprocessed.0/combined_22.txt', 'data/preprocessed.0/combined_23.txt', 'data/preprocessed.0/combined_33.txt', 'data/preprocessed.0/combined_27.txt', 'data/preprocessed.0/combined_26.txt', 'data/preprocessed.0/combined_32.txt', 'data/preprocessed.0/combined_18.txt', 'data/preprocessed.0/combined_24.txt', 'data/preprocessed.0/combined_30.txt', 'data/preprocessed.0/combined_31.txt', 'data/preprocessed.0/combined_25.txt', 'data/preprocessed.0/combined_19.txt', 'data/preprocessed.0/combined_14.txt', 'data/preprocessed.0/combined_28.txt', 'data/preprocessed.0/combined_29.txt', 'data/preprocessed.0/combined_15.txt', 'data/preprocessed.0/combined_1.txt', 'data/preprocessed.0/combined_3.txt', 'data/preprocessed.0/combined_17.txt', 'data/preprocessed.0/combined_16.txt', 'data/preprocessed.0/combined_2.txt', 'data/preprocessed.0/combined_6.txt', 'data/preprocessed.0/combined_12.txt', 'data/preprocessed.0/combined_13.txt', 'data/preprocessed.0/combined_7.txt', 'data/preprocessed.0/combined_5.txt', 'data/preprocessed.0/combined_11.txt', 'data/preprocessed.0/combined_10.txt', 'data/preprocessed.0/combined_4.txt']
+
+training for epoch  0 
+
+
+Splitting file 1 of 36: data/preprocessed.0/combined_9.txt into a 0.9 split between train and validation
+
+and Tokenizing file 1 of 36: data/preprocessed.0/combined_9.txt
+generated token IDs !
+now chunking tokens for max_length =  1024  stride =  1024
+tokenization done!
+generated token IDs !
+now chunking tokens for max_length =  1024  stride =  1024
+tokenization done!
+Training ...
+Ep 1 (Step 0): Train loss 7.914, Val loss 10.214
+Every effort moves you/8/8/8/8/8/8/8/8/8/8/8/8/8/8/8/8/8/8/8/8/8/8/8/8/8
+^C
+Saved model_checkpoints/model_pg_0_interrupted.pth
+Saved model_checkpoints/model_pg_final.pth
+Traceback (most recent call last):
+  File "/Users/anupkaul/akaul_git/demosthenes-llm/pretraining/gutenberg/gutenberg/pretraining_simple.py", line 283, in <module>
+    plot_losses(epochs_tensor, tokens_seen, train_losses, val_losses, output_dir)
+TypeError: plot_losses() takes 4 positional arguments but 5 were given
+
+

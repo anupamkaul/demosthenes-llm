@@ -28,9 +28,11 @@ import sys, os
 sys.path.append( os.path.join( os.path.dirname(os.path.abspath(__file__)),  '../../../tokenizers/') )
 sys.path.append( os.path.join( os.path.dirname(os.path.abspath(__file__)),  '../../../attention/') )
 sys.path.append( os.path.join( os.path.dirname(os.path.abspath(__file__)),  '../../../llm-infra/') )
+sys.path.append( os.path.join( os.path.dirname(os.path.abspath(__file__)),  '../../../pretraining') )
 
-from GPTModel import GPTModel
+from GPTModel import GPTModel  
 from dataloaderV1 import create_dataloader_v1
+from utils_loss import calc_loss_batch, evaluate_model, generate_and_print_sample, plot_losses
 
 
 def read_text_file(file_path):
