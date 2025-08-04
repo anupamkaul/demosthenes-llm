@@ -100,6 +100,7 @@ def train_model_simple(model, optimizer, device, n_epochs,
     try:
         for epoch in range(n_epochs):
             print("\ntraining for epoch ", epoch, " of ", n_epochs, "\n")
+            print("batch size ", batch_size)
 
             # Iterate over the books in the training corpus
             for index, file_path in enumerate(all_files, 1):
@@ -125,13 +126,17 @@ def train_model_simple(model, optimizer, device, n_epochs,
                     num_workers=0
                 )
 
+                print("Train loader:")
+                for x,y in train_loader:
+                    print(x.shape, y.shape)
+
                 print("\nTraining ...")
                 model.train()  # set up training params
 
                 # training loop
 
                 for input_batch, target_batch in train_loader:
-                    print("debug: len input_batch: ", len(input_batch), "len target_batch: ", len(target_batch), "len train_loader: ", len(train_loader))
+                    print("\ndebug: len input_batch: ", len(input_batch), "len target_batch: ", len(target_batch), "len train_loader: ", len(train_loader))
                     optimizer.zero_grad()
                     loss = calc_loss_batch(input_batch, target_batch, model, device)
                     loss.backward()
@@ -153,9 +158,13 @@ def train_model_simple(model, optimizer, device, n_epochs,
 
                     # Generate text passage
                     if global_step % print_sample_iter == 0:
+
+                        print("\ngenerate and print sample..")
                         generate_and_print_sample(
                             model, tokenizer, device, start_context
                         )
+
+                print("\nout of input_batch inner for loop\n")
 
                 if global_step % save_ckpt_freq:
 
@@ -207,6 +216,7 @@ if __name__ == "__main__":
     parser.add_argument('--lr', type=float, default=5e-4,
                         help='Learning rate for the optimizer')
     parser.add_argument('--batch_size', type=int, default=4,
+    #parser.add_argument('--batch_size', type=int, default=1024, # override here (mem resource limit reached)
                         help='Batch size for training')
     parser.add_argument('--debug', type=bool, default=False,
                         help='Uses a very small model for debugging purposes')

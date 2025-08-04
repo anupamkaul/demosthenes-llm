@@ -23,6 +23,8 @@ def train_model_simple(model, train_loader, val_loader, optimizer, device, num_e
         model.train() # set up training mode, i.e. enable dropouts, batch normalization (more memory computes)
     
         for input_batch, target_batch in train_loader:
+
+            print("debug: len input batch: ", len(input_batch), " len target batch: ", len(target_batch), " len train loader : ", len(train_loader))
  
             # reset the loss gradient from the previous batch iteration
             optimizer.zero_grad()                             # reset loss gradients from previous batch iteration
@@ -40,6 +42,8 @@ def train_model_simple(model, train_loader, val_loader, optimizer, device, num_e
 
             tokens_seen += input_batch.numel()
             global_step += 1
+
+            print("debug: global_step : ", global_step, " tokens seen: ", tokens_seen)
 
             # optional evaluation step
             if global_step % eval_freq == 0:                  # optional evaluation step
@@ -62,6 +66,7 @@ def train_model_simple(model, train_loader, val_loader, optimizer, device, num_e
 
                 # input("Press enter to continue..")
 
+        print("\nout of inner input_batch loop..")
         # print a sample text after each iteration to show visual/understandable progress (!) 
         generate_and_print_sample(model, tokenizer, device, start_context) # print a sample text after each epoch
 
@@ -91,6 +96,7 @@ def evaluate_model(model, train_loader, val_loader, device, eval_iter):
 
 def generate_and_print_sample(model, tokenizer, device, start_context):
 
+    print("generate and print sample..\n")
     model.eval() # turn off training mode (see above)
 
     context_size = model.pos_emb.weight.shape[0]
