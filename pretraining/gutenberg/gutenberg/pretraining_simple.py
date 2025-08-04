@@ -97,6 +97,13 @@ def train_model_simple(model, optimizer, device, n_epochs,
     global_step = -1
     start_time = time.time()
 
+    # batch_size of 4 is about 38K global_step iterations (to cover the entirety of training set data, via sliding window)
+    # this hack is for shortening the data seen, albiet at the cost of accuracy. But I will get a fuller picture from all of the books
+    # in a shorter amount of time (i.e. training should complete in number_epochs * max_eval_limit * number of new-indexed books)
+    # additional TODO is to save the state of files, epochs, and actual input batches to prevent biasing when restarting the program
+
+    max_eval_limit = 100
+
     try:
         for epoch in range(n_epochs):
             print("\ntraining for epoch ", epoch, " of ", n_epochs, "\n")
@@ -164,6 +171,17 @@ def train_model_simple(model, optimizer, device, n_epochs,
                             model, tokenizer, device, start_context
                         )
 
+                    if global_step % max_eval_limit == 0:
+
+                        print("reached max eval limit, moving to next book\n")
+
+                        print("\ngenerate and print sample..")
+                        generate_and_print_sample(
+                            model, tokenizer, device, start_context
+                        )
+
+                        continue # skip the rest of the iterations and exit loop
+
                 print("\nout of input_batch inner for loop\n")
 
                 if global_step % save_ckpt_freq:
@@ -216,6 +234,7 @@ if __name__ == "__main__":
     parser.add_argument('--lr', type=float, default=5e-4,
                         help='Learning rate for the optimizer')
     parser.add_argument('--batch_size', type=int, default=4,
+    #parser.add_argument('--batch_size', type=int, default=256,
     #parser.add_argument('--batch_size', type=int, default=1024, # override here (mem resource limit reached)
                         help='Batch size for training')
     parser.add_argument('--debug', type=bool, default=False,
