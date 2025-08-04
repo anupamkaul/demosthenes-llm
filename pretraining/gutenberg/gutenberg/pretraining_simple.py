@@ -180,7 +180,7 @@ def train_model_simple(model, optimizer, device, n_epochs,
                             model, tokenizer, device, start_context
                         )
 
-                        continue # skip the rest of the iterations and exit loop
+                        break # skip the rest of the iterations and exit loop
 
                 print("\nout of input_batch inner for loop\n")
 
