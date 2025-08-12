@@ -130,7 +130,7 @@ def train_model_simple(model, optimizer, device, n_epochs,
                 print("new index: ", index, "file path: ", filepath)
                 
 
-            sys.exit()
+            #sys.exit()
 
             # Iterate over the books in the training corpus
             for index, file_path in enumerate(all_files, 1):
@@ -158,9 +158,20 @@ def train_model_simple(model, optimizer, device, n_epochs,
                     num_workers=0
                 )
 
-                print("Train loader:")
+                print("Train loader:") #x, y are input_batch and target_batch..
                 for x,y in train_loader:
                     print(x.shape, y.shape)
+
+                # for input, target batches, since they increase sequentially by
+                # 1 iterator each time (they are basically different by 1, and both
+                # have the same stride window), we will save a counter and then skip
+                # the next for loop by the same counter (saved as a sv_input_target_batch)
+                # by using continue. That should bring us to the saved state and restore
+                # the for loop as if nothing happened. Its the same iterator principle, and
+                # we don't need to care "what" the iterator setup is ; the for loop is already
+                # doing that for us. This "counter" will always be less than either the full
+                # length of the loop or less than max_iter. In fact I can get rid of max_iter
+                # as well and do an actual training that is saved/restored...
 
                 print("\nTraining ...")
                 model.train()  # set up training params
@@ -169,6 +180,15 @@ def train_model_simple(model, optimizer, device, n_epochs,
 
                 for input_batch, target_batch in train_loader:
                     print("\ndebug: len input_batch: ", len(input_batch), "len target_batch: ", len(target_batch), "len train_loader: ", len(train_loader))
+
+                    # we will need to save this input_batch, target_batch iterations and restart
+                    # without losing context, post an interruption. How big are these anyways?
+
+                    print("input batch: ", input_batch, "\ntarget batch : ", target_batch)
+                    input()
+                    continue
+                    #sys.exit()
+
                     optimizer.zero_grad()
                     loss = calc_loss_batch(input_batch, target_batch, model, device)
                     loss.backward()
