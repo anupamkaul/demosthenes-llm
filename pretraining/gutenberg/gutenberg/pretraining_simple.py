@@ -86,6 +86,19 @@ def print_eta(start_time, book_start_time, index, total_files):
           f"\nTotal time elapsed {total_h}h {total_m}m {total_s}s"
           f"\nETA for remaining books: {eta_h}h {eta_m}m {eta_s}s")
 
+import json
+def save_training_state(file_enum, input_batch_counter, tokens_seen, global_step, filename="training_state.json"):
+    """ save training state to json, to resume an interrupted training for the LLM """
+    
+    state = {
+        "file_enum": file_enum,
+        "input_batch_counter": input_batch_counter,
+        "tokens_seen" : tokens_seen,
+        "global_step": global_step
+    }
+    with open(filename, 'w') as f:
+        json.dump(state, f) 
+    print(f"Training state saved for file index {file_enum} batch_counter  {input_batch_counter}")
 
 def train_model_simple(model, optimizer, device, n_epochs,
                        eval_freq, eval_iter, print_sample_iter, start_context,
@@ -256,6 +269,9 @@ def train_model_simple(model, optimizer, device, n_epochs,
         torch.save(model.state_dict(), model_file_name)
         print(f"Saved {model_file_name}")
 
+        # save in-progress training state
+        save_training_state(1, 2, 3, 4)
+
     return train_losses, val_losses, track_tokens_seen
 
 
@@ -319,11 +335,21 @@ if __name__ == "__main__":
     torch.manual_seed(123)
     model = GPTModel(GPT_CONFIG_124M)
 
-    # load previously saved instance of the model (to continue training)
+    # load previously saved instance of the model (to continue training) and the training states
     # enable this once I save it first time (I don't know the format, so let the output drive the input)
 
-    model.load_state_dict(torch.load("model_checkpoints/model_pg_final.pth", map_location=device))
-    print("loaded previously saved model to continue training..")
+    try:
+        model.load_state_dict(torch.load("model_checkpoints/model_pg_final.pth", map_location=device))
+        print("loaded previously saved model to continue training..")
+    except FileNotFoundError:
+        print("model not found on disk. monitor as a one time thing, error out if repeats")
+
+    try:
+        with open("training_state.json", 'r') as f:
+            saved_state = json.load(f)
+            print("loading training state: ", saved_state)
+    except FileNotFoundError:
+            print("No training saved states ! Start training from the beginning")
 
     model.to(device)
     optimizer = torch.optim.AdamW(model.parameters(), lr=args.lr, weight_decay=0.1)
