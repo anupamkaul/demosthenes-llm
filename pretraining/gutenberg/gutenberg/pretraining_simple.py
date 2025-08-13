@@ -119,41 +119,34 @@ def train_model_simple(model, optimizer, device, n_epochs,
 
     try:
         for epoch in range(n_epochs):
+
             print("\ntraining for epoch ", epoch, " of ", n_epochs, "\n")
             print("batch size ", batch_size)
 
-            # upon interruption, we save index in the following loop and
-            # we restore it as sv_start_file_enum. We skip the enumeration
-            # via continue till we land on the right book index
-            sv_start_file_enum=1 # default enum index is 1
+            # Iterate over the books in the training corpus
+            for index, file_path in enumerate(all_files, 1):
 
-            # enumerate with start_index just moves the start index but retains the
-            # full iterable list (which is not what we're looking for). So we will use
-            # sv_ counter to skip to the actual iterable, while still starting the enumeration
-            # as 1. (This is a basic limitation of python's enumeration construct)
+                # upon interruption, we save index in the following loop and
+                # we restore it as sv_start_file_enum. We skip the enumeration
+                # via continue till we land on the right book index
 
-            for ele in enumerate(all_files, 1):
-                print(ele)
-
-            for index, filepath in enumerate(all_files, 1):
+                # enumerate with start_index just moves the start index but retains the
+                # full iterable list (which is not what we're looking for). So we will use
+                # sv_ counter to skip to the actual iterable, while still starting the enumeration
+                # as 1. (This is a basic limitation of python's enumeration construct)
 
                 if (index < sv_start_file_enum):
                     continue
 
-                print("new index: ", index, "file path: ", filepath)
-                
-
-            #sys.exit()
-
-            # Iterate over the books in the training corpus
-            for index, file_path in enumerate(all_files, 1):
+                print("new index: ", index, "file path: ", file_path, "<ENTER>")
+                input()
+                continue
 
                 book_start_time = time.time()
                 text_data = read_text_file(file_path) + " <|endoftext|> "
 
                 print(f"\nSplitting file {index} of {total_files}: {file_path} into a {train_ratio} split between train and validation")
                 print(f"\nand Tokenizing file {index} of {total_files}: {file_path}")
-
 
                 # tokenization happens in create_dataloaders, which calls create_dataloader_v1
                 # (defined in tokenizers/dataloaderV1.py) which calls GPTDatasetV1
@@ -270,7 +263,8 @@ def train_model_simple(model, optimizer, device, n_epochs,
         print(f"Saved {model_file_name}")
 
         # save in-progress training state
-        save_training_state(1, 2, 3, 4)
+        save_training_state(index, 2, 3, 4)
+        print(f"Saved training state")
 
     return train_losses, val_losses, track_tokens_seen
 
@@ -348,8 +342,12 @@ if __name__ == "__main__":
         with open("training_state.json", 'r') as f:
             saved_state = json.load(f)
             print("loading training state: ", saved_state)
+            # load the variables
+            sv_start_file_enum = saved_state["file_enum"]
+
     except FileNotFoundError:
             print("No training saved states ! Start training from the beginning")
+            sv_start_file_enum=1
 
     model.to(device)
     optimizer = torch.optim.AdamW(model.parameters(), lr=args.lr, weight_decay=0.1)
