@@ -100,6 +100,12 @@ def save_training_state(file_enum, input_batch_counter, tokens_seen, global_step
         json.dump(state, f) 
     print(f"Training state saved for file index {file_enum} batch_counter  {input_batch_counter}")
 
+
+# global vars, since I modify them inside the training loop
+# (another python kludge, and positionally I need to declare it prior to its usage)
+
+sv_start_file_enum = 1
+
 def train_model_simple(model, optimizer, device, n_epochs,
                        eval_freq, eval_iter, print_sample_iter, start_context,
                        output_dir, save_ckpt_freq, tokenizer,
@@ -135,6 +141,7 @@ def train_model_simple(model, optimizer, device, n_epochs,
                 # sv_ counter to skip to the actual iterable, while still starting the enumeration
                 # as 1. (This is a basic limitation of python's enumeration construct)
 
+                global sv_start_file_enum
                 if (index < sv_start_file_enum):
                     continue
 
@@ -164,9 +171,9 @@ def train_model_simple(model, optimizer, device, n_epochs,
                     num_workers=0
                 )
 
-                print("Train loader:") #x, y are input_batch and target_batch..
-                for x,y in train_loader:
-                    print(x.shape, y.shape)
+                #print("Train loader:") #x, y are input_batch and target_batch..
+                #for x,y in train_loader:
+                #    print(x.shape, y.shape)
 
                 # for input, target batches, since they increase sequentially by
                 # 1 iterator each time (they are basically different by 1, and both
@@ -193,7 +200,6 @@ def train_model_simple(model, optimizer, device, n_epochs,
                     print("input batch: ", input_batch, "\ntarget batch : ", target_batch)
                     input()
                     continue
-                    #sys.exit()
 
                     optimizer.zero_grad()
                     loss = calc_loss_batch(input_batch, target_batch, model, device)
@@ -250,6 +256,16 @@ def train_model_simple(model, optimizer, device, n_epochs,
 
                 print("some stats: ")
                 print_eta(start_time, book_start_time, index, total_files)
+
+            # this is the end of the first primary loop (epoch). Here is where
+            # index has to be zero (not anywhere else) to synchronize with the
+            # saved states and to prevent newer epochs from starting with the 
+            # maxed out index. Index is naturally going to be recalculated to zero
+            # following the flow mechanics. This is either where we save and load
+            # again or initialize the saved enum to zero
+
+            print("switching to next epoch for training")
+            sv_start_file_enum = 1
 
     except KeyboardInterrupt:
 
@@ -343,11 +359,13 @@ if __name__ == "__main__":
             saved_state = json.load(f)
             print("loading training state: ", saved_state)
             # load the variables
-            sv_start_file_enum = saved_state["file_enum"]
+            sv_start_file_enum    = saved_state["file_enum"]
+            sv_input_batch_counter= saved_state["input_batch_counter"]
 
     except FileNotFoundError:
             print("No training saved states ! Start training from the beginning")
             sv_start_file_enum=1
+            sv_input_batch_counter=1
 
     model.to(device)
     optimizer = torch.optim.AdamW(model.parameters(), lr=args.lr, weight_decay=0.1)
