@@ -136,4 +136,144 @@ Traceback (most recent call last):
     plot_losses(epochs_tensor, tokens_seen, train_losses, val_losses, output_dir)
 TypeError: plot_losses() takes 4 positional arguments but 5 were given
 
+--> Some BUGS
+: showing with saved variables that when global counter is 0 the loop will quit (max_eval_limit)
+: if loop is interrupted (Ctl-C) during tokenization of the previous file then previous loop's batch counter is saved (needs to be fixed to zero)
+
+(base) anupkaul@147dda4c0851 gutenberg % python pretraining_simple.py 
+pretraining args:  Namespace(data_dir='data/preprocessed.0', output_dir='model_checkpoints', n_epochs=10, print_sample_iter=5, eval_freq=5, save_ckpt_freq=10, lr=0.0005, batch_size=4, debug=False)
+device for training:  cpu
+is MPS available:  False
+loaded previously saved model to continue training..
+loading training state:  {'n_epochs': 5, 'file_enum': 20, 'input_batch_counter': 0, 'tokens_seen': 3, 'global_step': 4}
+Total files for training: 36
+Files:
+ ['data/preprocessed.0/combined_9.txt', 'data/preprocessed.0/combined_21.txt', 'data/preprocessed.0/combined_35.txt', 'data/preprocessed.0/combined_34.txt', 'data/preprocessed.0/combined_20.txt', 'data/preprocessed.0/combined_8.txt', 'data/preprocessed.0/combined_36.txt', 'data/preprocessed.0/combined_22.txt', 'data/preprocessed.0/combined_23.txt', 'data/preprocessed.0/combined_33.txt', 'data/preprocessed.0/combined_27.txt', 'data/preprocessed.0/combined_26.txt', 'data/preprocessed.0/combined_32.txt', 'data/preprocessed.0/combined_18.txt', 'data/preprocessed.0/combined_24.txt', 'data/preprocessed.0/combined_30.txt', 'data/preprocessed.0/combined_31.txt', 'data/preprocessed.0/combined_25.txt', 'data/preprocessed.0/combined_19.txt', 'data/preprocessed.0/combined_14.txt', 'data/preprocessed.0/combined_28.txt', 'data/preprocessed.0/combined_29.txt', 'data/preprocessed.0/combined_15.txt', 'data/preprocessed.0/combined_1.txt', 'data/preprocessed.0/combined_3.txt', 'data/preprocessed.0/combined_17.txt', 'data/preprocessed.0/combined_16.txt', 'data/preprocessed.0/combined_2.txt', 'data/preprocessed.0/combined_6.txt', 'data/preprocessed.0/combined_12.txt', 'data/preprocessed.0/combined_13.txt', 'data/preprocessed.0/combined_7.txt', 'data/preprocessed.0/combined_5.txt', 'data/preprocessed.0/combined_11.txt', 'data/preprocessed.0/combined_10.txt', 'data/preprocessed.0/combined_4.txt']
+
+training for epoch  5  of  10 
+
+batch size  4
+new index:  20 file path:  data/preprocessed.0/combined_14.txt <ENTER>
+Reading and splitting file 20 of 36: data/preprocessed.0/combined_14.txt into a 0.9 split between train and validation
+Tokenizing file 20 of 36: data/preprocessed.0/combined_14.txt
+generated token IDs !
+now chunking tokens for max_length =  1024  stride =  1024
+tokenization done!
+generated token IDs !
+now chunking tokens for max_length =  1024  stride =  1024
+tokenization done!
+
+Training ...
+1  input batch:  tensor([[  447,   247,    82,  ...,   286,  2677, 13514],
+        [  198,   198, 27034,  ...,    40,  4601,   326],
+        [25813,    13, 14423,  ...,   220,   220,   220],
+        [  250,  6690,   349,  ...,  2256,    11,   447]]) 
+target batch :  tensor([[  247,    82,   198,  ...,  2677, 13514,    13],
+        [  198, 27034,    13,  ...,  4601,   326,   673],
+        [   13, 14423,   717,  ...,   220,   220,   220],
+        [ 6690,   349, 26448,  ...,    11,   447,   251]])
+global step:  0  tokens seen:  4096
+evaluating model, noting train + validation loss (interim)
+Ep 6 (Step 0): Train loss 7.630, Val loss 7.597
+
+generate and print sample..
+Every effort moves you                                                  
+reached max eval limit, moving to next book
+
+
+generate and print sample..
+Every effort moves you                                                  
+
+out of input_batch inner for loop
+
+some stats: 
+Book processed 0h 4m 52s
+Total time elapsed 0h 4m 52s
+ETA for remaining books: 0h 3m 54s
+new index:  21 file path:  data/preprocessed.0/combined_28.txt <ENTER>
+Reading and splitting file 21 of 36: data/preprocessed.0/combined_28.txt into a 0.9 split between train and validation
+Tokenizing file 21 of 36: data/preprocessed.0/combined_28.txt
+generated token IDs !
+now chunking tokens for max_length =  1024  stride =  1024
+tokenization done!
+generated token IDs !
+now chunking tokens for max_length =  1024  stride =  1024
+tokenization done!
+
+Training ...
+1  input batch:  tensor([[ 4548, 17809, 24685,  ...,    82,   551,  8591],
+        [12421,   198,  2385,  ...,  5173,   408, 11033],
+        [   11,  6273,   415,  ...,    83,   220, 25125],
+        [  361,   417,   568,  ...,  1931,  4169,  1611]]) 
+target batch :  tensor([[17809, 24685, 16175,  ...,   551,  8591, 13808],
+        [  198,  2385,    71,  ...,   408, 11033, 11033],
+        [ 6273,   415,   257,  ...,   220, 25125,  2634],
+        [  417,   568,    71,  ...,  4169,  1611,   677]])
+global step:  1  tokens seen:  8192
+2  input batch:  tensor([[  257,   385,  4587,  ...,  6732, 11033,  2261],
+        [ 8073,   287,   644,  ...,   607,  1282,   287],
+        [ 3656,    11,   447,  ...,    11,   290,   198],
+        [  198,   379,   262,  ...,   338, 11114,   290]]) 
+target batch :  tensor([[  385,  4587,   198,  ..., 11033,  2261,   259],
+        [  287,   644,   550,  ...,  1282,   287,    11],
+        [   11,   447,   251,  ...,   290,   198, 15344],
+        [  379,   262,  2526,  ..., 11114,   290,  2842]])
+global step:  2  tokens seen:  12288
+3  input batch:  tensor([[10034, 12409,  2489,  ..., 12931,   422,   438],
+        [  290, 13002,   508,  ...,   198,   198,     1],
+        [ 8358,   269,     6,  ..., 12797,  8358,   198],
+        [ 2584,    76, 11033,  ...,    13, 22673,   289]]) 
+target batch :  tensor([[12409,  2489,    11,  ...,   422,   438,   259],
+        [13002,   508, 10408,  ...,   198,     1, 16676],
+        [  269,     6,   395,  ...,  8358,   198,  6880],
+        [   76, 11033,    83,  ..., 22673,   289, 11033]])
+global step:  3  tokens seen:  16384
+4  input batch:  tensor([[  306,    11,  1165,  ...,   379,   257,  3084],
+        [  257,  3105,  2046,  ..., 42200,  8073, 11496],
+        [ 4928,    11,   340,  ...,  5822,   198, 32826],
+        [  262,  1597,   286,  ..., 20374,    26,   340]]) 
+target batch :  tensor([[   11,  1165,    11,  ...,   257,  3084,   655],
+        [ 3105,  2046,   287,  ...,  8073, 11496,   198],
+        [   11,   340,   373,  ...,   198, 32826,   340],
+        [ 1597,   286,  1204,  ...,    26,   340,  2058]])
+global step:  4  tokens seen:  20480
+5  input batch:  tensor([[  447,   247,    82,  ...,   611,   655, 49975],
+        [  477,   268,  6184,  ...,  3693, 23516,    60],
+        [ 6058,  3754,   198,  ...,   500,   373, 10032],
+        [  198,  6214,   264,  ...,  2185,    11,   921]]) 
+target batch :  tensor([[  247,    82,   644,  ...,   655, 49975,    26],
+        [  268,  6184,   120,  ..., 23516,    60,   198],
+        [ 3754,   198,  1659,  ...,   373, 10032,   286],
+        [ 6214,   264,    13,  ...,    11,   921,  9365]])
+global step:  5  tokens seen:  24576
+evaluating model, noting train + validation loss (interim)
+Ep 6 (Step 5): Train loss 7.011, Val loss 7.464
+
+generate and print sample..
+Every effort moves you                                                  
+reached max eval limit, moving to next book
+
+
+generate and print sample..
+Every effort moves you                                                  
+
+out of input_batch inner for loop
+
+saving model (interim)
+Saved model_checkpoints/model_pg_5.pth
+Saved model_checkpoints/model_pg_final.pth
+some stats: 
+Book processed 0h 9m 2s
+Total time elapsed 0h 13m 55s
+ETA for remaining books: 0h 9m 56s
+new index:  22 file path:  data/preprocessed.0/combined_29.txt <ENTER>
+Reading and splitting file 22 of 36: data/preprocessed.0/combined_29.txt into a 0.9 split between train and validation
+Tokenizing file 22 of 36: data/preprocessed.0/combined_29.txt
+^C
+Saved model_checkpoints/model_pg_5_interrupted.pth
+Saved model_checkpoints/model_pg_final.pth
+Training state saved for epoch 5 file index 22 batch_counter  5
+Saved training state
+Maximum GPU memory allocated: 0.00 GB
+(base) anupkaul@147dda4c0851 gutenberg % 
 

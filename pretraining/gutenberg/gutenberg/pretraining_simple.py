@@ -127,7 +127,8 @@ def train_model_simple(model, optimizer, device, n_epochs,
     # in a shorter amount of time (i.e. training should complete in number_epochs * max_eval_limit * number of new-indexed books)
     # additional TODO is to save the state of files, epochs, and actual input batches to prevent biasing when restarting the program
 
-    max_eval_limit = 100
+    #max_eval_limit = 100
+    max_eval_limit = 5 # for simulation
 
     try:
         for epoch in range(n_epochs):
@@ -156,14 +157,19 @@ def train_model_simple(model, optimizer, device, n_epochs,
                     continue
 
                 print("new index: ", index, "file path: ", file_path, "<ENTER>")
+
+                '''
+                # training loop simulation aid
                 input()
                 continue
+                '''
+
+                print(f"Reading and splitting file {index} of {total_files}: {file_path} into a {train_ratio} split between train and validation")
 
                 book_start_time = time.time()
                 text_data = read_text_file(file_path) + " <|endoftext|> "
 
-                print(f"\nSplitting file {index} of {total_files}: {file_path} into a {train_ratio} split between train and validation")
-                print(f"\nand Tokenizing file {index} of {total_files}: {file_path}")
+                print(f"Tokenizing file {index} of {total_files}: {file_path}")
 
                 # tokenization happens in create_dataloaders, which calls create_dataloader_v1
                 # (defined in tokenizers/dataloaderV1.py) which calls GPTDatasetV1
@@ -181,14 +187,16 @@ def train_model_simple(model, optimizer, device, n_epochs,
                     num_workers=0
                 )
 
-                #print("Train loader:") #x, y are input_batch and target_batch..
-                #for x,y in train_loader:
-                #    print(x.shape, y.shape)
+                '''
+                print("Train loader:") #x, y are input_batch and target_batch..
+                for x,y in train_loader:
+                    print(x.shape, y.shape)
+                '''
 
                 # for input, target batches, since they increase sequentially by
                 # 1 iterator each time (they are basically different by 1, and both
                 # have the same stride window), we will save a counter and then skip
-                # the next for loop by the same counter (saved as a sv_input_target_batch)
+                # the next for loop by the same counter (saved as a sv_input_batch_counter)
                 # by using continue. That should bring us to the saved state and restore
                 # the for loop as if nothing happened. Its the same iterator principle, and
                 # we don't need to care "what" the iterator setup is ; the for loop is already
@@ -201,15 +209,29 @@ def train_model_simple(model, optimizer, device, n_epochs,
 
                 # training loop
 
+                # needs these vars to save and restore training states when interrupted
+                input_batch_counter = 0
+                global sv_input_batch_counter
+
                 for input_batch, target_batch in train_loader:
-                    print("\ndebug: len input_batch: ", len(input_batch), "len target_batch: ", len(target_batch), "len train_loader: ", len(train_loader))
+                    input_batch_counter += 1
+
+                    # a good debug to indicate how long this loop will run [ len(train_loader} ]
+                    # print("\ndebug: len input_batch: ", len(input_batch), "len target_batch: ", len(target_batch), "len train_loader: ", len(train_loader))
 
                     # we will need to save this input_batch, target_batch iterations and restart
                     # without losing context, post an interruption. How big are these anyways?
 
-                    print("input batch: ", input_batch, "\ntarget batch : ", target_batch)
+                    if (input_batch_counter < sv_input_batch_counter):
+                        continue
+
+                    print(input_batch_counter, " input batch: ", input_batch, "\ntarget batch : ", target_batch)
+
+                    '''
+                    # training loop simulation aid
                     input()
                     continue
+                    '''
 
                     optimizer.zero_grad()
                     loss = calc_loss_batch(input_batch, target_batch, model, device)
@@ -238,6 +260,7 @@ def train_model_simple(model, optimizer, device, n_epochs,
                             model, tokenizer, device, start_context
                         )
 
+                    # bug : an early exit if global_step=0
                     if global_step % max_eval_limit == 0:
 
                         print("reached max eval limit, moving to next book\n")
@@ -285,7 +308,7 @@ def train_model_simple(model, optimizer, device, n_epochs,
         print(f"Saved {model_file_name}")
 
         # save in-progress training state
-        save_training_state(epoch, index, 2, 3, 4)
+        save_training_state(epoch, index, input_batch_counter, 3, 4)
         print(f"Saved training state")
 
 
@@ -301,7 +324,7 @@ def train_model_simple(model, optimizer, device, n_epochs,
         print(f"Saved {model_file_name}")
 
         # save in-progress training state
-        save_training_state(epoch, index, 2, 3, 4)
+        save_training_state(epoch, index, input_batch_counter, 3, 4)
         print(f"Saved training state")
 
     return train_losses, val_losses, track_tokens_seen
