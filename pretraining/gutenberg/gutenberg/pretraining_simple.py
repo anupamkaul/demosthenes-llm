@@ -87,10 +87,11 @@ def print_eta(start_time, book_start_time, index, total_files):
           f"\nETA for remaining books: {eta_h}h {eta_m}m {eta_s}s")
 
 import json
-def save_training_state(file_enum, input_batch_counter, tokens_seen, global_step, filename="training_state.json"):
+def save_training_state(n_epochs, file_enum, input_batch_counter, tokens_seen, global_step, filename="training_state.json"):
     """ save training state to json, to resume an interrupted training for the LLM """
     
     state = {
+        "n_epochs": n_epochs,
         "file_enum": file_enum,
         "input_batch_counter": input_batch_counter,
         "tokens_seen" : tokens_seen,
@@ -98,13 +99,18 @@ def save_training_state(file_enum, input_batch_counter, tokens_seen, global_step
     }
     with open(filename, 'w') as f:
         json.dump(state, f) 
-    print(f"Training state saved for file index {file_enum} batch_counter  {input_batch_counter}")
+    print(f"Training state saved for epoch {n_epochs} file index {file_enum} batch_counter  {input_batch_counter}")
 
 
-# global vars, since I modify them inside the training loop
+# training state is saved in the following variables
+# these are global vars, since I modify them inside the training loop
 # (another python kludge, and positionally I need to declare it prior to its usage)
 
-sv_start_file_enum = 1
+sv_n_epochs = 0            # for epochs
+sv_start_file_enum = 1     # for file index (every 500MB clubbed text file) 
+sv_input_batch_counter = 1   # for current input and target batches
+sv_tokens_seen = 0         # for token_seen
+sv_global_step = 0         # the global step var in the training loop
 
 def train_model_simple(model, optimizer, device, n_epochs,
                        eval_freq, eval_iter, print_sample_iter, start_context,
@@ -125,6 +131,10 @@ def train_model_simple(model, optimizer, device, n_epochs,
 
     try:
         for epoch in range(n_epochs):
+
+            global sv_n_epochs
+            if (epoch < sv_n_epochs):
+                continue
 
             print("\ntraining for epoch ", epoch, " of ", n_epochs, "\n")
             print("batch size ", batch_size)
@@ -267,6 +277,18 @@ def train_model_simple(model, optimizer, device, n_epochs,
             print("switching to next epoch for training")
             sv_start_file_enum = 1
 
+        # this is where the final for loop ends for training
+        print("END OF TRAINING")
+        # save the model
+        model_file_name = output_dir / "model_pg_final.pth"
+        torch.save(model.state_dict(), model_file_name)
+        print(f"Saved {model_file_name}")
+
+        # save in-progress training state
+        save_training_state(epoch, index, 2, 3, 4)
+        print(f"Saved training state")
+
+
     except KeyboardInterrupt:
 
         file_name = output_dir / f"model_pg_{global_step}_interrupted.pth"
@@ -279,7 +301,7 @@ def train_model_simple(model, optimizer, device, n_epochs,
         print(f"Saved {model_file_name}")
 
         # save in-progress training state
-        save_training_state(index, 2, 3, 4)
+        save_training_state(epoch, index, 2, 3, 4)
         print(f"Saved training state")
 
     return train_losses, val_losses, track_tokens_seen
@@ -359,11 +381,13 @@ if __name__ == "__main__":
             saved_state = json.load(f)
             print("loading training state: ", saved_state)
             # load the variables
+            sv_n_epochs           = saved_state["n_epochs"]
             sv_start_file_enum    = saved_state["file_enum"]
             sv_input_batch_counter= saved_state["input_batch_counter"]
 
     except FileNotFoundError:
             print("No training saved states ! Start training from the beginning")
+            sv_n_epochs=0
             sv_start_file_enum=1
             sv_input_batch_counter=1
 
