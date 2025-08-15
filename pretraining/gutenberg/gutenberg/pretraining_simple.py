@@ -119,7 +119,7 @@ def train_model_simple(model, optimizer, device, n_epochs,
 
     train_losses, val_losses, track_tokens_seen = [], [], []
     tokens_seen = 0
-    global_step = -1
+    global_step = 0 
     start_time = time.time()
 
     # batch_size of 4 is about 38K global_step iterations (to cover the entirety of training set data, via sliding window)
@@ -128,7 +128,7 @@ def train_model_simple(model, optimizer, device, n_epochs,
     # additional TODO is to save the state of files, epochs, and actual input batches to prevent biasing when restarting the program
 
     #max_eval_limit = 100
-    max_eval_limit = 5 # for simulation
+    max_eval_limit = 3 # for simulation
 
     try:
         for epoch in range(n_epochs):
@@ -157,6 +157,15 @@ def train_model_simple(model, optimizer, device, n_epochs,
                     continue
 
                 print("new index: ", index, "file path: ", file_path, "<ENTER>")
+
+                # need these vars to save and restore training states when interrupted
+
+                global sv_input_batch_counter
+                # first time interrupts (on file read, tokenization) should preserve saved batch states
+                if index == sv_start_file_enum: 
+                    input_batch_counter = sv_input_batch_counter
+                else:
+                    input_batch_counter = 0
 
                 '''
                 # training loop simulation aid
@@ -209,10 +218,7 @@ def train_model_simple(model, optimizer, device, n_epochs,
 
                 # training loop
 
-                # needs these vars to save and restore training states when interrupted
                 input_batch_counter = 0
-                global sv_input_batch_counter
-
                 for input_batch, target_batch in train_loader:
                     input_batch_counter += 1
 
@@ -260,7 +266,6 @@ def train_model_simple(model, optimizer, device, n_epochs,
                             model, tokenizer, device, start_context
                         )
 
-                    # bug : an early exit if global_step=0
                     if global_step % max_eval_limit == 0:
 
                         print("reached max eval limit, moving to next book\n")
