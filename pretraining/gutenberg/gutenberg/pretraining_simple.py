@@ -99,7 +99,7 @@ def save_training_state(n_epochs, file_enum, input_batch_counter, tokens_seen, g
     }
     with open(filename, 'w') as f:
         json.dump(state, f) 
-    print(f"Training state saved for epoch {n_epochs} file index {file_enum} batch_counter  {input_batch_counter}")
+    print(f"Training state saved for epoch {n_epochs} file index {file_enum} batch_counter  {input_batch_counter} tokens {tokens_seen} global_step {global_step}")
 
 
 # training state is saved in the following variables
@@ -127,8 +127,14 @@ def train_model_simple(model, optimizer, device, n_epochs,
     # in a shorter amount of time (i.e. training should complete in number_epochs * max_eval_limit * number of new-indexed books)
     # additional TODO is to save the state of files, epochs, and actual input batches to prevent biasing when restarting the program
 
-    #max_eval_limit = 100
-    max_eval_limit = 3 # for simulation
+    max_eval_limit = 1000
+    #max_eval_limit = 3 # for simulation
+
+    global sv_global_step
+    global_step = sv_global_step
+
+    global sv_tokens_seen
+    tokens_seen = sv_tokens_seen
 
     try:
         for epoch in range(n_epochs):
@@ -313,7 +319,7 @@ def train_model_simple(model, optimizer, device, n_epochs,
         print(f"Saved {model_file_name}")
 
         # save in-progress training state
-        save_training_state(epoch, index, input_batch_counter, 3, 4)
+        save_training_state(epoch, index, input_batch_counter, tokens_seen, global_step)
         print(f"Saved training state")
 
 
@@ -329,7 +335,7 @@ def train_model_simple(model, optimizer, device, n_epochs,
         print(f"Saved {model_file_name}")
 
         # save in-progress training state
-        save_training_state(epoch, index, input_batch_counter, 3, 4)
+        save_training_state(epoch, index, input_batch_counter, tokens_seen, global_step)
         print(f"Saved training state")
 
     return train_losses, val_losses, track_tokens_seen
@@ -412,12 +418,16 @@ if __name__ == "__main__":
             sv_n_epochs           = saved_state["n_epochs"]
             sv_start_file_enum    = saved_state["file_enum"]
             sv_input_batch_counter= saved_state["input_batch_counter"]
+            sv_tokens_seen        = saved_state["tokens_seen"]
+            sv_global_step        = saved_state["global_step"]
 
     except FileNotFoundError:
             print("No training saved states ! Start training from the beginning")
             sv_n_epochs=0
             sv_start_file_enum=1
             sv_input_batch_counter=1
+            sv_tokens_seen=0
+            sv_global_step=0
 
     model.to(device)
     optimizer = torch.optim.AdamW(model.parameters(), lr=args.lr, weight_decay=0.1)
@@ -440,8 +450,6 @@ if __name__ == "__main__":
     output_dir = Path(args.output_dir)
     output_dir.mkdir(parents=True, exist_ok=True)
 
-    #sys.exit()
-
     train_losses, val_losses, tokens_seen = train_model_simple(
         model, optimizer, device,
         batch_size=args.batch_size,
@@ -455,9 +463,12 @@ if __name__ == "__main__":
         tokenizer=tokenizer
     )
 
-    epochs_tensor = torch.linspace(0, args.n_epochs, len(train_losses))
+    # these are probably worth saving as well, for plotting (arrays)
+    print("tokens_seen[] = ", tokens_seen)
+    print("train_losses[] = ", train_losses)
+    print("val_losses[] = ", val_losses)
 
-    #plot_losses(epochs_tensor, tokens_seen, train_losses, val_losses, output_dir)
+    epochs_tensor = torch.linspace(0, args.n_epochs, len(train_losses))
     plot_losses(epochs_tensor, tokens_seen, train_losses, val_losses)
 
     # save the model
