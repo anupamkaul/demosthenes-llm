@@ -277,3 +277,110 @@ Saved training state
 Maximum GPU memory allocated: 0.00 GB
 (base) anupkaul@147dda4c0851 gutenberg % 
 
+--> LOG on Aug 15 5:06pm (2025)
+
+(base) anupkaul@147dda4c0851 gutenberg % python pretraining_simple.py 
+pretraining args:  Namespace(data_dir='data/preprocessed.0', output_dir='model_checkpoints', n_epochs=10, print_sample_iter=5, eval_freq=5, save_ckpt_freq=10, lr=0.0005, batch_size=4, debug=False)
+device for training:  cpu
+is MPS available:  False
+loaded previously saved model to continue training..
+loading training state:  {'n_epochs': 0, 'file_enum': 2, 'input_batch_counter': 2, 'tokens_seen': 16384, 'global_step': 4}
+Total files for training: 36
+Files:
+ ['data/preprocessed.0/combined_9.txt', 'data/preprocessed.0/combined_21.txt', 'data/preprocessed.0/combined_35.txt', 'data/preprocessed.0/combined_34.txt', 'data/preprocessed.0/combined_20.txt', 'data/preprocessed.0/combined_8.txt', 'data/preprocessed.0/combined_36.txt', 'data/preprocessed.0/combined_22.txt', 'data/preprocessed.0/combined_23.txt', 'data/preprocessed.0/combined_33.txt', 'data/preprocessed.0/combined_27.txt', 'data/preprocessed.0/combined_26.txt', 'data/preprocessed.0/combined_32.txt', 'data/preprocessed.0/combined_18.txt', 'data/preprocessed.0/combined_24.txt', 'data/preprocessed.0/combined_30.txt', 'data/preprocessed.0/combined_31.txt', 'data/preprocessed.0/combined_25.txt', 'data/preprocessed.0/combined_19.txt', 'data/preprocessed.0/combined_14.txt', 'data/preprocessed.0/combined_28.txt', 'data/preprocessed.0/combined_29.txt', 'data/preprocessed.0/combined_15.txt', 'data/preprocessed.0/combined_1.txt', 'data/preprocessed.0/combined_3.txt', 'data/preprocessed.0/combined_17.txt', 'data/preprocessed.0/combined_16.txt', 'data/preprocessed.0/combined_2.txt', 'data/preprocessed.0/combined_6.txt', 'data/preprocessed.0/combined_12.txt', 'data/preprocessed.0/combined_13.txt', 'data/preprocessed.0/combined_7.txt', 'data/preprocessed.0/combined_5.txt', 'data/preprocessed.0/combined_11.txt', 'data/preprocessed.0/combined_10.txt', 'data/preprocessed.0/combined_4.txt']
+
+training for epoch  0  of  10 
+
+batch size  4
+new index:  2 file path:  data/preprocessed.0/combined_21.txt <ENTER>
+Reading and splitting file 2 of 36: data/preprocessed.0/combined_21.txt into a 0.9 split between train and validation
+Tokenizing file 2 of 36: data/preprocessed.0/combined_21.txt
+GPTDatasetV1.py generated token IDs !
+GPTDatasetV1.py chunking tokens for max_length =  1024  stride =  1024
+GPTDatasetV1.py tokenization done!
+GPTDatasetV1.py generated token IDs !
+GPTDatasetV1.py chunking tokens for max_length =  1024  stride =  1024
+GPTDatasetV1.py tokenization done!
+
+Training ...
+2  input batch:  tensor([[  220,  3336, 25703,  ..., 11778,  5223,   523],
+        [  262, 17288,    12,  ..., 10678,   326,   883],
+        [ 4760,    51, 19555,  ...,  4760,    34, 10659],
+        [   11,   373,   262,  ...,    11,   314,   561]]) 
+target batch :  tensor([[ 3336, 25703,  1961,  ...,  5223,   523,   329],
+        [17288,    12,  2256,  ...,   326,   883,   508],
+        [   51, 19555, 15916,  ...,    34, 10659, 15751],
+        [  373,   262,   198,  ...,   314,   561,   407]])
+global step:  5  tokens seen:  20480
+evaluating model, noting train + validation loss (interim)
+Ep 1 (Step 5): Train loss 7.719, Val loss 8.493
+
+generate and print sample..
+Every effort moves you                                                  
+3  input batch:  tensor([[   32, 17139,    38,  ..., 29697,  1404,  4177],
+        [   34,  4760,    34,  ...,  4093,  2246,  4177],
+        [   38,  4760,  5603,  ...,   198,  4760,    38],
+        [ 2085,   268,  1976,  ...,  2304,   831,  4587]]) 
+target batch :  tensor([[17139,    38, 15751,  ...,  1404,  4177,    34],
+        [ 4760,    34,  3838,  ...,  2246,  4177,    38],
+        [ 4760,  5603,  1404,  ...,  4760,    38,  3838],
+        [  268,  1976,    84,  ...,   831,  4587, 35893]])
+global step:  6  tokens seen:  24576
+4  input batch:  tensor([[  290, 46728,   863,  ...,  3843, 11015,  3963],
+        [11190, 15916, 11190,  ...,  6144,  6144,  6144],
+        [15751,    51, 11190,  ...,  3838,  4760, 42197],
+        [   13,   198,   198,  ...,   531,   340,  1625]]) 
+target batch :  tensor([[46728,   863,   416,  ..., 11015,  3963,   350],
+        [15916, 11190, 26861,  ...,  6144,  6144,  6144],
+        [   51, 11190,    51,  ...,  4760, 42197,    51],
+        [  198,   198,   447,  ...,   340,  1625,   422]])
+global step:  7  tokens seen:  28672
+5  input batch:  tensor([[9476,  287, 4145,  ...,  257,  308, 1000],
+        [ 274, 2634,   70,  ...,  317,  479,  494],
+        [  11,  198, 6814,  ...,   11,  288, 1236],
+        [6144, 6144, 6144,  ..., 6144, 6144, 6144]]) 
+target batch :  tensor([[  287,  4145, 41797,  ...,   308,  1000,   355],
+        [ 2634,    70,  9116,  ...,   479,   494,  1360],
+        [  198,  6814, 39683,  ...,   288,  1236,   198],
+        [ 6144,  6144,  6144,  ...,  6144,  6144,  6144]])
+global step:  8  tokens seen:  32768
+6  input batch:  tensor([[ 4177,    51,  4177,  ..., 19555,  4093,  4760],
+        [ 8358,   299,   516,  ...,    26, 12777,   285],
+        [ 4587,  6478,  6607,  ..., 21638,   585, 34984],
+        [ 6144,  6144,  6144,  ...,  6144,  6144,  6144]]) 
+target batch :  tensor([[   51,  4177, 11190,  ...,  4093,  4760, 15916],
+        [  299,   516,  1196,  ..., 12777,   285,     6],
+        [ 6478,  6607,    11,  ...,   585, 34984,  5719],
+        [ 6144,  6144,  6144,  ...,  6144,  6144,  6144]])
+global step:  9  tokens seen:  36864
+7  input batch:  tensor([[  819,   499,  6944,  ...,    11,  1276,    11],
+        [ 3838, 26861,  2246,  ...,  3838,  2246, 46361],
+        [ 2246,  4760,  4825,  ...,  1404,  8141,  1404],
+        [19555,  4177,  4177,  ..., 19555, 29697,  1404]]) 
+target batch :  tensor([[  499,  6944,   290,  ...,  1276,    11,   287],
+        [26861,  2246,  1404,  ...,  2246, 46361, 19555],
+        [ 4760,  4825,  1404,  ...,  8141,  1404,    38],
+        [ 4177,  4177,    51,  ..., 29697,  1404,    38]])
+global step:  10  tokens seen:  40960
+evaluating model, noting train + validation loss (interim)
+Ep 1 (Step 10): Train loss 7.263, Val loss 7.928
+
+generate and print sample..
+Every effort moves you                                                  
+8  input batch:  tensor([[  795,  2865,    64,  ..., 10134,   256, 28749],
+        [  257,  4017, 23151,  ...,   306,   780,   326],
+        [10659,    38, 17922,  ...,    38, 46361,  4760],
+        [  198,  1350, 29811,  ..., 13951,  5899,   290]]) 
+target batch :  tensor([[ 2865,    64,   257,  ...,   256, 28749,  6937],
+        [ 4017, 23151,  2063,  ...,   780,   326,   373],
+        [   38, 17922,    38,  ..., 46361,  4760,    38],
+        [ 1350, 29811,   326,  ...,  5899,   290,  2829]])
+^CSaved model_checkpoints/model_pg_10_interrupted.pth
+Saved model_checkpoints/model_pg_final.pth
+Training state saved for epoch 0 file index 2 batch_counter  8 tokens 40960 global_step 10
+Saved training state
+tokens_seen[] =  [20480, 40960]
+train_losses[] =  [7.718893527984619, 7.262941360473633]
+val_losses[] =  [8.492859840393066, 7.928170204162598]
+Maximum GPU memory allocated: 0.00 GB
+
