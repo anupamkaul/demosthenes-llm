@@ -350,7 +350,7 @@ if __name__ == "__main__":
                         help='Directory containing the training data')
     parser.add_argument('--output_dir', type=str, default='model_checkpoints',
                         help='Directory where the model checkpoints will be saved')
-    parser.add_argument('--n_epochs', type=int, default=10,
+    parser.add_argument('--n_epochs', type=int, default=3,
                         help='Number of epochs to train the model')
     parser.add_argument('--print_sample_iter', type=int, default=5,
                         help='Iterations between printing sample outputs')
