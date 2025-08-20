@@ -1151,3 +1151,349 @@ val_losses[] =  [8.62218952178955, 7.625783920288086, 7.685596942901611, 7.26588
 2025-08-19 16:31:57.349 python[52703:420515] The class 'NSSavePanel' overrides the method identifier.  This method is implemented by class 'NSWindow'
 Maximum GPU memory allocated: 0.00 GB
 (base) anupkaul@147dda4c0851 gutenberg % 
+
+--> Another run on Aug-19 (101 - 130 batches, book 1, epoch 1):
+
+(base) anupkaul@147dda4c0851 gutenberg % python pretraining_simple.py 
+pretraining args:  Namespace(data_dir='data/preprocessed.0', output_dir='model_checkpoints', n_epochs=3, print_sample_iter=5, eval_freq=5, save_ckpt_freq=10, lr=0.0005, batch_size=4, debug=False)
+device for training:  cpu
+is MPS available:  False
+loaded previously saved model to continue training..
+loading training state:  {'n_epochs': 0, 'file_enum': 1, 'input_batch_counter': 101, 'tokens_seen': 409600, 'global_step': 100}
+Total files for training: 36
+Files:
+ ['data/preprocessed.0/combined_9.txt', 'data/preprocessed.0/combined_21.txt', 'data/preprocessed.0/combined_35.txt', 'data/preprocessed.0/combined_34.txt', 'data/preprocessed.0/combined_20.txt', 'data/preprocessed.0/combined_8.txt', 'data/preprocessed.0/combined_36.txt', 'data/preprocessed.0/combined_22.txt', 'data/preprocessed.0/combined_23.txt', 'data/preprocessed.0/combined_33.txt', 'data/preprocessed.0/combined_27.txt', 'data/preprocessed.0/combined_26.txt', 'data/preprocessed.0/combined_32.txt', 'data/preprocessed.0/combined_18.txt', 'data/preprocessed.0/combined_24.txt', 'data/preprocessed.0/combined_30.txt', 'data/preprocessed.0/combined_31.txt', 'data/preprocessed.0/combined_25.txt', 'data/preprocessed.0/combined_19.txt', 'data/preprocessed.0/combined_14.txt', 'data/preprocessed.0/combined_28.txt', 'data/preprocessed.0/combined_29.txt', 'data/preprocessed.0/combined_15.txt', 'data/preprocessed.0/combined_1.txt', 'data/preprocessed.0/combined_3.txt', 'data/preprocessed.0/combined_17.txt', 'data/preprocessed.0/combined_16.txt', 'data/preprocessed.0/combined_2.txt', 'data/preprocessed.0/combined_6.txt', 'data/preprocessed.0/combined_12.txt', 'data/preprocessed.0/combined_13.txt', 'data/preprocessed.0/combined_7.txt', 'data/preprocessed.0/combined_5.txt', 'data/preprocessed.0/combined_11.txt', 'data/preprocessed.0/combined_10.txt', 'data/preprocessed.0/combined_4.txt']
+
+training for epoch  0  of  3 
+
+batch size  4
+new index:  1 file path:  data/preprocessed.0/combined_9.txt <ENTER>
+Reading and splitting file 1 of 36: data/preprocessed.0/combined_9.txt into a 0.9 split between train and validation
+Tokenizing file 1 of 36: data/preprocessed.0/combined_9.txt
+GPTDatasetV1.py generated token IDs !
+GPTDatasetV1.py chunking tokens for max_length =  1024  stride =  1024
+GPTDatasetV1.py tokenization done!
+GPTDatasetV1.py generated token IDs !
+GPTDatasetV1.py chunking tokens for max_length =  1024  stride =  1024
+GPTDatasetV1.py tokenization done!
+
+Training ...
+101  input batch:  tensor([[ 9508,   930,  8699,  ...,    10,   650,    10],
+        [ 1365,   621,  4544,  ...,   198, 43227,    11],
+        [   13,   198,   198,  ...,  1724,   286, 17613],
+        [  220,   220,   220,  ...,  4914,  9506,    11]]) 
+target batch :  tensor([[  930,  8699,   930,  ...,   650,    10,   650],
+        [  621,  4544, 20090,  ..., 43227,    11,   475],
+        [  198,   198,  1026,  ...,   286, 17613,    13],
+        [  220,   220,   220,  ...,  9506,    11,  3344]])
+global step:  101  tokens seen:  413696
+102  input batch:  tensor([[  385,    11,   269,  ...,   390,  8710,   343],
+        [ 9530,  2502,   438,  ...,   663, 13755,    13],
+        [ 5101,    11,   475,  ...,   286,  2877,    11],
+        [ 2319,   930,  6073,  ...,    91,  6298, 23141]]) 
+target batch :  tensor([[   11,   269,  5857,  ...,  8710,   343,    26],
+        [ 2502,   438, 22438,  ..., 13755,    13,   198],
+        [   11,   475,   355,  ...,  2877,    11, 12077],
+        [  930,  6073,   158,  ...,  6298, 23141,    91]])
+global step:  102  tokens seen:  417792
+103  input batch:  tensor([[  465, 28273,  1029,  ...,   284,   910,    13],
+        [ 9192,   284,  1561,  ...,  9930,   466,   407],
+        [ 5055,   510,    11,  ...,    26,   198,  8505],
+        [15768,   550,   257,  ...,  7051,   286, 45246]]) 
+target batch :  tensor([[28273,  1029, 22645,  ...,   910,    13,   383],
+        [  284,  1561,   284,  ...,   466,   407,  2138],
+        [  510,    11,   465,  ...,   198,  8505,    11],
+        [  550,   257,  1913,  ...,   286, 45246,    11]])
+global step:  103  tokens seen:  421888
+104  input batch:  tensor([[  390,  8591, 11202,  ...,  8591,   277, 10924],
+        [27457,   284,   262,  ...,   198,    67,   447],
+        [  319,   284,   262,  ...,  3048,   198, 18108],
+        [   26,   339,   198,  ..., 12811,   286,  1502]]) 
+target batch :  tensor([[ 8591, 11202,   748,  ...,   277, 10924,   493],
+        [  284,   262, 16669,  ...,    67,   447,   247],
+        [  284,   262,  3859,  ...,   198, 18108,   587],
+        [  339,   198,    66,  ...,   286,  1502,   290]])
+global step:  104  tokens seen:  425984
+105  input batch:  tensor([[  657,   657,   198,  ...,   532,   657,   657],
+        [  587, 10282,   416,  ...,   632,   373,   198],
+        [  259, 45091,   387,  ...,    13, 14200,    11],
+        [  468,   550,   281,  ...,   220,   220,   220]]) 
+target batch :  tensor([[  657,   198,    23,  ...,   657,   657,   198],
+        [10282,   416,   262,  ...,   373,   198,   411],
+        [45091,   387, 24851,  ..., 14200,    11,   474],
+        [  550,   281,  5778,  ...,   220,   220,   220]])
+global step:  105  tokens seen:  430080
+evaluating model, noting train + validation loss (interim)
+Ep 1 (Step 105): Train loss 7.573, Val loss 7.602
+
+generate and print sample..
+Every effort moves you the the the the the the the the the the the the the the the the the the the the the the the the the the the the the the the the the the the the the the the the the the the the the the the the the the
+106  input batch:  tensor([[  198,  7050,   543,  ..., 10591,   319,   465],
+        [   23,    14,    49,  ...,    14,    23,    14],
+        [  198,    23,    14,  ...,    23,    14,    23],
+        [21673,    11,   780,  ...,   780,   198,  9930]]) 
+target batch :  tensor([[7050,  543,  340,  ...,  319,  465, 1364],
+        [  14,   49,   22,  ...,   23,   14,   74],
+        [  23,   14,   23,  ...,   14,   23,   14],
+        [  11,  780,  286,  ...,  198, 9930, 1265]])
+global step:  106  tokens seen:  434176
+107  input batch:  tensor([[22319, 43781,    13,  ..., 19418,   262,  4931],
+        [  351,   257,  1310,  ...,    11,   284,  2222],
+        [ 3278, 15129,   262,  ..., 10686,    88,   526],
+        [   11,   356, 37813,  ..., 14448,   198,  1462]]) 
+target batch :  tensor([[43781,    13,  4808,  ...,   262,  4931,   290],
+        [  257,  1310, 20136,  ...,   284,  2222,  1363],
+        [15129,   262, 15403,  ...,    88,   526,   198],
+        [  356, 37813,   329,  ...,   198,  1462,  1230]])
+global step:  107  tokens seen:  438272
+108  input batch:  tensor([[ 4129,   326,   339,  ...,   247,   303,  1392],
+        [  319,   428,   198,  ...,   198,   198,  1537],
+        [  220,   220,   220,  ..., 41083,    11,   447],
+        [ 3436,    11,   287,  ...,   656,  1194,    11]]) 
+target batch :  tensor([[  326,   339,   555,  ...,   303,  1392,    11],
+        [  428,   198, 16442,  ...,   198,  1537,   318],
+        [  220,   220,   220,  ...,    11,   447,   251],
+        [   11,   287,   262,  ...,  1194,    11,  2236]])
+global step:  108  tokens seen:  442368
+109  input batch:  tensor([[  365,    89,    83,  ...,    89, 17325,    11],
+        [  314,   836,   447,  ..., 33200,  5748,   326],
+        [  775,  1276,   307,  ...,  1539,   691,   838],
+        [ 7027,   287,   326,  ...,  5368,  3224,  2324]]) 
+target batch :  tensor([[   89,    83,   316,  ..., 17325,    11, 21043],
+        [  836,   447,   247,  ...,  5748,   326,  9838],
+        [ 1276,   307, 42938,  ...,   691,   838,    66],
+        [  287,   326,   198,  ...,  3224,  2324,   284]])
+global step:  109  tokens seen:  446464
+110  input batch:  tensor([[  270,    11,   474,  ...,  1987, 35851,  1679],
+        [26505,    12, 16760,  ...,    11,  2158,    11],
+        [  220,   930, 29815,  ...,   220,   220,   220],
+        [ 2501,    72,    13,  ...,   198,   330,   565]]) 
+target batch :  tensor([[   11,   474,     6,  ..., 35851,  1679,    26],
+        [   12, 16760,    11,  ...,  2158,    11,   340],
+        [  930, 29815,    11,  ...,   220,   220,   930],
+        [   72,    13,   851,  ...,   330,   565, 45983]])
+global step:  110  tokens seen:  450560
+evaluating model, noting train + validation loss (interim)
+Ep 1 (Step 110): Train loss 7.616, Val loss 7.491
+
+generate and print sample..
+Every effort moves you                                                  
+111  input batch:  tensor([[  198,  1640, 33738,  ...,   290, 18904,   683],
+        [   14,    18,    48,  ...,    23,   275,   532],
+        [   11,  3595,  2264,  ...,    44,  2591,   570],
+        [ 3675,   198,  8583,  ...,    11,   290, 29644]]) 
+target batch :  tensor([[ 1640, 33738,   326,  ..., 18904,   683,  1568],
+        [   18,    48,    19,  ...,   275,   532,   532],
+        [ 3595,  2264,   417,  ...,  2591,   570, 23365],
+        [  198,  8583,    11,  ...,   290, 29644,   198]])
+global step:  111  tokens seen:  454656
+112  input batch:  tensor([[   81,  1040,    11,  ...,   288,   504,   263],
+        [11735,   257,   794,  ..., 46097,  3738,    86],
+        [  284,  2513,   706,  ...,     7,   361,   340],
+        [11033,  6340,  2306,  ...,   272, 38387, 29943]]) 
+target batch :  tensor([[ 1040,    11,  2123,  ...,   504,   263,   627],
+        [  257,   794,   299,  ...,  3738,    86,   419],
+        [ 2513,   706,  3223,  ...,   361,   340,   550],
+        [ 6340,  2306,   388,  ..., 38387, 29943,  3308]])
+global step:  112  tokens seen:  458752
+113  input batch:  tensor([[ 434, 4587,  380,  ..., 2123, 2819,   73],
+        [1807,  777, 6799,  ..., 7244,   11, 4361],
+        [ 465, 3200,  284,  ...,  447,  247,   82],
+        [ 220,  220,  220,  ...,  220,  220,  220]]) 
+target batch :  tensor([[ 4587,   380, 35979,  ...,  2819,    73,  4662],
+        [  777,  6799,  1095,  ...,    11,  4361,    11],
+        [ 3200,   284,   465,  ...,   247,    82,  8034],
+        [  220,   220,   220,  ...,   220,   220,   220]])
+global step:  113  tokens seen:  462848
+114  input batch:  tensor([[17730, 36945,   710,  ..., 35560,  2471,  6592],
+        [ 6617,   286,   465,  ...,   440, 14430,    11],
+        [ 4808,    43, 47383,  ..., 12650,  1747,   198],
+        [19554,   694,    13,  ...,    11,   290, 24790]]) 
+target batch :  tensor([[36945,   710,    74,  ...,  2471,  6592,   285],
+        [  286,   465, 14934,  ..., 14430,    11, 14430],
+        [   43, 47383,    62,  ...,  1747,   198,  3919],
+        [  694,    13,   887,  ...,   290, 24790,   284]])
+global step:  114  tokens seen:  466944
+115  input batch:  tensor([[  220,  3329,    11,  ...,   198,   220,   345],
+        [42326,  4808, 44429,  ...,   986, 17730,   198],
+        [ 1342, 10469,  2300,  ...,  5107,  2672,   329],
+        [ 4453,  1139,    11,  ...,   290, 48897,    88]]) 
+target batch :  tensor([[ 3329,    11,   284,  ...,   220,   345,  3520],
+        [ 4808, 44429,   648,  ..., 17730,   198,   198],
+        [10469,  2300,   621,  ...,  2672,   329,   262],
+        [ 1139,    11,   366,  ..., 48897,    88,  1028]])
+global step:  115  tokens seen:  471040
+evaluating model, noting train + validation loss (interim)
+Ep 1 (Step 115): Train loss 6.725, Val loss 7.100
+
+generate and print sample..
+Every effort moves you                                                  
+116  input batch:  tensor([[   18,    42,    16,  ...,    18,   275,   532],
+        [   23,    14,    22,  ...,    14,    22,    42],
+        [  290, 48977,   994,  ...,  9776,    11,   523],
+        [  269,   129,   241,  ..., 17809,   289,  2634]]) 
+target batch :  tensor([[   42,    16,    14,  ...,   275,   532,   532],
+        [   14,    22,    42,  ...,    22,    42,    14],
+        [48977,   994,   810,  ...,    11,   523,  6824],
+        [  129,   241,   333,  ...,   289,  2634,   305]])
+global step:  116  tokens seen:  475136
+117  input batch:  tensor([[ 3244,  2011,   430,  ...,    13,   198, 15200],
+        [  743,   307,   925,  ...,   447,   247,    82],
+        [ 2651,   319,   262,  ..., 37038, 13174,  2292],
+        [  262, 44570, 21657,  ...,   198,   198,     1]]) 
+target batch :  tensor([[ 2011,   430,  7802,  ...,   198, 15200, 46046],
+        [  307,   925, 20140,  ...,   247,    82, 18807],
+        [  319,   262,  9296,  ..., 13174,  2292,    11],
+        [44570, 21657,   553,  ...,   198,     1,  3666]])
+global step:  117  tokens seen:  479232
+118  input batch:  tensor([[  679,   338,  4173,  ...,  3226,   534,  4713],
+        [  326,   477,   262,  ...,   262, 18216, 41408],
+        [14793,  1920,  2728,  ...,   284,   617,   198],
+        [  198,    83, 12427,  ..., 35209,  1976,  2926]]) 
+target batch :  tensor([[  338,  4173, 28956,  ...,   534,  4713, 21752],
+        [  477,   262, 10040,  ..., 18216, 41408,   351],
+        [ 1920,  2728,   286,  ...,   617,   198,   710],
+        [   83, 12427,   526,  ...,  1976,  2926,  1976]])
+global step:  118  tokens seen:  483328
+119  input batch:  tensor([[  198,  1565,  7054,  ...,   198,  2435,    11],
+        [24120,    68,    11,  ...,  3240,    11,   810],
+        [  262,  1908,   563,  ...,   284,  1650,   866],
+        [  198,  1169,  7372,  ...,   350,    13,   412]]) 
+target batch :  tensor([[1565, 7054, 4090,  ..., 2435,   11,  475],
+        [  68,   11,  198,  ...,   11,  810,  257],
+        [1908,  563,   12,  ..., 1650,  866,  757],
+        [1169, 7372,   11,  ...,   13,  412,  907]])
+global step:  119  tokens seen:  487424
+120  input batch:  tensor([[20766,   692, 28213,  ...,    25,  4808, 14772],
+        [10404,   286,  3340,  ..., 34929,    13,  6430],
+        [  550,  3724,   290,  ...,   345,   355,   284],
+        [ 2923,   198,    64,  ...,   326,   262,   734]]) 
+target batch :  tensor([[  692, 28213,  1125,  ...,  4808, 14772, 32732],
+        [  286,  3340,   561,  ...,    13,  6430,    11],
+        [ 3724,   290,   326,  ...,   355,   284,  1521],
+        [  198,    64,  2060,  ...,   262,   734,  1862]])
+global step:  120  tokens seen:  491520
+evaluating model, noting train + validation loss (interim)
+Ep 1 (Step 120): Train loss 6.394, Val loss 7.040
+
+generate and print sample..
+Every effort moves you                                                  
+121  input batch:  tensor([[ 340,  460, 1239,  ...,  220,  220,  220],
+        [ 543,  635,  198,  ..., 2589,  560, 4203],
+        [ 502,  423,  340,  ...,  198,  198,  447],
+        [ 290,   11,  996,  ...,   79,  395,  438]]) 
+target batch :  tensor([[  460,  1239,   307,  ...,   220,   220,   220],
+        [  635,   198, 12214,  ...,   560,  4203,   286],
+        [  423,   340,   319,  ...,   198,   447,   250],
+        [   11,   996,  5741,  ...,   395,   438, 43857]])
+global step:  121  tokens seen:  495616
+122  input batch:  tensor([[  390, 22346, 10359,  ...,    47,  3529,   497],
+        [  259, 10255, 11033,  ...,   289,  2013,    78],
+        [  286,  1107,   845,  ...,   284,  4929,   290],
+        [36074, 48796,   412,  ...,    75,    26,   264]]) 
+target batch :  tensor([[22346, 10359, 10205,  ...,  3529,   497,   728],
+        [10255, 11033,   410,  ...,  2013,    78,  6592],
+        [ 1107,   845,  1310,  ...,  4929,   290,  1745],
+        [48796,   412,   385,  ...,    26,   264,   387]])
+global step:  122  tokens seen:  499712
+123  input batch:  tensor([[  284,   900,   340,  ...,  9713,   198,  1640],
+        [  508,   468,   198,  ...,   414,   543,   318],
+        [20225,   345,   481,  ...,   597,   725, 36083],
+        [  805,    13,   198,  ...,   198,   600, 29706]]) 
+target batch :  tensor([[  900,   340, 15165,  ...,   198,  1640,   262],
+        [  468,   198, 47436,  ...,   543,   318,   262],
+        [  345,   481,  3328,  ...,   725, 36083,   198],
+        [   13,   198,   198,  ...,   600, 29706,   438]])
+global step:  123  tokens seen:  503808
+124  input batch:  tensor([[ 3831, 16923,   500,  ...,   126,   117, 46256],
+        [  198, 19188,    77,  ...,    11, 45341,   257],
+        [  442,   388,   290,  ...,   339,   373,   852],
+        [   11,   290,  1718,  ...,  1239,   198, 36007]]) 
+target batch :  tensor([[16923,   500,    11,  ...,   117, 46256,   226],
+        [19188,    77,   470,  ..., 45341,   257,  1310],
+        [  388,   290,   502,  ...,   373,   852, 43423],
+        [  290,  1718,   257,  ...,   198, 36007,   676]])
+global step:  124  tokens seen:  507904
+125  input batch:  tensor([[  417,  2052, 28654,  ...,   257,   794,   288],
+        [  198,    23,    14,  ...,    14,    23,    14],
+        [  247,    67,   262,  ...,   220,   220,   220],
+        [  416,   534,  1944,  ..., 11329,    13,   554]]) 
+target batch :  tensor([[ 2052, 28654,   290,  ...,   794,   288,  2575],
+        [   23,    14,    16,  ...,    23,    14,    23],
+        [   67,   262, 10654,  ...,   220,   220,  2080],
+        [  534,  1944, 24601,  ...,    13,   554,  2166]])
+global step:  125  tokens seen:  512000
+evaluating model, noting train + validation loss (interim)
+Ep 1 (Step 125): Train loss 6.585, Val loss 7.105
+
+generate and print sample..
+Every effort moves you                                                  
+126  input batch:  tensor([[   13,  1114,  4554,  ...,   464,  2029,  3348],
+        [ 1477,   480,   511,  ...,   438,   270,  2921],
+        [11835, 31256,   290,  ...,  4521,    18,    60],
+        [   12,    66,  6320,  ...,   286,   262,  1944]]) 
+target batch :  tensor([[ 1114,  4554,    11,  ...,  2029,  3348,   373],
+        [  480,   511,   898,  ...,   270,  2921,   606],
+        [31256,   290,  8169,  ...,    18,    60,   925],
+        [   66,  6320,    11,  ...,   262,  1944,   198]])
+global step:  126  tokens seen:  516096
+127  input batch:  tensor([[ 3392,    11,   198,  ...,  3653,    11,   290],
+        [  372,  2123,   371,  ...,  9407,   198, 25125],
+        [  220,   220,   220,  ...,  2626,   407,   691],
+        [   26,   198,  1169,  ...,   550,  3332,   287]]) 
+target batch :  tensor([[   11,   198, 10508,  ...,    11,   290,   355],
+        [ 2123,   371,   271,  ...,   198, 25125,  4548],
+        [  220,   220,   220,  ...,   407,   691,   257],
+        [  198,  1169,  4513,  ...,  3332,   287,   262]])
+global step:  127  tokens seen:  520192
+128  input batch:  tensor([[14022,   550,   587,  ...,  2863,   284,  6654],
+        [ 1656,   757,    13,  ...,  8092,   198,  1891],
+        [  220,   317,  7608,  ...,   220,   220,   220],
+        [  618,   339, 39545,  ...,   251, 16896,   262]]) 
+target batch :  tensor([[  550,   587,  1049,  ...,   284,  6654,   262],
+        [  757,    13,   198,  ...,   198,  1891,    12],
+        [  317,  7608,    72,  ...,   220,   220,   220],
+        [  339, 39545,    11,  ..., 16896,   262,   584]])
+global step:  128  tokens seen:  524288
+129  input batch:  tensor([[  448,  8471,    11,  ..., 13192,   384,  2261],
+        [   14,    17,    45,  ...,    23,    14,    17],
+        [   21,    74,    16,  ...,    48,    17,   275],
+        [  438, 20845,   257,  ...,     6,  4487,  2914]]) 
+target batch :  tensor([[ 8471,    11,   937,  ...,   384,  2261, 28141],
+        [   17,    45,    20,  ...,    14,    17,    45],
+        [   74,    16,   275,  ...,    17,   275,   532],
+        [20845,   257,  1229,  ...,  4487,  2914,    85]])
+global step:  129  tokens seen:  528384
+130  input batch:  tensor([[ 3141,    13,   198,  ...,    13,   628,   220],
+        [  411,   325,    11,  ..., 21606, 40004,    26],
+        [  770,   714,   407,  ...,   262,  4281,  6149],
+        [49658,    13,   337,  ...,  1874,  3916,  1526]]) 
+target batch :  tensor([[   13,   198,   220,  ...,   628,   220,   220],
+        [  325,    11,   386,  ..., 40004,    26,  3362],
+        [  714,   407,   475,  ...,  4281,  6149,   281],
+        [   13,   337,    13,  ...,  3916,  1526,    13]])
+global step:  130  tokens seen:  532480
+evaluating model, noting train + validation loss (interim)
+Ep 1 (Step 130): Train loss 6.636, Val loss 7.172
+
+generate and print sample..
+Every effort moves you                                                  
+131  input batch:  tensor([[ 5804,   287,   257,  ...,   553,   355,   582],
+        [   79, 32678, 13674,  ...,   286,   262,   336],
+        [  198,  1069,  5666,  ...,   417, 13281,  6124],
+        [ 8347,   198, 19971,  ...,   630,   547,  4145]]) 
+target batch :  tensor([[  287,   257, 10489,  ...,   355,   582,   743],
+        [32678, 13674,    13,  ...,   262,   336,   729],
+        [ 1069,  5666,   827,  ..., 13281,  6124,    11],
+        [  198, 19971,  2945,  ...,   547,  4145,  1813]])
+^CSaved model_checkpoints/model_pg_130_interrupted.pth
+Saved model_checkpoints/model_pg_final.pth
+Training state saved for epoch 0 file index 1 batch_counter  131 tokens 532480 global_step 130
+Saved training state
+tokens_seen[] =  [430080, 450560, 471040, 491520, 512000, 532480]
+train_losses[] =  [7.57289457321167, 7.61592960357666, 6.725027084350586, 6.394010066986084, 6.584564208984375, 6.635503768920898]
+val_losses[] =  [7.602479934692383, 7.491216659545898, 7.099959850311279, 7.04001522064209, 7.104891300201416, 7.172372817993164]
+2025-08-19 17:35:40.552 python[72325:589832] The class 'NSSavePanel' overrides the method identifier.  This method is implemented by class 'NSWindow'
+Maximum GPU memory allocated: 0.00 GB
+
+

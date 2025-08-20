@@ -2,7 +2,7 @@
 Self-attention is a mechanism that allows each position in the INPUT sequence to consider the relevancy of, or "attend to" all other
 positions in the same INPUT sequence when computing the representation of the sequence. 
 
-It asessess and learns the relationships and dependencies between various parts of the INPUT itself, such as words in a sentence, or pixels in an emage (or later - contextual relationships between concepts as part of a larger conversation - TODO ! )
+It asessess and learns the relationships and dependencies between various parts of the INPUT itself, such as words in a sentence, or pixels in an image (or later - contextual relationships between concepts as part of a larger conversation - TODO ! )
 
 (Follows from Bahdanau attention mechanism that had RNN decoder (output) access all states of the encoder (input) sequence. RNNs focused on relationships between elements of two different sequences, such as in sequence-to-sequence models where the attention might be between an input sequence and and output sequence. Self-attention, and hence transformers, eliminates RNNs entirely and establishes a new order of encode/decode with self-attention)
 
@@ -44,7 +44,7 @@ for query x^2, and a21..a2T is the attention score associated with x^2. As dot_p
 attention at its basic format could be nothing more than a dot-product between 2 elements (to start with)
 that maps a similarity-index relationship between an input token and another in a sentence.
 
-In self-atttention, our goal is to calculate context-vectors z(i) for eaxh element x(i) in the input sequence.
+In self-atttention, our goal is to calculate context-vectors z(i) for each element x(i) in the input sequence.
 A context vector can be interpreted as an enriched embedding vector. 
 
 To illustrate this, let's focus on the embedding vector of second input element x(2) and proceed thusly 
@@ -75,7 +75,7 @@ print("\nattn score of query element 2 is the dot product of itself with each in
 
 '''
 In the next step we Normalize each of the attention scores we computed previously. The main goal behind normalization is to 
-obrain attention weights that sum up to 1. This normalization is a convention that is useful for interpretation and maintaining 
+obtain attention weights that sum up to 1. This normalization is a convention that is useful for interpretation and maintaining 
 training stability in an LLM. Here is a straight fwd way for normalization:
 
 '''
@@ -115,7 +115,7 @@ print("Attention weights:", attn_weights_2)
 print("Sum:", attn_weights_2.sum(), "\n")
 
 '''
-Now that we have computed the normalized attentio weights, we are ready for the final step: calculate the context vector z(2)
+Now that we have computed the normalized attention weights, we are ready for the final step: calculate the context vector z(2)
 by multiplying the embedded tokens, x(i), with the corresponding attention weights and then summing the resulting vectors. Thus,
 context vector is the weighted sum of all input vectors, obtained by multiplying each input vector by its corresponding attention weight.
 
