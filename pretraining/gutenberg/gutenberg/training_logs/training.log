@@ -1780,3 +1780,41 @@ val_losses[] =  [7.035029411315918, 6.834537506103516, 6.960396766662598, 7.4470
 2025-08-20 16:32:53.075 python[24041:165788] The class 'NSSavePanel' overrides the method identifier.  This method is implemented by class 'NSWindow'
 Maximum GPU memory allocated: 0.00 GB
 (base) anupkaul@147dda4c0851 gutenberg % 
+
+... snippets of the 275 run ...
+
+global step:  274  tokens seen:  1122304
+275  input batch:  tensor([[ 9033, 41437,   748,  ...,   370,   620,   301],
+        [37628,  1703, 35190,  ...,  2710,  1153,   198],
+        [    6,   261,  4057,  ...,   198,   198, 30373],
+        [  264,   730,  7126,  ...,   264, 43130, 42445]]) 
+target batch :  tensor([[41437,   748,   520,  ...,   620,   301,   388],
+        [ 1703, 35190,    11,  ...,  1153,   198,   268],
+        [  261,  4057,   303,  ...,   198, 30373,    38],
+        [  730,  7126,    68,  ..., 43130, 42445,    12]])
+global step:  275  tokens seen:  1126400
+evaluating model, noting train + validation loss (interim)
+Ep 1 (Step 275): Train loss 5.534, Val loss 6.115
+
+generate and print sample..
+Every effort moves you,                                                 
+276  input batch:  tensor([[11193,    11, 16043,  ...,    11, 10005, 21753],
+        [21056,    11,   642,  ...,  2787,   268,    11],
+        [  198, 10378,  1823,  ...,   257,  2292,   198],
+        [   85,   318,  1288,  ...,   264,    89, 10205]]) 
+target batch :  tensor([[   11, 16043, 19036,  ..., 10005, 21753,   563],
+        [   11,   642,    13,  ...,   268,    11,  8460],
+        [10378,  1823,   656,  ...,  2292,   198,  1659],
+        [  318,  1288,    76,  ...,    89, 10205,  2528]])
+^C
+Saved model_checkpoints/model_pg_275_interrupted.pth
+Saved model_checkpoints/model_pg_final.pth
+Training state saved for epoch 0 file index 1 batch_counter  276 tokens 1126400 global_step 275
+Saved training state
+tokens_seen[] =  [880640, 901120, 921600, 942080, 962560, 983040, 1003520, 1024000, 1044480, 1064960, 1085440, 1105920, 1126400]
+train_losses[] =  [6.7127227783203125, 6.6843061447143555, 6.3575663566589355, 5.842154026031494, 6.106642246246338, 6.367518901824951, 6.407283306121826, 6.589157581329346, 5.371329307556152, 6.350704669952393, 5.754458427429199, 6.504549026489258, 5.533699989318848]
+val_losses[] =  [6.574122428894043, 6.541729927062988, 6.358169078826904, 6.233400344848633, 6.1771979331970215, 5.993091106414795, 5.9311089515686035, 5.908151149749756, 5.906918048858643, 6.010305404663086, 6.257967472076416, 6.082775115966797, 6.114573001861572]
+2025-09-04 17:51:39.698 python[13147:73462] The class 'NSSavePanel' overrides the method identifier.  This method is implemented by class 'NSWindow'
+Maximum GPU memory allocated: 0.00 GB
+
+
