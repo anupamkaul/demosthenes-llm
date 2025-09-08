@@ -72,6 +72,10 @@ def train_model_simple(model, train_loader, val_loader, optimizer, device, num_e
 
         # input("Press enter to continue..")
 
+    # save the model before we return
+    torch.save(model.state_dict(), "./model/model.pth")
+    print("model saved\n")
+
     return train_losses, val_losses, track_tokens_seen
 
 

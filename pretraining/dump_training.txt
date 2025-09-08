@@ -156,12 +156,12 @@ He placed them at my elbow and continued to wander up and down the room, stoppin
 "I turned back to my work, and went on groping and muddling; then I looked at the donkey again. I saw that, when Stroud laid in the first stroke, he knew just what the end would be. He had possessed his subject, absorbed it, recreated it. When had I done that with any of my things? They hadn't been born of me--I had just adopted them. . . .
 
 "Hang it, Rickham, with that face watching me I couldn't do another stroke. The plain truth was, I didn't know where to put it--_I had never known_. Only, with my sitters and my public, a showy splash of colour covered up the fact--I just threw paint into their faces. . . . Well, paint was the one medium those dead eyes could see through--see straight to the tottering foundations underneath. Don't you know how, in talking a foreign language, even fluently, one says half the time not what one wants to but what one can? Well--that was the way I painted; and as he lay there and watched me, the thing they called my 'techniq
-generated token IDs !
-now chunking tokens for max_length =  256  stride =  256
-tokenization done!
-generated token IDs !
-now chunking tokens for max_length =  256  stride =  256
-tokenization done!
+GPTDatasetV1.py generated token IDs !
+GPTDatasetV1.py chunking tokens for max_length =  256  stride =  256
+GPTDatasetV1.py tokenization done!
+GPTDatasetV1.py generated token IDs !
+GPTDatasetV1.py chunking tokens for max_length =  256  stride =  256
+GPTDatasetV1.py tokenization done!
 Train loader:
 torch.Size([2, 256]) torch.Size([2, 256])
 torch.Size([2, 256]) torch.Size([2, 256])
@@ -1157,4 +1157,6 @@ out of inner input_batch loop..
 generate and print sample..
 
 Every effort moves you?"  "Yes--quite insensible to the irony. She wanted him vindicated--and by me!"  He laughed again, and threw back his head to look up at the sketch of the donkey. "There were days when I
+model saved
+
 tokens seen:  [512, 3072, 5632, 8192, 10752, 13312, 15872, 18432, 20992, 23552, 26112, 28672, 31232, 33792, 36352, 38912, 41472, 44032, 46592, 49152, 51712, 54272, 56832, 59392, 61952, 64512, 67072, 69632, 72192, 74752, 77312, 79872, 82432, 84992, 87552, 90112]
