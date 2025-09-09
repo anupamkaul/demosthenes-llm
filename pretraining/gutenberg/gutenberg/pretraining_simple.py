@@ -288,12 +288,28 @@ def train_model_simple(model, optimizer, device, n_epochs,
                 if global_step % save_ckpt_freq:
 
                     print("saving model (interim)")
-                    file_name = output_dir / f"model_pg_{global_step}.pth"
-                    torch.save(model.state_dict(), file_name)
+                    file_name = output_dir / f"model_and_optmzr_pg_{global_step}.pth"
+
+                    #torch.save(model.state_dict(), file_name)
+                    # save both the model and the optimizer states
+                    torch.save( 
+                         {
+                            "model_state_dict": model.state_dict(),
+                            "optimizer_state_dict": optimizer.state_dict(),
+                         }, 
+                         file_name
+                    )
 
                     # save the model
-                    model_file_name = output_dir / "model_pg_final.pth"
-                    torch.save(model.state_dict(), model_file_name)
+                    model_file_name = output_dir / "model_and_optmzr_pg_final.pth"
+                    #torch.save(model.state_dict(), model_file_name)
+                    torch.save( 
+                         {
+                            "model_state_dict": model.state_dict(),
+                            "optimizer_state_dict": optimizer.state_dict(),
+                         }, 
+                         model_file_name
+                    )
 
                     print(f"Saved {file_name}")
                     print(f"Saved {model_file_name}")
@@ -325,21 +341,35 @@ def train_model_simple(model, optimizer, device, n_epochs,
 
     except KeyboardInterrupt:
 
-        file_name = output_dir / f"model_pg_{global_step}_interrupted.pth"
-        torch.save(model.state_dict(), file_name)
-        print(f"Saved {file_name}")
+        file_name = output_dir / f"model_and_optmzr_pg_{global_step}_interrupted.pth"
+        #torch.save(model.state_dict(), file_name)
+        
+        torch.save( 
+             {
+                "model_state_dict": model.state_dict(),
+                "optimizer_state_dict": optimizer.state_dict(),
+             }, 
+             file_name
+        )
 
         # save the model
-        model_file_name = output_dir / "model_pg_final.pth"
-        torch.save(model.state_dict(), model_file_name)
-        print(f"Saved {model_file_name}")
+        model_file_name = output_dir / "model_and_optmzr_pg_final.pth"
+        #torch.save(model.state_dict(), model_file_name)
+        torch.save( 
+             {
+                "model_state_dict": model.state_dict(),
+                "optimizer_state_dict": optimizer.state_dict(),
+             }, 
+             model_file_name
+        )
+
+        print(f"Saved {file_name} and {model_file_name}")
 
         # save in-progress training state
         save_training_state(epoch, index, input_batch_counter, tokens_seen, global_step)
         print(f"Saved training state")
 
     return train_losses, val_losses, track_tokens_seen
-
 
 if __name__ == "__main__":
 
@@ -405,8 +435,18 @@ if __name__ == "__main__":
     # enable this once I save it first time (I don't know the format, so let the output drive the input)
 
     try:
-        model.load_state_dict(torch.load("model_checkpoints/model_pg_final.pth", map_location=device))
-        print("loaded previously saved model to continue training..")
+
+        checkpoint = torch.load("model_checkpoints/model_and_optmzr_pg_final.pth", map_location=device)
+        model.load_state_dict(checkpoint["model_state_dict"])
+
+        optimizer = torch.optim.AdamW(model.parameters(), lr=5e-4, weight_decay=0.1)
+        optimizer.load_state_dict(checkpoint["optimizer_state_dict"])
+
+        #model.train();
+
+        #model.load_state_dict(torch.load("model_checkpoints/model_pg_final.pth", map_location=device))
+
+        print("loaded previously saved model and optimizer to continue training..")
     except FileNotFoundError:
         print("model not found on disk. monitor as a one time thing, error out if repeats")
 
@@ -430,8 +470,9 @@ if __name__ == "__main__":
             sv_global_step=0
 
     model.to(device)
-    optimizer = torch.optim.AdamW(model.parameters(), lr=args.lr, weight_decay=0.1)
-    # TODO : need to save optimizer state (dict) separately from the entire model itself
+
+    # see if I still need this init in case a saved checkpoint doesn't exist
+    #optimizer = torch.optim.AdamW(model.parameters(), lr=args.lr, weight_decay=0.1)
 
     tokenizer = tiktoken.get_encoding("gpt2")
 

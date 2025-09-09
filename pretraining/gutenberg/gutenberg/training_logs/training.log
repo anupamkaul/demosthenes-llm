@@ -1817,4 +1817,76 @@ val_losses[] =  [6.574122428894043, 6.541729927062988, 6.358169078826904, 6.2334
 2025-09-04 17:51:39.698 python[13147:73462] The class 'NSSavePanel' overrides the method identifier.  This method is implemented by class 'NSWindow'
 Maximum GPU memory allocated: 0.00 GB
 
+--> In the 275 to 280 global step phase, I switched to saving optimizer state_dict along with the model (and loading it):
 
+(base) anupkaul@147dda4c0851 gutenberg % python pretraining_simple.py
+pretraining args:  Namespace(data_dir='data/preprocessed.0', output_dir='model_checkpoints', n_epochs=3, print_sample_iter=5, eval_freq=5, save_ckpt_freq=10, lr=0.0005, batch_size=4, debug=False)
+device for training:  cpu
+is MPS available:  False
+loaded previously saved model and optimizer to continue training..
+loading training state:  {'n_epochs': 0, 'file_enum': 1, 'input_batch_counter': 278, 'tokens_seen': 1134592, 'global_step': 277}
+Total files for training: 36
+Files:
+ ['data/preprocessed.0/combined_9.txt', 'data/preprocessed.0/combined_21.txt', 'data/preprocessed.0/combined_35.txt', 'data/preprocessed.0/combined_34.txt', 'data/preprocessed.0/combined_20.txt', 'data/preprocessed.0/combined_8.txt', 'data/preprocessed.0/combined_36.txt', 'data/preprocessed.0/combined_22.txt', 'data/preprocessed.0/combined_23.txt', 'data/preprocessed.0/combined_33.txt', 'data/preprocessed.0/combined_27.txt', 'data/preprocessed.0/combined_26.txt', 'data/preprocessed.0/combined_32.txt', 'data/preprocessed.0/combined_18.txt', 'data/preprocessed.0/combined_24.txt', 'data/preprocessed.0/combined_30.txt', 'data/preprocessed.0/combined_31.txt', 'data/preprocessed.0/combined_25.txt', 'data/preprocessed.0/combined_19.txt', 'data/preprocessed.0/combined_14.txt', 'data/preprocessed.0/combined_28.txt', 'data/preprocessed.0/combined_29.txt', 'data/preprocessed.0/combined_15.txt', 'data/preprocessed.0/combined_1.txt', 'data/preprocessed.0/combined_3.txt', 'data/preprocessed.0/combined_17.txt', 'data/preprocessed.0/combined_16.txt', 'data/preprocessed.0/combined_2.txt', 'data/preprocessed.0/combined_6.txt', 'data/preprocessed.0/combined_12.txt', 'data/preprocessed.0/combined_13.txt', 'data/preprocessed.0/combined_7.txt', 'data/preprocessed.0/combined_5.txt', 'data/preprocessed.0/combined_11.txt', 'data/preprocessed.0/combined_10.txt', 'data/preprocessed.0/combined_4.txt']
+
+training for epoch  0  of  3 
+
+batch size  4
+new index:  1 file path:  data/preprocessed.0/combined_9.txt <ENTER>
+Reading and splitting file 1 of 36: data/preprocessed.0/combined_9.txt into a 0.9 split between train and validation
+Tokenizing file 1 of 36: data/preprocessed.0/combined_9.txt
+GPTDatasetV1.py generated token IDs !
+GPTDatasetV1.py chunking tokens for max_length =  1024  stride =  1024
+GPTDatasetV1.py tokenization done!
+GPTDatasetV1.py generated token IDs !
+GPTDatasetV1.py chunking tokens for max_length =  1024  stride =  1024
+GPTDatasetV1.py tokenization done!
+
+Training ...
+278  input batch:  tensor([[  316,   463,   259,  ...,   250,  2504,   318],
+        [11212,   757,     0,  ...,   286,    11,   447],
+        [   53,   669, 30830,  ...,   322,    62,    26],
+        [  532,   657,   657,  ...,    49,   275,   532]]) 
+target batch :  tensor([[  463,   259,  3699,  ...,  2504,   318,  1165],
+        [  757,     0,   887,  ...,    11,   447,   251],
+        [  669, 30830,    11,  ...,    62,    26,  4808],
+        [  657,   657,   198,  ...,   275,   532,   532]])
+global step:  278  tokens seen:  1138688
+279  input batch:  tensor([[  537, 27725,    62,  ..., 19591,  3549,    11],
+        [ 3347,   550,   587,  ...,   743, 45897,    11],
+        [  220,   220,   220,  ...,   220,   220,   748],
+        [14364,   273,  2724,  ...,    77,   384,  5330]]) 
+target batch :  tensor([[27725,    62,    11,  ...,  3549,    11,  3999],
+        [  550,   587,   523,  ..., 45897,    11,   284],
+        [  220,   220,   220,  ...,   220,   748,   367],
+        [  273,  2724,   391,  ...,   384,  5330,   615]])
+global step:  279  tokens seen:  1142784
+280  input batch:  tensor([[  220,   220,   220,  ...,   345,    11,   339],
+        [ 4528,  6184,    97,  ...,  1228,  2013,    11],
+        [  284,   465,   898,  ...,   247,    51,   271],
+        [ 1203,  3367,    13,  ...,    13,   371, 20739]]) 
+target batch :  tensor([[  220,   220,   220,  ...,    11,   339, 31976],
+        [ 6184,    97,  2926,  ...,  2013,    11,   198],
+        [  465,   898,  4279,  ...,    51,   271,   257],
+        [ 3367,    13,   628,  ...,   371, 20739, 48294]])
+global step:  280  tokens seen:  1146880
+evaluating model, noting train + validation loss (interim)
+Ep 1 (Step 280): Train loss 7.046, Val loss 6.000
+
+generate and print sample..
+Every effort moves you                                                  
+281  input batch:  tensor([[  368, 13951,   384,  ...,   479, 14852,   267],
+        [ 1188, 37980, 17723,  ...,  7204,  3308,   474],
+        [  976,    11,   345,  ...,   460,   447,   247],
+        [ 1320,   428,   318,  ...,   220, 26364, 25668]]) 
+target batch :  tensor([[13951,   384,   271,  ..., 14852,   267,  4528],
+        [37980, 17723,    84,  ...,  3308,   474, 11033],
+        [   11,   345,   198,  ...,   447,   247,    83],
+        [  428,   318, 18149,  ..., 26364, 25668,   684]])
+^CSaved model_checkpoints/model_and_optmzr_pg_280_interrupted.pth and model_checkpoints/model_and_optmzr_pg_final.pth
+Training state saved for epoch 0 file index 1 batch_counter  281 tokens 1146880 global_step 280
+Saved training state
+tokens_seen[] =  [1146880]
+train_losses[] =  [7.045722007751465]
+val_losses[] =  [5.9996466636657715]
+Maximum GPU memory allocated: 0.00 GB
