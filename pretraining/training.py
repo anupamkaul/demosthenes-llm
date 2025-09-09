@@ -147,6 +147,18 @@ optimizer = torch.optim.AdamW(
     lr=0.0004, weight_decay=0.1     
 )
 
+
+# load previously saved instance of the model (to continue training) and the training states
+# enable this once I save it first time (I don't know the format, so let the output drive the input)
+
+try:
+    model.load_state_dict(torch.load("./model/model.pth", map_location=device))
+    print("loaded previously saved model to continue training..")
+    input()
+except FileNotFoundError:
+    print("model not found on disk. monitor as a one time thing, error out if repeats")
+
+
 #num_epochs=10
 num_epochs=20
 #num_epochs=2 # just to debug plot_losses 

@@ -1,4 +1,5 @@
 device:  cpu
+loaded previously saved model to continue training..
 Characters: 20479
 Tokens: 5145
 90% of the split is from index  18431
@@ -663,7 +664,7 @@ Output text:
  Every effort moves you rentingetic wasnم refres RexMeCHicular stren
 debug: len input batch:  2  len target batch:  2  len train loader :  9
 debug: global_step :  0  tokens seen:  512
-Epoch 1 (Step 000000): Train loss 9.983, Val loss 9.939
+Epoch 1 (Step 000000): Train loss 0.711, Val loss 7.310
 debug: len input batch:  2  len target batch:  2  len train loader :  9
 debug: global_step :  1  tokens seen:  1024
 debug: len input batch:  2  len target batch:  2  len train loader :  9
@@ -674,7 +675,7 @@ debug: len input batch:  2  len target batch:  2  len train loader :  9
 debug: global_step :  4  tokens seen:  2560
 debug: len input batch:  2  len target batch:  2  len train loader :  9
 debug: global_step :  5  tokens seen:  3072
-Epoch 1 (Step 000005): Train loss 8.095, Val loss 8.300
+Epoch 1 (Step 000005): Train loss 0.234, Val loss 7.136
 debug: len input batch:  2  len target batch:  2  len train loader :  9
 debug: global_step :  6  tokens seen:  3584
 debug: len input batch:  2  len target batch:  2  len train loader :  9
@@ -685,12 +686,12 @@ debug: global_step :  8  tokens seen:  4608
 out of inner input_batch loop..
 generate and print sample..
 
-Every effort moves you.                                                 
+Every effort moves you?" He laughed." For Mrs. Stroud laid down across the background of the house."  He laughed again. Stroud laid in and threw back his head to look up at the sketch of the secret, and were amusing himself by holding
 debug: len input batch:  2  len target batch:  2  len train loader :  9
 debug: global_step :  9  tokens seen:  5120
 debug: len input batch:  2  len target batch:  2  len train loader :  9
 debug: global_step :  10  tokens seen:  5632
-Epoch 2 (Step 000010): Train loss 6.773, Val loss 7.032
+Epoch 2 (Step 000010): Train loss 0.178, Val loss 7.265
 debug: len input batch:  2  len target batch:  2  len train loader :  9
 debug: global_step :  11  tokens seen:  6144
 debug: len input batch:  2  len target batch:  2  len train loader :  9
@@ -701,7 +702,7 @@ debug: len input batch:  2  len target batch:  2  len train loader :  9
 debug: global_step :  14  tokens seen:  7680
 debug: len input batch:  2  len target batch:  2  len train loader :  9
 debug: global_step :  15  tokens seen:  8192
-Epoch 2 (Step 000015): Train loss 6.083, Val loss 6.559
+Epoch 2 (Step 000015): Train loss 0.161, Val loss 7.278
 debug: len input batch:  2  len target batch:  2  len train loader :  9
 debug: global_step :  16  tokens seen:  8704
 debug: len input batch:  2  len target batch:  2  len train loader :  9
@@ -710,14 +711,14 @@ debug: global_step :  17  tokens seen:  9216
 out of inner input_batch loop..
 generate and print sample..
 
-Every effort moves you.                                                 
+Every effort moves you?"  "Yes--quite insensible to the irony. She wanted him vindicated--and by me!"  Mrs. Gisburn drew back his head to look up at the sketch of the donkey. "strongest," as his
 debug: len input batch:  2  len target batch:  2  len train loader :  9
 debug: global_step :  18  tokens seen:  9728
 debug: len input batch:  2  len target batch:  2  len train loader :  9
 debug: global_step :  19  tokens seen:  10240
 debug: len input batch:  2  len target batch:  2  len train loader :  9
 debug: global_step :  20  tokens seen:  10752
-Epoch 3 (Step 000020): Train loss 13.400, Val loss 13.963
+Epoch 3 (Step 000020): Train loss 0.116, Val loss 7.276
 debug: len input batch:  2  len target batch:  2  len train loader :  9
 debug: global_step :  21  tokens seen:  11264
 debug: len input batch:  2  len target batch:  2  len train loader :  9
@@ -728,14 +729,14 @@ debug: len input batch:  2  len target batch:  2  len train loader :  9
 debug: global_step :  24  tokens seen:  12800
 debug: len input batch:  2  len target batch:  2  len train loader :  9
 debug: global_step :  25  tokens seen:  13312
-Epoch 3 (Step 000025): Train loss 5.668, Val loss 6.479
+Epoch 3 (Step 000025): Train loss 0.082, Val loss 7.441
 debug: len input batch:  2  len target batch:  2  len train loader :  9
 debug: global_step :  26  tokens seen:  13824
 
 out of inner input_batch loop..
 generate and print sample..
 
-Every effort moves you the"I that, and the"-- to the . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+Every effort moves you?"  "Yes--quite insensible to the irony. She wanted him vindicated--and by me!"  He laughed again, and threw back his head to look up at the sketch of the donkey. "There were days when I
 debug: len input batch:  2  len target batch:  2  len train loader :  9
 debug: global_step :  27  tokens seen:  14336
 debug: len input batch:  2  len target batch:  2  len train loader :  9
@@ -744,7 +745,7 @@ debug: len input batch:  2  len target batch:  2  len train loader :  9
 debug: global_step :  29  tokens seen:  15360
 debug: len input batch:  2  len target batch:  2  len train loader :  9
 debug: global_step :  30  tokens seen:  15872
-Epoch 4 (Step 000030): Train loss 5.434, Val loss 6.420
+Epoch 4 (Step 000030): Train loss 0.062, Val loss 7.446
 debug: len input batch:  2  len target batch:  2  len train loader :  9
 debug: global_step :  31  tokens seen:  16384
 debug: len input batch:  2  len target batch:  2  len train loader :  9
@@ -755,12 +756,12 @@ debug: len input batch:  2  len target batch:  2  len train loader :  9
 debug: global_step :  34  tokens seen:  17920
 debug: len input batch:  2  len target batch:  2  len train loader :  9
 debug: global_step :  35  tokens seen:  18432
-Epoch 4 (Step 000035): Train loss 5.081, Val loss 6.345
+Epoch 4 (Step 000035): Train loss 0.050, Val loss 7.573
 
 out of inner input_batch loop..
 generate and print sample..
 
-Every effort moves you. "I"I had been. Gisburn. Gisburn, and I had been his I had I had been, and the, and I had been the his of the of the of the of the of the of the of
+Every effort moves you?"  "Yes--quite insensible to the irony. She wanted him vindicated--and by me!"  He laughed again, and threw back his head to look up at the sketch of the donkey. "There were days when I
 debug: len input batch:  2  len target batch:  2  len train loader :  9
 debug: global_step :  36  tokens seen:  18944
 debug: len input batch:  2  len target batch:  2  len train loader :  9
@@ -771,7 +772,7 @@ debug: len input batch:  2  len target batch:  2  len train loader :  9
 debug: global_step :  39  tokens seen:  20480
 debug: len input batch:  2  len target batch:  2  len train loader :  9
 debug: global_step :  40  tokens seen:  20992
-Epoch 5 (Step 000040): Train loss 4.339, Val loss 6.286
+Epoch 5 (Step 000040): Train loss 0.053, Val loss 7.584
 debug: len input batch:  2  len target batch:  2  len train loader :  9
 debug: global_step :  41  tokens seen:  21504
 debug: len input batch:  2  len target batch:  2  len train loader :  9
@@ -784,10 +785,10 @@ debug: global_step :  44  tokens seen:  23040
 out of inner input_batch loop..
 generate and print sample..
 
-Every effort moves you, with a, in the a--and a, with a me--and a, I had been--I                           
+Every effort moves you?"  "Yes--quite insensible to the irony. She wanted him vindicated--and by me!"  He laughed again, and threw back his head to look up at the sketch of the donkey. "There were days when I
 debug: len input batch:  2  len target batch:  2  len train loader :  9
 debug: global_step :  45  tokens seen:  23552
-Epoch 6 (Step 000045): Train loss 4.506, Val loss 6.323
+Epoch 6 (Step 000045): Train loss 0.034, Val loss 7.711
 debug: len input batch:  2  len target batch:  2  len train loader :  9
 debug: global_step :  46  tokens seen:  24064
 debug: len input batch:  2  len target batch:  2  len train loader :  9
@@ -798,7 +799,7 @@ debug: len input batch:  2  len target batch:  2  len train loader :  9
 debug: global_step :  49  tokens seen:  25600
 debug: len input batch:  2  len target batch:  2  len train loader :  9
 debug: global_step :  50  tokens seen:  26112
-Epoch 6 (Step 000050): Train loss 3.735, Val loss 6.164
+Epoch 6 (Step 000050): Train loss 0.036, Val loss 7.721
 debug: len input batch:  2  len target batch:  2  len train loader :  9
 debug: global_step :  51  tokens seen:  26624
 debug: len input batch:  2  len target batch:  2  len train loader :  9
@@ -809,12 +810,12 @@ debug: global_step :  53  tokens seen:  27648
 out of inner input_batch loop..
 generate and print sample..
 
-Every effort moves you know the, and my the fact, and to the fact of the fact, and, I had been, the fact, and to see of the, and I had been the donkey, and I had the, and my of the picture, I
+Every effort moves you?"  "Yes--quite insensible to the irony. She wanted him vindicated--and by me!"  He laughed again, and threw back his head to look up at the sketch of the donkey. "There were days when I
 debug: len input batch:  2  len target batch:  2  len train loader :  9
 debug: global_step :  54  tokens seen:  28160
 debug: len input batch:  2  len target batch:  2  len train loader :  9
 debug: global_step :  55  tokens seen:  28672
-Epoch 7 (Step 000055): Train loss 3.407, Val loss 6.265
+Epoch 7 (Step 000055): Train loss 0.028, Val loss 7.733
 debug: len input batch:  2  len target batch:  2  len train loader :  9
 debug: global_step :  56  tokens seen:  29184
 debug: len input batch:  2  len target batch:  2  len train loader :  9
@@ -825,7 +826,7 @@ debug: len input batch:  2  len target batch:  2  len train loader :  9
 debug: global_step :  59  tokens seen:  30720
 debug: len input batch:  2  len target batch:  2  len train loader :  9
 debug: global_step :  60  tokens seen:  31232
-Epoch 7 (Step 000060): Train loss 3.069, Val loss 6.142
+Epoch 7 (Step 000060): Train loss 0.028, Val loss 7.737
 debug: len input batch:  2  len target batch:  2  len train loader :  9
 debug: global_step :  61  tokens seen:  31744
 debug: len input batch:  2  len target batch:  2  len train loader :  9
@@ -834,14 +835,14 @@ debug: global_step :  62  tokens seen:  32256
 out of inner input_batch loop..
 generate and print sample..
 
-Every effort moves you know the fact up-stream of his eyes to the fact of the last of the house of the fact of the fact, and to see of the picture of his glory, I had been. "I looked, and I had been I had
+Every effort moves you?"  "Yes--quite insensible to the irony. She wanted him vindicated--and by me!"  He laughed again, and threw back his head to look up at the sketch of the donkey. "There were days when I
 debug: len input batch:  2  len target batch:  2  len train loader :  9
 debug: global_step :  63  tokens seen:  32768
 debug: len input batch:  2  len target batch:  2  len train loader :  9
 debug: global_step :  64  tokens seen:  33280
 debug: len input batch:  2  len target batch:  2  len train loader :  9
 debug: global_step :  65  tokens seen:  33792
-Epoch 8 (Step 000065): Train loss 2.467, Val loss 6.121
+Epoch 8 (Step 000065): Train loss 0.026, Val loss 7.672
 debug: len input batch:  2  len target batch:  2  len train loader :  9
 debug: global_step :  66  tokens seen:  34304
 debug: len input batch:  2  len target batch:  2  len train loader :  9
@@ -852,14 +853,14 @@ debug: len input batch:  2  len target batch:  2  len train loader :  9
 debug: global_step :  69  tokens seen:  35840
 debug: len input batch:  2  len target batch:  2  len train loader :  9
 debug: global_step :  70  tokens seen:  36352
-Epoch 8 (Step 000070): Train loss 2.201, Val loss 6.150
+Epoch 8 (Step 000070): Train loss 0.014, Val loss 7.822
 debug: len input batch:  2  len target batch:  2  len train loader :  9
 debug: global_step :  71  tokens seen:  36864
 
 out of inner input_batch loop..
 generate and print sample..
 
-Every effort moves you know the picture.      "--as such--had not till he was a--and by a--and by a smile; then I looked at the donkey.            
+Every effort moves you?"  "Yes--quite insensible to the irony. She wanted him vindicated--and by me!"  He laughed again, and threw back his head to look up at the sketch of the donkey. "There were days when I
 debug: len input batch:  2  len target batch:  2  len train loader :  9
 debug: global_step :  72  tokens seen:  37376
 debug: len input batch:  2  len target batch:  2  len train loader :  9
@@ -868,7 +869,7 @@ debug: len input batch:  2  len target batch:  2  len train loader :  9
 debug: global_step :  74  tokens seen:  38400
 debug: len input batch:  2  len target batch:  2  len train loader :  9
 debug: global_step :  75  tokens seen:  38912
-Epoch 9 (Step 000075): Train loss 1.878, Val loss 6.184
+Epoch 9 (Step 000075): Train loss 0.018, Val loss 7.858
 debug: len input batch:  2  len target batch:  2  len train loader :  9
 debug: global_step :  76  tokens seen:  39424
 debug: len input batch:  2  len target batch:  2  len train loader :  9
@@ -879,12 +880,12 @@ debug: len input batch:  2  len target batch:  2  len train loader :  9
 debug: global_step :  79  tokens seen:  40960
 debug: len input batch:  2  len target batch:  2  len train loader :  9
 debug: global_step :  80  tokens seen:  41472
-Epoch 9 (Step 000080): Train loss 1.464, Val loss 6.206
+Epoch 9 (Step 000080): Train loss 0.009, Val loss 7.786
 
 out of inner input_batch loop..
 generate and print sample..
 
-Every effort moves you know."        "--as such--had not--as I said, one, I had a you in the moment--as.                
+Every effort moves you?"  "Yes--quite insensible to the irony. She wanted him vindicated--and by me!"  He laughed again, and threw back his head to look up at the sketch of the donkey. "There were days when I
 debug: len input batch:  2  len target batch:  2  len train loader :  9
 debug: global_step :  81  tokens seen:  41984
 debug: len input batch:  2  len target batch:  2  len train loader :  9
@@ -895,7 +896,7 @@ debug: len input batch:  2  len target batch:  2  len train loader :  9
 debug: global_step :  84  tokens seen:  43520
 debug: len input batch:  2  len target batch:  2  len train loader :  9
 debug: global_step :  85  tokens seen:  44032
-Epoch 10 (Step 000085): Train loss 1.123, Val loss 6.244
+Epoch 10 (Step 000085): Train loss 0.014, Val loss 7.825
 debug: len input batch:  2  len target batch:  2  len train loader :  9
 debug: global_step :  86  tokens seen:  44544
 debug: len input batch:  2  len target batch:  2  len train loader :  9
@@ -908,10 +909,10 @@ debug: global_step :  89  tokens seen:  46080
 out of inner input_batch loop..
 generate and print sample..
 
-Every effort moves you?"            "I turned back to my work, and went on groping and muddling; then I looked at the donkey again. I saw that, and down the room, I had
+Every effort moves you?"  "Yes--quite insensible to the irony. She wanted him vindicated--and by me!"  He laughed again, and threw back his head to look up at the sketch of the donkey. "There were days when I
 debug: len input batch:  2  len target batch:  2  len train loader :  9
 debug: global_step :  90  tokens seen:  46592
-Epoch 11 (Step 000090): Train loss 0.890, Val loss 6.333
+Epoch 11 (Step 000090): Train loss 0.008, Val loss 7.915
 debug: len input batch:  2  len target batch:  2  len train loader :  9
 debug: global_step :  91  tokens seen:  47104
 debug: len input batch:  2  len target batch:  2  len train loader :  9
@@ -922,7 +923,7 @@ debug: len input batch:  2  len target batch:  2  len train loader :  9
 debug: global_step :  94  tokens seen:  48640
 debug: len input batch:  2  len target batch:  2  len train loader :  9
 debug: global_step :  95  tokens seen:  49152
-Epoch 11 (Step 000095): Train loss 0.724, Val loss 6.397
+Epoch 11 (Step 000095): Train loss 0.006, Val loss 7.941
 debug: len input batch:  2  len target batch:  2  len train loader :  9
 debug: global_step :  96  tokens seen:  49664
 debug: len input batch:  2  len target batch:  2  len train loader :  9
@@ -933,12 +934,12 @@ debug: global_step :  98  tokens seen:  50688
 out of inner input_batch loop..
 generate and print sample..
 
-Every effort moves you?"  "Yes--quite insensible to the irony. She wanted him vindicated--and by me!"     "Oh, and I looked at the donkey again. I saw that, when Stroud laid in the first
+Every effort moves you?"  "Yes--quite insensible to the irony. She wanted him vindicated--and by me!"  He laughed again, and threw back his head to look up at the sketch of the donkey. "There were days when I
 debug: len input batch:  2  len target batch:  2  len train loader :  9
 debug: global_step :  99  tokens seen:  51200
 debug: len input batch:  2  len target batch:  2  len train loader :  9
 debug: global_step :  100  tokens seen:  51712
-Epoch 12 (Step 000100): Train loss 0.566, Val loss 6.396
+Epoch 12 (Step 000100): Train loss 0.011, Val loss 7.929
 debug: len input batch:  2  len target batch:  2  len train loader :  9
 debug: global_step :  101  tokens seen:  52224
 debug: len input batch:  2  len target batch:  2  len train loader :  9
@@ -949,7 +950,7 @@ debug: len input batch:  2  len target batch:  2  len train loader :  9
 debug: global_step :  104  tokens seen:  53760
 debug: len input batch:  2  len target batch:  2  len train loader :  9
 debug: global_step :  105  tokens seen:  54272
-Epoch 12 (Step 000105): Train loss 0.406, Val loss 6.472
+Epoch 12 (Step 000105): Train loss 0.005, Val loss 7.935
 debug: len input batch:  2  len target batch:  2  len train loader :  9
 debug: global_step :  106  tokens seen:  54784
 debug: len input batch:  2  len target batch:  2  len train loader :  9
@@ -958,14 +959,14 @@ debug: global_step :  107  tokens seen:  55296
 out of inner input_batch loop..
 generate and print sample..
 
-Every effort moves you?"  "Yes--quite insensible to the irony. She wanted him vindicated--and by me!"  "Oh, in the moment--as Jack himself, one might put it, had been the man of the hour. The
+Every effort moves you?"  "Yes--quite insensible to the irony. She wanted him vindicated--and by me!"  He laughed again, and threw back his head to look up at the sketch of the donkey. "There were days when I
 debug: len input batch:  2  len target batch:  2  len train loader :  9
 debug: global_step :  108  tokens seen:  55808
 debug: len input batch:  2  len target batch:  2  len train loader :  9
 debug: global_step :  109  tokens seen:  56320
 debug: len input batch:  2  len target batch:  2  len train loader :  9
 debug: global_step :  110  tokens seen:  56832
-Epoch 13 (Step 000110): Train loss 0.335, Val loss 6.611
+Epoch 13 (Step 000110): Train loss 0.008, Val loss 7.994
 debug: len input batch:  2  len target batch:  2  len train loader :  9
 debug: global_step :  111  tokens seen:  57344
 debug: len input batch:  2  len target batch:  2  len train loader :  9
@@ -976,7 +977,7 @@ debug: len input batch:  2  len target batch:  2  len train loader :  9
 debug: global_step :  114  tokens seen:  58880
 debug: len input batch:  2  len target batch:  2  len train loader :  9
 debug: global_step :  115  tokens seen:  59392
-Epoch 13 (Step 000115): Train loss 0.266, Val loss 6.625
+Epoch 13 (Step 000115): Train loss 0.006, Val loss 8.068
 debug: len input batch:  2  len target batch:  2  len train loader :  9
 debug: global_step :  116  tokens seen:  59904
 
@@ -992,7 +993,7 @@ debug: len input batch:  2  len target batch:  2  len train loader :  9
 debug: global_step :  119  tokens seen:  61440
 debug: len input batch:  2  len target batch:  2  len train loader :  9
 debug: global_step :  120  tokens seen:  61952
-Epoch 14 (Step 000120): Train loss 0.251, Val loss 6.700
+Epoch 14 (Step 000120): Train loss 0.006, Val loss 8.082
 debug: len input batch:  2  len target batch:  2  len train loader :  9
 debug: global_step :  121  tokens seen:  62464
 debug: len input batch:  2  len target batch:  2  len train loader :  9
@@ -1003,7 +1004,7 @@ debug: len input batch:  2  len target batch:  2  len train loader :  9
 debug: global_step :  124  tokens seen:  64000
 debug: len input batch:  2  len target batch:  2  len train loader :  9
 debug: global_step :  125  tokens seen:  64512
-Epoch 14 (Step 000125): Train loss 0.184, Val loss 6.707
+Epoch 14 (Step 000125): Train loss 0.004, Val loss 7.984
 
 out of inner input_batch loop..
 generate and print sample..
@@ -1019,7 +1020,7 @@ debug: len input batch:  2  len target batch:  2  len train loader :  9
 debug: global_step :  129  tokens seen:  66560
 debug: len input batch:  2  len target batch:  2  len train loader :  9
 debug: global_step :  130  tokens seen:  67072
-Epoch 15 (Step 000130): Train loss 0.157, Val loss 6.822
+Epoch 15 (Step 000130): Train loss 0.009, Val loss 7.942
 debug: len input batch:  2  len target batch:  2  len train loader :  9
 debug: global_step :  131  tokens seen:  67584
 debug: len input batch:  2  len target batch:  2  len train loader :  9
@@ -1035,7 +1036,7 @@ generate and print sample..
 Every effort moves you?"  "Yes--quite insensible to the irony. She wanted him vindicated--and by me!"  He laughed again, and threw back his head to look up at the sketch of the donkey. "There were days when I
 debug: len input batch:  2  len target batch:  2  len train loader :  9
 debug: global_step :  135  tokens seen:  69632
-Epoch 16 (Step 000135): Train loss 0.141, Val loss 6.899
+Epoch 16 (Step 000135): Train loss 0.011, Val loss 8.017
 debug: len input batch:  2  len target batch:  2  len train loader :  9
 debug: global_step :  136  tokens seen:  70144
 debug: len input batch:  2  len target batch:  2  len train loader :  9
@@ -1046,7 +1047,7 @@ debug: len input batch:  2  len target batch:  2  len train loader :  9
 debug: global_step :  139  tokens seen:  71680
 debug: len input batch:  2  len target batch:  2  len train loader :  9
 debug: global_step :  140  tokens seen:  72192
-Epoch 16 (Step 000140): Train loss 0.129, Val loss 6.913
+Epoch 16 (Step 000140): Train loss 0.009, Val loss 8.030
 debug: len input batch:  2  len target batch:  2  len train loader :  9
 debug: global_step :  141  tokens seen:  72704
 debug: len input batch:  2  len target batch:  2  len train loader :  9
@@ -1062,7 +1063,7 @@ debug: len input batch:  2  len target batch:  2  len train loader :  9
 debug: global_step :  144  tokens seen:  74240
 debug: len input batch:  2  len target batch:  2  len train loader :  9
 debug: global_step :  145  tokens seen:  74752
-Epoch 17 (Step 000145): Train loss 0.093, Val loss 6.971
+Epoch 17 (Step 000145): Train loss 0.006, Val loss 8.044
 debug: len input batch:  2  len target batch:  2  len train loader :  9
 debug: global_step :  146  tokens seen:  75264
 debug: len input batch:  2  len target batch:  2  len train loader :  9
@@ -1073,7 +1074,7 @@ debug: len input batch:  2  len target batch:  2  len train loader :  9
 debug: global_step :  149  tokens seen:  76800
 debug: len input batch:  2  len target batch:  2  len train loader :  9
 debug: global_step :  150  tokens seen:  77312
-Epoch 17 (Step 000150): Train loss 0.097, Val loss 6.976
+Epoch 17 (Step 000150): Train loss 0.010, Val loss 7.996
 debug: len input batch:  2  len target batch:  2  len train loader :  9
 debug: global_step :  151  tokens seen:  77824
 debug: len input batch:  2  len target batch:  2  len train loader :  9
@@ -1089,7 +1090,7 @@ debug: len input batch:  2  len target batch:  2  len train loader :  9
 debug: global_step :  154  tokens seen:  79360
 debug: len input batch:  2  len target batch:  2  len train loader :  9
 debug: global_step :  155  tokens seen:  79872
-Epoch 18 (Step 000155): Train loss 0.090, Val loss 7.059
+Epoch 18 (Step 000155): Train loss 0.013, Val loss 7.972
 debug: len input batch:  2  len target batch:  2  len train loader :  9
 debug: global_step :  156  tokens seen:  80384
 debug: len input batch:  2  len target batch:  2  len train loader :  9
@@ -1100,7 +1101,7 @@ debug: len input batch:  2  len target batch:  2  len train loader :  9
 debug: global_step :  159  tokens seen:  81920
 debug: len input batch:  2  len target batch:  2  len train loader :  9
 debug: global_step :  160  tokens seen:  82432
-Epoch 18 (Step 000160): Train loss 0.083, Val loss 7.023
+Epoch 18 (Step 000160): Train loss 0.013, Val loss 8.020
 debug: len input batch:  2  len target batch:  2  len train loader :  9
 debug: global_step :  161  tokens seen:  82944
 
@@ -1116,7 +1117,7 @@ debug: len input batch:  2  len target batch:  2  len train loader :  9
 debug: global_step :  164  tokens seen:  84480
 debug: len input batch:  2  len target batch:  2  len train loader :  9
 debug: global_step :  165  tokens seen:  84992
-Epoch 19 (Step 000165): Train loss 0.080, Val loss 7.039
+Epoch 19 (Step 000165): Train loss 0.020, Val loss 7.944
 debug: len input batch:  2  len target batch:  2  len train loader :  9
 debug: global_step :  166  tokens seen:  85504
 debug: len input batch:  2  len target batch:  2  len train loader :  9
@@ -1127,12 +1128,12 @@ debug: len input batch:  2  len target batch:  2  len train loader :  9
 debug: global_step :  169  tokens seen:  87040
 debug: len input batch:  2  len target batch:  2  len train loader :  9
 debug: global_step :  170  tokens seen:  87552
-Epoch 19 (Step 000170): Train loss 0.066, Val loss 7.169
+Epoch 19 (Step 000170): Train loss 0.005, Val loss 7.926
 
 out of inner input_batch loop..
 generate and print sample..
 
-Every effort moves you?"  "Yes--quite insensible to the irony. She wanted him vindicated--and by me!"  He laughed again, and threw back the window-curtains, moved aside a _jardiniere_ full of
+Every effort moves you?"  "Yes--quite insensible to the irony. She wanted him vindicated--and by me!"  He laughed again, and threw back his head to look up at the sketch of the donkey. "There were days when I
 debug: len input batch:  2  len target batch:  2  len train loader :  9
 debug: global_step :  171  tokens seen:  88064
 debug: len input batch:  2  len target batch:  2  len train loader :  9
@@ -1143,7 +1144,7 @@ debug: len input batch:  2  len target batch:  2  len train loader :  9
 debug: global_step :  174  tokens seen:  89600
 debug: len input batch:  2  len target batch:  2  len train loader :  9
 debug: global_step :  175  tokens seen:  90112
-Epoch 20 (Step 000175): Train loss 0.063, Val loss 7.135
+Epoch 20 (Step 000175): Train loss 0.010, Val loss 7.988
 debug: len input batch:  2  len target batch:  2  len train loader :  9
 debug: global_step :  176  tokens seen:  90624
 debug: len input batch:  2  len target batch:  2  len train loader :  9
