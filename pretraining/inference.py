@@ -36,6 +36,7 @@ except FileNotFoundError:
     print("model not found on disk. monitor as a one time thing, error out if repeats")
     exit
 
+# benchmark a string (every effort moves you)
 token_ids = generate_text_simple(
     model          = model,
     idx            = text_to_token_ids("Every effort moves you", tokenizer), # or the user's input (for a chat)
@@ -46,17 +47,19 @@ token_ids = generate_text_simple(
 
 print("\nchat output: ", token_ids_to_text(token_ids, tokenizer))
 
+# chat version..
 # now we ask user for their input and check how we do
-user_input = input("chat with me: (and press enter) ")
 
-token_ids = generate_text_simple(
-    model          = model,
-    idx            = text_to_token_ids(user_input, tokenizer), # or the user's input (for a chat)
-    max_new_tokens = 25,
-    context_size   = GPT_CONFIG_124M["context_length"]     
+while(True):
+    user_input = input("\nchat with me: (and press enter) ")
 
-)
+    token_ids = generate_text_simple(
+        model          = model,
+        idx            = text_to_token_ids(user_input, tokenizer), # or the user's input (for a chat)
+        max_new_tokens = 25,
+        context_size   = GPT_CONFIG_124M["context_length"]     
 
-print("\nchat output: ", token_ids_to_text(token_ids, tokenizer))
+    )
+    print("\nchat output: ", token_ids_to_text(token_ids, tokenizer))
 
 
