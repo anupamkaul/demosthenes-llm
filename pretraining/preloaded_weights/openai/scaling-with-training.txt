@@ -1,0 +1,68 @@
+Realizing how resource intensive it is to train even a small model like demosthenes with a book dump like gutenberg
+
+Scaling resources for LLM (Large Language Model) training involves strategies to handle the increasing computational 
+demands of larger models and datasets. Key approaches include distributed training, parameter-efficient fine-tuning, 
+hardware optimization, and efficient data handling.
+
+(watch: https://www.youtube.com/watch?v=_rEsLo21WvE&t=2034s)
+
+1. Distributed Training:
+Data Parallelism:
+Distributes the training data across multiple devices (GPUs, TPUs), enabling parallel processing of different data batches.
+
+Model Parallelism:
+Splits the model itself across multiple devices, allowing training of larger models that wouldn't fit on a single device.
+
+Pipeline Parallelism:
+Divides the model into stages and distributes them across devices, enabling pipelined processing of different parts of the model.
+
+Tensor Parallelism:
+Distributes individual operations within the model across multiple devices.
+
+Hybrid Parallelism:
+Combines different parallelism strategies (e.g., 3D parallelism) to optimize resource utilization and training speed. 
+
+(watch: https://www.youtube.com/watch?v=6wYmc2ir5ho&t=657s)
+
+2. Parameter-Efficient Fine-Tuning (PEFT):
+
+Techniques like LoRA (Low-Rank Adaptation) and Prompt Tuning reduce the number of trainable parameters during fine-tuning, 
+significantly decreasing computational requirements and memory usage. This approach enables fine-tuning large models on 
+smaller datasets or with limited resources.
+ 
+(watch: https://www.youtube.com/watch?v=5Q2KGEN3APk&t=401s)
+
+3. Hardware Optimization:
+
+Choosing the right hardware:
+Selecting powerful GPUs (e.g., NVIDIA H100, A100) or TPUs with high memory capacity and bandwidth is crucial. 
+Inter-GPU communication:
+Optimizing communication between GPUs using high-speed networks like InfiniBand is essential for efficient distributed training. 
+Quantization:
+Reducing the precision of model weights and activations (e.g., from 32-bit to 16-bit or 8-bit) can significantly reduce memory 
+footprint and improve inference speed. 
+
+(watch: https://www.youtube.com/watch?v=kPGTx4wcm_w&t=2085s)
+
+4. Efficient Data Handling:
+
+Data Parallelism:
+Distributing the training data across multiple devices is a fundamental technique for scaling LLM training. 
+
+Data Chunking:
+Breaking down large datasets into smaller chunks can improve data loading efficiency and reduce memory pressure. 
+
+Data Augmentation:
+Applying data augmentation techniques can increase the effective size of the training dataset, potentially improving model generalization. 
+
+Data Filtering:
+Removing irrelevant or noisy data can improve training efficiency and model quality. 
+
+5. Monitoring and Optimization:
+
+Resource Monitoring:
+Tools like nvidia-smi and PyTorch profilers help track resource utilization (memory, GPU utilization, etc.) during training. 
+
+Autoscaling:
+Dynamically adjusting the number of resources based on workload demands can optimize resource utilization and cost. 
+ 
