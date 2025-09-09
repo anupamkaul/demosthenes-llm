@@ -117,7 +117,10 @@ def generate_and_print_sample(model, tokenizer, device, start_context):
    
     model.train() # turn back training mode
 
+# ''''
 # main
+# ''''
+
 import sys, os
 sys.path.append( os.path.join( os.path.dirname(os.path.abspath(__file__)),  '../llm-infra/') )
 
@@ -153,7 +156,7 @@ optimizer = torch.optim.AdamW(
 
 try:
     model.load_state_dict(torch.load("./model/model.pth", map_location=device))
-    print("loaded previously saved model to continue training..")
+    print("loaded previously saved model to continue training..<enter>")
     input()
 except FileNotFoundError:
     print("model not found on disk. monitor as a one time thing, error out if repeats")
