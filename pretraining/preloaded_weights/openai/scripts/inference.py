@@ -44,7 +44,7 @@ token_ids = generate_text_simple(
     model          = model,
     idx            = text_to_token_ids("Every effort moves you", tokenizer), # or the user's input (for a chat)
     max_new_tokens = 25,
-    context_size   = GPT_CONFIG_124M["context_length"]     
+    context_size   = 1024     
 
 )
 
@@ -60,7 +60,7 @@ while(True):
         model          = model,
         idx            = text_to_token_ids(user_input, tokenizer), # or the user's input (for a chat)
         max_new_tokens = 25,
-        context_size   = GPT_CONFIG_124M["context_length"]     
+        context_size   = 1024    
 
     )
     print("\nchat output: ", token_ids_to_text(token_ids, tokenizer))

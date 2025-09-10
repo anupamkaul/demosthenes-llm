@@ -48,3 +48,42 @@ chat with me: (and press enter) ^CTraceback (most recent call last):
                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 KeyboardInterrupt
 
+--
+
+python inference.py 
+
+model loaded .. <enter>
+
+
+chat output:  Every effort moves you to the same way you move to the next level.
+
+The more you move, the more you move.
+
+
+
+chat with me: (and press enter) What I think about
+
+chat output:  What I think about is that the people who are going to be in the next few years are going to be in the people who are going to
+
+chat with me: (and press enter) they are doing better
+
+chat output:  they are doing better than ever.
+
+"I think that the fact that the people are so good at this is a sign that they are
+
+chat with me: (and press enter) who is the president of United States
+
+chat output:  who is the president of United States of America, and the president of the United States of Canada, and the president of the United States of Canada, and the
+
+chat with me: (and press enter) this is a better version now
+
+chat output:  this is a better version now, but I'm not sure if it's a better version.
+
+I'm not sure if it's a better version
+
+chat with me: (and press enter) ^CTraceback (most recent call last):
+  File "/Users/anupkaul/akaul_git/demosthenes-llm/pretraining/preloaded_weights/openai/scripts/inference.py", line 57, in <module>
+    user_input = input("\nchat with me: (and press enter) ")
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+KeyboardInterrupt
+
