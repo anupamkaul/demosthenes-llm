@@ -1,0 +1,10 @@
+The get.. script fetches the gpt_download script
+The exec .. script executes the gpt_download_script, creates and populates a local ./gpt2 folder
+
+pwd
+/Users/anupkaul/akaul_git/demosthenes-llm/pretraining/preloaded_weights/openai/scripts/gpt2/124M
+(base) anupkaul@147dda4c0851 124M % ls
+checkpoint                     hparams.json                   model.ckpt.index               vocab.bpe
+encoder.json                   model.ckpt.data-00000-of-00001 model.ckpt.meta
+
+
