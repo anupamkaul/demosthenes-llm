@@ -87,3 +87,49 @@ chat with me: (and press enter) ^CTraceback (most recent call last):
                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 KeyboardInterrupt
 
+--> third run:
+
+(base) anupkaul@147dda4c0851 scripts % python inference.py 
+
+model loaded .. <enter>
+
+
+chat output:  Every effort moves you.
+
+The first thing you need to do is to be patient.
+
+You need to be patient.
+
+
+
+chat with me: (and press enter) who are you ?
+
+chat output:  who are you ?
+
+I'm not sure.
+I'm not sure.
+
+I'm not sure.
+
+I'm not
+
+chat with me: (and press enter) who trained you?
+
+chat output:  who trained you?
+
+Yes, I I'm a trained trainer.
+
+I'm a trained you.
+
+I'm a trained
+
+chat with me: (and press enter) dude you are still imperfect ! 
+
+chat output:  dude you are still imperfect !  and you are still imperfect !
+I am not a man.  I am not a man.  I
+
+chat with me: (and press enter) ^CTraceback (most recent call last):
+  File "/Users/anupkaul/akaul_git/demosthenes-llm/pretraining/preloaded_weights/openai/scripts/inference.py", line 57, in <module>
+    user_input = input("\nchat with me: (and press enter) ")
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+KeyboardInterrupt
