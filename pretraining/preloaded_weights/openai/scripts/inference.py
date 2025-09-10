@@ -8,7 +8,7 @@ import tiktoken
 tokenizer = tiktoken.get_encoding("gpt2")
 
 import textgenerate
-from textgenerate import text_to_token_ids, generate_text_simple, token_ids_to_text
+from textgenerate import text_to_token_ids, generate_text_simple, token_ids_to_text, generate
 
 # load previously saved instance of the model (to check inference) 
 #(start with the simple model generated from a single file (the verdict))
@@ -40,12 +40,25 @@ except FileNotFoundError:
     exit
 
 # benchmark a string (every effort moves you)
+
+'''
 token_ids = generate_text_simple(
     model          = model,
     idx            = text_to_token_ids("Every effort moves you", tokenizer), # or the user's input (for a chat)
     max_new_tokens = 25,
     context_size   = 1024     
 
+)
+'''
+
+token_ids = generate(
+    model=model,
+    idx=text_to_token_ids("Every effort moves you", tokenizer).to(device),
+    max_new_tokens=25,
+    #context_size=NEW_CONFIG["context_length"],
+    context_size=1024,
+    top_k=50,
+    temperature=1.5
 )
 
 print("\nchat output: ", token_ids_to_text(token_ids, tokenizer))
@@ -54,8 +67,10 @@ print("\nchat output: ", token_ids_to_text(token_ids, tokenizer))
 # now we ask user for their input and check how we do
 
 while(True):
+
     user_input = input("\nchat with me: (and press enter) ")
 
+    '''
     token_ids = generate_text_simple(
         model          = model,
         idx            = text_to_token_ids(user_input, tokenizer), # or the user's input (for a chat)
@@ -63,6 +78,18 @@ while(True):
         context_size   = 1024    
 
     )
+    '''
+
+    token_ids = generate(
+        model=model,
+        idx=text_to_token_ids(user_input, tokenizer).to(device),
+        max_new_tokens=25,
+        #context_size=NEW_CONFIG["context_length"],
+        context_size=1024,
+        top_k=50,
+        temperature=1.5
+    )
+
     print("\nchat output: ", token_ids_to_text(token_ids, tokenizer))
 
 

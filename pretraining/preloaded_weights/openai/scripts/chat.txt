@@ -133,3 +133,42 @@ chat with me: (and press enter) ^CTraceback (most recent call last):
     user_input = input("\nchat with me: (and press enter) ")
                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 KeyboardInterrupt
+
+--> with top_k sampling and temperature:
+
+(base) anupkaul@147dda4c0851 scripts % python inference.py 
+
+model loaded .. <enter>
+
+
+chat output:  Every effort moves you into thinking you are actually working towards the best path for you," and that it is not possible. In other words this kind
+
+chat with me: (and press enter) that was a good answer
+
+chat output:  that was a good answer and what is the actual cost of that in fact.
+Ridford : "No they would have known the actual cost
+
+chat with me: (and press enter) but you are still naive
+
+chat output:  but you are still naive
+
+[10:25 PM 0]. DASH: (laughing to himself as he read his words). [10
+
+chat with me: (and press enter) OMG you are talking gibberish
+
+chat output:  OMG you are talking gibberish.
+
+YOU CENSOUTER. MIGHT be called that but is so. And he had to take the oath
+
+chat with me: (and press enter) what ?
+
+chat output:  what ? I mean , "Why can't a couple get off together?", "[3e:e4e5k0]
+
+chat with me: (and press enter) who are you
+
+chat output:  who are you,"," Mr. Rizzo said. "The main line and everybody's point, that's how you've had your
+
+chat with me: (and press enter) ^CTraceback (most recent call last):
+  File "/Users/anupkaul/akaul_git/demosthenes-llm/pretraining/preloaded_weights/openai/scripts/inference.py", line 71, in <module>
+    user_input = input("\nchat with me: (and press enter) ")
+                 ^^^^^^^^^^^^^^^
