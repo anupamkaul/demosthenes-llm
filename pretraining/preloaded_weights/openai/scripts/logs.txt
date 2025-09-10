@@ -21,31 +21,8 @@ pwd
 checkpoint                     hparams.json                   model.ckpt.index               vocab.bpe
 encoder.json                   model.ckpt.data-00000-of-00001 model.ckpt.meta
 
---> adding additional code to the exec script:
-
-python exec_gpt_download.py
-2025-09-09 17:04:34.868721: I tensorflow/core/platform/cpu_feature_guard.cc:210] This TensorFlow binary is optimized to use available CPU instructions in performance-critical operations.
-To enable the following instructions: AVX2 AVX512F AVX512_VNNI FMA, in other operations, rebuild TensorFlow with the appropriate compiler flags.
-AttributeError: 'MessageFactory' object has no attribute 'GetPrototype'
-AttributeError: 'MessageFactory' object has no attribute 'GetPrototype'
-AttributeError: 'MessageFactory' object has no attribute 'GetPrototype'
-AttributeError: 'MessageFactory' object has no attribute 'GetPrototype'
-AttributeError: 'MessageFactory' object has no attribute 'GetPrototype'
-AttributeError: 'MessageFactory' object has no attribute 'GetPrototype'
-File already exists and is up-to-date: gpt2/124M/checkpoint
-File already exists and is up-to-date: gpt2/124M/encoder.json
-File already exists and is up-to-date: gpt2/124M/hparams.json
-File already exists and is up-to-date: gpt2/124M/model.ckpt.data-00000-of-00001
-File already exists and is up-to-date: gpt2/124M/model.ckpt.index
-File already exists and is up-to-date: gpt2/124M/model.ckpt.meta
-File already exists and is up-to-date: gpt2/124M/vocab.bpe
-Settings:  {'n_vocab': 50257, 'n_ctx': 1024, 'n_embd': 768, 'n_head': 12, 'n_layer': 12}
-Params:  dict_keys(['blocks', 'b', 'g', 'wpe', 'wte'])
-
----
-
-python create_pretrained_model.py
-2025-09-10 08:41:50.782586: I tensorflow/core/platform/cpu_feature_guard.cc:210] This TensorFlow binary is optimized to use available CPU instructions in performance-critical operations.
+(base) anupkaul@147dda4c0851 scripts % python create_pretrained_model.py
+2025-09-10 15:01:18.824304: I tensorflow/core/platform/cpu_feature_guard.cc:210] This TensorFlow binary is optimized to use available CPU instructions in performance-critical operations.
 To enable the following instructions: AVX2 AVX512F AVX512_VNNI FMA, in other operations, rebuild TensorFlow with the appropriate compiler flags.
 AttributeError: 'MessageFactory' object has no attribute 'GetPrototype'
 AttributeError: 'MessageFactory' object has no attribute 'GetPrototype'
@@ -77,6 +54,246 @@ The weights of the token embedding layers are: [[-0.11010301 -0.03926672  0.0331
    0.12067825]]
 The dims are: (50257, 768)
 
+NEW_CONFIG:  {'vocab_size': 50257, 'context_length': 1024, 'emb_dim': 768, 'n_heads': 12, 'n_layers': 12, 'drop_rate': 0.1, 'qkv_bias': True}
+GPTModel(
+  (tok_emb): Embedding(50257, 768)
+  (pos_emb): Embedding(1024, 768)
+  (drop_emb): Dropout(p=0.1, inplace=False)
+  (trf_blocks): Sequential(
+    (0): TransformerBlock(
+      (att): MultiHeadAttention(
+        (W_query): Linear(in_features=768, out_features=768, bias=True)
+        (W_key): Linear(in_features=768, out_features=768, bias=True)
+        (W_value): Linear(in_features=768, out_features=768, bias=True)
+        (out_proj): Linear(in_features=768, out_features=768, bias=True)
+        (dropout): Dropout(p=0.1, inplace=False)
+      )
+      (ff): FeedForward(
+        (layers): Sequential(
+          (0): Linear(in_features=768, out_features=3072, bias=True)
+          (1): GELU()
+          (2): Linear(in_features=3072, out_features=768, bias=True)
+        )
+      )
+      (norm1): LayerNorm()
+      (norm2): LayerNorm()
+      (drop_shortcut): Dropout(p=0.1, inplace=False)
+    )
+    (1): TransformerBlock(
+      (att): MultiHeadAttention(
+        (W_query): Linear(in_features=768, out_features=768, bias=True)
+        (W_key): Linear(in_features=768, out_features=768, bias=True)
+        (W_value): Linear(in_features=768, out_features=768, bias=True)
+        (out_proj): Linear(in_features=768, out_features=768, bias=True)
+        (dropout): Dropout(p=0.1, inplace=False)
+      )
+      (ff): FeedForward(
+        (layers): Sequential(
+          (0): Linear(in_features=768, out_features=3072, bias=True)
+          (1): GELU()
+          (2): Linear(in_features=3072, out_features=768, bias=True)
+        )
+      )
+      (norm1): LayerNorm()
+      (norm2): LayerNorm()
+      (drop_shortcut): Dropout(p=0.1, inplace=False)
+    )
+    (2): TransformerBlock(
+      (att): MultiHeadAttention(
+        (W_query): Linear(in_features=768, out_features=768, bias=True)
+        (W_key): Linear(in_features=768, out_features=768, bias=True)
+        (W_value): Linear(in_features=768, out_features=768, bias=True)
+        (out_proj): Linear(in_features=768, out_features=768, bias=True)
+        (dropout): Dropout(p=0.1, inplace=False)
+      )
+      (ff): FeedForward(
+        (layers): Sequential(
+          (0): Linear(in_features=768, out_features=3072, bias=True)
+          (1): GELU()
+          (2): Linear(in_features=3072, out_features=768, bias=True)
+        )
+      )
+      (norm1): LayerNorm()
+      (norm2): LayerNorm()
+      (drop_shortcut): Dropout(p=0.1, inplace=False)
+    )
+    (3): TransformerBlock(
+      (att): MultiHeadAttention(
+        (W_query): Linear(in_features=768, out_features=768, bias=True)
+        (W_key): Linear(in_features=768, out_features=768, bias=True)
+        (W_value): Linear(in_features=768, out_features=768, bias=True)
+        (out_proj): Linear(in_features=768, out_features=768, bias=True)
+        (dropout): Dropout(p=0.1, inplace=False)
+      )
+      (ff): FeedForward(
+        (layers): Sequential(
+          (0): Linear(in_features=768, out_features=3072, bias=True)
+          (1): GELU()
+          (2): Linear(in_features=3072, out_features=768, bias=True)
+        )
+      )
+      (norm1): LayerNorm()
+      (norm2): LayerNorm()
+      (drop_shortcut): Dropout(p=0.1, inplace=False)
+    )
+    (4): TransformerBlock(
+      (att): MultiHeadAttention(
+        (W_query): Linear(in_features=768, out_features=768, bias=True)
+        (W_key): Linear(in_features=768, out_features=768, bias=True)
+        (W_value): Linear(in_features=768, out_features=768, bias=True)
+        (out_proj): Linear(in_features=768, out_features=768, bias=True)
+        (dropout): Dropout(p=0.1, inplace=False)
+      )
+      (ff): FeedForward(
+        (layers): Sequential(
+          (0): Linear(in_features=768, out_features=3072, bias=True)
+          (1): GELU()
+          (2): Linear(in_features=3072, out_features=768, bias=True)
+        )
+      )
+      (norm1): LayerNorm()
+      (norm2): LayerNorm()
+      (drop_shortcut): Dropout(p=0.1, inplace=False)
+    )
+    (5): TransformerBlock(
+      (att): MultiHeadAttention(
+        (W_query): Linear(in_features=768, out_features=768, bias=True)
+        (W_key): Linear(in_features=768, out_features=768, bias=True)
+        (W_value): Linear(in_features=768, out_features=768, bias=True)
+        (out_proj): Linear(in_features=768, out_features=768, bias=True)
+        (dropout): Dropout(p=0.1, inplace=False)
+      )
+      (ff): FeedForward(
+        (layers): Sequential(
+          (0): Linear(in_features=768, out_features=3072, bias=True)
+          (1): GELU()
+          (2): Linear(in_features=3072, out_features=768, bias=True)
+        )
+      )
+      (norm1): LayerNorm()
+      (norm2): LayerNorm()
+      (drop_shortcut): Dropout(p=0.1, inplace=False)
+    )
+    (6): TransformerBlock(
+      (att): MultiHeadAttention(
+        (W_query): Linear(in_features=768, out_features=768, bias=True)
+        (W_key): Linear(in_features=768, out_features=768, bias=True)
+        (W_value): Linear(in_features=768, out_features=768, bias=True)
+        (out_proj): Linear(in_features=768, out_features=768, bias=True)
+        (dropout): Dropout(p=0.1, inplace=False)
+      )
+      (ff): FeedForward(
+        (layers): Sequential(
+          (0): Linear(in_features=768, out_features=3072, bias=True)
+          (1): GELU()
+          (2): Linear(in_features=3072, out_features=768, bias=True)
+        )
+      )
+      (norm1): LayerNorm()
+      (norm2): LayerNorm()
+      (drop_shortcut): Dropout(p=0.1, inplace=False)
+    )
+    (7): TransformerBlock(
+      (att): MultiHeadAttention(
+        (W_query): Linear(in_features=768, out_features=768, bias=True)
+        (W_key): Linear(in_features=768, out_features=768, bias=True)
+        (W_value): Linear(in_features=768, out_features=768, bias=True)
+        (out_proj): Linear(in_features=768, out_features=768, bias=True)
+        (dropout): Dropout(p=0.1, inplace=False)
+      )
+      (ff): FeedForward(
+        (layers): Sequential(
+          (0): Linear(in_features=768, out_features=3072, bias=True)
+          (1): GELU()
+          (2): Linear(in_features=3072, out_features=768, bias=True)
+        )
+      )
+      (norm1): LayerNorm()
+      (norm2): LayerNorm()
+      (drop_shortcut): Dropout(p=0.1, inplace=False)
+    )
+    (8): TransformerBlock(
+      (att): MultiHeadAttention(
+        (W_query): Linear(in_features=768, out_features=768, bias=True)
+        (W_key): Linear(in_features=768, out_features=768, bias=True)
+        (W_value): Linear(in_features=768, out_features=768, bias=True)
+        (out_proj): Linear(in_features=768, out_features=768, bias=True)
+        (dropout): Dropout(p=0.1, inplace=False)
+      )
+      (ff): FeedForward(
+        (layers): Sequential(
+          (0): Linear(in_features=768, out_features=3072, bias=True)
+          (1): GELU()
+          (2): Linear(in_features=3072, out_features=768, bias=True)
+        )
+      )
+      (norm1): LayerNorm()
+      (norm2): LayerNorm()
+      (drop_shortcut): Dropout(p=0.1, inplace=False)
+    )
+    (9): TransformerBlock(
+      (att): MultiHeadAttention(
+        (W_query): Linear(in_features=768, out_features=768, bias=True)
+        (W_key): Linear(in_features=768, out_features=768, bias=True)
+        (W_value): Linear(in_features=768, out_features=768, bias=True)
+        (out_proj): Linear(in_features=768, out_features=768, bias=True)
+        (dropout): Dropout(p=0.1, inplace=False)
+      )
+      (ff): FeedForward(
+        (layers): Sequential(
+          (0): Linear(in_features=768, out_features=3072, bias=True)
+          (1): GELU()
+          (2): Linear(in_features=3072, out_features=768, bias=True)
+        )
+      )
+      (norm1): LayerNorm()
+      (norm2): LayerNorm()
+      (drop_shortcut): Dropout(p=0.1, inplace=False)
+    )
+    (10): TransformerBlock(
+      (att): MultiHeadAttention(
+        (W_query): Linear(in_features=768, out_features=768, bias=True)
+        (W_key): Linear(in_features=768, out_features=768, bias=True)
+        (W_value): Linear(in_features=768, out_features=768, bias=True)
+        (out_proj): Linear(in_features=768, out_features=768, bias=True)
+        (dropout): Dropout(p=0.1, inplace=False)
+      )
+      (ff): FeedForward(
+        (layers): Sequential(
+          (0): Linear(in_features=768, out_features=3072, bias=True)
+          (1): GELU()
+          (2): Linear(in_features=3072, out_features=768, bias=True)
+        )
+      )
+      (norm1): LayerNorm()
+      (norm2): LayerNorm()
+      (drop_shortcut): Dropout(p=0.1, inplace=False)
+    )
+    (11): TransformerBlock(
+      (att): MultiHeadAttention(
+        (W_query): Linear(in_features=768, out_features=768, bias=True)
+        (W_key): Linear(in_features=768, out_features=768, bias=True)
+        (W_value): Linear(in_features=768, out_features=768, bias=True)
+        (out_proj): Linear(in_features=768, out_features=768, bias=True)
+        (dropout): Dropout(p=0.1, inplace=False)
+      )
+      (ff): FeedForward(
+        (layers): Sequential(
+          (0): Linear(in_features=768, out_features=3072, bias=True)
+          (1): GELU()
+          (2): Linear(in_features=3072, out_features=768, bias=True)
+        )
+      )
+      (norm1): LayerNorm()
+      (norm2): LayerNorm()
+      (drop_shortcut): Dropout(p=0.1, inplace=False)
+    )
+  )
+  (final_norm): LayerNorm()
+  (out_head): Linear(in_features=768, out_features=50257, bias=False)
+)
+device:  cpu
+my model has been loaded with pretrained weights !
 
 
 
