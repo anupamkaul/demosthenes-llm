@@ -42,6 +42,40 @@ File already exists and is up-to-date: gpt2/124M/vocab.bpe
 Settings:  {'n_vocab': 50257, 'n_ctx': 1024, 'n_embd': 768, 'n_head': 12, 'n_layer': 12}
 Params:  dict_keys(['blocks', 'b', 'g', 'wpe', 'wte'])
 
+---
+
+python create_pretrained_model.py
+2025-09-10 08:41:50.782586: I tensorflow/core/platform/cpu_feature_guard.cc:210] This TensorFlow binary is optimized to use available CPU instructions in performance-critical operations.
+To enable the following instructions: AVX2 AVX512F AVX512_VNNI FMA, in other operations, rebuild TensorFlow with the appropriate compiler flags.
+AttributeError: 'MessageFactory' object has no attribute 'GetPrototype'
+AttributeError: 'MessageFactory' object has no attribute 'GetPrototype'
+AttributeError: 'MessageFactory' object has no attribute 'GetPrototype'
+AttributeError: 'MessageFactory' object has no attribute 'GetPrototype'
+AttributeError: 'MessageFactory' object has no attribute 'GetPrototype'
+AttributeError: 'MessageFactory' object has no attribute 'GetPrototype'
+File already exists and is up-to-date: gpt2/124M/checkpoint
+File already exists and is up-to-date: gpt2/124M/encoder.json
+File already exists and is up-to-date: gpt2/124M/hparams.json
+File already exists and is up-to-date: gpt2/124M/model.ckpt.data-00000-of-00001
+File already exists and is up-to-date: gpt2/124M/model.ckpt.index
+File already exists and is up-to-date: gpt2/124M/model.ckpt.meta
+File already exists and is up-to-date: gpt2/124M/vocab.bpe
+Settings:  {'n_vocab': 50257, 'n_ctx': 1024, 'n_embd': 768, 'n_head': 12, 'n_layer': 12}
+Params:  dict_keys(['blocks', 'b', 'g', 'wpe', 'wte'])
+The weights of the token embedding layers are: [[-0.11010301 -0.03926672  0.03310751 ... -0.1363697   0.01506208
+   0.04531523]
+ [ 0.04034033 -0.04861503  0.04624869 ...  0.08605453  0.00253983
+   0.04318958]
+ [-0.12746179  0.04793796  0.18410145 ...  0.08991534 -0.12972379
+  -0.08785918]
+ ...
+ [-0.04453601 -0.05483596  0.01225674 ...  0.10435229  0.09783269
+  -0.06952604]
+ [ 0.1860082   0.01665728  0.04611587 ... -0.09625227  0.07847701
+  -0.02245961]
+ [ 0.05135201 -0.02768905  0.0499369  ...  0.00704835  0.15519823
+   0.12067825]]
+The dims are: (50257, 768)
 
 
 
