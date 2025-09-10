@@ -183,7 +183,9 @@ gpt.to(device)
 
 print("my model has been loaded with pretrained weights ! \n")
 
-
+# save the model before we return
+torch.save(gpt.state_dict(), "./model/model.pth")       
+print("model saved\n")
 
 
 

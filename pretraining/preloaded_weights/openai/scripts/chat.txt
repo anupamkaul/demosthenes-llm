@@ -1,0 +1,50 @@
+(base) anupkaul@147dda4c0851 scripts % python inference.py 
+
+model loaded .. <enter>
+
+
+chat output:  Every effort moves you can't do it.
+
+You can't do it.
+
+You can't do it.
+
+You can
+
+chat with me: (and press enter) Every effort moves you
+
+chat output:  Every effort moves you to the point where you can't.
+
+The best way to do this is to use the same method as described above
+
+chat with me: (and press enter) what are you talking about?
+
+chat output:  what are you talking about?
+
+I'm not talking about the fact that the government is not doing anything about it should not be doing anything about it
+
+chat with me: (and press enter) who is the president of America?
+
+chat output:  who is the president of America?
+
+
+The president, who is the president of the United States?
+
+The president of the United States
+
+
+
+chat with me: (and press enter) man, you are incoherent ! 
+
+chat output:  man, you are incoherent !  You are incoherent !  You are incoherent !  You are incoherent !  You are inco
+
+chat with me: (and press enter) all right then
+
+chat output:  all right then, I'm not sure what I'm going to do. I'm not sure if I'm going to do it. I
+
+chat with me: (and press enter) ^CTraceback (most recent call last):
+  File "/Users/anupkaul/akaul_git/demosthenes-llm/pretraining/preloaded_weights/openai/scripts/inference.py", line 57, in <module>
+    user_input = input("\nchat with me: (and press enter) ")
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+KeyboardInterrupt
+
