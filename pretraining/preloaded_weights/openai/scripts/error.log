@@ -33,3 +33,44 @@ chat output:  Every effort moves you so often and this is your own responsibilit
 chat with me: (and press enter) Every effort moves you
 
 chat output:  Every effort moves you around."<|endoftext|>How it works... It has been estimated by the Institute for Women Research, one of the leading experts on women
+
+--> program quit on its own:
+
+chat with me: (and press enter) Every effort moves you
+
+chat output:  Every effort moves you so often and this is your own responsibility." She's no "treaty" on how little this may feel or want
+
+chat with me: (and press enter) Every effort moves you
+
+chat output:  Every effort moves you around."<|endoftext|>How it works... It has been estimated by the Institute for Women Research, one of the leading experts on women
+
+chat with me: (and press enter) 
+Traceback (most recent call last):
+  File "/Users/anupkaul/akaul_git/demosthenes-llm/pretraining/preloaded_weights/openai/scripts/inference.py", line 84, in <module>
+    token_ids = generate(
+                ^^^^^^^^^
+  File "/Users/anupkaul/akaul_git/demosthenes-llm/pretraining/preloaded_weights/openai/scripts/textgenerate.py", line 25, in generate
+    logits = model(idx_cond)
+             ^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1511, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1520, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/anupkaul/akaul_git/demosthenes-llm/pretraining/preloaded_weights/openai/scripts/../../../../llm-infra/GPTModel.py", line 50, in forward
+    tok_embeds = self.tok_emb(in_idx)
+                 ^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1511, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1520, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.11/site-packages/torch/nn/modules/sparse.py", line 163, in forward
+    return F.embedding(
+           ^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.11/site-packages/torch/nn/functional.py", line 2237, in embedding
+    return torch.embedding(weight, input, padding_idx, scale_grad_by_freq, sparse)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+RuntimeError: Expected tensor for argument #1 'indices' to have one of the following scalar types: Long, Int; but got torch.FloatTensor instead (while checking arguments for embedding)
