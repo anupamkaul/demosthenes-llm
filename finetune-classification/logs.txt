@@ -1,4 +1,4 @@
-python spam-dataset.py
+(base) anupkaul@147dda4c0851 finetune-classification % python spam-dataset.py 
 sms_spam_collection/SMSSpamCollection.tsv already exists. Skipping download and extraction.
      Label                                               Text
 0      ham  Go until jurong point, crazy.. Available only ...
@@ -14,20 +14,28 @@ sms_spam_collection/SMSSpamCollection.tsv already exists. Skipping download and 
 5571   ham                         Rofl. Its true to its name
 
 [5572 rows x 2 columns]
-
-# class label distribution (as is):
-
 Label
 ham     4825
 spam     747
 Name: count, dtype: int64
-
-# balance out the labels (this 747 of each):
-
 Label
 ham     747
 spam    747
 Name: count, dtype: int64
+      Label                                               Text
+4307      0  Awww dat is sweet! We can think of something t...
+4138      0                             Just got to  &lt;#&gt;
+4831      0  The word "Checkmate" in chess comes from the P...
+4461      0  This is wishing you a great day. Moji told me ...
+5440      0      Thank you. do you generally date the brothas?
+...     ...                                                ...
+5537      1  Want explicit SEX in 30 secs? Ring 02073162414...
+5540      1  ASKED 3MOBILE IF 0870 CHATLINES INCLU IN FREE ...
+5547      1  Had your contract mobile 11 Mnths? Latest Moto...
+5566      1  REMINDER FROM O2: To get 2.50 pounds free call...
+5567      1  This is the 2nd time we have tried 2 contact u...
+
+[1494 rows x 2 columns]
 
 
 

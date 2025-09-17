@@ -80,5 +80,45 @@ def create_balanced_dataset(df):
 balanced_df = create_balanced_dataset(df)
 print(balanced_df["Label"].value_counts())
 
+# next, we will convert the label names to "tokens" (0 and 1)
+# (or integer class labels)
+
+balanced_df["Label"] = balanced_df["Label"].map({"ham": 0, "spam": 1})
+print(balanced_df)
+
+# next, we create a random_split function to split the dataset (balanced_df) 
+# into 3 parts: 70% for training, 10% for validation, and 20% for testing
+# (this is a common ML ratio to train, adjust and evaluate models)
+
+# the good thing about this func is that it will auto adjust the 3 subsets
+# based on the frac values it recieves
+
+def random_split(df, train_frac, validation_frac):
+
+    # shuffle the entire data frame
+    df = df.sample(frac=1, random_state=123).reset_index(drop=True) 
+
+    # calculate the split indices
+    train_end      = int(len(df) * train_frac)
+    validation_end = train_end + int(len(df) * validation_frac)
+
+    train_df      = df[:train_end]                    # grab the first chunk for training (dataframes)
+    validation_df = df[train_end:validation_end] # grab the 2nd chunk for validation
+    test_df       = df[validation_end:]
+
+    return train_df, validation_df, test_df
+
+# test the above :
+
+train_df, validation_df, test_df = random_split(balanced_df, 0.7, 0.1) # meaning test is 0.2
+
+# save the batched sets as their own .CSV files:
+
+train_df.to_csv("train.csv", index=None)
+validation_df.to_csv("validation.csv", index=None)
+test_df.to_csv("test.csv", index=None)
 
 
+
+
+    
