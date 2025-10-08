@@ -45,4 +45,6 @@ Stage 3:
 
 spam-dataset.py  (this generates a bunch of SMS data and ancillary files)
 spam-dataloader.py (this creates data loaders specific for the SMS dataset, as a precursor to the classification based training)
+spam-datasetclass.py (this defines the dataset class that I use to instantiate the loaders)
+
 
