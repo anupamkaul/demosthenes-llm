@@ -41,4 +41,8 @@ Stage 3:
 9. Evaluate the fine-tuned model
 10. Use model on new data (inference)
 
+--> order of perusal
+
+spam-dataset.py  (this generates a bunch of SMS data and ancillary files)
+spam-dataloader.py (this creates data loaders specific for the SMS dataset, as a precursor to the classification based training)
 

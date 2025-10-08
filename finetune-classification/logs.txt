@@ -1,4 +1,3 @@
-(base) anupkaul@147dda4c0851 finetune-classification % python spam-dataset.py 
 sms_spam_collection/SMSSpamCollection.tsv already exists. Skipping download and extraction.
      Label                                               Text
 0      ham  Go until jurong point, crazy.. Available only ...
@@ -36,7 +35,3 @@ Name: count, dtype: int64
 5567      1  This is the 2nd time we have tried 2 contact u...
 
 [1494 rows x 2 columns]
-
-
-
-
