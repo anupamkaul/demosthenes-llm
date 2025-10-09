@@ -30,6 +30,30 @@ we reuse the GPTModel class (demosthenes) and load_weights_into_gpt function
 from pretraining to download the weights into the GPT model. A hackier way is
 also to simply read the model that I stored to the disk but I will skip that
 for now and re-create the pretrained demosthenes model now
+
+Starting point is ../pretraining/preloaded_weights/openai/scripts
+'''
+
+import sys, os
+sys.path.append( os.path.join( os.path.dirname(os.path.abspath(__file__)),  '../pretraining/preloaded_weights/openai/scripts') )
+sys.path.append( os.path.join( os.path.dirname(os.path.abspath(__file__)),  '../llm-infra/') )
+
+from gpt_download import download_and_load_gpt2
+from create_pretrained_model import load_weights_into_gpt
+from GPTModel import GPTModel
+
+model_size = CHOOSE_MODEL.split(" ")[-1].lstrip("(").rstrip(")")
+settings, params = download_and_load_gpt2(
+    model_size=model_size, models_dir="gpt2"
+)
+
+model = GPTModel(BASE_CONFIG)
+load_weights_into_gpt(model, params)
+model.eval()
+
+'''
+After loading the model weights into the GPTModel, we reuse the text generation utility function 
+from previous work to ensure that the model generates coherent text:
 '''
 
 

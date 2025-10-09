@@ -36,7 +36,9 @@ parent-child-basics.py
 training.py
 dual_writer.py (sample code to show how to dump and print, for training.py)
 
-
+The two folders are:
+1. gutenberg/gutenberg for the full training I myself did with gutenberg data
+2. pretraining/preloaded_weights/openai/scripts for preloading demosthenes will publically available open weights
 
 
 
