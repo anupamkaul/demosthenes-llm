@@ -39,7 +39,7 @@ sys.path.append( os.path.join( os.path.dirname(os.path.abspath(__file__)),  '../
 sys.path.append( os.path.join( os.path.dirname(os.path.abspath(__file__)),  '../llm-infra/') )
 
 from gpt_download import download_and_load_gpt2
-from create_pretrained_model import load_weights_into_gpt
+from load_wts_to_gpt import load_weights_into_gpt
 from GPTModel import GPTModel
 
 model_size = CHOOSE_MODEL.split(" ")[-1].lstrip("(").rstrip(")")
@@ -50,6 +50,7 @@ settings, params = download_and_load_gpt2(
 model = GPTModel(BASE_CONFIG)
 load_weights_into_gpt(model, params)
 model.eval()
+print("model with loaded weights is ready")
 
 '''
 After loading the model weights into the GPTModel, we reuse the text generation utility function 
