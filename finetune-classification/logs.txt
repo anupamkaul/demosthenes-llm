@@ -59,3 +59,7 @@ Every effort moves you forward.
 
 The first step is to understand the importance of your work
 
+now checking for classification prompts:
+Is the following text 'spam'? Answer with 'yes' or 'no': 'You are a winner you have been specially selected to receive $1000 cash or a $2000 award.'
+
+The following text 'spam'? Answer with 'yes' or 'no': 'You are a winner
