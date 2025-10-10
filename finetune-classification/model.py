@@ -57,4 +57,17 @@ After loading the model weights into the GPTModel, we reuse the text generation 
 from previous work to ensure that the model generates coherent text:
 '''
 
+from textgenerate import text_to_token_ids, generate_text_simple, token_ids_to_text, generate
+
+import tiktoken
+tokenizer = tiktoken.get_encoding("gpt2")
+
+text_1 = "Every effort moves you"
+token_ids = generate_text_simple(
+    model=model,
+    idx=text_to_token_ids(text_1, tokenizer),
+    max_new_tokens=15,
+    context_size=BASE_CONFIG["context_length"]
+)
+print(token_ids_to_text(token_ids, tokenizer))
 
