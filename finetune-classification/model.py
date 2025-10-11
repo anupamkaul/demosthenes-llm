@@ -89,4 +89,59 @@ token_ids = generate_text_simple(
 )
 print(token_ids_to_text(token_ids, tokenizer))
 
+'''
+To prep the model for classification fine tuning, we replace the 
+original output layer, which maps the hidden representation of 768
+nodes to 50,257 (the token vocabulary) to 2 classes (0 - not spam, and
+1 - spam). We use the same model as above which is pretrained, except
+that we will replace the output layer and then train this model such
+that only the edge most nodes of the outermost layer that we have replaced,
+are tuned, thus achieving "fine tuning" of this model geared towards
+classification.
+
+Fine-tuning selected layers vs. all layers
+
+Since we start with a pretrained model, it’s not necessary to fine-tune 
+all model layers. In neural network-based language models, the lower layers 
+generally capture basic language structures and semantics applicable across 
+a wide range of tasks and datasets. So, fine-tuning only the last layers 
+(i.e., layers near the output), which are more specific to nuanced linguistic 
+patterns and task-specific features, is often sufficient to adapt the model to 
+new tasks. A nice side effect is that it is computationally more efficient to 
+fine-tune only a small number of layers.
+
+'''
+
+print("\n", model)
+
+# first, freeze the model, meaning that we make all layers non-trainable
+
+for param in model.parameters():
+    param.requires_grad = False
+
+# next, we replace the output layer (model.out_head -- see logs.txt) which
+# originally maps to the size of the vocab, to 2
+
+import torch
+torch.manual_seed(123)
+num_classes = 2
+
+model.out_head = torch.nn.Linear(
+    in_features  = BASE_CONFIG["emb_dim"],  # 768, as before
+    out_features = num_classes              # 2 now
+)
+
+# note that this new model_out.head has requires_grad set to True by default
+# so this will be the only layer in the model that will be updated during
+# training. We also configure the last transformer block (accessed as -1) 
+# and the final LayerNorm module, which connects this block to the output layer,
+# to be trainable.
+
+for param in model.trf_blocks[-1].parameters():
+    param.requires_grad = True
+for param in model.final_norm.parameters():
+    param.requires_grad = True
+
+print(model)
+
 
