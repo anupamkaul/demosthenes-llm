@@ -144,4 +144,54 @@ for param in model.final_norm.parameters():
 
 print(model)
 
+'''
+above shows that model.out_head maps to 2. At this time requires_grad field for
+params is false for every layer except the last trf and layer_norm layers and the
+final output block.
+'''
+
+'''
+Lets now check that freezing the model doesn't impact the model's operations, i.e.
+I should still be able to feed the model text, and grab out all of the output layers
+with the difference being that the final tensor dims should be 2 instead of 50247
+'''
+
+print("\ncheck that the frozen model (except the final layers) is still able to operate on text as expected\n")
+
+inputs = tokenizer.encode("Do you have time")	
+inputs = torch.tensor(inputs).unsqueeze(0)
+print("Inputs:", inputs)
+print("Input dims:", inputs.shape)    # shape(batch, size, num_tokens)
+
+'''
+The print output shows that the preceding code encodes the inputs into a tensor consisting of four input tokens:
+
+Inputs: tensor([[5211,  345,  423,  640]])
+Inputs dimensions: torch.Size([1, 4])
+
+'''
+
+# now we pass the encoded text into the frozen model and get the output tensors
+
+with torch.no_grad():
+    output = model(inputs)
+
+print("Output: ", output)
+print("Output dims", output.shape)    # shape(batch, size, num_tokens)
+
+'''
+The output tensor looks like the following:
+
+Outputs:
+ tensor([[[-1.5854,  0.9904],
+          [-3.7235,  7.4548],
+          [-2.2661,  6.6049],
+          [-3.5983,  3.9902]]])
+Outputs dimensions: torch.Size([1, 4, 2])
+
+A similar input would have previously produced an output tensor of [1, 4, 50257], where 50257 
+represents the vocabulary size. The number of output rows corresponds to the number of input tokens 
+(in this case, four). However, each output’s embedding dimension (the number of columns) is now 2 
+instead of 50,257 since we replaced the output layer of the model.
+'''
 

@@ -308,4 +308,12 @@ GPTModel(
 block's required_grad is also made True thus making only the last trf block, layer norm,
 the final output layer to be trainable, rest of the model is frozen.
 
+check that the frozen model (except the final layers) is still able to operate on text as expected
 
+Inputs: tensor([[5211,  345,  423,  640]])
+Input dims: torch.Size([1, 4])
+Output:  tensor([[[-1.5854,  0.9904],
+         [-3.7235,  7.4548],
+         [-2.2661,  6.6049],
+         [-3.5983,  3.9902]]])
+Output dims torch.Size([1, 4, 2])
