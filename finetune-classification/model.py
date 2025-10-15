@@ -195,3 +195,106 @@ represents the vocabulary size. The number of output rows corresponds to the num
 instead of 50,257 since we replaced the output layer of the model.
 '''
 
+'''
+
+Given how causal attention works, the last token actually holds all of the attention query info
+from the previous tokens. So we don't need to fine tune the 4 rows (output). Instead we will
+focus on the last row corresponding to the last output token (see last_output_token.png)
+
+Given the causal attention mask setup, the last token in a sequence accumulates the most information 
+since it is the only token with access to data from all the previous tokens. Therefore, in our spam 
+classification task, we focus on this last token during the fine-tuning process.
+
+'''
+
+print("last output token: ", output[:, -1, :])  # the : is don't care or for-all, the -1 indicates last..
+
+'''
+Last output token: tensor([[-3.5983,  3.9902]])
+
+Next: we convert this last token to class prediction labels
+(we use softmax and argmax as follows)
+'''
+
+probas = torch.softmax(output[:, -1, :], dim=-1)
+label = torch.argmax(probas)
+print("Class label:", label.item())
+
+'''
+Using the softmax function here is optional because the largest outputs directly correspond to the highest 
+probability scores. Hence, we can simplify the code without using softmax:
+'''
+
+logits = output[:, -1, :]
+label = torch.argmax(logits)
+print("Class label:", label.item())
+
+'''
+Both of the above return the class label 1 (spam)
+
+This concept can also be used to compute the classification accuracy, which measures the percentage of correct 
+predictions across a dataset.
+
+To determine the classification accuracy, we apply the argmax-based prediction code to all examples in the dataset 
+and calculate the proportion of correct predictions by defining a calc_accuracy_loader function, like so:
+'''
+
+def calc_accuracy_loader(data_loader, model, device, num_batches=None):
+    model.eval()
+    correct_predictions, num_examples = 0, 0
+
+    if num_batches is None:
+        num_batches = len(data_loader)
+    else:
+        num_batches = min(num_batches, len(data_loader))
+    for i, (input_batch, target_batch) in enumerate(data_loader):
+        if i < num_batches:
+            input_batch = input_batch.to(device)
+            target_batch = target_batch.to(device)
+
+
+            with torch.no_grad():
+                logits = model(input_batch)[:, -1, :]    # last output token
+            predicted_labels = torch.argmax(logits, dim=-1)
+
+            num_examples += predicted_labels.shape[0]
+            correct_predictions += (
+                (predicted_labels == target_batch).sum().item()
+            )
+
+        else:
+            break
+    return correct_predictions / num_examples
+
+'''
+Let's use the above function to determine the classification accuracies from a bunch
+of 10 batches from the 3 datasets, for efficiency:
+device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+model.to(device)
+
+torch.manual_seed(123)
+train_accuracy = calc_accuracy_loader(
+    train_loader, model, device, num_batches=10
+)
+val_accuracy = calc_accuracy_loader(
+    val_loader, model, device, num_batches=10
+)
+test_accuracy = calc_accuracy_loader(
+    test_loader, model, device, num_batches=10
+)
+
+print(f"Training accuracy: {train_accuracy*100:.2f}%")
+print(f"Validation accuracy: {val_accuracy*100:.2f}%")
+print(f"Test accuracy: {test_accuracy*100:.2f}%")
+
+Training accuracy: 46.25%
+Validation accuracy: 45.00%
+Test accuracy: 48.75%
+
+we get close to random probabities (50%ish) and this is
+because we haven't fine tuned the model for classification
+yet
+
+the next step prior to training would be to figure out
+how we calculate the loss
+'''
