@@ -4,11 +4,12 @@ Complete agent chat interface with function calling
 
 import torch
 import tiktoken
+
 from agent_executor import AgentExecutor
+from agent_model import setup_agent_model
 
 # Load the trained model and setup
 def load_agent_model():
-    exec(open('agent-model.py').read())
     model = setup_agent_model()
     
     # Load trained weights if available
