@@ -1,0 +1,43 @@
+> Here's a clear explanation of all the agent* files in your directory:
+
+## **agent-chat.py**
+Interactive chat interface for the agent system. Loads a trained model and provides a conversation loop where users can input requests, and the agent 
+predicts which function to call and executes it with confidence scores.
+
+## **agent_functions.json**
+Simple JSON configuration defining 6 available functions: get_weather, send_email, search_web, calculate, set_reminder, and no_function with their 
+descriptions.
+
+## **advanced-agent-dataset.py**
+Generates an expanded training dataset with 10 functions including file operations (read_file, write_file, run_code) and multi-step reasoning capabilities. 
+Creates train/validation/test splits.
+
+## **agent-executor.py**
+Function execution engine that takes predicted function names and user input, then executes the appropriate action. Contains helper methods to extract 
+parameters like locations, recipients, and math expressions from natural language.
+
+## **multi-step-agent.py**
+Handles complex tasks requiring multiple function calls in sequence. Uses rule-based decomposition to break down requests like "check weather and email it" 
+into separate steps, then executes them sequentially.
+
+## **agent-finetune.py**
+Training script that fine-tunes your Demosthenes LLM for agent function calling. Uses the same classification approach as your spam detection but for 
+predicting which function to call based on user input.
+
+## **agent-model.py**
+Model setup that loads pretrained GPT-2 weights into your Demosthenes architecture, freezes most parameters, and replaces the output head with a 6-class 
+classifier for function prediction. Only unfreezes the last transformer block for fine-tuning.
+
+## **agent_datasetclass.py**
+PyTorch Dataset class for loading agent training data. Handles tokenization, padding, and truncation of text inputs paired with function labels.
+
+## **agent-dataset.py**
+Generates basic training examples mapping natural language requests to function calls. Creates 12 examples across 6 functions with train/validation/test 
+splits.
+
+## **complete-agent.py**
+Most advanced implementation combining all components with conversation memory, context awareness, and session saving. Handles follow-up questions, context 
+references, and provides an interactive chat interface with debugging commands.
+
+The files follow your classification fine-tuning pattern but adapt it for function calling - essentially treating function prediction as a 6-class 
+classification problem where the model learns to map user intents to executable functions.

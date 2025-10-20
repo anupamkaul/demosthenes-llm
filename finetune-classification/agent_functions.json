@@ -1,0 +1,8 @@
+{
+  "get_weather": "Get current weather for a location",
+  "send_email": "Send an email to a recipient",
+  "search_web": "Search the web for information",
+  "calculate": "Perform mathematical calculations",
+  "set_reminder": "Set a reminder for a specific time",
+  "no_function": "No function call needed"
+}

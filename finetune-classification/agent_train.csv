@@ -1,0 +1,9 @@
+Text,Function,Label
+What's the weather like in San Francisco?,get_weather,0
+Send an email to John about the meeting,send_email,1
+Search for Python tutorials,search_web,2
+What is 25 * 47?,calculate,3
+Remind me to call mom at 3pm,set_reminder,4
+"Hello, how are you?",no_function,5
+Can you check the temperature in New York?,get_weather,0
+Email the report to Sarah,send_email,1
