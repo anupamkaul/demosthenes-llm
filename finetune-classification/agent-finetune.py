@@ -9,7 +9,7 @@ from torch.utils.data import DataLoader
 import tiktoken
 
 from agent_datasetclass import AgentDataset
-exec(open('agent_model.py').read())
+exec(open('agent-model.py').read())
 
 def train_agent_model():
     """Fine-tune model for agent function calling"""
