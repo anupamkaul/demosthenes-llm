@@ -1,0 +1,44 @@
+# trained the generated code of agent_finetune.py and saved the trained model
+# agent_chat should pick it up for next time ..
+
+(base) anupkaul@147dda4c0851 finetune-classification % python agent-finetune.py
+  File "/Users/anupkaul/akaul_git/demosthenes-llm/finetune-classification/agent-finetune.py", line 66
+    from agent-dataset import generate_agent_dataset
+              ^
+SyntaxError: invalid syntax
+(base) anupkaul@147dda4c0851 finetune-classification % vi agent-finetune.py
+(base) anupkaul@147dda4c0851 finetune-classification % mv agent-dataset.py agent_dataset.py
+(base) anupkaul@147dda4c0851 finetune-classification % python agent-finetune.py
+2025-10-20 16:12:46.840285: I tensorflow/core/platform/cpu_feature_guard.cc:210] This TensorFlow binary is optimized to use available CPU instructions in performance-critical operations.
+To enable the following instructions: AVX2 AVX512F AVX512_VNNI FMA, in other operations, rebuild TensorFlow with the appropriate compiler flags.
+AttributeError: 'MessageFactory' object has no attribute 'GetPrototype'
+AttributeError: 'MessageFactory' object has no attribute 'GetPrototype'
+AttributeError: 'MessageFactory' object has no attribute 'GetPrototype'
+AttributeError: 'MessageFactory' object has no attribute 'GetPrototype'
+AttributeError: 'MessageFactory' object has no attribute 'GetPrototype'
+AttributeError: 'MessageFactory' object has no attribute 'GetPrototype'
+File already exists and is up-to-date: gpt2/124M/checkpoint
+File already exists and is up-to-date: gpt2/124M/encoder.json
+File already exists and is up-to-date: gpt2/124M/hparams.json
+File already exists and is up-to-date: gpt2/124M/model.ckpt.data-00000-of-00001
+File already exists and is up-to-date: gpt2/124M/model.ckpt.index
+File already exists and is up-to-date: gpt2/124M/model.ckpt.meta
+File already exists and is up-to-date: gpt2/124M/vocab.bpe
+Text: 'What's the weather in Boston?' -> Function: calculate (ID: 3)
+Text: 'Send email to Alice' -> Function: calculate (ID: 3)
+Text: 'Hello there' -> Function: calculate (ID: 3)
+Generated 12 agent training examples
+Functions: ['get_weather', 'send_email', 'search_web', 'calculate', 'set_reminder', 'no_function']
+File already exists and is up-to-date: gpt2/124M/checkpoint
+File already exists and is up-to-date: gpt2/124M/encoder.json
+File already exists and is up-to-date: gpt2/124M/hparams.json
+File already exists and is up-to-date: gpt2/124M/model.ckpt.data-00000-of-00001
+File already exists and is up-to-date: gpt2/124M/model.ckpt.index
+File already exists and is up-to-date: gpt2/124M/model.ckpt.meta
+File already exists and is up-to-date: gpt2/124M/vocab.bpe
+Epoch 1: Loss=6.1417, Val Acc=0.00%
+Epoch 2: Loss=4.9943, Val Acc=0.00%
+Epoch 3: Loss=4.2145, Val Acc=0.00%
+Epoch 4: Loss=3.4874, Val Acc=0.00%
+Epoch 5: Loss=2.8035, Val Acc=0.00%
+Agent model saved!`
