@@ -73,3 +73,56 @@ Epoch 4: Loss=2.6822, Val Acc=100.00%
 Epoch 5: Loss=2.3817, Val Acc=100.00%
 Agent model saved!
 
+
+--> retrain for fine tuning by increasing epochs from 5 to 20
+losses go down to 1.73 range and then stick there..
+
+(base) anupkaul@147dda4c0851 bootstrap-agents % python agent-finetune.py
+2025-10-21 14:45:25.617932: I tensorflow/core/platform/cpu_feature_guard.cc:210] This TensorFlow binary is optimized to use available CPU instructions in performance-critical operations.
+To enable the following instructions: AVX2 AVX512F AVX512_VNNI FMA, in other operations, rebuild TensorFlow with the appropriate compiler flags.
+AttributeError: 'MessageFactory' object has no attribute 'GetPrototype'
+AttributeError: 'MessageFactory' object has no attribute 'GetPrototype'
+AttributeError: 'MessageFactory' object has no attribute 'GetPrototype'
+AttributeError: 'MessageFactory' object has no attribute 'GetPrototype'
+AttributeError: 'MessageFactory' object has no attribute 'GetPrototype'
+AttributeError: 'MessageFactory' object has no attribute 'GetPrototype'
+File already exists and is up-to-date: gpt2/124M/checkpoint
+File already exists and is up-to-date: gpt2/124M/encoder.json
+File already exists and is up-to-date: gpt2/124M/hparams.json
+File already exists and is up-to-date: gpt2/124M/model.ckpt.data-00000-of-00001
+File already exists and is up-to-date: gpt2/124M/model.ckpt.index
+File already exists and is up-to-date: gpt2/124M/model.ckpt.meta
+File already exists and is up-to-date: gpt2/124M/vocab.bpe
+Text: 'What's the weather in Boston?' -> Function: get_weather (ID: 0)
+Text: 'Send email to Alice' -> Function: get_weather (ID: 0)
+Text: 'Hello there' -> Function: get_weather (ID: 0)
+Generated 12 agent training examples
+Functions: ['get_weather', 'send_email', 'search_web', 'calculate', 'set_reminder', 'no_function']
+File already exists and is up-to-date: gpt2/124M/checkpoint
+File already exists and is up-to-date: gpt2/124M/encoder.json
+File already exists and is up-to-date: gpt2/124M/hparams.json
+File already exists and is up-to-date: gpt2/124M/model.ckpt.data-00000-of-00001
+File already exists and is up-to-date: gpt2/124M/model.ckpt.index
+File already exists and is up-to-date: gpt2/124M/model.ckpt.meta
+File already exists and is up-to-date: gpt2/124M/vocab.bpe
+Epoch 1: Loss=5.1735, Val Acc=100.00%
+Epoch 2: Loss=4.0145, Val Acc=100.00%
+Epoch 3: Loss=3.2317, Val Acc=0.00%
+Epoch 4: Loss=2.7010, Val Acc=0.00%
+Epoch 5: Loss=2.3488, Val Acc=0.00%
+Epoch 6: Loss=2.2830, Val Acc=0.00%
+Epoch 7: Loss=2.1256, Val Acc=0.00%
+Epoch 8: Loss=2.0593, Val Acc=0.00%
+Epoch 9: Loss=1.9882, Val Acc=0.00%
+Epoch 10: Loss=1.9103, Val Acc=0.00%
+Epoch 11: Loss=1.8754, Val Acc=0.00%
+Epoch 12: Loss=1.8234, Val Acc=0.00%
+Epoch 13: Loss=1.7777, Val Acc=0.00%
+Epoch 14: Loss=1.7657, Val Acc=0.00%
+Epoch 15: Loss=1.7548, Val Acc=0.00%
+Epoch 16: Loss=1.7463, Val Acc=0.00%
+Epoch 17: Loss=1.7376, Val Acc=0.00%
+Epoch 18: Loss=1.7376, Val Acc=0.00%
+Epoch 19: Loss=1.7171, Val Acc=0.00%
+Epoch 20: Loss=1.7226, Val Acc=0.00%
+Agent model saved!

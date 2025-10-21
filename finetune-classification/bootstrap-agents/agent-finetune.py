@@ -35,7 +35,7 @@ def train_agent_model():
     
     # Training loop
     model.train()
-    for epoch in range(5):  # Minimal epochs
+    for epoch in range(20):  # Minimal epochs
         total_loss = 0
         
         for input_batch, target_batch in train_loader:

@@ -60,3 +60,50 @@ You: ^CTraceback (most recent call last):
     user_input = input("\nYou: ")
                  ^^^^^^^^^^^^^^^^
 KeyboardInterrupt
+
+--> upon retraining the fine tuning for 20 epochs, the results are now skewed to "Search Web" :( 
+
+(base) anupkaul@147dda4c0851 bootstrap-agents % python agent-chat.py
+2025-10-21 14:49:54.712408: I tensorflow/core/platform/cpu_feature_guard.cc:210] This TensorFlow binary is optimized to use available CPU instructions in performance-critical operations.
+To enable the following instructions: AVX2 AVX512F AVX512_VNNI FMA, in other operations, rebuild TensorFlow with the appropriate compiler flags.
+AttributeError: 'MessageFactory' object has no attribute 'GetPrototype'
+AttributeError: 'MessageFactory' object has no attribute 'GetPrototype'
+AttributeError: 'MessageFactory' object has no attribute 'GetPrototype'
+AttributeError: 'MessageFactory' object has no attribute 'GetPrototype'
+AttributeError: 'MessageFactory' object has no attribute 'GetPrototype'
+AttributeError: 'MessageFactory' object has no attribute 'GetPrototype'
+File already exists and is up-to-date: gpt2/124M/checkpoint
+File already exists and is up-to-date: gpt2/124M/encoder.json
+File already exists and is up-to-date: gpt2/124M/hparams.json
+File already exists and is up-to-date: gpt2/124M/model.ckpt.data-00000-of-00001
+File already exists and is up-to-date: gpt2/124M/model.ckpt.index
+File already exists and is up-to-date: gpt2/124M/model.ckpt.meta
+File already exists and is up-to-date: gpt2/124M/vocab.bpe
+Loaded trained agent model
+Agent Chat Ready! Type 'quit' to exit.
+
+You: Hi ! 
+predicted function:  search_web
+probabilities:  tensor([[0.2451, 0.0388, 0.6606, 0.0045, 0.0019, 0.0491]])  confidence:  0.6605753898620605
+Function: search_web (0.66)
+Agent: Search results for: Hi !
+
+You: Send email to Alice
+predicted function:  search_web
+probabilities:  tensor([[1.0626e-01, 9.9016e-03, 8.4711e-01, 1.4183e-03, 1.7283e-04, 3.5144e-02]])  confidence:  0.8471080660820007
+Function: search_web (0.85)
+Agent: Search results for: Send email to
+
+You: this is screwed up ! 
+predicted function:  search_web
+probabilities:  tensor([[2.0550e-01, 2.7270e-02, 7.2085e-01, 1.7283e-03, 5.2371e-04, 4.4133e-02]])  confidence:  0.720849335193634
+Function: search_web (0.72)
+Agent: Search results for: this is screwed
+
+You: bye
+predicted function:  search_web
+probabilities:  tensor([[0.1891, 0.0908, 0.4736, 0.0804, 0.0496, 0.1165]])  confidence:  0.47358933091163635
+Function: search_web (0.47)
+Agent: Search results for: bye
+
+You: quit
