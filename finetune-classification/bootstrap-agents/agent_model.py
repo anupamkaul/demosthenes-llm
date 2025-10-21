@@ -4,8 +4,8 @@ Based on your existing classification fine-tuning approach
 """
 
 import sys, os
-sys.path.append(os.path.join(os.path.dirname(os.path.abspath(__file__)), '../pretraining/preloaded_weights/openai/scripts'))
-sys.path.append(os.path.join(os.path.dirname(os.path.abspath(__file__)), '../llm-infra/'))
+sys.path.append(os.path.join(os.path.dirname(os.path.abspath(__file__)), '../../pretraining/preloaded_weights/openai/scripts'))
+sys.path.append(os.path.join(os.path.dirname(os.path.abspath(__file__)), '../../llm-infra/'))
 
 import torch
 import tiktoken

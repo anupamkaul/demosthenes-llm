@@ -34,3 +34,42 @@ Epoch 5: Loss=2.2601, Val Acc=0.00%
 Agent model saved!
 (base) anupkaul@147dda4c0851 finetune-classification % 
 
+
+--> rerun finetuning in this folder, bootstrap re-downloads gpt2 data here
+--> also it was unable to fix the extra "../" and I had to hand-do it in agent_model.py
+
+python agent-finetune.py
+2025-10-21 13:32:44.697479: I tensorflow/core/platform/cpu_feature_guard.cc:210] This TensorFlow binary is optimized to use available CPU instructions in performance-critical operations.
+To enable the following instructions: AVX2 AVX512F AVX512_VNNI FMA, in other operations, rebuild TensorFlow with the appropriate compiler flags.
+AttributeError: 'MessageFactory' object has no attribute 'GetPrototype'
+AttributeError: 'MessageFactory' object has no attribute 'GetPrototype'
+AttributeError: 'MessageFactory' object has no attribute 'GetPrototype'
+AttributeError: 'MessageFactory' object has no attribute 'GetPrototype'
+AttributeError: 'MessageFactory' object has no attribute 'GetPrototype'
+AttributeError: 'MessageFactory' object has no attribute 'GetPrototype'
+checkpoint: 100%|████████████████████████████████████████████████████████████████████████████████████████████████████████| 77.0/77.0 [00:00<00:00, 16.3kiB/s]
+encoder.json: 100%|████████████████████████████████████████████████████████████████████████████████████████████████████| 1.04M/1.04M [00:00<00:00, 2.89MiB/s]
+hparams.json: 100%|██████████████████████████████████████████████████████████████████████████████████████████████████████| 90.0/90.0 [00:00<00:00, 23.5kiB/s]
+model.ckpt.data-00000-of-00001: 100%|████████████████████████████████████████████████████████████████████████████████████| 498M/498M [00:34<00:00, 14.5MiB/s]
+model.ckpt.index: 100%|████████████████████████████████████████████████████████████████████████████████████████████████| 5.21k/5.21k [00:00<00:00, 2.68MiB/s]
+model.ckpt.meta: 100%|███████████████████████████████████████████████████████████████████████████████████████████████████| 471k/471k [00:00<00:00, 1.53MiB/s]
+vocab.bpe: 100%|█████████████████████████████████████████████████████████████████████████████████████████████████████████| 456k/456k [00:00<00:00, 1.48MiB/s]
+Text: 'What's the weather in Boston?' -> Function: no_function (ID: 5)
+Text: 'Send email to Alice' -> Function: no_function (ID: 5)
+Text: 'Hello there' -> Function: no_function (ID: 5)
+Generated 12 agent training examples
+Functions: ['get_weather', 'send_email', 'search_web', 'calculate', 'set_reminder', 'no_function']
+File already exists and is up-to-date: gpt2/124M/checkpoint
+File already exists and is up-to-date: gpt2/124M/encoder.json
+File already exists and is up-to-date: gpt2/124M/hparams.json
+File already exists and is up-to-date: gpt2/124M/model.ckpt.data-00000-of-00001
+File already exists and is up-to-date: gpt2/124M/model.ckpt.index
+File already exists and is up-to-date: gpt2/124M/model.ckpt.meta
+File already exists and is up-to-date: gpt2/124M/vocab.bpe
+Epoch 1: Loss=5.0620, Val Acc=0.00%
+Epoch 2: Loss=4.1124, Val Acc=100.00%
+Epoch 3: Loss=3.4807, Val Acc=100.00%
+Epoch 4: Loss=2.6822, Val Acc=100.00%
+Epoch 5: Loss=2.3817, Val Acc=100.00%
+Agent model saved!
+

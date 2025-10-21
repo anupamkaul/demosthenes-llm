@@ -41,10 +41,15 @@ class AgentChat:
         
         predicted_id = torch.argmax(logits, dim=-1).item()
         predicted_function = self.functions[predicted_id]
+
+        # debug print
+        print("predicted function: ", predicted_function)
         
         # Get confidence scores
         probabilities = torch.softmax(logits, dim=-1)
         confidence = probabilities[0][predicted_id].item()
+
+        print("probabilities: ", probabilities, " confidence: ", confidence) 
         
         # Execute function
         result = self.executor.execute(predicted_function, user_input)
