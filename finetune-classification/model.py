@@ -266,6 +266,14 @@ def calc_accuracy_loader(data_loader, model, device, num_batches=None):
             break
     return correct_predictions / num_examples
 
+import spam_dataloader
+from spam_dataloader import train_loader, val_loader, test_loader
+
+# quick check..
+print(f"{len(train_loader)} training batches")
+print(f"{len(val_loader)} validation batches")
+print(f"{len(test_loader)} test batches")
+
 '''
 Let's use the above function to determine the classification accuracies from a bunch
 of 10 batches from the 3 datasets, for efficiency:
