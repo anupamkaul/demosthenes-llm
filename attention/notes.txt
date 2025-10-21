@@ -1,0 +1,52 @@
+This folder contains a comprehensive implementation of attention mechanisms, progressing from basic concepts to a full multi-head attention system. Here's 
+what each file does:
+
+### **Core Progression (as outlined in README):**
+
+1. dot_product.py - Demonstrates basic dot product calculations for measuring vector similarity, the foundation of attention mechanisms.
+
+2. simple-self-attention-no-wts.py - Implements simplified self-attention without trainable weights, showing how to compute context vectors using dot 
+products and softmax normalization.
+
+3. context-vec-simple-attn-nowts.py - Extends the simple attention to compute context vectors for all input tokens simultaneously using matrix operations.
+
+4. self-attention-trainable-wts.py - Adds trainable weight matrices (Wq, Wk, Wv) to transform inputs into queries, keys, and values, implementing scaled dot-
+product attention.
+
+5. SelfAttentionV1.py - Compact class implementation using nn.Parameter for weight matrices.
+
+6. test_SelfAttentionV1.py - Test file for the V1 implementation.
+
+7. SelfAttentionV2.py - Improved version using nn.Linear layers for better weight initialization.
+
+8. test_SelfAttentionV2.py - Test file for the V2 implementation.
+
+9. causal_mask_attn.py - Demonstrates causal masking to prevent attention to future tokens, essential for autoregressive language models.
+
+10. SelfAttentionV2Causal.py - Integrates causal masking and dropout into the self-attention class, with batch processing support.
+
+11. test_SelfAttentionV2Causal.py - Test file for causal attention.
+
+12. MultiHeadAttn_StackedCausalSA.py - Creates multi-head attention by stacking multiple causal attention modules using nn.ModuleList.
+
+13. MultiHeadAttention.py - Efficient implementation of multi-head attention that processes all heads in parallel using tensor reshaping and transposition.
+
+### **Supporting Files:**
+
+• **views_example.py** - Demonstrates PyTorch's view() operation for tensor reshaping
+• **transpose_example.py** - Shows various transpose operations in PyTorch
+• **dropout_example.py** - Illustrates dropout application to attention weights
+• **test_batchedMultiplication.py** - Tests batched matrix multiplication used in multi-head attention
+• **TEST123.py** - Comprehensive test using GPT-2 scale parameters (768 dimensions, 12 heads) with actual tokenized text
+
+### **Key Concepts Implemented:**
+
+1. Dot Product Attention - Basic similarity measurement
+2. Self-Attention - Computing context-aware representations
+3. Trainable Weights - Learning optimal query/key/value projections
+4. Scaled Dot-Product - Preventing vanishing gradients
+5. Causal Masking - Ensuring autoregressive behavior
+6. Multi-Head Attention - Parallel processing of different representation subspaces
+7. Batch Processing - Handling multiple sequences simultaneously
+
+The progression builds from fundamental concepts to a production-ready multi-head attention implementation suitable for transformer architectures like GPT.
