@@ -309,3 +309,50 @@ yet
 the next step prior to training would be to figure out
 how we calculate the loss
 '''
+
+'''
+Because classification accuracy is not a differentiable function, 
+we use cross-entropy loss as a proxy to maximize accuracy. Accordingly, 
+the calc_loss_batch function remains the same, with one adjustment: 
+we focus on optimizing only the last token, model(input_batch)[:, -1, :], 
+rather than all tokens, model(input_batch):
+'''
+
+def calc_loss_batch(input_batch, target_batch, model, device):
+    input_batch = input_batch.to(device)
+    target_batch = target_batch.to(device)
+    logits = model(input_batch)[:, -1, :]
+    loss = torch.nn.functional.cross_entropy(logits, target_batch)
+    return loss
+
+def calc_loss_loader(data_loader, model, device, num_batches=None):
+    total_loss = 0.
+    if len(data_loader) == 0:
+        return float("nan")
+    elif num_batches is None:
+        num_batches = len(data_loader)
+    else:
+        num_batches = min(num_batches, len(data_loader))
+    for i, (input_batch, target_batch) in enumerate(data_loader):
+        if i < num_batches:
+            loss = calc_loss_batch(
+                input_batch, target_batch, model, device
+            )
+            total_loss += loss.item()
+        else:
+            break
+    return total_loss / num_batches
+
+# Similar to calculating the training accuracy, we now compute the initial loss for each data set:
+
+with torch.no_grad():
+    train_loss = calc_loss_loader(
+        train_loader, model, device, num_batches=5
+    )
+    val_loss = calc_loss_loader(val_loader, model, device, num_batches=5)
+    test_loss = calc_loss_loader(test_loader, model, device, num_batches=5)
+
+print(f"Training loss: {train_loss:.3f}")
+print(f"Validation loss: {val_loss:.3f}")
+print(f"Test loss: {test_loss:.3f}")
+
