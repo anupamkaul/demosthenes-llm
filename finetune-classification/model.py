@@ -277,6 +277,8 @@ print(f"{len(test_loader)} test batches")
 '''
 Let's use the above function to determine the classification accuracies from a bunch
 of 10 batches from the 3 datasets, for efficiency:
+'''
+
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 model.to(device)
 
@@ -295,6 +297,7 @@ print(f"Training accuracy: {train_accuracy*100:.2f}%")
 print(f"Validation accuracy: {val_accuracy*100:.2f}%")
 print(f"Test accuracy: {test_accuracy*100:.2f}%")
 
+'''
 Training accuracy: 46.25%
 Validation accuracy: 45.00%
 Test accuracy: 48.75%
