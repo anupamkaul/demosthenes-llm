@@ -105,5 +105,16 @@ print(classify_review(
     text_2, model, tokenizer, device, max_length=train_dataset.max_length
 ))
 
+'''
+Do a chatbot that detects spam messages now, based on fine tuned demosthenes
+'''
+
+while(True):
+    user_input = input("\nwrite up something and I will detect spam or not: (and press enter) ")
+    
+    print("\nCheck for Spam: ", user_input) 
+    print(classify_review(user_input, model, tokenizer, device, max_length=train_dataset.max_length))
+
+
 
 

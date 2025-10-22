@@ -14,3 +14,48 @@ spam
 
 Check for Spam:  Hey, just wanted to check if we're still on for dinner tonight? Let me know!
 not spam
+
+--> chatbot mode:
+
+(base) anupkaul@147dda4c0851 finetune-classification % python inference.py
+model loaded in 0.03 minutes.
+[50256]
+120
+120
+120
+Input batch dimensions: torch.Size([8, 120])
+Label batch dimensions torch.Size([8])
+130 training batches
+19 validation batches
+38 test batches
+
+Check for Spam:  You are a winner you have been specially selected to receive $1000 cash or a $2000 award.
+spam
+
+Check for Spam:  Hey, just wanted to check if we're still on for dinner tonight? Let me know!
+not spam
+
+write up something and I will detect spam or not: (and press enter) ou are a winner you have been specially selected to receive $1000 cash
+
+Check for Spam:  ou are a winner you have been specially selected to receive $1000 cash
+not spam
+
+write up something and I will detect spam or not: (and press enter) You are a winner and you have been specially selected to recieve an award
+
+Check for Spam:  You are a winner and you have been specially selected to recieve an award
+not spam
+
+write up something and I will detect spam or not: (and press enter) You are a winner you have been specially selected to receive $1000 cash or a $2000 award.
+
+Check for Spam:  You are a winner you have been specially selected to receive $1000 cash or a $2000 award.
+spam
+
+write up something and I will detect spam or not: (and press enter) Mila, age23, blonde, new in UK. I look sex with UK guys. if u like fun with me. Text MTALK to 69866.18 . 30pp/txt 1st 5free. £1.50 increments. Help08718728876
+
+Check for Spam:  Mila, age23, blonde, new in UK. I look sex with UK guys. if u like fun with me. Text MTALK to 69866.18 . 30pp/txt 1st 5free. £1.50 increments. Help08718728876
+spam
+
+write up something and I will detect spam or not: (and press enter) exit
+
+Check for Spam:  exit
+not spam
