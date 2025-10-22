@@ -1,0 +1,16 @@
+model loaded in 0.03 minutes.
+[50256]
+120
+120
+120
+Input batch dimensions: torch.Size([8, 120])
+Label batch dimensions torch.Size([8])
+130 training batches
+19 validation batches
+38 test batches
+
+Check for Spam:  You are a winner you have been specially selected to receive $1000 cash or a $2000 award.
+spam
+
+Check for Spam:  Hey, just wanted to check if we're still on for dinner tonight? Let me know!
+not spam
