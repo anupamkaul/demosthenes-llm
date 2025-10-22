@@ -1,0 +1,32 @@
+python download_dataset.py
+Traceback (most recent call last):
+  File "/Users/anupkaul/akaul_git/demosthenes-llm/finetune-instruction-follow/download_dataset.py", line 26, in <module>
+    data = download_and_load_file(file_path, url)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/anupkaul/akaul_git/demosthenes-llm/finetune-instruction-follow/download_dataset.py", line 9, in download_and_load_file
+    with urllib.request.urlopen(url) as response:
+         ^^^^^^^^^^^^^^
+AttributeError: module 'urllib' has no attribute 'request'
+(base) anupkaul@147dda4c0851 finetune-instruction-follow % vi download_dataset.py    
+(base) anupkaul@147dda4c0851 finetune-instruction-follow % vi download_dataset.py
+(base) anupkaul@147dda4c0851 finetune-instruction-follow % python download_dataset.py
+Number of entries: 1100
+<enter>
+{'instruction': 'Evaluate the following phrase by transforming it into the spelling given.', 'input': 'freind --> friend', 'output': 'The spelling of the given phrase "freind" is incorrect, the correct spelling is "friend".'}
+<enter>
+{'instruction': 'Edit the following sentence for grammar.', 'input': 'He go to the park every day.', 'output': 'He goes to the park every day.'}
+<enter>
+{'instruction': 'Convert 45 kilometers to meters.', 'input': '', 'output': '45 kilometers is 45000 meters.'}
+<enter>
+{'instruction': "Rewrite this sentence to start with 'Although': Despite the rain, they went for a walk.", 'input': '', 'output': 'Although it was raining, they went for a walk.'}
+<enter>
+{'instruction': 'What are the first 10 square numbers?', 'input': '', 'output': '1, 4, 9, 16, 25, 36, 49, 64, 81, 100.'}
+<enter>
+{'instruction': 'Suggest a more formal synonym for "happy."', 'input': '', 'output': 'A more formal synonym for "happy" is "content."'}
+<enter>
+{'instruction': 'Translate the following sentence into French.', 'input': 'Where is the nearest restaurant?', 'output': 'Où est le restaurant le plus proche?'}
+<enter>^CTraceback (most recent call last):
+  File "/Users/anupkaul/akaul_git/demosthenes-llm/finetune-instruction-follow/download_dataset.py", line 32, in <module>
+    input("<enter>")
+KeyboardInterrupt
+
