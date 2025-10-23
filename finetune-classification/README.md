@@ -14,7 +14,7 @@ working. (All of this done on a mac)
 
 Demosthenes llm is my llm from scratch.
 
-In classification fine-tuning,(follownig classical machine learning) the model is trained to recognize a specific set 
+In classification fine-tuning,(following classical machine learning) the model is trained to recognize a specific set 
 of class labels, such as “spam” and “not spam.” Examples of classification tasks extend beyond LLMs and email filtering: 
 they include identifying different species of plants from images; categorizing news articles into topics like sports, 
 politics, and technology; and distinguishing between benign and malignant tumors in medical imaging.

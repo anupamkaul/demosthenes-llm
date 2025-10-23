@@ -6,6 +6,7 @@ def download_and_load_file(file_path, url):
 
     if not os.path.exists(file_path):
 
+        print("dataset not available, downloading..")
         with urllib.request.urlopen(url) as response:
             text_data = response.read().decode("utf-8")
 
@@ -24,11 +25,11 @@ url =  (
 )
 
 data = download_and_load_file(file_path, url)
-print("Number of entries:", len(data))
-input("<enter>")
+print("Number of entries:", len(data), " <enter>")
+input()
 
 for dataitem in data:
-    print(dataitem)
-    input("<enter>")
+    print(dataitem, " <enter>")
+    input()
 
 
