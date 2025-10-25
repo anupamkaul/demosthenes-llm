@@ -1,0 +1,7 @@
+Comparison of prompt styles for instruction fine-tuning in LLMs. 
+
+The Alpaca style (left) uses a structured format with defined sections for instruction, input, and response, 
+while the Phi-3 style (right) employs a simpler format with designated <|user|> and <|assistant|> tokens.
+
+(We go with Alpaca in this code)
+
