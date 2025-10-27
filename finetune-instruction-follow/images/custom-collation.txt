@@ -1,0 +1,7 @@
+The five substeps involved in implementing the batching process: 
+
+(2.1) applying the prompt template, 
+(2.2) using tokenization from previous chapters, 
+(2.3) adding padding tokens, 
+(2.4) creating target token IDs, and 
+(2.5) replacing -100 placeholder tokens to mask padding tokens in the loss function.
