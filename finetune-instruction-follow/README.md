@@ -5,6 +5,7 @@ Perusal order:
 (1) Dataset prep:
 - download_dataset.py (generates instruction-data.json and logs)
 - stylize_prompts.py  (next we can reformat the training sets to a specific prompt style (alpaca, phi-3 etc))
+- dataset_tuning.py   (all other operations to prepare data for the model, including batching, optimizations etc)
 
 
 
