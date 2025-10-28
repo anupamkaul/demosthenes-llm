@@ -142,3 +142,48 @@ def custom_collate_draft_1(
     inputs_tensor = torch.stack(inputs_lst).to(device)
     return inputs_tensor
 
+'''
+
+Above was for INPUT batches, but we also need to create OUTPUT
+batches that stand for target tokens. Initially they will be right
+shifted by one, as that is how LLMs/attention mechanisms work. The 
+training/backprop will add weights that will then actually strengthen
+the model to predict the next token. Shifting right by one is CORRECT
+because in a sense these are already the generated outputs, and these
+sentences are the "correct" representations of an output from the model
+already (these are ideal outputs in a sense)
+
+draft_2 version adds target tokens to target batches, using the same
+padding strategy as described above, for draft_1:
+
+'''
+
+def custom_collate_draft_2(
+    batch,
+    pad_token_id=50256,
+    device="cpu"
+):
+    batch_max_length = max(len(item)+1 for item in batch)
+    inputs_lst, targets_lst = [], []
+
+    for item in batch:
+        new_item = item.copy()
+        new_item += [pad_token_id]
+
+        padded = (
+            new_item + [pad_token_id] * 
+            (batch_max_length - len(new_item))
+        )
+        inputs = torch.tensor(padded[:-1])
+        targets = torch.tensor(padded[1:]) # target shifts by 1 to left (its the "next" of sequence)
+
+        inputs_lst.append(inputs)
+        targets_lst.append(targets)
+
+    inputs_tensor = torch.stack(inputs_lst).to(device)
+    targets_tensor = torch.stack(targets_lst).to(device)
+
+    return inputs_tensor, targets_tensor
+
+
+

@@ -1,4 +1,5 @@
 from dataset_tuning import custom_collate_draft_1
+from dataset_tuning import custom_collate_draft_2
 
 # test custom_collate_draft_1 (ideally in its own file)
 
@@ -25,5 +26,7 @@ batch2 = (
 print("custom collate draft 1 (batch-1):\n", custom_collate_draft_1(batch1))
 print("custom collate draft 1 (batch-2):\n", custom_collate_draft_1(batch2))
 
-
+print("\n\n")
+print("custom collate draft 2 (batch-1):\n", custom_collate_draft_2(batch1))
+print("custom collate draft 2 (batch-2):\n", custom_collate_draft_2(batch2))
 
