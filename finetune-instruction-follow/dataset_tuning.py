@@ -61,6 +61,9 @@ import torch
 from torch.utils.data import Dataset
 from stylize_prompts import format_input
 
+# first we implement steps 2.1 and 2.2 from
+# images/customer-collation-training-batches.png
+
 class InstructionDataset(Dataset):
 
     def __init__(self, data, tokenizer):
@@ -79,4 +82,63 @@ class InstructionDataset(Dataset):
     def __len__(self):
         return len(self.data)
 
+'''
+
+Similar to the approach for classification fine tuning, we will accelerate
+training by collecting multiple traininig samples in a batch, which means
+we have to pad inputs to a similar length. Similar to classification ft, we 
+will use <|endoftext|> token as a padding token.
+
+But instead of appending this marker to the input tokens, we will directly append
+it to the pretokenized inputs. We can use the tokenizer's encode method on an
+<|endoftext|> marker to remind us which tokenID we should use:
+
+'''
+
+import tiktoken
+tokenizer = tiktoken.get_encoding("gpt2")
+print(tokenizer.encode("<|endoftext|>", allowed_special={"<|endoftext|>"}))
+# this prints [50256]
+
+'''
+Moving on to step 2.3 of the process (see images/collate_within_batches.png), 
+we adopt a more sophisticated approach by developing a custom collate function 
+that we can pass to the data loader. 
+
+This custom collate function pads the training examples in each batch to the same 
+length while allowing different batches to have different lengths.
+
+This approach minimizes unnecessary padding by only extending sequences to match 
+the longest one in EACH batch, NOT the whole dataset.
+'''
+
+def custom_collate_draft_1(
+    batch,    # batch allows different padding equivalencies amongst batches
+    pad_token_id=50256,
+    device="cpu"
+):
+
+    # calc max len for this batch:
+    batch_max_length = max(len(item)+1 for item in batch) # 
+
+    inputs_lst = []
+
+    # pad and prepare inputs:
+    for item in batch:
+        new_item = item.copy()
+        new_item += [pad_token_id]
+
+
+        padded = (
+            new_item + [pad_token_id] * 
+            (batch_max_length - len(new_item))
+        )
+
+        # remove extra padded token added earlier
+        inputs = torch.tensor(padded[:-1])
+        inputs_lst.append(inputs)
+
+    # convert list of inputs into tensor and transfer to target device
+    inputs_tensor = torch.stack(inputs_lst).to(device)
+    return inputs_tensor
 
