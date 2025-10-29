@@ -119,7 +119,7 @@ def custom_collate_draft_1(
 ):
 
     # calc max len for this batch:
-    batch_max_length = max(len(item)+1 for item in batch) # 
+    batch_max_length = max(len(item)+1 for item in batch) 
 
     inputs_lst = []
 
@@ -127,7 +127,6 @@ def custom_collate_draft_1(
     for item in batch:
         new_item = item.copy()
         new_item += [pad_token_id]
-
 
         padded = (
             new_item + [pad_token_id] * 
@@ -185,5 +184,68 @@ def custom_collate_draft_2(
 
     return inputs_tensor, targets_tensor
 
+'''
 
+In the next step, I assign a -100 placeholder value to all padding tokens, 
+as highlighted in minus-100-token.png. This special value allows me to exclude 
+these padding tokens from contributing to the training loss calculation, 
+ensuring that only meaningful data influences model learning. (-100 because this
+is an "ignore-token" option during loss calculations using cross_entropy in pytorch):
+
+"cross_entropy(..., ignore_index=-100)" 
+
+But along with the -100 tokens, I still keep the first end of marker 50256 so that 
+the training can remember where a logical sentence ends (and distinguish them from
+pads that I'm "masking" with -100 so as not to convolute the training (no pun intended))
+
+i.e. retaining the last eom allows the LLM to learn when to generate an end-of-text token in 
+response to instructions, which I use as an indicator that the generated response is complete
+(see retain_last_endoftext.png)
+
+In the following fn I modify my custom collate function to replace tokens of ID 50256 
+with -100 in the target lists. Additionally I introduce an allowed_ max_length parameter 
+to optionally limit the length of the samples. 
+
+This adjustment will be useful if I plan to work with my own datasets that exceed the 
+1024-token context size supported by the GPT-2 model in demosthenes.
+
+'''
+
+def custom_collate_fn(
+    batch,
+    pad_token_id=50256,
+    ignore_index=-100,
+    allowed_max_length=None,
+    device="cpu"
+):
+
+    batch_max_length = max(len(item)+1 for item in batch)
+    inputs_lst, targets_lst = [], []
+
+    for item in batch:
+        new_item = item.copy()
+        new_item += [pad_token_id]
+
+        padded = (
+            new_item + [pad_token_id] *
+            (batch_max_length - len(new_item))
+        )
+        inputs = torch.tensor(padded[:-1])
+        targets = torch.tensor(padded[1:])
+
+        mask = targets == pad_token_id
+        indices = torch.nonzero(mask).squeeze()
+        if indices.numel() > 1:
+            targets[indices[1:]] = ignore_index
+
+        if allowed_max_length is not None:
+            inputs = inputs[:allowed_max_length]
+            targets = targets[:allowed_max_length]
+
+        inputs_lst.append(inputs)
+        targets_lst.append(targets)
+
+    inputs_tensor = torch.stack(inputs_lst).to(device)
+    targets_tensor = torch.stack(targets_lst).to(device)
+    return inputs_tensor, targets_tensor
 
