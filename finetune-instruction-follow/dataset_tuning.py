@@ -76,7 +76,7 @@ class InstructionDataset(Dataset):
             full_text = instruction_plus_input + response_text
             self.encoded_texts.append(tokenizer.encode(full_text))
 
-    def __get_item__(self, index):
+    def __getitem__(self, index):
         return self.encoded_texts[index]
 
     def __len__(self):
@@ -248,4 +248,87 @@ def custom_collate_fn(
     inputs_tensor = torch.stack(inputs_lst).to(device)
     targets_tensor = torch.stack(targets_lst).to(device)
     return inputs_tensor, targets_tensor
+
+'''
+see test_loss_patterns.py : we choose not to apply masks
+to instruction and inputs (the -100) because the paper in
+images/instruction_tuning_w_loss proves that there is more
+benefit to the LLM response in not applying masks to input/instruction
+(but should check and confirm otherwise)
+'''
+
+'''
+Now, onto DataLoaders. Will reuse the code above to basically plugin
+both InstructionDataset objects and the custom_collate_fn into the 
+Pytorch data loaders. The loaders will automatically shuffle and organize
+batches for the LLM fine-tuning process.
+'''
+
+'''
+To reuse the chosen device setting in custom_collate_fn when we plug it into 
+the PyTorch DataLoader class, we use the partial function from Python’s functools 
+standard library to create a new version of the function with the device argument 
+prefilled. Additionally, we set the allowed_max_length to 1024, which truncates 
+the data to the maximum context length supported by the GPT-2 model, which we will fine-tune later:
+'''
+
+device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+
+# if torch.backends.mps.is_available():
+#     device = torch.device("mps")"      
+
+print("Device:", device)
+
+from functools import partial
+
+customized_collate_fn = partial(
+    custom_collate_fn,
+    device=device,
+    allowed_max_length=1024
+)
+
+'''
+Next, we can set up the data loaders as we did previously, but this time, we will 
+use our custom collate function for the batching process.
+'''
+
+from torch.utils.data import DataLoader
+
+num_workers = 0
+batch_size = 8
+
+torch.manual_seed(123)
+
+train_dataset = InstructionDataset(train_data, tokenizer)
+
+train_loader = DataLoader(
+    train_dataset,
+    batch_size=batch_size,
+    collate_fn=customized_collate_fn,
+    shuffle=True,
+    drop_last=True,
+    num_workers=num_workers
+)
+
+val_dataset = InstructionDataset(val_data, tokenizer)
+
+val_loader = DataLoader(
+    val_dataset,
+    batch_size=batch_size,
+    collate_fn=customized_collate_fn,
+    shuffle=False,
+    drop_last=False,
+    num_workers=num_workers
+)
+
+test_dataset = InstructionDataset(test_data, tokenizer)
+
+test_loader = DataLoader(
+    test_dataset,
+    batch_size=batch_size,
+    collate_fn=customized_collate_fn,
+    shuffle=False,
+    drop_last=False,
+    num_workers=num_workers
+)
 
