@@ -1,0 +1,25 @@
+Len of data:  1100
+Training set length: 935
+Test set length: 110
+Validation set length: 55
+[50256]
+Device: cpu
+Below is an instruction that describes a task. Write a response that appropriately completes the request. 
+
+### Instruction:
+Convert the active sentence to passive: 'The chef cooks the meal every day.'
+File already exists and is up-to-date: gpt2/355M/checkpoint
+File already exists and is up-to-date: gpt2/355M/encoder.json
+File already exists and is up-to-date: gpt2/355M/hparams.json
+File already exists and is up-to-date: gpt2/355M/model.ckpt.data-00000-of-00001
+File already exists and is up-to-date: gpt2/355M/model.ckpt.index
+File already exists and is up-to-date: gpt2/355M/model.ckpt.meta
+File already exists and is up-to-date: gpt2/355M/vocab.bpe
+model loaded (including finding on disk) in 0.29 minutes.
+### Response:
+
+The chef cooks the meal every day.
+
+### Instruction:
+
+Convert the active sentence to passive: 'The chef cooks the
