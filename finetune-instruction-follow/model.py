@@ -10,7 +10,7 @@ train_model_simple training code that I used in pretraining demosthenes !
 Before beginning instruction fine-tuning, we must first load a pretrained GPT 
 model that we want to fine-tune (see figure 7.15), a process we have undertaken 
 previously. However, instead of using the smallest 124-million-parameter model 
-as before, we load the medium-sized model with 355 million parameters. 
+as before, we load the medium-sized model with 355-million-parameters. 
 
 The reason for this choice is that the 124-million-parameter model is too limited 
 in capacity to achieve satisfactory results via instruction fine-tuning. Specifically, 
@@ -54,19 +54,31 @@ settings, params = download_and_load_gpt2(
 
 model = GPTModel(BASE_CONFIG)
 load_weights_into_gpt(model, params)
-model.eval();
+model.eval()
+
+'''
+Take the above model, take the instruction set data (dataset_finetune.py)
+and now apply the train_model_simple framework to finetune/train it based
+on the dataset that has been downloaded and formatted. 
+
+We will take the above 355-M pretrained model above and further train it using 
+the curently prepared instruction dataset dataset_finetune.py). 
+We already did all the hard work when we implemented the instruction dataset 
+processing. 
+
+For the fine-tuning process itself, we can reuse the loss calculation and 
+training functions implemented in 'pretraining' folder.
+'''
 
 sys.path.append( os.path.join( os.path.dirname(os.path.abspath(__file__)),  '../pretraining/') )
 
-#from training import train_model_simple
 from utils_loss import calc_loss_loader
+from training_container import train_model_simple
 
-# note: "training.py" in ../pretraining has not been well written
-# pulls in garbage code from ltv that pulls in verdict.txt
-# needs either a re-write or a re-import of train_model_simple into its own container
+# (note that 'train_data' references to train_model_simple must flow from _this_ dataset_finetune.py
+# hence I containerize train_model_simple)
 
-# note that train_loader etc now comes from ./dataset_tuning.py so all I need is a container
-# that contains train_model_simple only (and minimal associated dependencies) 
+
 
 
 
