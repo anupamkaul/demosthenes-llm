@@ -52,9 +52,31 @@ settings, params = download_and_load_gpt2(
     models_dir="gpt2"
 )
 
+'''
+Load the existing model for continued training, or load the downloaded
+pretrained 355M gpt2 model mapped to demosthenes and train it. Both options
+train a pretrained model for instruction fine tuning
+'''
+
 model = GPTModel(BASE_CONFIG)
 load_weights_into_gpt(model, params)
 model.eval()
+
+import torch
+device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+print("device: ", device)
+ 
+model.to(device)
+
+try:
+    model.load_state_dict(torch.load("./model/modelif.pth", map_location=device))
+    print("loaded previously saved model to continue training for instruction-follow..<enter>")
+    input()
+
+except FileNotFoundError:
+    print("model not found on disk. train from scratch for instruction-follow..<enter>")
+    input()
+
 
 '''
 Take the above model, take the instruction set data (dataset_finetune.py)
@@ -67,7 +89,7 @@ We already did all the hard work when we implemented the instruction dataset
 processing. 
 
 For the fine-tuning process itself, we can reuse the loss calculation and 
-training functions implemented in 'pretraining' folder.
+training functions implemented in 'pretraining' folder. (pretraining_container)
 '''
 
 sys.path.append( os.path.join( os.path.dirname(os.path.abspath(__file__)),  '../pretraining/') )
@@ -82,13 +104,6 @@ from training_container import train_model_simple, plot_losses
 before we begin the instruction-follow training, let's calculate the 
 initial loss of training and validation sets
 '''
-
-import torch
-device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
-print("device: ", device)
- 
-model.to(device)
-torch.manual_seed(123)
 
 from dataset_tuning import train_loader, val_loader, train_data, val_data
 
@@ -107,6 +122,9 @@ print("Validation loss:", val_loss)
 Need to optimize this:
 Training loss: 3.9499454498291016
 Validation loss: 3.89001145362854
+
+trained for instruction fine-tuning will have lower values 
+(0.3 and 0.6 ranges)
 '''
 
 '''

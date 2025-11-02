@@ -1,0 +1,35 @@
+(base) anupkaul@147dda4c0851 finetune-instruction-follow % python model.py
+2025-11-02 12:59:56.984637: I tensorflow/core/platform/cpu_feature_guard.cc:210] This TensorFlow binary is optimized to use available CPU instructions in performance-critical operations.
+To enable the following instructions: AVX2 AVX512F AVX512_VNNI FMA, in other operations, rebuild TensorFlow with the appropriate compiler flags.
+AttributeError: 'MessageFactory' object has no attribute 'GetPrototype'
+AttributeError: 'MessageFactory' object has no attribute 'GetPrototype'
+AttributeError: 'MessageFactory' object has no attribute 'GetPrototype'
+AttributeError: 'MessageFactory' object has no attribute 'GetPrototype'
+AttributeError: 'MessageFactory' object has no attribute 'GetPrototype'
+AttributeError: 'MessageFactory' object has no attribute 'GetPrototype'
+File already exists and is up-to-date: gpt2/355M/checkpoint
+File already exists and is up-to-date: gpt2/355M/encoder.json
+File already exists and is up-to-date: gpt2/355M/hparams.json
+File already exists and is up-to-date: gpt2/355M/model.ckpt.data-00000-of-00001
+File already exists and is up-to-date: gpt2/355M/model.ckpt.index
+File already exists and is up-to-date: gpt2/355M/model.ckpt.meta
+File already exists and is up-to-date: gpt2/355M/vocab.bpe
+device:  cpu
+loaded previously saved model to continue training for instruction-follow..<enter>
+
+Len of data:  1100
+Training set length: 935
+Test set length: 110
+Validation set length: 55
+[50256]
+Device: cpu
+Training loss: 0.3159785747528076
+Validation loss: 0.6567213296890259
+Now we fine tune (train) for instruction-follow !  2  num_epochs 
+generate and print sample..
+
+Below is an instruction that describes a task. Write a response that appropriately completes the request.   ### Instruction: Convert the active sentence to passive: 'The chef cooks the meal every day.'  ### Response: The meal is cooked every day by the chef.<|endoftext|>The following is an instruction that describes a task. Write a response that appropriately completes the request.   ### Instruction: What is the capital of the United
+debug: len input batch:  8  len target batch:  8  len train loader :  116
+debug: global_step :  0  tokens seen:  496
+^CTraceback (most recent call last):
+
