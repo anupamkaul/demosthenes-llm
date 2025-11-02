@@ -1,6 +1,10 @@
 '''
 Now that we know how to calculate losses across the batch-sets of training and validation
 data (see loss-training-validation.py) we will implement the code for pretraining my LLM (GPTModel)
+
+Note that this container is for training for instruction fine tuning (the model generated is 
+modelif.pth) 
+
 '''
 
 import torch
