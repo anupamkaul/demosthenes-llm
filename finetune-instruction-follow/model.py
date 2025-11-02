@@ -78,9 +78,42 @@ from training_container import train_model_simple
 # (note that 'train_data' references to train_model_simple must flow from _this_ dataset_finetune.py
 # hence I containerize train_model_simple)
 
+'''
+before we begin the instruction-follow training, let's calculate the 
+initial loss of training and validation sets
+'''
 
+import torch
+device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+print("device: ", device)
+ 
+# TODO : check when we need this       
+optimizer = torch.optim.AdamW(
+    model.parameters(),
+    lr=0.0004, weight_decay=0.1
+)   
 
+model.to(device)
+torch.manual_seed(123)
 
+from dataset_tuning import train_loader, val_loader
+
+with torch.no_grad():
+    train_loss = calc_loss_loader(
+        train_loader, model, device, num_batches=5
+    )
+    val_loss = calc_loss_loader(
+        val_loader, model, device, num_batches=5
+)
+
+print("Training loss:", train_loss)
+print("Validation loss:", val_loss)
+
+'''
+Need to optimize this:
+Training loss: 3.9499454498291016
+Validation loss: 3.89001145362854
+'''
 
 
 

@@ -1,17 +1,16 @@
- python model.py
-2025-10-31 14:08:38.069025: I tensorflow/core/platform/cpu_feature_guard.cc:210] This TensorFlow binary is optimized to use available CPU instructions in performance-critical operations.
-To enable the following instructions: AVX2 AVX512F AVX512_VNNI FMA, in other operations, rebuild TensorFlow with the appropriate compiler flags.
-AttributeError: 'MessageFactory' object has no attribute 'GetPrototype'
-AttributeError: 'MessageFactory' object has no attribute 'GetPrototype'
-AttributeError: 'MessageFactory' object has no attribute 'GetPrototype'
-AttributeError: 'MessageFactory' object has no attribute 'GetPrototype'
-AttributeError: 'MessageFactory' object has no attribute 'GetPrototype'
-AttributeError: 'MessageFactory' object has no attribute 'GetPrototype'
-checkpoint: 100%|████████████████████████████████████████████████████████████████████████████████████████████████████████| 77.0/77.0 [00:00<00:00, 9.95kiB/s]
-encoder.json: 100%|████████████████████████████████████████████████████████████████████████████████████████████████████| 1.04M/1.04M [00:00<00:00, 2.40MiB/s]
-hparams.json: 100%|██████████████████████████████████████████████████████████████████████████████████████████████████████| 91.0/91.0 [00:00<00:00, 31.8kiB/s]
-model.ckpt.data-00000-of-00001: 100%|██████████████████████████████████████████████████████████████████████████████████| 1.42G/1.42G [02:50<00:00, 8.33MiB/s]
-model.ckpt.index: 100%|████████████████████████████████████████████████████████████████████████████████████████████████| 10.4k/10.4k [00:00<00:00, 4.10MiB/s]
-model.ckpt.meta: 100%|███████████████████████████████████████████████████████████████████████████████████████████████████| 927k/927k [00:00<00:00, 2.05MiB/s]
-vocab.bpe: 100%|█████████████████████████████████████████████████████████████████████████████████████████████████████████| 456k/456k [00:00<00:00, 1.22MiB/s]
-
+File already exists and is up-to-date: gpt2/355M/checkpoint
+File already exists and is up-to-date: gpt2/355M/encoder.json
+File already exists and is up-to-date: gpt2/355M/hparams.json
+File already exists and is up-to-date: gpt2/355M/model.ckpt.data-00000-of-00001
+File already exists and is up-to-date: gpt2/355M/model.ckpt.index
+File already exists and is up-to-date: gpt2/355M/model.ckpt.meta
+File already exists and is up-to-date: gpt2/355M/vocab.bpe
+device:  cpu
+Len of data:  1100
+Training set length: 935
+Test set length: 110
+Validation set length: 55
+[50256]
+Device: cpu
+Training loss: 3.9499454498291016
+Validation loss: 3.89001145362854

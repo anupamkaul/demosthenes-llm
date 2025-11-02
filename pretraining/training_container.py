@@ -5,10 +5,6 @@ data (see loss-training-validation.py) we will implement the code for pretrainin
 
 import torch
 
-from dual_writer import DualWriter
-import sys
-sys.stdout = DualWriter("dump_training.txt")
-
 def train_model_simple(model, train_loader, val_loader, optimizer, device, num_epochs,
                        eval_freq, eval_iter, start_context, tokenizer):
 
@@ -144,7 +140,4 @@ def plot_losses(epochs_seen, tokens_seen, train_losses, val_losses):
     fig.tight_layout()
 
     plt.show()
-
-sys.stdout.close() # Close the file at the end
-
 
