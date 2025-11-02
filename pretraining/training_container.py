@@ -5,11 +5,16 @@ data (see loss-training-validation.py) we will implement the code for pretrainin
 
 import torch
 
+from utils_loss import calc_loss_batch, calc_loss_loader
+
 def train_model_simple(model, train_loader, val_loader, optimizer, device, num_epochs,
                        eval_freq, eval_iter, start_context, tokenizer):
 
     train_losses, val_losses, track_tokens_seen = [], [], []  # initialize lists to track losses and tokens seen
     tokens_seen, global_step = 0, -1
+
+    # print a sample text after each iteration to show visual/understandable progress (!) 
+    generate_and_print_sample(model, tokenizer, device, start_context) # print a sample text after each epoch
 
     for epoch in range(num_epochs):                           # main training loop
 
@@ -93,6 +98,9 @@ def evaluate_model(model, train_loader, val_loader, device, eval_iter):
     
     return train_loss, val_loss
 
+
+import textgenerate
+from textgenerate import text_to_token_ids, generate_text_simple, token_ids_to_text
 
 def generate_and_print_sample(model, tokenizer, device, start_context):
 
