@@ -1,0 +1,23 @@
+(base) anupkaul@147dda4c0851 alpaca % python model.py
+2025-11-05 09:20:10.613513: I tensorflow/core/platform/cpu_feature_guard.cc:210] This TensorFlow binary is optimized to use available CPU instructions in performance-critical operations.
+To enable the following instructions: AVX2 AVX512F AVX512_VNNI FMA, in other operations, rebuild TensorFlow with the appropriate compiler flags.
+AttributeError: 'MessageFactory' object has no attribute 'GetPrototype'
+AttributeError: 'MessageFactory' object has no attribute 'GetPrototype'
+AttributeError: 'MessageFactory' object has no attribute 'GetPrototype'
+AttributeError: 'MessageFactory' object has no attribute 'GetPrototype'
+AttributeError: 'MessageFactory' object has no attribute 'GetPrototype'
+AttributeError: 'MessageFactory' object has no attribute 'GetPrototype'
+checkpoint: 100%|████████████████████████████████████████████████████████████████████████████████████████████████████████| 77.0/77.0 [00:00<00:00, 10.6kiB/s]
+encoder.json: 100%|████████████████████████████████████████████████████████████████████████████████████████████████████| 1.04M/1.04M [00:00<00:00, 2.55MiB/s]
+hparams.json: 100%|██████████████████████████████████████████████████████████████████████████████████████████████████████| 91.0/91.0 [00:00<00:00, 54.1kiB/s]
+model.ckpt.data-00000-of-00001: 100%|██████████████████████████████████████████████████████████████████████████████████| 1.42G/1.42G [01:51<00:00, 12.7MiB/s]
+model.ckpt.index: 100%|████████████████████████████████████████████████████████████████████████████████████████████████| 10.4k/10.4k [00:00<00:00, 3.91MiB/s]
+model.ckpt.meta: 100%|███████████████████████████████████████████████████████████████████████████████████████████████████| 927k/927k [00:00<00:00, 2.76MiB/s]
+vocab.bpe: 100%|█████████████████████████████████████████████████████████████████████████████████████████████████████████| 456k/456k [00:00<00:00, 1.86MiB/s]
+device:  cpu
+model not found on disk. train from scratch for instruction-follow for alpaca dataset .. <enter>
+
+Traceback (most recent call last):
+  File "/Users/anupkaul/akaul_git/demosthenes-llm/finetune-instruction-follow/alpaca/model.py", line 99, in <module>
+    from utils_loss import calc_loss_loader
+ModuleNotFoundError: No module named 'utils_loss'

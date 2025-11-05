@@ -294,7 +294,9 @@ use our custom collate function for the batching process.
 from torch.utils.data import DataLoader
 
 num_workers = 0
-batch_size = 8
+#batch_size = 8 # this can be fine tuned for loaders if we run out of memory
+
+batch_size = 2 # this can be fine tuned for loaders if we run out of memory
 
 torch.manual_seed(123)
 
