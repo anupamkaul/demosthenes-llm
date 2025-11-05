@@ -73,3 +73,115 @@ Model response:
 >> Time to go home?
 -------------------------------------
 
+Below is an instruction that describes a task. Write a response that appropriately completes the request. 
+
+### Instruction:
+Rewrite the sentence.
+
+### Input:
+The lecture was delivered in a clear manner.
+
+Correct response:
+>> The lecture was delivered clearly.
+
+Model response:
+>> The lecture was delivered in a clear manner.
+-------------------------------------
+
+Below is an instruction that describes a task. Write a response that appropriately completes the request. 
+
+### Instruction:
+Generate a humorous anecdote.
+
+Correct response:
+>> Why was the math book sad? Because it had too many problems!
+
+Model response:
+>> The cat jumped over the fence.
+-------------------------------------
+
+Below is an instruction that describes a task. Write a response that appropriately completes the request. 
+
+### Instruction:
+Identify the correct spelling: 'recieve' or 'receive'.
+
+Correct response:
+>> The correct spelling is 'receive'.
+
+Model response:
+>> The correct spelling is 'receive'.
+-------------------------------------
+
+Below is an instruction that describes a task. Write a response that appropriately completes the request. 
+
+### Instruction:
+Create a sentence using the word 'nostalgia'.
+
+Correct response:
+>> Nostalgia washed over her as she looked through the old photos.
+
+Model response:
+>> Nostalgia is a strong emotion that can be felt in the past.
+-------------------------------------
+
+Below is an instruction that describes a task. Write a response that appropriately completes the request. 
+
+### Instruction:
+Classify the following numbers as prime or composite.
+
+### Input:
+: 11, 14, 19.
+
+Correct response:
+>> Prime numbers: 11, 19
+Composite numbers: 14
+
+Model response:
+>> Prime: 11
+Composite: 14
+-------------------------------------
+
+Below is an instruction that describes a task. Write a response that appropriately completes the request. 
+
+### Instruction:
+What is the capital of Denmark?
+
+Correct response:
+>> The capital of Denmark is Copenhagen.
+
+Model response:
+>> The capital of Denmark is Copenhagen.
+-------------------------------------
+
+Below is an instruction that describes a task. Write a response that appropriately completes the request. 
+
+### Instruction:
+What is the opposite of 'wet'?
+
+Correct response:
+>> The opposite of 'wet' is 'dry'.
+
+Model response:
+>> The opposite of 'wet' is 'dry'.
+-------------------------------------
+
+Below is an instruction that describes a task. Write a response that appropriately completes the request. 
+
+### Instruction:
+Identify the type of sentence.
+
+### Input:
+Did you finish the report?
+
+Correct response:
+>> The type of sentence is interrogative.
+
+Model response:
+>> The type of sentence is imperative.
+-------------------------------------
+^CTraceback (most recent call last):
+  File "/Users/anupkaul/akaul_git/demosthenes-llm/finetune-instruction-follow/test_model.py", line 111, in <module>
+    input() #let it flow
+    ^^^^^^^
+KeyboardInterrupt
+

@@ -78,7 +78,8 @@ Generate instruction-follow text and compare manually first with the
 supervised response, using first few samples of the test dataset
 '''
 
-for entry in test_data[:5]:    # iterate over 1st 5 samples
+#for entry in test_data[:5]:    # iterate over 1st 5 samples
+for entry in test_data:    # iterate over all samples
     input_text = format_input(entry) # this does not include the output 
 
     # use the model to infer (predict / write) out the response
@@ -107,5 +108,5 @@ for entry in test_data[:5]:    # iterate over 1st 5 samples
     print(f"\nCorrect response:\n>> {entry['output']}")
     print(f"\nModel response:\n>> {response_text.strip()}")
     print("-------------------------------------")
-    input()
+    input() #let it flow
 
