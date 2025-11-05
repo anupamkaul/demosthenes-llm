@@ -1,0 +1,48 @@
+Regularization in LLM fine-tuning is a set of techniques that prevent the model from overfitting to the new, specific dataset. 
+It helps balance the model's ability to learn the new task while retaining its general knowledge and avoiding memorizing the 
+training data too closely. Methods include adding a penalty to the loss function (like L2 regularization), using techniques 
+like dropout to randomly deactivate neurons, or preventing catastrophic forgetting of prior knowledge. 
+
+Key concepts
+
+Overfitting: When a model becomes too specialized to its training data, it performs poorly on new, unseen data. 
+Regularization counteracts this by keeping the model more general.
+
+Bias-variance tradeoff: Regularization decreases the model's variance (sensitivity to training data) at the cost 
+of slightly increasing bias (average error). The goal is to find an optimal balance.
+
+Catastrophic forgetting: A phenomenon where a model fine-tuned on a new task forgets the general knowledge it learned 
+during pre-training. Regularization helps mitigate this. 
+
+Common regularization techniques
+
+Adding a penalty term to the loss function:
+
+L2 regularization: Adds the sum of the squared weights to the loss function, which encourages weights to be small but not 
+necessarily zero.
+
+L1 regularization: Adds the sum of the absolute values of the weights, which can push some weights to exactly zero, performing 
+feature selection.
+
+Dropout: Randomly deactivates a subset of neurons during each training step.
+Prevents neurons from becoming overly reliant on each other, promoting more robust and generalized features.
+Can be applied to various parts of an LLM, including attention layers and feedforward networks.
+
+Preventing catastrophic forgetting:
+
+Techniques like Elastic Weight Consolidation (EWC) apply regularization by restricting updates to parameters important for previous tasks, 
+as described in this arXiv paper. (https://arxiv.org/html/2501.13669v2) 
+
+Knowledge distillation can also be used, where the fine-tuned model learns under the guidance of the original pre-trained model to preserve its knowledge, says this arXiv paper.
+
+Replay-based methods store a small subset of old data to be used alongside new data during training, according to this arXiv paper.
+
+Other techniques:
+
+Learning rate adjustments: Using techniques like Layer-wise Learning Rate Decay (LLRD) to more carefully control how different layers 
+of the model are updated, as explained on newline.co. (https://www.newline.co/@zaoyang/fine-tuning-llms-with-limited-data-regularization-tips--dd41770e)
+
+KL Divergence: Used in Reinforcement Learning (RL) fine-tuning to keep the fine-tuned model close to the original model's distribution, 
+ensuring stable learning, as seen in a Reddit discussion. (https://www.reddit.com/r/reinforcementlearning/comments/1kjhnqw/the_evolution_of_rl_for_finetuning_llms_from/) 
+
+
