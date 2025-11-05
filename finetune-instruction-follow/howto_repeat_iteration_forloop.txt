@@ -1,0 +1,14 @@
+for item in my_list:
+    while True:
+        try:
+            # Perform operations on 'item'
+            # If successful, break out of the while loop
+            print(f"Processing {item}")
+            if item == 2:
+                raise ValueError("Simulating an error for item 2")
+            print(f"Finished processing {item}")
+            break 
+        except ValueError as e:
+            print(f"Error processing {item}: {e}. Retrying...")
+            # The 'continue' statement here keeps the while loop running for the same 'item'
+            continue 

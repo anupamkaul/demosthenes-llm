@@ -1,3 +1,77 @@
+showing that training proceeds normally (step 300, epoch1), batch-size=2 (so will take a long time coming out of the batch loop)
+meaning I will need to add state values and iteratively save and load, but memory pressure is good
+
+Epoch 1 (Step 000285): Train loss 1.621, Val loss 1.686
+debug: len input batch:  2  len target batch:  2  len train loader :  22100
+debug: global_step :  286  tokens seen:  73240
+debug: len input batch:  2  len target batch:  2  len train loader :  22100
+debug: global_step :  287  tokens seen:  73550
+debug: len input batch:  2  len target batch:  2  len train loader :  22100
+debug: global_step :  288  tokens seen:  73836
+debug: len input batch:  2  len target batch:  2  len train loader :  22100
+debug: global_step :  289  tokens seen:  74080
+debug: len input batch:  2  len target batch:  2  len train loader :  22100
+debug: global_step :  290  tokens seen:  74460
+Epoch 1 (Step 000290): Train loss 1.371, Val loss 1.683
+debug: len input batch:  2  len target batch:  2  len train loader :  22100
+debug: global_step :  291  tokens seen:  74596
+debug: len input batch:  2  len target batch:  2  len train loader :  22100
+debug: global_step :  292  tokens seen:  74784
+debug: len input batch:  2  len target batch:  2  len train loader :  22100
+debug: global_step :  293  tokens seen:  74960
+debug: len input batch:  2  len target batch:  2  len train loader :  22100
+debug: global_step :  294  tokens seen:  75238
+debug: len input batch:  2  len target batch:  2  len train loader :  22100
+debug: global_step :  295  tokens seen:  75376
+Epoch 1 (Step 000295): Train loss 1.412, Val loss 1.677
+debug: len input batch:  2  len target batch:  2  len train loader :  22100
+debug: global_step :  296  tokens seen:  75602
+debug: len input batch:  2  len target batch:  2  len train loader :  22100
+debug: global_step :  297  tokens seen:  75732
+debug: len input batch:  2  len target batch:  2  len train loader :  22100
+debug: global_step :  298  tokens seen:  75956
+debug: len input batch:  2  len target batch:  2  len train loader :  22100
+debug: global_step :  299  tokens seen:  76266
+debug: len input batch:  2  len target batch:  2  len train loader :  22100
+debug: global_step :  300  tokens seen:  76544
+Epoch 1 (Step 000300): Train loss 1.430, Val loss 1.676
+debug: len input batch:  2  len target batch:  2  len train loader :  22100
+debug: global_step :  301  tokens seen:  77018
+debug: len input batch:  2  len target batch:  2  len train loader :  22100
+debug: global_step :  302  tokens seen:  77150
+debug: len input batch:  2  len target batch:  2  len train loader :  22100
+debug: global_step :  303  tokens seen:  77342
+debug: len input batch:  2  len target batch:  2  len train loader :  22100
+debug: global_step :  304  tokens seen:  77556
+debug: len input batch:  2  len target batch:  2  len train loader :  22100
+debug: global_step :  305  tokens seen:  77938
+Epoch 1 (Step 000305): Train loss 1.285, Val loss 1.670
+debug: len input batch:  2  len target batch:  2  len train loader :  22100
+debug: global_step :  306  tokens seen:  78114
+debug: len input batch:  2  len target batch:  2  len train loader :  22100
+^CTraceback (most recent call last):
+  File "/Users/anupkaul/akaul_git/demosthenes-llm/finetune-instruction-follow/alpaca/model.py", line 157, in <module>
+    train_losses, val_losses, tokens_seen = train_model_simple(
+                                            ^^^^^^^^^^^^^^^^^^^
+  File "/Users/anupkaul/akaul_git/demosthenes-llm/finetune-instruction-follow/alpaca/../../pretraining/training_container.py", line 44, in train_model_simple
+    optimizer.step()                                  # update weight model using loss gradients
+    ^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.11/site-packages/torch/optim/optimizer.py", line 385, in wrapper
+    out = func(*args, **kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.11/site-packages/torch/optim/optimizer.py", line 76, in _use_grad
+    ret = func(self, *args, **kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.11/site-packages/torch/optim/adamw.py", line 187, in step
+    adamw(
+  File "/opt/anaconda3/lib/python3.11/site-packages/torch/optim/adamw.py", line 339, in adamw
+    func(
+  File "/opt/anaconda3/lib/python3.11/site-packages/torch/optim/adamw.py", line 470, in _single_tensor_adamw
+    denom = (exp_avg_sq.sqrt() / bias_correction2_sqrt).add_(eps)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+
+
 (base) anupkaul@147dda4c0851 finetune-instruction-follow % python model.py
 2025-11-02 12:59:56.984637: I tensorflow/core/platform/cpu_feature_guard.cc:210] This TensorFlow binary is optimized to use available CPU instructions in performance-critical operations.
 To enable the following instructions: AVX2 AVX512F AVX512_VNNI FMA, in other operations, rebuild TensorFlow with the appropriate compiler flags.
