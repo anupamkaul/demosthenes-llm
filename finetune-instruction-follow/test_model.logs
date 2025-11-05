@@ -1,0 +1,75 @@
+Len of data:  1100
+Training set length: 935
+Test set length: 110
+Validation set length: 55
+[50256]
+Device: cpu
+device:  cpu
+loaded previously saved model to validate its goodness for instruction-follow..<enter>
+
+Below is an instruction that describes a task. Write a response that appropriately completes the request. 
+
+### Instruction:
+Rewrite the sentence using a simile.
+
+### Input:
+The car is very fast.
+
+Correct response:
+>> The car is as fast as lightning.
+
+Model response:
+>> The car is as fast as a cheetah.
+-------------------------------------
+
+Below is an instruction that describes a task. Write a response that appropriately completes the request. 
+
+### Instruction:
+What type of cloud is typically associated with thunderstorms?
+
+Correct response:
+>> The type of cloud typically associated with thunderstorms is cumulonimbus.
+
+Model response:
+>> The type of cloud associated with thunderstorms is a cumulus cloud.
+-------------------------------------
+
+Below is an instruction that describes a task. Write a response that appropriately completes the request. 
+
+### Instruction:
+Name the author of 'Pride and Prejudice'.
+
+Correct response:
+>> Jane Austen.
+
+Model response:
+>> The author of 'Pride and Prejudice' is Jane Austen.
+-------------------------------------
+
+Below is an instruction that describes a task. Write a response that appropriately completes the request. 
+
+### Instruction:
+What is the periodic symbol for chlorine?
+
+Correct response:
+>> The periodic symbol for chlorine is Cl.
+
+Model response:
+>> The periodic symbol for chlorine is C.
+-------------------------------------
+
+Below is an instruction that describes a task. Write a response that appropriately completes the request. 
+
+### Instruction:
+Correct the punctuation in the sentence.
+
+### Input:
+Its time to go home.
+
+Correct response:
+>> The corrected sentence should be: 'It's time to go home.'
+
+Model response:
+>> Time to go home?
+-------------------------------------
+
