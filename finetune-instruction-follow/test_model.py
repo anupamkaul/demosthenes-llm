@@ -63,15 +63,19 @@ print("device: ", device)
 model.to(device)
 
 try:
+    import time
+    start_time = time.time()
+
     model.load_state_dict(torch.load("./model/modelif.pth", map_location=device))
-    print("loaded previously saved model to validate its goodness for instruction-follow..<enter>")
+
+    end_time = time.time()
+    load_time_minutes = (end_time - start_time) / 60
+    print(f"loaded saved model (1.6G) in {load_time_minutes:.2f} minutes .. <enter>")
     input()
 
 except FileNotFoundError:
     print("model not found on disk. please point to location, or train from scratch for instruction-follow")
     exit()
-
-#TODO : Call out model load time above
 
 '''
 Generate instruction-follow text and compare manually first with the 
@@ -80,6 +84,8 @@ supervised response, using first few samples of the test dataset
 
 #for entry in test_data[:5]:    # iterate over 1st 5 samples
 for entry in test_data:    # iterate over all samples
+
+    exec_start_time = time.time()
     input_text = format_input(entry) # this does not include the output 
 
     # use the model to infer (predict / write) out the response
@@ -93,7 +99,8 @@ for entry in test_data:    # iterate over all samples
 
     model_generated_text = token_ids_to_text(token_ids, tokenizer)
 
-    # TODO : callout inference time, above
+    exec_end_time = time.time()
+    exec_time = (exec_end_time - exec_start_time) / 60
 
     response_text = (
         model_generated_text[len(input_text):]
@@ -104,6 +111,7 @@ for entry in test_data:    # iterate over all samples
     # actual response given during training is entry['output']
     # let's manually compare
 
+    print(f"Response generated in {exec_time:.2f} minutes .. <enter>")
     print(input_text)
     print(f"\nCorrect response:\n>> {entry['output']}")
     print(f"\nModel response:\n>> {response_text.strip()}")

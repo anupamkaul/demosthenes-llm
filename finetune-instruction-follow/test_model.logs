@@ -1,3 +1,47 @@
+add time values to loading model and inference times
+
+(base) anupkaul@147dda4c0851 finetune-instruction-follow % python test_model.py
+Len of data:  1100
+Training set length: 935
+Test set length: 110
+Validation set length: 55
+[50256]
+Device: cpu
+device:  cpu
+loaded saved model (1.6G) in 0.04 minutes .. <enter>
+
+Response generated in 0.12 minutes .. <enter>
+Below is an instruction that describes a task. Write a response that appropriately completes the request. 
+
+### Instruction:
+Rewrite the sentence using a simile.
+
+### Input:
+The car is very fast.
+
+Correct response:
+>> The car is as fast as lightning.
+
+Model response:
+>> The car is as fast as a cheetah.
+-------------------------------------
+
+Response generated in 0.11 minutes .. <enter>
+Below is an instruction that describes a task. Write a response that appropriately completes the request. 
+
+### Instruction:
+What type of cloud is typically associated with thunderstorms?
+
+Correct response:
+>> The type of cloud typically associated with thunderstorms is cumulonimbus.
+
+Model response:
+>> The type of cloud associated with thunderstorms is a cumulus cloud.
+-------------------------------------
+
+
+(full logs)
+
 Len of data:  1100
 Training set length: 935
 Test set length: 110
