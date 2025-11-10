@@ -16,5 +16,3 @@ to 4, 2, or even 1.
 
 Lowering the allowed_max_length from 1,024 to 512 or 256 can also help manage memory problems.
 
-..
-
