@@ -59,4 +59,18 @@ end_time = time.time()
 loading_time_minutes = (end_time - start_time) / 60
 print(f"Loaded in {loading_time_minutes:.2f} minutes.")
 
+'''
+Do a chatbot that detects responds to instruction-follow prompts and/or normal text messages
+
+It's a bummer that prompts need special processing vs normal text (i.e. one must know that 
+the incoming text is an instruction vs normal text? to be checked later..) 
+'''
+
+from stylize_prompts import format_input
+
+while(True):
+    user_input = input("\nwrite up something (and press enter) ")
+    input_text = format_input(user_input) # this does not include the output 
+    print("formatted input: ", input_text)# doesn't work if input is not an "entry" (i.e. in a prompt format already)
+    
 
