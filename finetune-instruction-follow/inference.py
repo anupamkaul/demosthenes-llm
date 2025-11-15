@@ -14,6 +14,7 @@ demosthenes model that I created
 import torch
 
 import sys, os
+sys.path.append( os.path.join( os.path.dirname(os.path.abspath(__file__)),  '../pretraining/preloaded_weights/openai/scripts') )
 sys.path.append( os.path.join( os.path.dirname(os.path.abspath(__file__)),  '../llm-infra/') )
 
 BASE_CONFIG = {
@@ -67,10 +68,28 @@ the incoming text is an instruction vs normal text? to be checked later..)
 '''
 
 from stylize_prompts import format_input
+from textgenerate import generate, text_to_token_ids, token_ids_to_text
+
+import tiktoken
+tokenizer = tiktoken.get_encoding("gpt2")
 
 while(True):
     user_input = input("\nwrite up something (and press enter) ")
-    input_text = format_input(user_input) # this does not include the output 
-    print("formatted input: ", input_text)# doesn't work if input is not an "entry" (i.e. in a prompt format already)
-    
+    print("thinking..")
+
+    #input_text = format_input(user_input) # this does not include the output 
+    #print("formatted input: ", input_text)# doesn't work if input is not an "entry" (i.e. in a prompt format already)
+  
+    # use the model to infer (predict / write) out the response
+    token_ids = generate(
+        model = model,
+        #idx = text_to_token_ids(input_text, tokenizer).to(device),
+        idx = text_to_token_ids(user_input, tokenizer).to(device),
+        max_new_tokens = 256,
+        context_size = BASE_CONFIG["context_length"],
+        eos_id = 50256
+    )
+
+    model_generated_text = token_ids_to_text(token_ids, tokenizer)
+    print("Response: ", model_generated_text)
 

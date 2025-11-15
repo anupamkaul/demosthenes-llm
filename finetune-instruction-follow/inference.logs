@@ -1,0 +1,88 @@
+python inference.py 
+device:  cpu
+loading model..
+Loaded in 0.04 minutes.
+
+write up something (and press enter) Hello
+thinking..
+Response:  Hello is a chatbot that helps you build faster. Type "hello" for help. 
+
+### Input:
+Hello, world!
+
+### Response:
+Hello, world!
+
+write up something (and press enter) How many seconds are there in a day ?
+thinking..
+
+(and it hangs here) ...
+
+this is what it was trying to do when I interrupted it.
+where and why does the inferencing hang?
+remember, this is not a prompt, just regular text...
+
+
+^CTraceback (most recent call last):
+  File "/Users/anupkaul/akaul_git/demosthenes-llm/finetune-instruction-follow/inference.py", line 84, in <module>
+    token_ids = generate(
+                ^^^^^^^^^
+  File "/Users/anupkaul/akaul_git/demosthenes-llm/finetune-instruction-follow/../pretraining/preloaded_weights/openai/scripts/textgenerate.py", line 25, in generate
+    logits = model(idx_cond)
+             ^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1511, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1520, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/anupkaul/akaul_git/demosthenes-llm/finetune-instruction-follow/../llm-infra/GPTModel.py", line 56, in forward
+    x = self.trf_blocks(x)
+        ^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1511, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1520, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.11/site-packages/torch/nn/modules/container.py", line 217, in forward
+    input = module(input)
+            ^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1511, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1520, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/anupkaul/akaul_git/demosthenes-llm/finetune-instruction-follow/../llm-infra/TransformerBlock.py", line 65, in forward
+    x = self.ff(x)
+        ^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1511, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1520, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/anupkaul/akaul_git/demosthenes-llm/finetune-instruction-follow/../llm-infra/FeedForward.py", line 16, in forward
+    return self.layers(x)
+           ^^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1511, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1520, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.11/site-packages/torch/nn/modules/container.py", line 217, in forward
+    input = module(input)
+            ^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1511, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1520, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/anupkaul/akaul_git/demosthenes-llm/finetune-instruction-follow/../llm-infra/GELU.py", line 10, in forward
+    return 0.5  * x * (1 + torch.tanh(
+                           ^^^^^^^^^^^
+KeyboardInterrupt
+
