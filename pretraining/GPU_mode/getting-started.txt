@@ -1,0 +1,52 @@
+Installing PyTorch on Ubuntu 24.04 can be done using pip, preferably within a Python virtual environment.
+1. Prepare your system:
+Update your package list.
+Code
+
+    sudo apt update
+    sudo apt upgrade -y
+Install Python 3 and venv if not already present:
+Code
+
+    sudo apt install python3 python3-venv -y
+2. Create and activate a virtual environment:
+Create a virtual environment (e.g., named pytorch_env):
+Code
+
+    python3 -m venv pytorch_env
+Activate the virtual environment.
+Code
+
+    source pytorch_env/bin/activate
+(Your terminal prompt will change to indicate the active virtual environment.)
+3. Install PyTorch:
+If you need GPU support, ensure you have NVIDIA drivers and CUDA installed on your system. PyTorch binaries ship with CUDA runtime libraries, so you primarily need the NVIDIA driver.
+Visit the official PyTorch website's "Get Started" section (pytorch.org/get-started/locally/).
+Select your operating system (Linux), package manager (Pip), language (Python), and desired compute platform (CPU or CUDA).
+Copy the generated installation command and run it within your active virtual environment. For example, for CPU-only:
+Code
+
+    pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cpu
+Or for CUDA support (replace cu121 with your CUDA version if different):
+Code
+
+    pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu121
+4. Verify the installation:
+Open a Python interpreter within your virtual environment:
+Code
+
+    python
+Import PyTorch and perform a basic check:
+Python
+
+    import torch
+    print(torch.__version__)
+If you installed with CUDA support, verify GPU availability:
+Python
+
+    print(torch.cuda.is_available())
+This should return True if CUDA is correctly set up.
+5. Deactivate the virtual environment (when finished):
+```bash.
+Oops, something went wrong.
+

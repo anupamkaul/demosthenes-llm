@@ -1,6 +1,5 @@
 device:  cuda
-enter..device:  cpu
-loaded previously saved model to continue training..<enter>
+model not found on disk. monitor as a one time thing, error out if repeats
 Characters: 20479
 Tokens: 5145
 90% of the split is from index  18431
@@ -414,3 +413,10 @@ GPTModel(
   (final_norm): LayerNorm()
   (out_head): Linear(in_features=768, out_features=50257, bias=False)
 )
+device:  cuda
+Training loss:  10.987583372328016
+Validation loss:  10.98110580444336
+debug: len input batch:  2  len target batch:  2  len train loader :  9
+debug: global_step :  0  tokens seen:  512
+Epoch 1 (Step 000000): Train loss 9.871, Val loss 10.107
+debug: len input batch:  2  len target batch:  2  len train loader :  9
