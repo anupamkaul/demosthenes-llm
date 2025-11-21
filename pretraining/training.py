@@ -142,11 +142,16 @@ model = GPTModel(GPT_CONFIG_124M)
 
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 print("device: ", device)
+
+if "cuda" in device.type:
+    print("mem analysis:\n", torch.cuda.memory_summary(device=None, abbreviated=False))
+
 input("enter..")
 
-# enabled cuda on ubuntu 22.04 but GPU mem allocation (148Gi) 
-# is greater than what's available on GPU0(3.9Mi) on an NVidia GEForce-GTX
-# so, explicitly and sadly setting this to CPU until solved
+# enabled cuda on ubuntu 22.04 but GPU mem allocation (148MiB) 
+# is greater than what's available on GPU0(23.69MiB out of 3.94GiB) 
+# on an NVidia GEForce-GTX so explicitly and sadly setting this to CPU
+#  until solved
 
 # Comment out the following 2 lines when GPU works..
 device = torch.device("cpu")
