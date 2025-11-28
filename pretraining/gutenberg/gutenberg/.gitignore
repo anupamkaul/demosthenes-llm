@@ -1,6 +1,6 @@
 # data and metadata folder and all subfolders and files recursive
-data/**/*
-metadata/**/*
+#data/**/*
+#metadata/**/*
 
 # metadata raw file
 #metadata/rdf-files.tar.bz2
