@@ -1,0 +1,895 @@
+Noting the last error I get when I run this using a tesla GPU on google colab 
+(was able to run the-verdict simple tranining and the fine tune classification trainings)
+(was NOT able to train gutenberg as I haven't checked in all the data that I downloaded on my mac, am trying from my ubuntu 22.04)
+
+/home/anupam/demosthenes-llm/finetune-classification# python model.py 
+2025-11-28 17:26:47.529829: E external/local_xla/xla/stream_executor/cuda/cuda_fft.cc:467] Unable to register cuFFT factory: Attempting to register factory for plugin cuFFT when one has already been registered
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+E0000 00:00:1764350807.550307    8370 cuda_dnn.cc:8579] Unable to register cuDNN factory: Attempting to register factory for plugin cuDNN when one has already been registered
+E0000 00:00:1764350807.556659    8370 cuda_blas.cc:1407] Unable to register cuBLAS factory: Attempting to register factory for plugin cuBLAS when one has already been registered
+W0000 00:00:1764350807.573207    8370 computation_placer.cc:177] computation placer already registered. Please check linkage and avoid linking the same target more than once.
+W0000 00:00:1764350807.573238    8370 computation_placer.cc:177] computation placer already registered. Please check linkage and avoid linking the same target more than once.
+W0000 00:00:1764350807.573242    8370 computation_placer.cc:177] computation placer already registered. Please check linkage and avoid linking the same target more than once.
+W0000 00:00:1764350807.573245    8370 computation_placer.cc:177] computation placer already registered. Please check linkage and avoid linking the same target more than once.
+2025-11-28 17:26:47.578834: I tensorflow/core/platform/cpu_feature_guard.cc:210] This TensorFlow binary is optimized to use available CPU instructions in performance-critical operations.
+To enable the following instructions: AVX2 AVX512F FMA, in other operations, rebuild TensorFlow with the appropriate compiler flags.
+checkpoint: 100%|████████████████████████████████████████████████████████████| 77.0/77.0 [00:00<00:00, 239kiB/s]
+encoder.json: 100%|███████████████████████████████████████████████████████| 1.04M/1.04M [00:00<00:00, 2.99MiB/s]
+hparams.json: 100%|██████████████████████████████████████████████████████████| 90.0/90.0 [00:00<00:00, 268kiB/s]
+model.ckpt.data-00000-of-00001: 100%|███████████████████████████████████████| 498M/498M [00:44<00:00, 11.1MiB/s]
+model.ckpt.index: 100%|███████████████████████████████████████████████████| 5.21k/5.21k [00:00<00:00, 15.3MiB/s]
+model.ckpt.meta: 100%|██████████████████████████████████████████████████████| 471k/471k [00:00<00:00, 2.21MiB/s]
+vocab.bpe: 100%|████████████████████████████████████████████████████████████| 456k/456k [00:00<00:00, 1.80MiB/s]
+model with loaded weights is ready
+Every effort moves you forward.
+
+The first step is to understand the importance of your work
+
+
+now checking for classification prompts:
+Is the following text 'spam'? Answer with 'yes' or 'no': 'You are a winner you have been specially selected to receive $1000 cash or a $2000 award.'
+
+The following text 'spam'? Answer with 'yes' or 'no': 'You are a winner
+
+ GPTModel(
+  (tok_emb): Embedding(50257, 768)
+  (pos_emb): Embedding(1024, 768)
+  (drop_emb): Dropout(p=0.0, inplace=False)
+  (trf_blocks): Sequential(
+    (0): TransformerBlock(
+      (att): MultiHeadAttention(
+        (W_query): Linear(in_features=768, out_features=768, bias=True)
+        (W_key): Linear(in_features=768, out_features=768, bias=True)
+        (W_value): Linear(in_features=768, out_features=768, bias=True)
+        (out_proj): Linear(in_features=768, out_features=768, bias=True)
+        (dropout): Dropout(p=0.0, inplace=False)
+      )
+      (ff): FeedForward(
+        (layers): Sequential(
+          (0): Linear(in_features=768, out_features=3072, bias=True)
+          (1): GELU()
+          (2): Linear(in_features=3072, out_features=768, bias=True)
+        )
+      )
+      (norm1): LayerNorm()
+      (norm2): LayerNorm()
+      (drop_shortcut): Dropout(p=0.0, inplace=False)
+    )
+    (1): TransformerBlock(
+      (att): MultiHeadAttention(
+
+        (layers): Sequential(
+          (0): Linear(in_features=768, out_features=3072, bias=True)
+          (1): GELU()
+          (2): Linear(in_features=3072, out_features=768, bias=True)
+        )
+      )
+      (norm1): LayerNorm()
+      (norm2): LayerNorm()
+      (drop_shortcut): Dropout(p=0.0, inplace=False)
+    )
+    (5): TransformerBlock(
+      (att): MultiHeadAttention(
+        (W_query): Linear(in_features=768, out_features=768, bias=True)
+        (W_key): Linear(in_features=768, out_features=768, bias=True)
+        (W_value): Linear(in_features=768, out_features=768, bias=True)
+        (out_proj): Linear(in_features=768, out_features=768, bias=True)
+        (dropout): Dropout(p=0.0, inplace=False)
+      )
+      (ff): FeedForward(
+        (layers): Sequential(
+          (0): Linear(in_features=768, out_features=3072, bias=True)
+          (1): GELU()
+          (2): Linear(in_features=3072, out_features=768, bias=True)
+        )
+      )
+      (norm1): LayerNorm()
+      (norm2): LayerNorm()
+      (drop_shortcut): Dropout(p=0.0, inplace=False)
+    )
+    (6): TransformerBlock(
+      (att): MultiHeadAttention(
+        (W_query): Linear(in_features=768, out_features=768, bias=True)
+        (W_key): Linear(in_features=768, out_features=768, bias=True)
+        (W_value): Linear(in_features=768, out_features=768, bias=True)
+        (out_proj): Linear(in_fea
+      (norm1): LayerNorm()
+      (norm2): LayerNorm()
+      (drop_shortcut): Dropout(p=0.0, inplace=False)
+    )
+    (10): TransformerBlock(
+      (att): MultiHeadAttention(
+        (W_query): Linear(in_features=768, out_features=768, bias=True)
+        (W_key): Linear(in_features=768, out_features=768, bias=True)
+        (W_value): Linear(in_features=768, out_features=768, bias=True)
+        (out_proj): Linear(in_features=768, out_features=768, bias=True)
+        (dropout): Dropout(p=0.0, inplace=False)
+      )
+      (ff): FeedForward(
+        (layers): Sequential(
+          (0): Linear(in_features=768, out_features=3072, bias=True)
+          (1): GELU()
+          (2): Linear(in_features=3072, out_features=768, bias=True)
+        )
+      )
+      (norm1): LayerNorm()
+      (norm2): LayerNorm()
+      (drop_shortcut): Dropout(p=0.0, inplace=False)
+    )
+    (11): TransformerBlock(
+      (att): MultiHeadAttention(
+        (W_query): Linear(in_features=768, out_features=768, bias=True)
+        (W_key): Linear(in_features=768, out_features=768, bias=True)
+        (W_value): Linear(in_features=768, out_features=768, bias=True)
+        (out_proj): Linear(in_features=768, out_features=768, bias=True)
+        (dropout): Dropout(p=0.0, inplace=False)
+      )
+      (ff): FeedForward(
+        (layers): Sequential(
+          (0): Linear(in_features=768, out_features=3072, bias=True)
+          (1): GELU()
+          (2): Linear(in_features=3072, out_features=768, bias=True)
+        )
+      )
+      (norm1): LayerNorm()
+      (norm2): LayerNorm()
+      (drop_shortcut): Dropout(p=0.0, inplace=False)
+    )
+  )
+  (final_norm): LayerNorm()
+  (out_head): Linear(in_features=768, out_features=50257, bias=False)
+)
+GPTModel(
+  (tok_emb): Embedding(50257, 768)
+  (pos_emb): Embedding(1024, 768)
+  (drop_emb): Dropout(p=0.0, inplace=False)
+  (trf_blocks): Sequential(
+    (0): TransformerBlock(
+      (att): MultiHeadAttention(
+        (W_query): Linear(in_features=768, out_features=768, bias=True)
+        (W_key): Linear(in_features=768, out_features=768, bias=True)
+        (W_value): Linear(in_features=768, out_features=768, bias=True)
+
+      )
+      (norm1): LayerNorm()
+      (norm2): LayerNorm()
+      (drop_shortcut): Dropout(p=0.0, inplace=False)
+    )
+    (4): TransformerBlock(
+      (att): MultiHeadAttention(
+        (W_query): Linear(in_features=768, out_features=768, bias=True)
+        (W_key): Linear(in_features=768, out_features=768, bias=True)
+        (W_value): Linear(in_features=768, out_features=768, bias=True)
+        (out_proj): Linear(in_features=768, out_features=768, bias=True)
+        (dropout): Dropout(p=0.0, inplace=False)
+      )
+      (ff): FeedForward(
+        (layers): Sequential(
+          (0): Linear(in_features=768, out_features=3072, bias=True)
+          (1): GELU()
+          (2): Linear(in_features=3072, out_features=768, bias=True)
+        )
+      )
+      (norm1): LayerNorm()
+      (norm2): LayerNorm()
+      (drop_shortcut): Dropout(p=0.0, inplace=False)
+    )
+    (5): TransformerBlock(
+      (att): MultiHeadAttention(
+        (W_query): Linear(in_features=768, out_features=768, bias=True)
+        (W_key): Linear(in_features=768, out_features=768, bias=True)
+        (W_value): Linear(in_features=768, out_features=768, bias=True)
+        (out_proj): Linear(in_features=768, out_features=768, bias=True)
+        (dropout): Dropout(p=0.0, inplace=False)
+      )
+      (ff): FeedForward(
+        (layers): Sequential(
+          (0): Linear(in_features=768, out_features=3072, bi
+        (W_value): Linear(in_features=768, out_features=768, bias=True)
+        (out_proj): Linear(in_features=768, out_features=768, bias=True)
+        (dropout): Dropout(p=0.0, inplace=False)
+      )
+      (ff): FeedForward(
+        (layers): Sequential(
+          (0): Linear(in_features=768, out_features=3072, bias=True)
+          (1): GELU()
+          (2): Linear(in_features=3072, out_features=768, bias=True)
+        )
+      )
+      (norm1): LayerNorm()
+      (norm2): LayerNorm()
+      (drop_shortcut): Dropout(p=0.0, inplace=False)
+    )
+    (10): TransformerBlock(
+      (att): MultiHeadAttention(
+        (W_query): Linear(in_features=768, out_features=768, bias=True)
+        (W_key): Linear(in_features=768, out_features=768, bias=True)
+        (W_value): Linear(in_features=768, out_features=768, bias=True)
+        (out_proj): Linear(in_features=768, out_features=768, bias=True)
+        (dropout): Dropout(p=0.0, inplace=False)
+      )
+      (ff): FeedForward(
+        (layers): Sequential(
+          (0): Linear(in_features=768, out_features=3072, bias=True)
+          (1): GELU()
+          (2): Linear(in_features=3072, out_features=768, bias=True)
+        )
+      )
+      (norm1): LayerNorm()
+      (norm2): LayerNorm()
+      (drop_shortcut): Dropout(p=0.0, inplace=False)
+    )
+    (11): TransformerBlock(
+      (att): MultiHeadAttention(
+        (W_query): Linear(in_features=768, out_features=768, bias=True)
+        (W_key): Linear(in_features=768, out_features=768, bias=True)
+        (W_value): Linear(in_features=768, out_features=768, bias=True)
+        (out_proj): Linear(in_features=768, out_features=768, bias=True)
+        (dropout): Dropout(p=0.0, inplace=False)
+      )
+      (ff): FeedForward(
+        (layers): Sequential(
+          (0): Linear(in_features=768, out_features=3072, bias=True)
+          (1): GELU()
+          (2): Linear(in_features=3072, out_features=768, bias=True)
+        )
+      )
+      (norm1): LayerNorm()
+      (norm2): LayerNorm()
+      (drop_shortcut): Dropout(p=0.0, inplace=False)
+    )
+  )
+  (final_norm): LayerNorm()
+  (out_head): Linear(in_features=768, out_features=2, bias=True)
+)
+
+check that the frozen model (except the final layers) is still able to operate on text as expected
+
+Inputs: tensor([[5211,  345,  423,  640]])
+Input dims: torch.Size([1, 4])
+Output:  tensor([[[-1.5854,  0.9904],
+         [-3.7235,  7.4548],
+         [-2.2661,  6.6049],
+         [-3.5983,  3.9902]]])
+Output dims torch.Size([1, 4, 2])
+last output token:  tensor([[-3.5983,  3.9902]])
+Class label: 1
+Class label: 1
+[50256]
+120
+120
+120
+Input batch dimensions: torch.Size([8, 120])
+Label batch dimensions torch.Size([8])
+130 training batches
+19 validation batches
+38 test batches
+130 training batches
+19 validation batches
+38 test batches
+Training accuracy: 46.25%
+Validation accuracy: 45.00%
+Test accuracy: 48.75%
+Training loss: 2.453
+Validation loss: 2.583
+Test loss: 2.322
+Ep 1 (Step 000000): Train loss 2.153, Val loss 2.392
+Ep 1 (Step 000050): Train loss 0.617, Val loss 0.637
+Ep 1 (Step 000100): Train loss 0.523, Val loss 0.557
+Training accuracy: 70.00% | Validation accuracy: 72.50%
+Ep 2 (Step 000150): Train loss 0.561, Val loss 0.489
+Ep 2 (Step 000200): Train loss 0.419, Val loss 0.397
+Ep 2 (Step 000250): Train loss 0.409, Val loss 0.353
+Training accuracy: 82.50% | Validation accuracy: 85.00%
+Ep 3 (Step 000300): Train loss 0.333, Val loss 0.320
+Ep 3 (Step 000350): Train loss 0.340, Val loss 0.306
+Training accuracy: 90.00% | Validation accuracy: 90.00%
+Ep 4 (Step 000400): Train loss 0.136, Val loss 0.200
+Ep 4 (Step 000450): Train loss 0.153, Val loss 0.132
+Ep 4 (Step 000500): Train loss 0.222, Val loss 0.137
+Training accuracy: 100.00% | Validation accuracy: 97.50%
+Ep 5 (Step 000550): Train loss 0.207, Val loss 0.143
+Ep 5 (Step 000600): Train loss 0.083, Val loss 0.074
+Training accuracy: 100.00% | Validation accuracy: 97.50%
+Training completed in 0.93 minutes.
+Training accuracy: 97.21%
+Validation accuracy: 97.32%
+Test accuracy: 95.67%
+model saved!
+
+/home/anupam/demosthenes-llm/finetune-classification# ls
+accuracy-plot.pdf  inference.py    newlogs.txt            sms_spam_collection.zip  train.csv
+bootstrap-agents   logs.txt        __pycache__            spam_dataloader.py       training.logs
+gpt2               loss-plot.pdf   README.md              spam_datasetclass.py     traininglogs.txt
+images             model_logs.txt  review_classifier.pth  spam-dataset.py          validation.csv
+inference.log      model.py        sms_spam_collection    test.csv
+/home/anupam/demosthenes-llm/finetune-classification# python inference.py
+model loaded in 0.03 minutes.
+[50256]
+120
+120
+120
+Input batch dimensions: torch.Size([8, 120])
+Label batch dimensions torch.Size([8])
+130 training batches
+19 validation batches
+/home/anupam/demosthenes-llm/finetune-instruction-follow# ls
+alpaca                              instruction-data.json   test_inspect_dataset.py
+custom_collate.logs                 model.logs              test_loss_patterns.py
+dataset.logs                        model.py                test_model.logs
+dataset_tuning.py                   reading                 test_model_notfinetuned.logs
+download_dataset.py                 README.md               test_model_notfinetuned.py
+howto_repeat_iteration_forloop.txt  stylize_prompts.py      test_model.py
+images                              test_custom_collate.py  test_model_RL.py
+inference.logs                      test_dataloader.logs    test_stylize_prompts.py
+inference.py                        test_dataloader.py
+/home/anupam/demosthenes-llm/finetune-instruction-follow# python model.py
+2025-11-28 17:30:06.188736: E external/local_xla/xla/stream_executor/cuda/cuda_fft.cc:467] Unable to register cuFFT factory: Attempting to register factory for plugin cuFFT when one has already been registered
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+E0000 00:00:1764351006.208457    9244 cuda_dnn.cc:8579] Unable to register cuDNN factory: Attempting to register factory for plugin cuDNN when one has already been registered
+E0000 00:00:1764351006.214553    9244 cuda_blas.cc:1407] Unable to register cuBLAS factory: Attempting to register factory for plugin cuBLAS when one has already been registered
+W0000 00:00:1764351006.229920    9244 computation_placer.cc:177] computation placer already registered. Please check linkage and avoid linking the same target more than once.
+W0000 00:00:1764351006.229951    9244 computation_placer.cc:177] computation placer already registered. Please check linkage and avoid linking the same target more than once.
+W0000 00:00:1764351006.229955    9244 computation_placer.cc:177] computation placer already registered. Please check linkage and avoid linking the same target more than once.
+W0000 00:00:1764351006.229958    9244 computation_placer.cc:177] computation placer already registered. Please check linkage and avoid linking the same target more than once.
+2025-11-28 17:30:06.234614: I tensorflow/core/platform/cpu_feature_guard.cc:210] This TensorFlow binary is optimized to use available CPU instructions in performance-critical operations.
+To enable the following instructions: AVX2 AVX512F FMA, in other operations, rebuild TensorFlow with the appropriate compiler flags.
+checkpoint: 100%|████████████████████████████████████████████████████████████| 77.0/77.0 [00:00<00:00, 223kiB/s]
+encoder.json: 100%|███████████████████████████████████████████████████████| 1.04M/1.04M [00:00<00:00, 2.94MiB/s]
+hparams.json: 100%|██████████████████████████████████████████████████████████| 91.0/91.0 [00:00<00:00, 254kiB/s]
+model.ckpt.data-00000-of-00001: 100%|█████████████████████████████████████| 1.42G/1.42G [02:20<00:00, 10.1MiB/s]
+model.ckpt.index: 100%|███████████████████████████████████████████████████| 10.4k/10.4k [00:00<00:00, 24.2MiB/s]
+model.ckpt.meta: 100%|██████████████████████████████████████████████████████| 927k/927k [00:00<00:00, 2.53MiB/s]
+vocab.bpe: 100%|████████████████████████████████████████████████████████████| 456k/456k [00:00<00:00, 1.75MiB/s]
+2025-11-28 17:32:37.879309: W external/local_xla/xla/tsl/framework/cpu_allocator_impl.cc:83] Allocation of 205852672 exceeds 10% of free system memory.
+device:  cuda
+model not found on disk. train from scratch for instruction-follow..<enter>
+
+Len of data:  1100
+Training set length: 935
+Test set length: 110
+Validation set length: 55
+[50256]
+Device: cuda
+Training loss: 3.949962329864502
+Validation loss: 3.890028142929077
+Now we fine tune (train) for instruction-follow !  2  num_epochs 
+generate and print sample..
+
+Below is an instruction that describes a task. Write a response that appropriately completes the request.   ### Instruction: Convert the active sentence to passive: 'The chef cooks the meal every day.'  ### Response:  The chef cooks the meal every day.  ### Instruction:  Convert the active sentence to passive: 'The chef cooks the meal every day.'  ### Response:  The chef cooks the
+debug: len input batch:  8  len target batch:  8  len train loader :  116
+debug: global_step :  0  tokens seen:  496
+Epoch 1 (Step 000000): Train loss 2.887, Val loss 2.867
+debug: len input batch:  8  len target batch:  8  len train loader :  116
+debug: global_step :  1  tokens seen:  1112
+debug: len input batch:  8  len target batch:  8  len train loader :  116
+debug: global_step :  2  tokens seen:  1704
+debug: len input batch:  8  len target batch:  8  len train loader :  116
+debug: global_step :  3  tokens seen:  2256
+debug: len input batch:  8  len target batch:  8  len train loader :  116
+debug: global_step :  4  tokens seen:  2784
+debug: len input batch:  8  len target batch:  8  len train loader :  116
+debug: global_step :  5  tokens seen:  3368
+Epoch 1 (Step 000005): Train loss 1.223, Val loss 1.148
+debug: len input batch:  8  len target batch:  8  len train loader :  116
+debug: global_step :  6  tokens seen:  4016
+debug: len input batch:  8  len target batch:  8  len train loader :  116
+debug: global_step :  7  tokens seen:  4560
+debug: len input batch:  8  len target batch:  8  len train loader :  116
+debug: global_step :  8  tokens seen:  5064
+debug: len input batch:  8  len target batch:  8  len train loader :  116
+debug: global_step :  9  tokens seen:  5672
+debug: len input batch:  8  len target batch:  8  len train loader :  116
+debug: global_step :  10  tokens seen:  6176
+Epoch 1 (Step 000010): Train loss 0.856, Val loss 0.937
+debug: len input batch:  8  len target batch:  8  len train loader :  116
+debug: global_step :  11  tokens seen:  6728
+debug: len input batch:  8  len target batch:  8  len train loader :  116
+debug: global_step :  12  tokens seen:  7272
+debug: len input batch:  8  len target batch:  8  len train loader :  116
+debug: global_step :  13  tokens seen:  7896
+debug: len input batch:  8  len target batch:  8  len train loader :  116
+debug: global_step :  14  tokens seen:  8456
+debug: len input batch:  8  len target batch:  8  len train loader :  116
+debug: global_step :  15  tokens seen:  9096
+Epoch 1 (Step 000015): Train loss 0.854, Val loss 0.912
+debug: len input batch:  8  len target batch:  8  len train loader :  116
+debug: global_step :  16  tokens seen:  9672
+debug: len input batch:  8  len target batch:  8  len train loader :  116
+debug: global_step :  17  tokens seen:  10208
+debug: len input batch:  8  len target batch:  8  len train loader :  116
+debug: global_step :  18  tokens seen:  10880
+debug: len input batch:  8  len target batch:  8  len train loader :  116
+debug: global_step :  19  tokens seen:  11432
+debug: len input batch:  8  len target batch:  8  len train loader :  116
+debug: global_step :  20  tokens seen:  12080
+Epoch 1 (Step 000020): Train loss 0.786, Val loss 0.884
+debug: len input batch:  8  len target batch:  8  len train loader :  116
+debug: global_step :  21  tokens seen:  12656
+debug: len input batch:  8  len target batch:  8  len train loader :  116
+debug: global_step :  22  tokens seen:  13216
+debug: len input batch:  8  len target batch:  8  len train loader :  116
+debug: global_step :  23  tokens seen:  13744
+debug: len input batch:  8  len target batch:  8  len train loader :  116
+debug: global_step :  24  tokens seen:  14296
+debug: len input batch:  8  len target batch:  8  len train loader :  116
+debug: global_step :  25  tokens seen:  14784
+Epoch 1 (Step 000025): Train loss 0.742, Val loss 0.852
+debug: len input batch:  8  len target batch:  8  len train loader :  116
+debug: global_step :  26  tokens seen:  15264
+debug: len input batch:  8  len target batch:  8  len train loader :  116
+debug: global_step :  27  tokens seen:  15824
+debug: len input batch:  8  len target batch:  8  len train loader :  116
+debug: global_step :  28  tokens seen:  16336
+debug: len input batch:  8  len target batch:  8  len train loader :  116
+debug: global_step :  29  tokens seen:  16864
+debug: len input batch:  8  len target batch:  8  len train loader :  116
+debug: global_step :  30  tokens seen:  17480
+Epoch 1 (Step 000030): Train loss 0.783, Val loss 0.825
+debug: len input batch:  8  len target batch:  8  len train loader :  116
+debug: global_step :  31  tokens seen:  18016
+debug: len input batch:  8  len target batch:  8  len train loader :  116
+debug: global_step :  32  tokens seen:  18592
+debug: len input batch:  8  len target batch:  8  len train loader :  116
+debug: global_step :  33  tokens seen:  19328
+debug: len input batch:  8  len target batch:  8  len train loader :  116
+debug: global_step :  34  tokens seen:  19856
+debug: len input batch:  8  len target batch:  8  len train loader :  116
+debug: global_step :  35  tokens seen:  20376
+Epoch 1 (Step 000035): Train loss 0.705, Val loss 0.798
+debug: len input batch:  8  len target batch:  8  len train loader :  116
+debug: global_step :  36  tokens seen:  20920
+debug: len input batch:  8  len target batch:  8  len train loader :  116
+debug: global_step :  37  tokens seen:  21456
+debug: len input batch:  8  len target batch:  8  len train loader :  116
+debug: global_step :  38  tokens seen:  21976
+debug: len input batch:  8  len target batch:  8  len train loader :  116
+debug: global_step :  39  tokens seen:  22504
+debug: len input batch:  8  len target batch:  8  len train loader :  116
+debug: global_step :  40  tokens seen:  23112
+Epoch 1 (Step 000040): Train loss 0.665, Val loss 0.802
+debug: len input batch:  8  len target batch:  8  len train loader :  116
+debug: global_step :  41  tokens seen:  23832
+debug: len input batch:  8  len target batch:  8  len train loader :  116
+debug: global_step :  42  tokens seen:  24312
+debug: len input batch:  8  len target batch:  8  len train loader :  116
+debug: global_step :  43  tokens seen:  25024
+debug: len input batch:  8  len target batch:  8  len train loader :  116
+debug: global_step :  44  tokens seen:  25696
+debug: len input batch:  8  len target batch:  8  len train loader :  116
+debug: global_step :  45  tokens seen:  26368
+Epoch 1 (Step 000045): Train loss 0.623, Val loss 0.785
+debug: len input batch:  8  len target batch:  8  len train loader :  116
+debug: global_step :  46  tokens seen:  26936
+debug: len input batch:  8  len target batch:  8  len train loader :  116
+debug: global_step :  47  tokens seen:  27464
+debug: len input batch:  8  len target batch:  8  len train loader :  116
+debug: global_step :  48  tokens seen:  28064
+debug: len input batch:  8  len target batch:  8  len train loader :  116
+debug: global_step :  49  tokens seen:  28680
+debug: len input batch:  8  len target batch:  8  len train loader :  116
+debug: global_step :  50  tokens seen:  29224
+Epoch 1 (Step 000050): Train loss 0.661, Val loss 0.775
+debug: len input batch:  8  len target batch:  8  len train loader :  116
+debug: global_step :  51  tokens seen:  29832
+debug: len input batch:  8  len target batch:  8  len train loader :  116
+debug: global_step :  52  tokens seen:  30504
+debug: len input batch:  8  len target batch:  8  len train loader :  116
+debug: global_step :  53  tokens seen:  31064
+debug: len input batch:  8  len target batch:  8  len train loader :  116
+debug: global_step :  54  tokens seen:  31608
+debug: len input batch:  8  len target batch:  8  len train loader :  116
+debug: global_step :  55  tokens seen:  32096
+Epoch 1 (Step 000055): Train loss 0.756, Val loss 0.759
+debug: len input batch:  8  len target batch:  8  len train loader :  116
+debug: global_step :  56  tokens seen:  32584
+debug: len input batch:  8  len target batch:  8  len train loader :  116
+debug: global_step :  57  tokens seen:  33120
+debug: len input batch:  8  len target batch:  8  len train loader :  116
+debug: global_step :  58  tokens seen:  33768
+debug: len input batch:  8  len target batch:  8  len train loader :  116
+debug: global_step :  59  tokens seen:  34344
+debug: len input batch:  8  len target batch:  8  len train loader :  116
+debug: global_step :  60  tokens seen:  34840
+Epoch 1 (Step 000060): Train loss 0.710, Val loss 0.737
+debug: len input batch:  8  len target batch:  8  len train loader :  116
+debug: global_step :  61  tokens seen:  35312
+debug: len input batch:  8  len target batch:  8  len train loader :  116
+debug: global_step :  62  tokens seen:  35888
+debug: len input batch:  8  len target batch:  8  len train loader :  116
+debug: global_step :  63  tokens seen:  36432
+debug: len input batch:  8  len target batch:  8  len train loader :  116
+debug: global_step :  64  tokens seen:  36984
+debug: len input batch:  8  len target batch:  8  len train loader :  116
+debug: global_step :  65  tokens seen:  37496
+Epoch 1 (Step 000065): Train loss 0.643, Val loss 0.727
+debug: len input batch:  8  len target batch:  8  len train loader :  116
+debug: global_step :  66  tokens seen:  38200
+debug: len input batch:  8  len target batch:  8  len train loader :  116
+debug: global_step :  67  tokens seen:  38752
+debug: len input batch:  8  len target batch:  8  len train loader :  116
+debug: global_step :  68  tokens seen:  39272
+debug: len input batch:  8  len target batch:  8  len train loader :  116
+debug: global_step :  69  tokens seen:  39824
+debug: len input batch:  8  len target batch:  8  len train loader :  116
+debug: global_step :  70  tokens seen:  40400
+Epoch 1 (Step 000070): Train loss 0.523, Val loss 0.720
+debug: len input batch:  8  len target batch:  8  len train loader :  116
+debug: global_step :  71  tokens seen:  40952
+debug: len input batch:  8  len target batch:  8  len train loader :  116
+debug: global_step :  72  tokens seen:  41528
+debug: len input batch:  8  len target batch:  8  len train loader :  116
+debug: global_step :  73  tokens seen:  42024
+debug: len input batch:  8  len target batch:  8  len train loader :  116
+debug: global_step :  74  tokens seen:  42552
+debug: len input batch:  8  len target batch:  8  len train loader :  116
+debug: global_step :  75  tokens seen:  43096
+Epoch 1 (Step 000075): Train loss 0.561, Val loss 0.721
+debug: len input batch:  8  len target batch:  8  len train loader :  116
+debug: global_step :  76  tokens seen:  43624
+debug: len input batch:  8  len target batch:  8  len train loader :  116
+debug: global_step :  77  tokens seen:  44144
+debug: len input batch:  8  len target batch:  8  len train loader :  116
+debug: global_step :  78  tokens seen:  44632
+debug: len input batch:  8  len target batch:  8  len train loader :  116
+debug: global_step :  79  tokens seen:  45216
+debug: len input batch:  8  len target batch:  8  len train loader :  116
+debug: global_step :  80  tokens seen:  45736
+Epoch 1 (Step 000080): Train loss 0.597, Val loss 0.713
+debug: len input batch:  8  len target batch:  8  len train loader :  116
+debug: global_step :  81  tokens seen:  46304
+debug: len input batch:  8  len target batch:  8  len train loader :  116
+debug: global_step :  82  tokens seen:  46768
+debug: len input batch:  8  len target batch:  8  len train loader :  116
+debug: global_step :  83  tokens seen:  47352
+debug: len input batch:  8  len target batch:  8  len train loader :  116
+debug: global_step :  84  tokens seen:  47872
+debug: len input batch:  8  len target batch:  8  len train loader :  116
+debug: global_step :  85  tokens seen:  48424
+Epoch 1 (Step 000085): Train loss 0.503, Val loss 0.697
+debug: len input batch:  8  len target batch:  8  len train loader :  116
+debug: global_step :  86  tokens seen:  48928
+debug: len input batch:  8  len target batch:  8  len train loader :  116
+debug: global_step :  87  tokens seen:  49528
+debug: len input batch:  8  len target batch:  8  len train loader :  116
+debug: global_step :  88  tokens seen:  50176
+debug: len input batch:  8  len target batch:  8  len train loader :  116
+debug: global_step :  89  tokens seen:  50728
+debug: len input batch:  8  len target batch:  8  len train loader :  116
+debug: global_step :  90  tokens seen:  51296
+Epoch 1 (Step 000090): Train loss 0.552, Val loss 0.684
+debug: len input batch:  8  len target batch:  8  len train loader :  116
+debug: global_step :  91  tokens seen:  52032
+debug: len input batch:  8  len target batch:  8  len train loader :  116
+debug: global_step :  92  tokens seen:  52528
+debug: len input batch:  8  len target batch:  8  len train loader :  116
+debug: global_step :  93  tokens seen:  53064
+debug: len input batch:  8  len target batch:  8  len train loader :  116
+debug: global_step :  94  tokens seen:  53712
+debug: len input batch:  8  len target batch:  8  len train loader :  116
+debug: global_step :  95  tokens seen:  54368
+Epoch 1 (Step 000095): Train loss 0.493, Val loss 0.675
+debug: len input batch:  8  len target batch:  8  len train loader :  116
+debug: global_step :  96  tokens seen:  54968
+debug: len input batch:  8  len target batch:  8  len train loader :  116
+debug: global_step :  97  tokens seen:  55632
+debug: len input batch:  8  len target batch:  8  len train loader :  116
+debug: global_step :  98  tokens seen:  56144
+debug: len input batch:  8  len target batch:  8  len train loader :  116
+debug: global_step :  99  tokens seen:  56816
+debug: len input batch:  8  len target batch:  8  len train loader :  116
+debug: global_step :  100  tokens seen:  57368
+Epoch 1 (Step 000100): Train loss 0.494, Val loss 0.668
+debug: len input batch:  8  len target batch:  8  len train loader :  116
+debug: global_step :  101  tokens seen:  57912
+debug: len input batch:  8  len target batch:  8  len train loader :  116
+debug: global_step :  102  tokens seen:  58536
+debug: len input batch:  8  len target batch:  8  len train loader :  116
+debug: global_step :  103  tokens seen:  59272
+debug: len input batch:  8  len target batch:  8  len train loader :  116
+debug: global_step :  104  tokens seen:  59792
+debug: len input batch:  8  len target batch:  8  len train loader :  116
+debug: global_step :  105  tokens seen:  60288
+Epoch 1 (Step 000105): Train loss 0.563, Val loss 0.661
+debug: len input batch:  8  len target batch:  8  len train loader :  116
+debug: global_step :  106  tokens seen:  60896
+debug: len input batch:  8  len target batch:  8  len train loader :  116
+debug: global_step :  107  tokens seen:  61416
+debug: len input batch:  8  len target batch:  8  len train loader :  116
+debug: global_step :  108  tokens seen:  61952
+debug: len input batch:  8  len target batch:  8  len train loader :  116
+debug: global_step :  109  tokens seen:  62584
+debug: len input batch:  8  len target batch:  8  len train loader :  116
+debug: global_step :  110  tokens seen:  63120
+Epoch 1 (Step 000110): Train loss 0.549, Val loss 0.659
+debug: len input batch:  8  len target batch:  8  len train loader :  116
+debug: global_step :  111  tokens seen:  63640
+debug: len input batch:  8  len target batch:  8  len train loader :  116
+debug: global_step :  112  tokens seen:  64312
+debug: len input batch:  8  len target batch:  8  len train loader :  116
+debug: global_step :  113  tokens seen:  64848
+debug: len input batch:  8  len target batch:  8  len train loader :  116
+debug: global_step :  114  tokens seen:  65448
+debug: len input batch:  8  len target batch:  8  len train loader :  116
+debug: global_step :  115  tokens seen:  66008
+Epoch 1 (Step 000115): Train loss 0.501, Val loss 0.656
+
+out of inner input_batch loop..
+generate and print sample..
+
+Below is an instruction that describes a task. Write a response that appropriately completes the request.   ### Instruction: Convert the active sentence to passive: 'The chef cooks the meal every day.'  ### Response: The meal is prepared every day by the chef.<|endoftext|>The following is an instruction that describes a task. Write a response that appropriately completes the request.   ### Instruction: Convert the active sentence to passive
+debug: len input batch:  8  len target batch:  8  len train loader :  116
+debug: global_step :  116  tokens seen:  66560
+debug: len input batch:  8  len target batch:  8  len train loader :  116
+debug: global_step :  117  tokens seen:  67136
+debug: len input batch:  8  len target batch:  8  len train loader :  116
+debug: global_step :  118  tokens seen:  67656
+debug: len input batch:  8  len target batch:  8  len train loader :  116
+debug: global_step :  119  tokens seen:  68128
+debug: len input batch:  8  len target batch:  8  len train loader :  116
+debug: global_step :  120  tokens seen:  68664
+Epoch 2 (Step 000120): Train loss 0.433, Val loss 0.664
+debug: len input batch:  8  len target batch:  8  len train loader :  116
+debug: global_step :  121  tokens seen:  69176
+debug: len input batch:  8  len target batch:  8  len train loader :  116
+debug: global_step :  122  tokens seen:  69824
+debug: len input batch:  8  len target batch:  8  len train loader :  116
+debug: global_step :  123  tokens seen:  70344
+debug: len input batch:  8  len target batch:  8  len train loader :  116
+debug: global_step :  124  tokens seen:  70880
+debug: len input batch:  8  len target batch:  8  len train loader :  116
+debug: global_step :  125  tokens seen:  71456
+Epoch 2 (Step 000125): Train loss 0.441, Val loss 0.681
+debug: len input batch:  8  len target batch:  8  len train loader :  116
+debug: global_step :  126  tokens seen:  72048
+debug: len input batch:  8  len target batch:  8  len train loader :  116
+debug: global_step :  127  tokens seen:  72720
+debug: len input batch:  8  len target batch:  8  len train loader :  116
+debug: global_step :  128  tokens seen:  73368
+debug: len input batch:  8  len target batch:  8  len train loader :  116
+debug: global_step :  129  tokens seen:  73928
+debug: len input batch:  8  len target batch:  8  len train loader :  116
+debug: global_step :  130  tokens seen:  74424
+Epoch 2 (Step 000130): Train loss 0.442, Val loss 0.674
+debug: len input batch:  8  len target batch:  8  len train loader :  116
+debug: global_step :  131  tokens seen:  74984
+debug: len input batch:  8  len target batch:  8  len train loader :  116
+debug: global_step :  132  tokens seen:  75584
+debug: len input batch:  8  len target batch:  8  len train loader :  116
+debug: global_step :  133  tokens seen:  76208
+debug: len input batch:  8  len target batch:  8  len train loader :  116
+debug: global_step :  134  tokens seen:  76680
+debug: len input batch:  8  len target batch:  8  len train loader :  116
+debug: global_step :  135  tokens seen:  77240
+Epoch 2 (Step 000135): Train loss 0.403, Val loss 0.669
+debug: len input batch:  8  len target batch:  8  len train loader :  116
+debug: global_step :  136  tokens seen:  77808
+debug: len input batch:  8  len target batch:  8  len train loader :  116
+debug: global_step :  137  tokens seen:  78296
+debug: len input batch:  8  len target batch:  8  len train loader :  116
+debug: global_step :  138  tokens seen:  78920
+debug: len input batch:  8  len target batch:  8  len train loader :  116
+debug: global_step :  139  tokens seen:  79400
+debug: len input batch:  8  len target batch:  8  len train loader :  116
+debug: global_step :  140  tokens seen:  79944
+Epoch 2 (Step 000140): Train loss 0.406, Val loss 0.668
+debug: len input batch:  8  len target batch:  8  len train loader :  116
+debug: global_step :  141  tokens seen:  80616
+debug: len input batch:  8  len target batch:  8  len train loader :  116
+debug: global_step :  142  tokens seen:  81144
+debug: len input batch:  8  len target batch:  8  len train loader :  116
+debug: global_step :  143  tokens seen:  81672
+debug: len input batch:  8  len target batch:  8  len train loader :  116
+debug: global_step :  144  tokens seen:  82200
+debug: len input batch:  8  len target batch:  8  len train loader :  116
+debug: global_step :  145  tokens seen:  82840
+Epoch 2 (Step 000145): Train loss 0.365, Val loss 0.670
+debug: len input batch:  8  len target batch:  8  len train loader :  116
+debug: global_step :  146  tokens seen:  83440
+debug: len input batch:  8  len target batch:  8  len train loader :  116
+debug: global_step :  147  tokens seen:  84008
+debug: len input batch:  8  len target batch:  8  len train loader :  116
+debug: global_step :  148  tokens seen:  84568
+debug: len input batch:  8  len target batch:  8  len train loader :  116
+debug: global_step :  149  tokens seen:  85240
+debug: len input batch:  8  len target batch:  8  len train loader :  116
+debug: global_step :  150  tokens seen:  85976
+Epoch 2 (Step 000150): Train loss 0.377, Val loss 0.664
+debug: len input batch:  8  len target batch:  8  len train loader :  116
+debug: global_step :  151  tokens seen:  86536
+debug: len input batch:  8  len target batch:  8  len train loader :  116
+debug: global_step :  152  tokens seen:  87016
+debug: len input batch:  8  len target batch:  8  len train loader :  116
+debug: global_step :  153  tokens seen:  87504
+debug: len input batch:  8  len target batch:  8  len train loader :  116
+debug: global_step :  154  tokens seen:  88032
+debug: len input batch:  8  len target batch:  8  len train loader :  116
+debug: global_step :  155  tokens seen:  88616
+Epoch 2 (Step 000155): Train loss 0.407, Val loss 0.665
+debug: len input batch:  8  len target batch:  8  len train loader :  116
+debug: global_step :  156  tokens seen:  89088
+debug: len input batch:  8  len target batch:  8  len train loader :  116
+debug: global_step :  157  tokens seen:  89544
+debug: len input batch:  8  len target batch:  8  len train loader :  116
+debug: global_step :  158  tokens seen:  90096
+debug: len input batch:  8  len target batch:  8  len train loader :  116
+debug: global_step :  159  tokens seen:  90760
+debug: len input batch:  8  len target batch:  8  len train loader :  116
+debug: global_step :  160  tokens seen:  91288
+Epoch 2 (Step 000160): Train loss 0.415, Val loss 0.673
+debug: len input batch:  8  len target batch:  8  len train loader :  116
+debug: global_step :  161  tokens seen:  91944
+debug: len input batch:  8  len target batch:  8  len train loader :  116
+debug: global_step :  162  tokens seen:  92496
+debug: len input batch:  8  len target batch:  8  len train loader :  116
+debug: global_step :  163  tokens seen:  93128
+debug: len input batch:  8  len target batch:  8  len train loader :  116
+debug: global_step :  164  tokens seen:  93680
+debug: len input batch:  8  len target batch:  8  len train loader :  116
+debug: global_step :  165  tokens seen:  94208
+Epoch 2 (Step 000165): Train loss 0.372, Val loss 0.673
+debug: len input batch:  8  len target batch:  8  len train loader :  116
+debug: global_step :  166  tokens seen:  94928
+debug: len input batch:  8  len target batch:  8  len train loader :  116
+debug: global_step :  167  tokens seen:  95664
+debug: len input batch:  8  len target batch:  8  len train loader :  116
+debug: global_step :  168  tokens seen:  96152
+debug: len input batch:  8  len target batch:  8  len train loader :  116
+debug: global_step :  169  tokens seen:  96824
+debug: len input batch:  8  len target batch:  8  len train loader :  116
+debug: global_step :  170  tokens seen:  97536
+Epoch 2 (Step 000170): Train loss 0.322, Val loss 0.670
+debug: len input batch:  8  len target batch:  8  len train loader :  116
+debug: global_step :  171  tokens seen:  98144
+debug: len input batch:  8  len target batch:  8  len train loader :  116
+debug: global_step :  172  tokens seen:  98608
+debug: len input batch:  8  len target batch:  8  len train loader :  116
+debug: global_step :  173  tokens seen:  99208
+debug: len input batch:  8  len target batch:  8  len train loader :  116
+debug: global_step :  174  tokens seen:  99672
+debug: len input batch:  8  len target batch:  8  len train loader :  116
+debug: global_step :  175  tokens seen:  100176
+Epoch 2 (Step 000175): Train loss 0.331, Val loss 0.660
+debug: len input batch:  8  len target batch:  8  len train loader :  116
+debug: global_step :  176  tokens seen:  100784
+debug: len input batch:  8  len target batch:  8  len train loader :  116
+debug: global_step :  177  tokens seen:  101280
+debug: len input batch:  8  len target batch:  8  len train loader :  116
+debug: global_step :  178  tokens seen:  101752
+debug: len input batch:  8  len target batch:  8  len train loader :  116
+debug: global_step :  179  tokens seen:  102232
+debug: len input batch:  8  len target batch:  8  len train loader :  116
+debug: global_step :  180  tokens seen:  102752
+Epoch 2 (Step 000180): Train loss 0.391, Val loss 0.649
+debug: len input batch:  8  len target batch:  8  len train loader :  116
+debug: global_step :  181  tokens seen:  103328
+debug: len input batch:  8  len target batch:  8  len train loader :  116
+debug: global_step :  182  tokens seen:  103880
+debug: len input batch:  8  len target batch:  8  len train loader :  116
+debug: global_step :  183  tokens seen:  104448
+debug: len input batch:  8  len target batch:  8  len train loader :  116
+debug: global_step :  184  tokens seen:  105000
+debug: len input batch:  8  len target batch:  8  len train loader :  116
+debug: global_step :  185  tokens seen:  105648
+Epoch 2 (Step 000185): Train loss 0.410, Val loss 0.650
+debug: len input batch:  8  len target batch:  8  len train loader :  116
+debug: global_step :  186  tokens seen:  106144
+debug: len input batch:  8  len target batch:  8  len train loader :  116
+debug: global_step :  187  tokens seen:  106720
+debug: len input batch:  8  len target batch:  8  len train loader :  116
+debug: global_step :  188  tokens seen:  107200
+debug: len input batch:  8  len target batch:  8  len train loader :  116
+debug: global_step :  189  tokens seen:  107680
+debug: len input batch:  8  len target batch:  8  len train loader :  116
+debug: global_step :  190  tokens seen:  108288
+Epoch 2 (Step 000190): Train loss 0.337, Val loss 0.641
+debug: len input batch:  8  len target batch:  8  len train loader :  116
+debug: global_step :  191  tokens seen:  108832
+debug: len input batch:  8  len target batch:  8  len train loader :  116
+debug: global_step :  192  tokens seen:  109568
+debug: len input batch:  8  len target batch:  8  len train loader :  116
+debug: global_step :  193  tokens seen:  110128
+debug: len input batch:  8  len target batch:  8  len train loader :  116
+debug: global_step :  194  tokens seen:  110656
+debug: len input batch:  8  len target batch:  8  len train loader :  116
+debug: global_step :  195  tokens seen:  111128
+Epoch 2 (Step 000195): Train loss 0.326, Val loss 0.626
+debug: len input batch:  8  len target batch:  8  len train loader :  116
+debug: global_step :  196  tokens seen:  111648
+debug: len input batch:  8  len target batch:  8  len train loader :  116
+debug: global_step :  197  tokens seen:  112104
+debug: len input batch:  8  len target batch:  8  len train loader :  116
+debug: global_step :  198  tokens seen:  112600
+debug: len input batch:  8  len target batch:  8  len train loader :  116
+debug: global_step :  199  tokens seen:  113184
+debug: len input batch:  8  len target batch:  8  len train loader :  116
+debug: global_step :  200  tokens seen:  113800
+Epoch 2 (Step 000200): Train loss 0.304, Val loss 0.625
+debug: len input batch:  8  len target batch:  8  len train loader :  116
+debug: global_step :  201  tokens seen:  114352
+debug: len input batch:  8  len target batch:  8  len train loader :  116
+debug: global_step :  202  tokens seen:  114888
+debug: len input batch:  8  len target batch:  8  len train loader :  116
+debug: global_step :  203  tokens seen:  115536
+debug: len input batch:  8  len target batch:  8  len train loader :  116
+debug: global_step :  204  tokens seen:  116080
+debug: len input batch:  8  len target batch:  8  len train loader :  116
+debug: global_step :  205  tokens seen:  116584
+Epoch 2 (Step 000205): Train loss 0.344, Val loss 0.622
+debug: len input batch:  8  len target batch:  8  len train loader :  116
+debug: global_step :  206  tokens seen:  117032
+debug: len input batch:  8  len target batch:  8  len train loader :  116
+debug: global_step :  207  tokens seen:  117704
+debug: len input batch:  8  len target batch:  8  len train loader :  116
+debug: global_step :  208  tokens seen:  118408
+debug: len input batch:  8  len target batch:  8  len train loader :  116
+debug: global_step :  209  tokens seen:  118920
+debug: len input batch:  8  len target batch:  8  len train loader :  116
+debug: global_step :  210  tokens seen:  119408
+Epoch 2 (Step 000210): Train loss 0.361, Val loss 0.623
+debug: len input batch:  8  len target batch:  8  len train loader :  116
+debug: global_step :  211  tokens seen:  119952
+debug: len input batch:  8  len target batch:  8  len train loader :  116
+debug: global_step :  212  tokens seen:  120496
+debug: len input batch:  8  len target batch:  8  len train loader :  116
+debug: global_step :  213  tokens seen:  121072
+debug: len input batch:  8  len target batch:  8  len train loader :  116
+debug: global_step :  214  tokens seen:  121696
+debug: len input batch:  8  len target batch:  8  len train loader :  116
+debug: global_step :  215  tokens seen:  122288
+Epoch 2 (Step 000215): Train loss 0.395, Val loss 0.628
+debug: len input batch:  8  len target batch:  8  len train loader :  116
+debug: global_step :  216  tokens seen:  122800
+debug: len input batch:  8  len target batch:  8  len train loader :  116
+debug: global_step :  217  tokens seen:  123376
+debug: len input batch:  8  len target batch:  8  len train loader :  116
+debug: global_step :  218  tokens seen:  123920
+debug: len input batch:  8  len target batch:  8  len train loader :  116
+debug: global_step :  219  tokens seen:  124488
+debug: len input batch:  8  len target batch:  8  len train loader :  116
+debug: global_step :  220  tokens seen:  125024
+Epoch 2 (Step 000220): Train loss 0.300, Val loss 0.639
+debug: len input batch:  8  len target batch:  8  len train loader :  116
+debug: global_step :  221  tokens seen:  125576
+debug: len input batch:  8  len target batch:  8  len train loader :  116
+debug: global_step :  222  tokens seen:  126104
+debug: len input batch:  8  len target batch:  8  len train loader :  116
+debug: global_step :  223  tokens seen:  126656
+debug: len input batch:  8  len target batch:  8  len train loader :  116
+debug: global_step :  224  tokens seen:  127192
+debug: len input batch:  8  len target batch:  8  len train loader :  116
+debug: global_step :  225  tokens seen:  127696
+Epoch 2 (Step 000225): Train loss 0.345, Val loss 0.652
+debug: len input batch:  8  len target batch:  8  len train loader :  116
+debug: global_step :  226  tokens seen:  128304
+debug: len input batch:  8  len target batch:  8  len train loader :  116
+debug: global_step :  227  tokens seen:  128976
+debug: len input batch:  8  len target batch:  8  len train loader :  116
+debug: global_step :  228  tokens seen:  129536
+debug: len input batch:  8  len target batch:  8  len train loader :  116
+debug: global_step :  229  tokens seen:  130048
+debug: len input batch:  8  len target batch:  8  len train loader :  116
+debug: global_step :  230  tokens seen:  130624
+Epoch 2 (Step 000230): Train loss 0.293, Val loss 0.650
+debug: len input batch:  8  len target batch:  8  len train loader :  116
+debug: global_step :  231  tokens seen:  131240
+
+out of inner input_batch loop..
+generate and print sample..
+
+Below is an instruction that describes a task. Write a response that appropriately completes the request.   ### Instruction: Convert the active sentence to passive: 'The chef cooks the meal every day.'  ### Response: The meal is cooked every day by the chef.<|endoftext|>The following is an instruction that describes a task. Write a response that appropriately completes the request.   ### Instruction: What is the capital of the United
+Traceback (most recent call last):
+  File "/home/anupam/demosthenes-llm/finetune-instruction-follow/model.py", line 154, in <module>
+    train_losses, val_losses, tokens_seen = train_model_simple(
+                                            ^^^^^^^^^^^^^^^^^^^
+  File "/home/anupam/demosthenes-llm/finetune-instruction-follow/../pretraining/training_container.py", line 81, in train_model_simple
+    torch.save(model.state_dict(), "./model/modelif.pth")
+  File "/usr/local/lib/python3.12/dist-packages/torch/serialization.py", line 966, in save
+    with _open_zipfile_writer(f) as opened_zipfile:
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/torch/serialization.py", line 828, in _open_zipfile_writer
+    return container(name_or_buffer)  # type: ignore[arg-type]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/torch/serialization.py", line 792, in __init__
+    torch._C.PyTorchFileWriter(
+RuntimeError: Parent directory ./model does not exist.

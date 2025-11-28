@@ -1,3 +1,15 @@
+It turns out (after I imported my demosthenes code from mac to ubuntu via github, that I haven't uploaded any of the raw data
+to re-do and complete gutenberg training on colab). while I can always upload data into github, noting down the steps here, since I am also executing the same on colab terminal (as I write this) - which I could also do on my ubuntu but then the zipping and uploading and then the rezipping and downloading is also very costly in terms of machine time/memory: 
+
+1. in gutenberg/gutenberg, create ./data/raw and ./data/.mirror
+2. create ./metadata
+3. python get_data.py (downloads all of the raw data from aleph.gutenberg site) using rsync
+4. execute the run_process_data (which calls process_data.py)
+5. call prepare_data.py 
+6. now start the training. Colab has a 10 hour limit so my checkpointing should still be useful.
+
+
+old notes:
 1. rsync to populate data/.mirror and data/raw
 2. process_data (only the strip headers part, remove tokenizers and count, keep the logging) : to strip out the headers
 3. test in isolation with .0 folders and options in run_process script

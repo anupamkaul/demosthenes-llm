@@ -48,7 +48,8 @@ mem analysis:
 | Oversize GPU segments |       0    |       0    |       0    |       0    |
 |===========================================================================|
 
-enter..model not found on disk. monitor as a one time thing, error out if repeats
+enter..device:  cpu
+model not found on disk. monitor as a one time thing, error out if repeats
 Characters: 20479
 Tokens: 5145
 90% of the split is from index  18431

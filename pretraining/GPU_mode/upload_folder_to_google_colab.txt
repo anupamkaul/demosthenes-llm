@@ -1,0 +1,45 @@
+I was able to upload demosthenes code to colab, use a tesla-t4 GPU, trained all of my models, ran inference, 
+and downloaded it back (all done via .tar.gz) back to my local machines' Download folder: 
+
+To upload a local folder from an Ubuntu machine to Google Colab for training, follow these steps: Compress the Folder.
+Compress the entire folder you wish to upload into a ZIP or TAR.GZ archive. This simplifies the upload process and maintains the folder structure.
+Code
+
+    tar -czvf my_project_folder.tar.gz my_project_folder/
+or
+Code
+
+    zip -r my_project_folder.zip my_project_folder/
+
+--> I did this to demosthenes_llm
+--> chose runtime GPU (from terminal at bottom)
+--> from files (left) option I uploaded the zip file (into /home/anupam, I created anupam)
+--> tar -xvzf <file>
+--> ran python pretraining.py for the verdict, finished in less than 2 min, saved model in models/ and inference works
+--> trying now with gutenberg/gutenberg, get a no training files found error and my script quits
+
+===============================================
+
+To move a folder structure from your Google Colab environment to your local machine, you generally need to compress the folder and then download the compressed file.
+Here's a common method: Compress the folder in Colab.
+You can use the zip command in the Colab terminal to compress your desired folder. Replace your_folder_name with the actual name of the folder you want to download and your_archive_name.zip with the desired name for your zip file.
+Code
+
+    !zip -r your_archive_name.zip your_folder_name
+The -r flag ensures that the compression is recursive, including all subdirectories and files within your_folder_name. Download the compressed file.
+After the folder is compressed, you can download the .zip file to your local machine using the files.download function from google.colab.
+Python
+
+    from google.colab import files
+    files.download('your_archive_name.zip')
+
+(this above code can be inserted in a cell and executed) 
+
+(if it gives a chromium open error, try again)
+I waited and did 2 methods:
+1. ran this code in cell
+2. went to files on the left, went to my file in /home/anupam/demo.tar.gz and right clicked and chose download
+The demo.tar.gz was downloaded (twice) to my local Downloads folder. The tar contains full code + the models that I trained
+on colab.
+
+Q.E.D. I now have a method to use a Telsa GPU for free to train my models
