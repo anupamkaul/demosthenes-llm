@@ -272,6 +272,8 @@ def train_model_simple(model, optimizer, device, n_epochs,
                             model, tokenizer, device, start_context
                         )
 
+                    # if I am using colab I don't need this limit check
+                    '''
                     if global_step % max_eval_limit == 0:
 
                         print("reached max eval limit, moving to next book\n")
@@ -282,6 +284,7 @@ def train_model_simple(model, optimizer, device, n_epochs,
                         )
 
                         break # skip the rest of the iterations and exit loop
+                    '''
 
                 print("\nout of input_batch inner for loop\n")
 
@@ -431,24 +434,13 @@ if __name__ == "__main__":
     torch.manual_seed(123)
     model = GPTModel(GPT_CONFIG_124M)
 
-    # load previously saved instance of the model (to continue training) and the training states
-    # enable this once I save it first time (I don't know the format, so let the output drive the input)
+    # an unfortunate hack for my local ubuntu 22.04 : even when cuda force it to CPU
+    # (this is because memory requests to my GPU0 exceed its total mem available, needs debugging)
 
-    try:
+    device = torch.device("cpu")
+    print("device override (for my local ubuntu): ", device)
 
-        checkpoint = torch.load("model_checkpoints/model_and_optmzr_pg_final.pth", map_location=device)
-        model.load_state_dict(checkpoint["model_state_dict"])
-
-        optimizer = torch.optim.AdamW(model.parameters(), lr=5e-4, weight_decay=0.1)
-        optimizer.load_state_dict(checkpoint["optimizer_state_dict"])
-
-        #model.train();
-
-        #model.load_state_dict(torch.load("model_checkpoints/model_pg_final.pth", map_location=device))
-
-        print("loaded previously saved model and optimizer to continue training..")
-    except FileNotFoundError:
-        print("model not found on disk. monitor as a one time thing, error out if repeats")
+    # first load up the training (checkpoint) states to continue a previously interrupted training
 
     try:
         with open("training_state.json", 'r') as f:
@@ -469,10 +461,42 @@ if __name__ == "__main__":
             sv_tokens_seen=0
             sv_global_step=0
 
+    # next, load previously saved instance of the model (to continue training) and the training states
+    # enable this once I save it first time (I don't know the format, so let the output drive the input)
+
+    try:
+
+        checkpoint = torch.load("model_checkpoints/model_and_optmzr_pg_final.pth", map_location=device)
+        model.load_state_dict(checkpoint["model_state_dict"])
+
+        optimizer = torch.optim.AdamW(model.parameters(), lr=5e-4, weight_decay=0.1)
+        optimizer.load_state_dict(checkpoint["optimizer_state_dict"])
+
+        print("loaded previously saved model and optimizer to continue training..")
+
+    except FileNotFoundError:
+        print("model not found on disk. monitor as a one time thing, error out if repeats")
+
+        # Re-initialize training states here : case of moving machines when data is not exported
+        # but previous states from running on another machine was checked-in
+
+        # (using files: if there is a previous state cache then re-initialize it and save the previous copy
+        # but since I reverted the lookup order (first load training states) hence reinit of variables will
+        # do the trick here nicely. The assumption is that every run that is interrupted will update and save
+        # both the model and the checkpoint states file)
+
+        print("No training saved states ! Start training from the beginning")
+        sv_n_epochs=0
+        sv_start_file_enum=1
+        sv_input_batch_counter=1
+        sv_tokens_seen=0
+        sv_global_step=0
+
+
     model.to(device)
 
-    # see if I still need this init in case a saved checkpoint doesn't exist
-    #optimizer = torch.optim.AdamW(model.parameters(), lr=args.lr, weight_decay=0.1)
+    # still need this init in case a saved checkpoint (or model) doesn't exist
+    optimizer = torch.optim.AdamW(model.parameters(), lr=args.lr, weight_decay=0.1)
 
     tokenizer = tiktoken.get_encoding("gpt2")
 
@@ -490,6 +514,8 @@ if __name__ == "__main__":
 
     output_dir = Path(args.output_dir)
     output_dir.mkdir(parents=True, exist_ok=True)
+
+    input("Ready to commence training! <enter>")
 
     train_losses, val_losses, tokens_seen = train_model_simple(
         model, optimizer, device,

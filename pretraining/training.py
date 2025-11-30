@@ -155,7 +155,7 @@ input("enter..")
 
 # Comment out the following 2 lines when GPU works..
 device = torch.device("cpu")
-print("device: ", device)
+print("device override for my local ubuntu: ", device)
 
 model.to(device)
 
