@@ -4,7 +4,7 @@ to re-do and complete gutenberg training on colab). while I can always upload da
 1. in gutenberg/gutenberg, create ./data/raw and ./data/.mirror
 2. create ./metadata
 3. python get_data.py (downloads all of the raw data from aleph.gutenberg site) using rsync
-4. execute the run_process_data (which calls process_data.py)
+4. python process_data.py (also create ./data/text first, this is where all the 'process-books' text files are dumped) 
 5. call prepare_data.py 
 6. now start the training. Colab has a 10 hour limit so my checkpointing should still be useful.
 
