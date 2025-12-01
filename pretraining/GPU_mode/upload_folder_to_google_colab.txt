@@ -43,3 +43,66 @@ The demo.tar.gz was downloaded (twice) to my local Downloads folder. The tar con
 on colab.
 
 Q.E.D. I now have a method to use a Telsa GPU for free to train my models
+
+Nov-30 : I tried download all of the data directly on google colab but it took time (that exceeded the free tier time). I downloaded all datta on my ubuntu 22.04 and this resulted in a .tar.gz of around 20GB which didn't upload directly to colab. I removed everything except data/preprocessed.0 (the combined input files for gutenberg to be trained) + model changes. This .tar.gz came to about 7GB which again didn't upload directly to colab because of mem constraints (I guess). My next option is to upload this 7G demo.tar.gz to my google drive (which has this space) and to load from here directly to google colab thusly:
+
+To upload or access files from Google Drive in a Google Colab notebook, you need to mount your Google Drive. This process links your Drive storage to the Colab environment, allowing you to interact with your files.
+Here's how to do it: Mount Google Drive.
+Execute the following Python code in a Colab cell:
+Python
+
+    from google.colab import drive
+    drive.mount('/content/drive')
+This will prompt you to authenticate your Google account. Follow the on-screen instructions, select your account, grant the necessary permissions, and copy and paste the authorization code (if prompted) back into the Colab cell. Access your files.
+Once your Drive is successfully mounted, you can access your files and folders within the /content/drive/MyDrive directory. For example, if you have a file named my_data.csv in a folder called Colab_Data within your Google Drive's "My Drive", you can access it using the path: /content/drive/MyDrive/Colab_Data/my_data.csv.
+You can then use standard Python libraries like Pandas to read your data:
+Python
+
+    import pandas as pd
+    file_path = '/content/drive/MyDrive/Colab_Data/my_data.csv'
+    df = pd.read_csv(file_path)
+    print(df.head())
+Navigate to a specific directory (optional).
+If you are working with many files in a specific folder, you might find it convenient to change your current working directory using the %cd magic command:
+Python
+
+    %cd /content/drive/MyDrive/Colab_Data
+After changing the directory, you can refer to files within that directory using relative paths.
+Note: The mounted Drive connection is temporary and will be lost when your Colab runtime disconnects or restarts. You will need to re-mount your Drive each time you start a new Colab session.
+
+Another way, using the file menu on Colab:
+
+To upload a file from Google Drive to Google Colab using the file menu, you need to first mount your Google Drive within the Colab environment.
+Mount Google Drive:
+In a Colab code cell, execute the following code:
+Python
+
+        from google.colab import drive
+        drive.mount('/content/drive')
+This will prompt you to authorize Colab to access your Google Drive. Follow the instructions to complete the authentication process. Once successful, your Google Drive content will be accessible under /content/drive/My Drive/.
+Access the File:
+Navigate to the "Files" icon on the left-hand side menu bar in Colab. 
+You will see a folder structure including "drive". Expand "drive" and then "My Drive" to browse your Google Drive content.
+Locate the file you wish to use within your Google Drive folders.
+Copy the Path:
+Right-click on the desired file in the Colab file browser.
+Select "Copy path". This will copy the absolute path of the file within the mounted Drive to your clipboard (e.g., /content/drive/My Drive/MyFolder/my_file.csv).
+Use the File in your Notebook:
+Paste the copied path into your code when referencing the file. For example, if it's a CSV file you want to read with pandas:
+Python
+
+        import pandas as pd
+        file_path = "/content/drive/My Drive/MyFolder/my_file.csv"
+        df = pd.read_csv(file_path)
+
+>> The code cell works and I get:
+from google.colab import drive
+drive.mount('/content/drive')
+
+Mounted at /content/drive
+
+Not sure if necessary (but I need to inflate it and not in drive, so): 
+cd /home/anupam
+cp /content/drive/MyDrive/collab/demo.tar.gz .
+
+
