@@ -95,14 +95,22 @@ Python
         file_path = "/content/drive/My Drive/MyFolder/my_file.csv"
         df = pd.read_csv(file_path)
 
+(for data this is ok but I have code so I copy it to my home folder shown below)
+
 >> The code cell works and I get:
+
 from google.colab import drive
 drive.mount('/content/drive')
 
 Mounted at /content/drive
 
-Not sure if necessary (but I need to inflate it and not in drive, so): 
+(I need to inflate it and not in drive, so): 
+
 cd /home/anupam
 cp /content/drive/MyDrive/collab/demo.tar.gz .
 
+worked ! 
+
+next: tar -xvzf ./demo.tar.gz
+now I have all of my input data files in data/preprocessed.0 to begin actual T4 GPU training !!
 
