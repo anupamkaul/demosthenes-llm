@@ -1,0 +1,14 @@
+for gutenberg, best is to map to drive (as colab has a small upload limit of MBs), as a .tar.gz then mount
+
+100 batches (of 1024) take about 5 min of training cycles using a single Tesla T4
+so 1 batch = 5/100 min, and 1000 batches (if I execute max_eval_limit) is roughly 1 hour.
+
+(it also takes a couple of min to read the next combined-chunk file and split it 90% and 10%)
+
+so in 10 hours I can train the model with 10 combined files, then checkpoint, download, remap to
+drive and continue
+
+- providing downloading works
+- providing restarting with model works (last time cuda memalloc error with Tesla T4 when
+model was present. It wasn't the training states (hence the skip) that was accumulating RAM,
+it was something that happened when the model was present.
