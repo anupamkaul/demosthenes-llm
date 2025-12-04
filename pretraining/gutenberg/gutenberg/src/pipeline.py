@@ -73,6 +73,7 @@ def process_book(
 
         '''
         Disable token creation and count creation
+        '''
 
         # compute tokens
         tokens = tokenize_f(clean, language=language)
@@ -89,7 +90,6 @@ def process_book(
         target_file = os.path.join(counts_dir,"PG%s_counts.txt"%PG_number)
         with io.open(target_file,"w", encoding="UTF-8") as f:
             f.write("\n".join([w+"\t"+str(c) for w,c in counts.most_common()])+"\n")
-        '''
 
         # write log info if log_file is not None
         if log_file != "":

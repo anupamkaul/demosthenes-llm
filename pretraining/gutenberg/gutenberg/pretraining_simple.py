@@ -115,7 +115,7 @@ sv_global_step = 0         # the global step var in the training loop
 def train_model_simple(model, optimizer, device, n_epochs,
                        eval_freq, eval_iter, print_sample_iter, start_context,
                        output_dir, save_ckpt_freq, tokenizer,
-                       batch_size=1024, train_ratio=0.90):
+                       batch_size=2, train_ratio=0.90):
 
     train_losses, val_losses, track_tokens_seen = [], [], []
     tokens_seen = 0
@@ -145,6 +145,7 @@ def train_model_simple(model, optimizer, device, n_epochs,
 
             print("\ntraining for epoch ", epoch, " of ", n_epochs, "\n")
             print("batch size ", batch_size)
+            input()
 
             # Iterate over the books in the training corpus
             for index, file_path in enumerate(all_files, 1):
@@ -245,11 +246,25 @@ def train_model_simple(model, optimizer, device, n_epochs,
                     continue
                     '''
 
+                    print("optimizer setting")
                     optimizer.zero_grad()
+                    print("optimizer set")
+
+                    print("loss calculating")
                     loss = calc_loss_batch(input_batch, target_batch, model, device)
+                    print("loss calculated")
+
+                    print("backprop start")
                     loss.backward()
+                    print("backprop end")
+
+                    print("optimizer step start")
                     optimizer.step()
+                    print("optimizer step end")
+
                     tokens_seen += input_batch.numel()
+                    print("we have tokens_seen")
+
                     global_step += 1
                     print("global step: ", global_step, " tokens seen: ", tokens_seen)
 
@@ -273,7 +288,6 @@ def train_model_simple(model, optimizer, device, n_epochs,
                         )
 
                     # if I am using colab I don't need this limit check
-                    '''
                     if global_step % max_eval_limit == 0:
 
                         print("reached max eval limit, moving to next book\n")
@@ -284,7 +298,6 @@ def train_model_simple(model, optimizer, device, n_epochs,
                         )
 
                         break # skip the rest of the iterations and exit loop
-                    '''
 
                 print("\nout of input_batch inner for loop\n")
 
@@ -379,7 +392,7 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser(description='GPT Model Training Configuration')
 
     # modified these training params for a CPU friendly debug
-    parser.add_argument('--data_dir', type=str, default='data/preprocessed.0',
+    parser.add_argument('--data_dir', type=str, default='data/combined',
                         help='Directory containing the training data')
     parser.add_argument('--output_dir', type=str, default='model_checkpoints',
                         help='Directory where the model checkpoints will be saved')
@@ -393,7 +406,7 @@ if __name__ == "__main__":
                         help='Frequency of saving model checkpoints during training')
     parser.add_argument('--lr', type=float, default=5e-4,
                         help='Learning rate for the optimizer')
-    parser.add_argument('--batch_size', type=int, default=4,
+    parser.add_argument('--batch_size', type=int, default=2,
     #parser.add_argument('--batch_size', type=int, default=256,
     #parser.add_argument('--batch_size', type=int, default=1024, # override here (mem resource limit reached)
                         help='Batch size for training')

@@ -1,3 +1,27 @@
+Dec-04 2025:
+1. I get illegal instruction and laptop reboots with calc_batch_loss (passing inputs to model), prior to backprop
+2. I rechunked input files from 500MB each to 80MB each. Still the same
+3. I rechunked input files from 80MB each to 5MB each (folder: combined) and saved the 80MBs in combined_80mb
+4. Still error (1)
+5. Batch size was 1024, defaulted to a very conservative size 2 and training now proceeds sans errors on asus ubuntu! 
+6. Interruption saved the model checkpoint but didn't save the training states, probably because I hit interrupt twice.
+7. Can try with 80MB chunks with batch size of 2 next.
+8. 80MB had 228 combined files (from 37 of 500MB each). 5MBs have 3K+ files which is still less than 47K at 28k'ish each.
+9. So, getdata.py, dump in data/raw and call process_data, dump in combined_MBsize, batch size of 2 for CPU and proceed.
+
+Dec-02 2025:
+
+1. After get_data.py I am simply calling prepare_data.py
+2. (although I re-enabled tokens and count in process_data - step 3 - see below Nov-30 - what's the point?)
+3. prepare_data.py directly takes files from data/raw (revert back from data/text) and it calls strip_headers from src.cleanup
+   (which cleanup process_data.py was also calling, and currently I have no use for tokens or count)
+4. renamed preprocessed.0 to combined
+5. reduce combined file sizes from 500MB (slow processing + higher mem) to 100MB each. Thus I should see around 150-160 files
+   but still enough of a chunk-sized order over batches. (I can lower it even further so I could check these final inputs into
+   github minus the LFS pain..) 
+
+Nov-30 2025:
+
 It turns out (after I imported my demosthenes code from mac to ubuntu via github, that I haven't uploaded any of the raw data
 to re-do and complete gutenberg training on colab). while I can always upload data into github, noting down the steps here, since I am also executing the same on colab terminal (as I write this) - which I could also do on my ubuntu but then the zipping and uploading and then the rezipping and downloading is also very costly in terms of machine time/memory: 
 
@@ -8,6 +32,8 @@ to re-do and complete gutenberg training on colab). while I can always upload da
 5. call prepare_data.py 
 6. now start the training. Colab has a 10 hour limit so my checkpointing should still be useful.
 
+
+OLDER:
 
 old notes:
 1. rsync to populate data/.mirror and data/raw

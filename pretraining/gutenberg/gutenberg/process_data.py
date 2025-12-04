@@ -92,8 +92,8 @@ if __name__ == '__main__':
     # loop over all books in the raw-folder
     pbooks = 0
     for filename in glob.glob(join(args.raw, 'PG%s_raw.txt' % (args.pattern))):
-        # The process_books function will fail very rarely, whne
-        # a file tagged as UTf-8 is not really UTF-8. We kust
+        # The process_books function will fail very rarely, when
+        # a file tagged as UTf-8 is not really UTF-8. We just
         # skip those books.
         try:
             # get PG_id
@@ -127,4 +127,4 @@ if __name__ == '__main__':
                 print("# WARNING: metadata for '%s' not found" % filename)
         except Exception as e:
             if not args.quiet:
-                print("# WARNING: cannot process '%s' (unkown error)" % filename)
+                print("# WARNING: cannot process '%s' (bam! unknown error)" % filename)
