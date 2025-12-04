@@ -1,3 +1,167 @@
+anu-env) anupam@anupam-G75VW:~/akaul_git/demosthenes-llm/pretraining/gutenberg/gutenberg$ python pretraining_simple.py 
+pretraining args:  Namespace(data_dir='data/combined-80mb', output_dir='model_checkpoints', n_epochs=3, print_sample_iter=5, eval_freq=5, save_ckpt_freq=10, lr=0.0005, batch_size=2, debug=False)
+device for training:  cpu
+is MPS available:  False
+device override (for my local ubuntu):  cpu
+loading training state:  {'n_epochs': 0, 'file_enum': 1, 'input_batch_counter': 281, 'tokens_seen': 1146880, 'global_step': 280}
+model not found on disk. monitor as a one time thing, error out if repeats
+No training saved states ! Start training from the beginning
+Total files for training: 228
+Files:
+ ['data/combined-80mb/combined_105.txt', 'data/combined-80mb/combined_107.txt', 'data/combined-80mb/combined_80.txt', 'data/combined-80mb/combined_204.txt', 'data/combined-80mb/combined_23.txt', 'data/combined-80mb/combined_154.txt', 'data/combined-80mb/combined_19.txt', 'data/combined-80mb/combined_177.txt', 'data/combined-80mb/combined_191.txt', 'data/combined-80mb/combined_47.txt', 'data/combined-80mb/combined_161.txt', 'data/combined-80mb/combined_166.txt', 'data/combined-80mb/combined_9.txt', 'data/combined-80mb/combined_146.txt', 'data/combined-80mb/combined_170.txt', 'data/combined-80mb/combined_174.txt', 'data/combined-80mb/combined_193.txt', 'data/combined-80mb/combined_43.txt', 'data/combined-80mb/combined_125.txt', 'data/combined-80mb/combined_156.txt', 'data/combined-80mb/combined_50.txt', 'data/combined-80mb/combined_120.txt', 'data/combined-80mb/combined_196.txt', 'data/combined-80mb/combined_83.txt', 'data/combined-80mb/combined_160.txt', 'data/combined-80mb/combined_215.txt', 'data/combined-80mb/combined_226.txt', 'data/combined-80mb/combined_86.txt', 'data/combined-80mb/combined_67.txt', 'data/combined-80mb/combined_59.txt', 'data/combined-80mb/combined_102.txt', 'data/combined-80mb/combined_212.txt', 'data/combined-80mb/combined_112.txt', 'data/combined-80mb/combined_103.txt', 'data/combined-80mb/combined_27.txt', 'data/combined-80mb/combined_208.txt', 'data/combined-80mb/combined_179.txt', 'data/combined-80mb/combined_228.txt', 'data/combined-80mb/combined_101.txt', 'data/combined-80mb/combined_16.txt', 'data/combined-80mb/combined_131.txt', 'data/combined-80mb/combined_134.txt', 'data/combined-80mb/combined_184.txt', 'data/combined-80mb/combined_35.txt', 'data/combined-80mb/combined_25.txt', 'data/combined-80mb/combined_29.txt', 'data/combined-80mb/combined_109.txt', 'data/combined-80mb/combined_225.txt', 'data/combined-80mb/combined_13.txt', 'data/combined-80mb/combined_45.txt', 'data/combined-80mb/combined_104.txt', 'data/combined-80mb/combined_128.txt', 'data/combined-80mb/combined_60.txt', 'data/combined-80mb/combined_78.txt', 'data/combined-80mb/combined_117.txt', 'data/combined-80mb/combined_30.txt', 'data/combined-80mb/combined_221.txt', 'data/combined-80mb/combined_111.txt', 'data/combined-80mb/combined_123.txt', 'data/combined-80mb/combined_133.txt', 'data/combined-80mb/combined_217.txt', 'data/combined-80mb/combined_114.txt', 'data/combined-80mb/combined_167.txt', 'data/combined-80mb/combined_176.txt', 'data/combined-80mb/combined_171.txt', 'data/combined-80mb/combined_40.txt', 'data/combined-80mb/combined_189.txt', 'data/combined-80mb/combined_207.txt', 'data/combined-80mb/combined_222.txt', 'data/combined-80mb/combined_51.txt', 'data/combined-80mb/combined_64.txt', 'data/combined-80mb/combined_203.txt', 'data/combined-80mb/combined_157.txt', 'data/combined-80mb/combined_210.txt', 'data/combined-80mb/combined_124.txt', 'data/combined-80mb/combined_121.txt', 'data/combined-80mb/combined_202.txt', 'data/combined-80mb/combined_22.txt', 'data/combined-80mb/combined_87.txt', 'data/combined-80mb/combined_194.txt', 'data/combined-80mb/combined_57.txt', 'data/combined-80mb/combined_63.txt', 'data/combined-80mb/combined_162.txt', 'data/combined-80mb/combined_198.txt', 'data/combined-80mb/combined_213.txt', 'data/combined-80mb/combined_92.txt', 'data/combined-80mb/combined_61.txt', 'data/combined-80mb/combined_99.txt', 'data/combined-80mb/combined_94.txt', 'data/combined-80mb/combined_110.txt', 'data/combined-80mb/combined_138.txt', 'data/combined-80mb/combined_1.txt', 'data/combined-80mb/combined_140.txt', 'data/combined-80mb/combined_4.txt', 'data/combined-80mb/combined_148.txt', 'data/combined-80mb/combined_10.txt', 'data/combined-80mb/combined_145.txt', 'data/combined-80mb/combined_218.txt', 'data/combined-80mb/combined_8.txt', 'data/combined-80mb/combined_192.txt', 'data/combined-80mb/combined_180.txt', 'data/combined-80mb/combined_85.txt', 'data/combined-80mb/combined_220.txt', 'data/combined-80mb/combined_11.txt', 'data/combined-80mb/combined_96.txt', 'data/combined-80mb/combined_188.txt', 'data/combined-80mb/combined_53.txt', 'data/combined-80mb/combined_149.txt', 'data/combined-80mb/combined_69.txt', 'data/combined-80mb/combined_136.txt', 'data/combined-80mb/combined_39.txt', 'data/combined-80mb/combined_118.txt', 'data/combined-80mb/combined_214.txt', 'data/combined-80mb/combined_150.txt', 'data/combined-80mb/combined_159.txt', 'data/combined-80mb/combined_223.txt', 'data/combined-80mb/combined_93.txt', 'data/combined-80mb/combined_113.txt', 'data/combined-80mb/combined_48.txt', 'data/combined-80mb/combined_98.txt', 'data/combined-80mb/combined_195.txt', 'data/combined-80mb/combined_143.txt', 'data/combined-80mb/combined_38.txt', 'data/combined-80mb/combined_76.txt', 'data/combined-80mb/combined_185.txt', 'data/combined-80mb/combined_108.txt', 'data/combined-80mb/combined_54.txt', 'data/combined-80mb/combined_158.txt', 'data/combined-80mb/combined_165.txt', 'data/combined-80mb/combined_36.txt', 'data/combined-80mb/combined_200.txt', 'data/combined-80mb/combined_12.txt', 'data/combined-80mb/combined_122.txt', 'data/combined-80mb/combined_197.txt', 'data/combined-80mb/combined_68.txt', 'data/combined-80mb/combined_147.txt', 'data/combined-80mb/combined_28.txt', 'data/combined-80mb/combined_141.txt', 'data/combined-80mb/combined_55.txt', 'data/combined-80mb/combined_132.txt', 'data/combined-80mb/combined_190.txt', 'data/combined-80mb/combined_62.txt', 'data/combined-80mb/combined_70.txt', 'data/combined-80mb/combined_199.txt', 'data/combined-80mb/combined_88.txt', 'data/combined-80mb/combined_89.txt', 'data/combined-80mb/combined_3.txt', 'data/combined-80mb/combined_75.txt', 'data/combined-80mb/combined_20.txt', 'data/combined-80mb/combined_42.txt', 'data/combined-80mb/combined_168.txt', 'data/combined-80mb/combined_95.txt', 'data/combined-80mb/combined_14.txt', 'data/combined-80mb/combined_216.txt', 'data/combined-80mb/combined_139.txt', 'data/combined-80mb/combined_187.txt', 'data/combined-80mb/combined_97.txt', 'data/combined-80mb/combined_127.txt', 'data/combined-80mb/combined_73.txt', 'data/combined-80mb/combined_90.txt', 'data/combined-80mb/combined_79.txt', 'data/combined-80mb/combined_5.txt', 'data/combined-80mb/combined_37.txt', 'data/combined-80mb/combined_130.txt', 'data/combined-80mb/combined_182.txt', 'data/combined-80mb/combined_65.txt', 'data/combined-80mb/combined_15.txt', 'data/combined-80mb/combined_46.txt', 'data/combined-80mb/combined_71.txt', 'data/combined-80mb/combined_82.txt', 'data/combined-80mb/combined_181.txt', 'data/combined-80mb/combined_84.txt', 'data/combined-80mb/combined_18.txt', 'data/combined-80mb/combined_49.txt', 'data/combined-80mb/combined_116.txt', 'data/combined-80mb/combined_126.txt', 'data/combined-80mb/combined_144.txt', 'data/combined-80mb/combined_205.txt', 'data/combined-80mb/combined_26.txt', 'data/combined-80mb/combined_100.txt', 'data/combined-80mb/combined_6.txt', 'data/combined-80mb/combined_34.txt', 'data/combined-80mb/combined_119.txt', 'data/combined-80mb/combined_2.txt', 'data/combined-80mb/combined_211.txt', 'data/combined-80mb/combined_163.txt', 'data/combined-80mb/combined_77.txt', 'data/combined-80mb/combined_31.txt', 'data/combined-80mb/combined_201.txt', 'data/combined-80mb/combined_66.txt', 'data/combined-80mb/combined_115.txt', 'data/combined-80mb/combined_17.txt', 'data/combined-80mb/combined_186.txt', 'data/combined-80mb/combined_33.txt', 'data/combined-80mb/combined_56.txt', 'data/combined-80mb/combined_142.txt', 'data/combined-80mb/combined_58.txt', 'data/combined-80mb/combined_32.txt', 'data/combined-80mb/combined_209.txt', 'data/combined-80mb/combined_206.txt', 'data/combined-80mb/combined_7.txt', 'data/combined-80mb/combined_152.txt', 'data/combined-80mb/combined_72.txt', 'data/combined-80mb/combined_74.txt', 'data/combined-80mb/combined_24.txt', 'data/combined-80mb/combined_52.txt', 'data/combined-80mb/combined_135.txt', 'data/combined-80mb/combined_164.txt', 'data/combined-80mb/combined_227.txt', 'data/combined-80mb/combined_155.txt', 'data/combined-80mb/combined_178.txt', 'data/combined-80mb/combined_91.txt', 'data/combined-80mb/combined_151.txt', 'data/combined-80mb/combined_41.txt', 'data/combined-80mb/combined_137.txt', 'data/combined-80mb/combined_224.txt', 'data/combined-80mb/combined_44.txt', 'data/combined-80mb/combined_106.txt', 'data/combined-80mb/combined_175.txt', 'data/combined-80mb/combined_81.txt', 'data/combined-80mb/combined_169.txt', 'data/combined-80mb/combined_219.txt', 'data/combined-80mb/combined_153.txt', 'data/combined-80mb/combined_183.txt', 'data/combined-80mb/combined_173.txt', 'data/combined-80mb/combined_172.txt', 'data/combined-80mb/combined_129.txt', 'data/combined-80mb/combined_21.txt']
+Ready to commence training! <enter>
+
+training for epoch  0  of  3 
+
+batch size  2
+
+new index:  1 file path:  data/combined-80mb/combined_105.txt <ENTER>
+Reading and splitting file 1 of 228: data/combined-80mb/combined_105.txt into a 0.9 split between train and validation
+Tokenizing file 1 of 228: data/combined-80mb/combined_105.txt
+GPTDatasetV1.py generated token IDs !
+GPTDatasetV1.py chunking tokens for max_length =  1024  stride =  1024
+GPTDatasetV1.py tokenization done!
+GPTDatasetV1.py generated token IDs !
+GPTDatasetV1.py chunking tokens for max_length =  1024  stride =  1024
+GPTDatasetV1.py tokenization done!
+
+Training ...
+1  input batch:  tensor([[  198,   198,    32,  ...,   326,   345,   389],
+        [12703,   763,    12,  ...,  1555,   356,   389]]) 
+target batch :  tensor([[  198,    32,  1178,  ...,   345,   389,   257],
+        [  763,    12,  3575,  ...,   356,   389, 44681]])
+optimizer setting
+optimizer set
+loss calculating
+loss calculated
+backprop start
+backprop end
+optimizer step start
+optimizer step end
+we have tokens_seen
+global step:  1  tokens seen:  2048
+2  input batch:  tensor([[  220,   930, 15146,  ...,    13,  5267,    13],
+        [  251,   389, 17232,  ...,   220,   220,   220]]) 
+target batch :  tensor([[  930, 15146,  1539,  ...,  5267,    13,  2808],
+        [  389, 17232,    13,  ...,   220,   220,   220]])
+optimizer setting
+optimizer set
+loss calculating
+loss calculated
+backprop start
+backprop end
+optimizer step start
+optimizer step end
+we have tokens_seen
+global step:  2  tokens seen:  4096
+3  input batch:  tensor([[ 1158,  2634, 39990,  ...,   198,   438,   126],
+        [  511, 25321,    13,  ...,   290,   311,  5605]]) 
+target batch :  tensor([[ 2634, 39990,   475,  ...,   438,   126,    94],
+        [25321,    13,   198,  ...,   311,  5605,  8597]])
+optimizer setting
+optimizer set
+loss calculating
+loss calculated
+backprop start
+backprop end
+optimizer step start
+optimizer step end
+we have tokens_seen
+global step:  3  tokens seen:  6144
+4  input batch:  tensor([[  290,   284,  2868,  ...,    24,  4304,    60],
+        [   73, 21162,   257,  ...,    11, 35560, 38251]]) 
+target batch :  tensor([[  284,  2868,   273,  ...,  4304,    60,   628],
+        [21162,   257,   894,  ..., 35560, 38251, 15503]])
+optimizer setting
+optimizer set
+loss calculating
+loss calculated
+backprop start
+backprop end
+optimizer step start
+optimizer step end
+we have tokens_seen
+global step:  4  tokens seen:  8192
+5  input batch:  tensor([[  198,   727,   582,  ...,   553,  8263,   257],
+        [  383, 14268,  3607,  ...,   259, 10899,    68]]) 
+target batch :  tensor([[  727,   582,   550,  ...,  8263,   257, 22581],
+        [14268,  3607,   198,  ..., 10899,    68,    11]])
+optimizer setting
+optimizer set
+loss calculating
+loss calculated
+backprop start
+backprop end
+optimizer step start
+optimizer step end
+we have tokens_seen
+global step:  5  tokens seen:  10240
+evaluating model, noting train + validation loss (interim)
+Ep 1 (Step 5): Train loss 8.591, Val loss 8.636
+
+generate and print sample..
+Every effort moves you,                                                 
+6  input batch:  tensor([[25523,   262,  4808,  ...,  8587,   355,   262],
+        [10207,    11,   290,  ..., 22389,    11,   198]]) 
+target batch :  tensor([[  262,  4808,  5574,  ...,   355,   262, 10405],
+        [   11,   290,   530,  ...,    11,   198,  4360]])
+optimizer setting
+optimizer set
+loss calculating
+loss calculated
+backprop start
+backprop end
+optimizer step start
+optimizer step end
+we have tokens_seen
+global step:  6  tokens seen:  12288
+7  input batch:  tensor([[ 4150,   339, 10357,  ...,   290,   286, 12354],
+        [  973,   284,  1561,  ...,    11, 46723,    13]]) 
+target batch :  tensor([[  339, 10357,   198,  ...,   286, 12354,    13],
+        [  284,  1561, 18035,  ..., 46723,    13,   628]])
+optimizer setting
+optimizer set
+loss calculating
+loss calculated
+backprop start
+backprop end
+optimizer step start
+optimizer step end
+we have tokens_seen
+global step:  7  tokens seen:  14336
+8  input batch:  tensor([[21124,  7800,   477,  ...,   262, 10033, 30918],
+        [ 9393,   262,   393,  ...,   340,   355,   257]]) 
+target batch :  tensor([[ 7800,   477,  3858,  ..., 10033, 30918,   290],
+        [  262,   393,  6008,  ...,   355,   257,   198]])
+optimizer setting
+optimizer set
+loss calculating
+loss calculated
+backprop start
+backprop end
+optimizer step start
+optimizer step end
+we have tokens_seen
+global step:  8  tokens seen:  16384
+9  input batch:  tensor([[20711,    64,    11,  ...,   349,    13,  5949],
+        [  561,   787,  2241,  ...,  1501,   287,   257]]) 
+target batch :  tensor([[   64,    11,   508,  ...,    13,  5949,   692],
+        [  787,  2241,   290,  ...,   287,   257, 25565]])
+optimizer setting
+optimizer set
+loss calculating
+^C
+Saved model_checkpoints/model_and_optmzr_pg_8_interrupted.pth and model_checkpoints/model_and_optmzr_pg_final.pth
+Training state saved for epoch 0 file index 1 batch_counter  9 tokens 16384 global_step 8
+Saved training state
+tokens_seen[] =  [10240]
+train_losses[] =  [8.590537071228027]
+val_losses[] =  [8.6361722946167]
+Maximum GPU memory allocated: 0.00 GB
+
+
+
+
 (anu-env) anupam@anupam-G75VW:~/akaul_git/demosthenes-llm/pretraining/gutenberg/gutenberg$ python pretraining_simple.py 
 pretraining args:  Namespace(data_dir='data/combined', output_dir='model_checkpoints', n_epochs=3, print_sample_iter=5, eval_freq=5, save_ckpt_freq=10, lr=0.0005, batch_size=2, debug=False)
 device for training:  cpu
