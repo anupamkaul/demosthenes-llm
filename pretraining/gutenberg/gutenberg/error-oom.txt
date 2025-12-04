@@ -1,0 +1,65 @@
+sudo dmesg -T | grep kill
+[sudo] password for anupam: 
+[Thu Dec  4 09:51:14 2025] python invoked oom-killer: gfp_mask=0x140dca(GFP_HIGHUSER_MOVABLE|__GFP_COMP|__GFP_ZERO), order=0, oom_score_adj=200
+[Thu Dec  4 09:51:14 2025]  oom_kill_process+0x118/0x280
+[Thu Dec  4 09:51:14 2025] [   3363]  1000  3363   132771      142       64       78         0   135168       64           200 gsd-rfkill
+[Thu Dec  4 09:51:14 2025] oom-kill:constraint=CONSTRAINT_NONE,nodemask=(null),cpuset=/,mems_allowed=0,global_oom,task_memcg=/user.slice/user-1000.slice/user@1000.service/app.slice/app-org.gnome.Terminal.slice/vte-spawn-a38d1f33-0771-416a-abf8-3cd4717d6c56.scope,task=python,pid=184750,uid=1000
+
+On ubuntu-dell, system invokes oom-killer. This is because (verified on mac) the same training loop in the fwd-data feed to the model (when input_batch is passed to model in calc_batch_loss) takes 21G+ of memory. The dell only has 16G. Returns "killed".
+
+On asus-ubuntu it is worse. On the same loop in training, I get illegal instruction and my laptop reboots. That one also has 16G. Could be an illegal instruction executed during exception processing in that CPU. I re-chunked the training files to go down to 80MB each (from 500MB) each (and I also skipped process_data and directly did prepare_dataset, since that also strips headers). So I can arbitrarily reduce the input file size chunks on disk. To note that 80MB on disk also caused illegal instruction on asus. (To note is that training on the-verdict proceeded locally to success, as evidenced by the last CR (and the model exists locally)). 
+
+Here's some general guidance on how to fix oom errors during local training:
+
+----
+
+When a Python script is "killed" during training, it almost always means the operating system terminated the process because it ran out of memory. This happens when your script attempts to allocate more RAM than is available on your machine. 
+Since the script was executing a training task, the most likely culprits are memory-intensive operations related to your training data, model, or batch size. 
+
+Debug the issue
+1. Check system logs for an out-of-memory (OOM) event 
+The OOM killer is the Linux kernel process responsible for killing memory-intensive tasks. You can check for a record of this event using dmesg. 
+Open your terminal.
+Run dmesg -T | grep -i "killed process" to view recent system messages related to killed processes. On some systems, sudo dmesg may be necessary.
+Look for messages explicitly mentioning "Out of memory" or indicating that your Python process was the target. 
+
+2. Monitor memory usage
+Use a system monitoring tool while running your script to track its memory consumption in real time. 
+For Linux: Use the top or htop command in a separate terminal window. Watch the "RES" (Resident) memory column to see how much physical RAM your Python process is using. You can also use free -h to see your system's overall memory and swap usage.
+For macOS: Use top or the built-in Activity Monitor application.
+Programmatically: Use the psutil library to monitor your script's memory usage from within the program itself.
+python
+import os
+import psutil
+import time
+
+process = psutil.Process(os.getpid())
+
+while True:
+    mem_info = process.memory_info()
+    print(f"Current memory usage: {mem_info.rss / 1024 / 1024:.2f} MB")
+    time.sleep(60)  # Log memory usage every 60 seconds
+ 
+3. Log the process
+Use the faulthandler module to see a traceback of where your code was when it was killed. This can sometimes point to the specific line of code that triggered the memory spike. 
+Add this code to the top of your main script:
+python
+import faulthandler
+faulthandler.enable()
+Run your script and check the standard error output for a traceback.
+
+Common causes and solutions for training scripts
+
+Cause 	Solution
+Batch size is too large	Reduce the batch size. A smaller batch size requires less memory at each training step.
+
+Loading the entire dataset into memory	Modify your data loader to stream data in chunks rather than loading it all at once. For frameworks like PyTorch or TensorFlow, use a custom dataset class that loads data on demand.
+
+Intermediate data structures are not being released	Check your code for memory leaks, such as large dataframes or lists that are no longer needed. Ensure variables go out of scope or use del to explicitly delete them. Python's garbage collector can sometimes be slow to clean up large objects.
+
+Model size is too large	The model itself may be too large to fit into memory. Consider using a smaller model architecture or implementing techniques like model parallelism if your hardware supports it.
+
+GPU memory exhaustion	If you are training with a GPU, the "killed" message could indicate that you've run out of VRAM (GPU memory). Try reducing your batch size or a different training method. Monitor GPU usage with a tool like nvidia-smi.
+
+
+----
