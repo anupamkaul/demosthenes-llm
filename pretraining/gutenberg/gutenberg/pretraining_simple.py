@@ -393,6 +393,7 @@ if __name__ == "__main__":
 
     # modified these training params for a CPU friendly debug
     parser.add_argument('--data_dir', type=str, default='data/combined-80mb',
+    #parser.add_argument('--data_dir', type=str, default='data/preprocessed.0',
                         help='Directory containing the training data')
     parser.add_argument('--output_dir', type=str, default='model_checkpoints',
                         help='Directory where the model checkpoints will be saved')

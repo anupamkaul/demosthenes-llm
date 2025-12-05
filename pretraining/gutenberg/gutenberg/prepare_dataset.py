@@ -19,7 +19,7 @@ def is_english(text, threshold=0.9):
     return ascii_chars / len(text) > threshold
 
 
-def combine_files(file_paths, target_dir, max_size_mb=5, separator="<|endoftext|>", fallback_encoding="latin1"):
+def combine_files(file_paths, target_dir, max_size_mb=80, separator="<|endoftext|>", fallback_encoding="latin1"):
     if not os.path.exists(target_dir):
         os.makedirs(target_dir)
 
@@ -68,12 +68,12 @@ if __name__ == "__main__":
 
     parser = argparse.ArgumentParser(description="Preprocess and combine text files for pretraining")
 
-    parser.add_argument("--data_dir", type=str, default="data/raw",
-    #parser.add_argument("--data_dir", type=str, default="data/text",
+    #parser.add_argument("--data_dir", type=str, default="data/raw",
+    parser.add_argument("--data_dir", type=str, default="data/text",
                         help="Directory containing the downloaded raw training data")
-    parser.add_argument("--max_size_mb", type=int, default=5,
+    parser.add_argument("--max_size_mb", type=int, default=80,
                         help="The maximum file size for each concatenated file in megabytes")
-    parser.add_argument("--output_dir", type=str, default="data/combined",
+    parser.add_argument("--output_dir", type=str, default="data/combined-80mb",
                         help="Directory where the preprocessed data will be saved")
 
     args = parser.parse_args()

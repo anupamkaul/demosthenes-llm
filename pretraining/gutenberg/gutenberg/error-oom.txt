@@ -63,3 +63,53 @@ GPU memory exhaustion	If you are training with a GPU, the "killed" message could
 
 
 ----
+
+interestingly after reducing batch size to 2, on 5MB and 80MB chunk heads on asus, training proceeds BUT on dell ubuntu same batch size but with 500MB chunks still throws OOM at loss-calcs. Thus the input size loaded into RAM initially ALSO makes a difference, not just the batch size (see below)
+
+(anu-env) anupam@anupam-Inspiron-15-7000-Gaming:/media/anupam/DATA/demosthenes-llm-with-data/pretraining/gutenberg/gutenberg$ python pretraining_simple.py 
+pretraining args:  Namespace(data_dir='data/preprocessed.0', output_dir='model_checkpoints', n_epochs=3, print_sample_iter=5, eval_freq=5, save_ckpt_freq=10, lr=0.0005, batch_size=2, debug=False)
+device for training:  cuda
+is MPS available:  False
+device override (for my local ubuntu):  cpu
+loading training state:  {'n_epochs': 0, 'file_enum': 1, 'input_batch_counter': 9, 'tokens_seen': 16384, 'global_step': 8}
+model not found on disk. monitor as a one time thing, error out if repeats
+No training saved states ! Start training from the beginning
+Total files for training: 37
+Files:
+ ['data/preprocessed.0/combined_23.txt', 'data/preprocessed.0/combined_24.txt', 'data/preprocessed.0/combined_25.txt', 'data/preprocessed.0/combined_26.txt', 'data/preprocessed.0/combined_27.txt', 'data/preprocessed.0/combined_28.txt', 'data/preprocessed.0/combined_29.txt', 'data/preprocessed.0/combined_3.txt', 'data/preprocessed.0/combined_30.txt', 'data/preprocessed.0/combined_31.txt', 'data/preprocessed.0/combined_32.txt', 'data/preprocessed.0/combined_33.txt', 'data/preprocessed.0/combined_34.txt', 'data/preprocessed.0/combined_35.txt', 'data/preprocessed.0/combined_36.txt', 'data/preprocessed.0/combined_37.txt', 'data/preprocessed.0/combined_4.txt', 'data/preprocessed.0/combined_5.txt', 'data/preprocessed.0/combined_6.txt', 'data/preprocessed.0/combined_7.txt', 'data/preprocessed.0/combined_8.txt', 'data/preprocessed.0/combined_9.txt', 'data/preprocessed.0/combined_1.txt', 'data/preprocessed.0/combined_10.txt', 'data/preprocessed.0/combined_11.txt', 'data/preprocessed.0/combined_12.txt', 'data/preprocessed.0/combined_13.txt', 'data/preprocessed.0/combined_14.txt', 'data/preprocessed.0/combined_15.txt', 'data/preprocessed.0/combined_16.txt', 'data/preprocessed.0/combined_17.txt', 'data/preprocessed.0/combined_18.txt', 'data/preprocessed.0/combined_19.txt', 'data/preprocessed.0/combined_2.txt', 'data/preprocessed.0/combined_20.txt', 'data/preprocessed.0/combined_21.txt', 'data/preprocessed.0/combined_22.txt']
+Ready to commence training! <enter>
+
+training for epoch  0  of  3 
+
+batch size  2
+
+new index:  1 file path:  data/preprocessed.0/combined_23.txt <ENTER>
+Reading and splitting file 1 of 37: data/preprocessed.0/combined_23.txt into a 0.9 split between train and validation
+Tokenizing file 1 of 37: data/preprocessed.0/combined_23.txt
+GPTDatasetV1.py generated token IDs !
+GPTDatasetV1.py chunking tokens for max_length =  1024  stride =  1024
+GPTDatasetV1.py tokenization done!
+GPTDatasetV1.py generated token IDs !
+GPTDatasetV1.py chunking tokens for max_length =  1024  stride =  1024
+GPTDatasetV1.py tokenization done!
+
+Training ...
+1  input batch:  tensor([[ 198,  647,   83,  ..., 2634,  335, 6557],
+        [  11, 5795,  286,  ...,  339,  550, 4499]]) 
+target batch :  tensor([[ 647,   83,  257,  ...,  335, 6557, 3281],
+        [5795,  286,  262,  ...,  550, 4499,  422]])
+optimizer setting
+optimizer set
+loss calculating
+Killed
+sudo dmesg -T | grep kill
+[sudo] password for anupam: 
+[Thu Dec  4 09:51:14 2025] python invoked oom-killer: gfp_mask=0x140dca(GFP_HIGHUSER_MOVABLE|__GFP_COMP|__GFP_ZERO), order=0, oom_score_adj=200
+[Thu Dec  4 09:51:14 2025]  oom_kill_process+0x118/0x280
+[Thu Dec  4 09:51:14 2025] [   3363]  1000  3363   132771      142       64       78         0   135168       64           200 gsd-rfkill
+[Thu Dec  4 09:51:14 2025] oom-kill:constraint=CONSTRAINT_NONE,nodemask=(null),cpuset=/,mems_allowed=0,global_oom,task_memcg=/user.slice/user-1000.slice/user@1000.service/app.slice/app-org.gnome.Terminal.slice/vte-spawn-a38d1f33-0771-416a-abf8-3cd4717d6c56.scope,task=python,pid=184750,uid=1000
+[Thu Dec  4 15:44:55 2025] avahi-daemon invoked oom-killer: gfp_mask=0x140cca(GFP_HIGHUSER_MOVABLE|__GFP_COMP), order=0, oom_score_adj=0
+[Thu Dec  4 15:44:55 2025]  oom_kill_process+0x118/0x280
+[Thu Dec  4 15:44:55 2025] [   3363]  1000  3363   132771      173       64      109         0   135168       64           200 gsd-rfkill
+[Thu Dec  4 15:44:55 2025] oom-kill:constraint=CONSTRAINT_NONE,nodemask=(null),cpuset=/,mems_allowed=0,global_oom,task_memcg=/user.slice/user-1000.slice/user@1000.service/app.slice/app-org.gnome.Terminal.slice/vte-spawn-2cf72db9-21c7-4687-898e-58ac695c04ee.scope,task=python,pid=208356,uid=1000
+
