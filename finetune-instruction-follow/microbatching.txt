@@ -1,0 +1,125 @@
+So my Ubuntu Dell 22.04 mem (18-19G VRAM) isn't enough to even do instruction fine-tuning for a 
+batch-size of 2 with 355M params :) (which I was able to do with a batch size of 8 on my mac)
+
+I was able to do batch-size 2 training for the LLM for the-verdict as well as gutenberg training.
+(with my memory constrained ubuntu 22.04 dell)
+
+The difference with instruction fine tuning is that I also have to first put the pretrained model
+into RAM which I guess kills the "initial load" for RAM phase (not the actual calc_batch_loss, which
+_is_ the trigger but only because of the initial loads on the finetune strategy) 
+
+Implementing batch size of 1 (a.k.a. 'microbatching') is helping me get through (training is progressing
+as I am writing this) (instead of oom killer killing the python process). I also chose the lower precision
+model now (124M instead of 355M). If this set works then I will try microbatching with 355M next.
+
+So whereas the instruction fine tuning on my mac (M1 !) finished the 2 epochs with global step of 240
+in every epoch (with batch size 8), I am anticipating global step per epoch with microbatching to be
+240 * 8 = 1920 steps. Let's see..
+
+Actually we converged at 935 itself
+
+Here is a snippet when epoch 1 completed with CORRECT results ! (yay!)
+
+debug: global_step :  933  tokens seen:  53630
+debug: len input batch:  1  len target batch:  1  len train loader :  935
+debug: global_step :  934  tokens seen:  53695
+
+out of inner input_batch loop..
+generate and print sample..
+
+Below is an instruction that describes a task. Write a response that appropriately completes the request.   ### Instruction: Convert the active sentence to passive: 'The chef cooks the meal every day.'  ### Response: The meal every day is cooked by the chef.<|endoftext|>The following is an instruction that describes a task. Write a response that appropriately completes the request.  ### Input: The chef cooked the meal every day.
+
+(the second epoch should complete at 935 * 2 global step = 1870 step).
+
+Finetuning finished(!) with some errors:
+
+debug: len input batch:  1  len target batch:  1  len train loader :  935
+debug: global_step :  1857  tokens seen:  106706
+debug: len input batch:  1  len target batch:  1  len train loader :  935
+debug: global_step :  1858  tokens seen:  106761
+debug: len input batch:  1  len target batch:  1  len train loader :  935
+debug: global_step :  1859  tokens seen:  106810
+debug: len input batch:  1  len target batch:  1  len train loader :  935
+debug: global_step :  1860  tokens seen:  106874
+Epoch 2 (Step 001860): Train loss 0.277, Val loss 0.647
+debug: len input batch:  1  len target batch:  1  len train loader :  935
+debug: global_step :  1861  tokens seen:  106938
+debug: len input batch:  1  len target batch:  1  len train loader :  935
+debug: global_step :  1862  tokens seen:  107001
+debug: len input batch:  1  len target batch:  1  len train loader :  935
+debug: global_step :  1863  tokens seen:  107054
+debug: len input batch:  1  len target batch:  1  len train loader :  935
+debug: global_step :  1864  tokens seen:  107111
+debug: len input batch:  1  len target batch:  1  len train loader :  935
+debug: global_step :  1865  tokens seen:  107173
+Epoch 2 (Step 001865): Train loss 0.295, Val loss 0.638
+debug: len input batch:  1  len target batch:  1  len train loader :  935
+debug: global_step :  1866  tokens seen:  107220
+debug: len input batch:  1  len target batch:  1  len train loader :  935
+debug: global_step :  1867  tokens seen:  107289
+debug: len input batch:  1  len target batch:  1  len train loader :  935
+debug: global_step :  1868  tokens seen:  107340
+debug: len input batch:  1  len target batch:  1  len train loader :  935
+debug: global_step :  1869  tokens seen:  107390
+
+out of inner input_batch loop..
+generate and print sample..
+
+Below is an instruction that describes a task. Write a response that appropriately completes the request.   ### Instruction: Convert the active sentence to passive: 'The chef cooks the meal every day.'  ### Response: The chef cooked the meal every day.<|endoftext|>The following is a statement that is grammatically incorrect.  ### Input: The chef cooked the meal every day.  ### Response: The chef cooked the
+Traceback (most recent call last):
+  File "/home/anupam/akaul_git/demosthenes-llm/finetune-instruction-follow/model.py", line 161, in <module>
+    train_losses, val_losses, tokens_seen = train_model_simple(
+                                            ^^^^^^^^^^^^^^^^^^^
+  File "/home/anupam/akaul_git/demosthenes-llm/finetune-instruction-follow/../pretraining/training_container.py", line 81, in train_model_simple
+    torch.save(model.state_dict(), "./model/modelif.pth")
+  File "/home/anupam/anu-env/lib/python3.12/site-packages/torch/serialization.py", line 966, in save
+    with _open_zipfile_writer(f) as opened_zipfile:
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/anupam/anu-env/lib/python3.12/site-packages/torch/serialization.py", line 828, in _open_zipfile_writer
+    return container(name_or_buffer)  # type: ignore[arg-type]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/anupam/anu-env/lib/python3.12/site-packages/torch/serialization.py", line 792, in __init__
+    torch._C.PyTorchFileWriter(
+RuntimeError: Parent directory ./model does not exist.
+
+
+Anyways...
+
+Yes, you can instruction fine-tune an LLM with a batch size of 1 (often called "micro-batching"), 
+especially for memory efficiency or specific determinism, but it introduces noisy gradients, 
+slowing training and potentially harming generalization unless you use techniques like 
+gradient accumulation, scaled learning rates (as per recent research), or Parameter-Efficient 
+Fine-Tuning (PEFT) methods like LoRA to stabilize learning and achieve better throughput. 
+
+A larger effective batch size (achieved via accumulation) generally offers more stable training, 
+while batch size 1 is more for memory constraints or reducing batch-dependent output variance in 
+inference. 
+
+Why Batch Size 1 (Micro-Batching) is Used:
+
+Memory Savings: It fits huge models onto single GPUs by processing one sample at a time, a core 
+benefit of QLoRA/LoRA.
+
+Stochasticity: Can help escape local minima and improve robustness, but it's often too noisy on its own.
+
+Determinism: Helps minimize output variations in inference, making responses more consistent.
+ 
+Drawbacks & Solutions:
+
+Noisy Gradients: The biggest issue; the optimizer takes "wiggly" paths.
+Slow Training: Many small updates are less efficient than fewer, larger ones. 
+
+Best Practices (The Modern Approach):
+
+Use PEFT (LoRA/QLoRA): Train only adapter weights, significantly reducing memory and making smaller batches 
+viable and efficient.
+
+Gradient Accumulation: Simulate a larger batch size (e.g., effective batch size of 32) by accumulating gradients 
+over many micro-batches before updating weights.
+
+Scale Hyperparameters: Recent research suggests adjusting Adam hyperparameters (like learning rate) for small batches 
+(even batch size 1) to stabilize training, as detailed in papers like the one from arXiv.
+
+Target Throughput: Aim for the smallest batch size (often >1, perhaps 4-8 with accumulation) that maximizes GPU 
+throughput for faster, stable training, rather than strictly batch=1, unless absolutely necessary. 
+

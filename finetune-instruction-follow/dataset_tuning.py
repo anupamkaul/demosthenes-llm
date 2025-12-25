@@ -295,7 +295,8 @@ use our custom collate function for the batching process.
 from torch.utils.data import DataLoader
 
 num_workers = 0
-batch_size = 8
+#batch_size = 8
+batch_size = 1 #ubuntu machines have only 16GB RAM, crash at batch_size=8
 
 torch.manual_seed(123)
 
