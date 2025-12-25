@@ -123,3 +123,51 @@ Scale Hyperparameters: Recent research suggests adjusting Adam hyperparameters (
 Target Throughput: Aim for the smallest batch size (often >1, perhaps 4-8 with accumulation) that maximizes GPU 
 throughput for faster, stable training, rather than strictly batch=1, unless absolutely necessary. 
 
+---
+
+The training completed on the second run (I had forgotten to create the model folder to save the IF model):
+
+debug: global_step :  1854  tokens seen:  106533
+debug: len input batch:  1  len target batch:  1  len train loader :  935
+debug: global_step :  1855  tokens seen:  106586
+Epoch 2 (Step 001855): Train loss 0.275, Val loss 0.648
+debug: len input batch:  1  len target batch:  1  len train loader :  935
+debug: global_step :  1856  tokens seen:  106656
+debug: len input batch:  1  len target batch:  1  len train loader :  935
+debug: global_step :  1857  tokens seen:  106706
+debug: len input batch:  1  len target batch:  1  len train loader :  935
+debug: global_step :  1858  tokens seen:  106761
+debug: len input batch:  1  len target batch:  1  len train loader :  935
+debug: global_step :  1859  tokens seen:  106810
+debug: len input batch:  1  len target batch:  1  len train loader :  935
+debug: global_step :  1860  tokens seen:  106874
+Epoch 2 (Step 001860): Train loss 0.277, Val loss 0.647
+debug: len input batch:  1  len target batch:  1  len train loader :  935
+debug: global_step :  1861  tokens seen:  106938
+debug: len input batch:  1  len target batch:  1  len train loader :  935
+debug: global_step :  1862  tokens seen:  107001
+debug: len input batch:  1  len target batch:  1  len train loader :  935
+debug: global_step :  1863  tokens seen:  107054
+debug: len input batch:  1  len target batch:  1  len train loader :  935
+debug: global_step :  1864  tokens seen:  107111
+debug: len input batch:  1  len target batch:  1  len train loader :  935
+debug: global_step :  1865  tokens seen:  107173
+Epoch 2 (Step 001865): Train loss 0.295, Val loss 0.638
+debug: len input batch:  1  len target batch:  1  len train loader :  935
+debug: global_step :  1866  tokens seen:  107220
+debug: len input batch:  1  len target batch:  1  len train loader :  935
+debug: global_step :  1867  tokens seen:  107289
+debug: len input batch:  1  len target batch:  1  len train loader :  935
+debug: global_step :  1868  tokens seen:  107340
+debug: len input batch:  1  len target batch:  1  len train loader :  935
+debug: global_step :  1869  tokens seen:  107390
+
+out of inner input_batch loop..
+generate and print sample..
+
+Below is an instruction that describes a task. Write a response that appropriately completes the request.   ### Instruction: Convert the active sentence to passive: 'The chef cooks the meal every day.'  ### Response: The chef cooked the meal every day.<|endoftext|>The following is a statement that is grammatically incorrect.  ### Input: The chef cooked the meal every day.  ### Response: The chef cooked the
+model saved
+
+Training completed in 46.87 minutes.
+
+
