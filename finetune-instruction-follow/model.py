@@ -42,8 +42,8 @@ model_configs = {
     "gpt2-xl (1558M)": {"emb_dim": 1600, "n_layers": 48, "n_heads": 25},
 }
 
-#CHOOSE_MODEL = "gpt2-medium (355M)"
-CHOOSE_MODEL = "gpt2-small (124M)"
+CHOOSE_MODEL = "gpt2-medium (355M)"
+#CHOOSE_MODEL = "gpt2-small (124M)"
 BASE_CONFIG.update(model_configs[CHOOSE_MODEL])
 
 model_size = CHOOSE_MODEL.split(" ")[-1].lstrip("(").rstrip(")")
