@@ -28,6 +28,13 @@ GPT_CONFIG_124M = {
 model = GPTModel(GPT_CONFIG_124M)
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
+# Comment out the following 2 lines when GPU works..
+device = torch.device("cpu")
+print("device override for my local ubuntu: ", device)
+
+model = torch.compile(model)
+model.to(device)
+
 try:
 
     model.load_state_dict(torch.load("./model/model.pth", map_location=device))
