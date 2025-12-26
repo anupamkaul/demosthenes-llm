@@ -1,0 +1,76 @@
+Microbatching proceeded on my asus lunux 22.4 ubuntu with 355M
+(the buf/cache of 11G helped. Different mem arch from my dell ubuntu 22.04)
+
+The final outputs show inaccuracy though: (epoch 2):
+
+Epoch 2 (Step 001850): Train loss 0.328, Val loss 0.615
+debug: len input batch:  1  len target batch:  1  len train loader :  935
+debug: global_step :  1851  tokens seen:  106360
+debug: len input batch:  1  len target batch:  1  len train loader :  935
+debug: global_step :  1852  tokens seen:  106409
+debug: len input batch:  1  len target batch:  1  len train loader :  935
+debug: global_step :  1853  tokens seen:  106472
+debug: len input batch:  1  len target batch:  1  len train loader :  935
+debug: global_step :  1854  tokens seen:  106533
+debug: len input batch:  1  len target batch:  1  len train loader :  935
+debug: global_step :  1855  tokens seen:  106586
+Epoch 2 (Step 001855): Train loss 0.220, Val loss 0.608
+debug: len input batch:  1  len target batch:  1  len train loader :  935
+debug: global_step :  1856  tokens seen:  106656
+debug: len input batch:  1  len target batch:  1  len train loader :  935
+debug: global_step :  1857  tokens seen:  106706
+debug: len input batch:  1  len target batch:  1  len train loader :  935
+debug: global_step :  1858  tokens seen:  106761
+debug: len input batch:  1  len target batch:  1  len train loader :  935
+debug: global_step :  1859  tokens seen:  106810
+debug: len input batch:  1  len target batch:  1  len train loader :  935
+debug: global_step :  1860  tokens seen:  106874
+Epoch 2 (Step 001860): Train loss 0.255, Val loss 0.615
+debug: len input batch:  1  len target batch:  1  len train loader :  935
+debug: global_step :  1861  tokens seen:  106938
+debug: len input batch:  1  len target batch:  1  len train loader :  935
+debug: global_step :  1862  tokens seen:  107001
+debug: len input batch:  1  len target batch:  1  len train loader :  935
+debug: global_step :  1863  tokens seen:  107054
+debug: len input batch:  1  len target batch:  1  len train loader :  935
+debug: global_step :  1864  tokens seen:  107111
+debug: len input batch:  1  len target batch:  1  len train loader :  935
+debug: global_step :  1865  tokens seen:  107173
+Epoch 2 (Step 001865): Train loss 0.276, Val loss 0.611
+debug: len input batch:  1  len target batch:  1  len train loader :  935
+debug: global_step :  1866  tokens seen:  107220
+debug: len input batch:  1  len target batch:  1  len train loader :  935
+debug: global_step :  1867  tokens seen:  107289
+debug: len input batch:  1  len target batch:  1  len train loader :  935
+debug: global_step :  1868  tokens seen:  107340
+debug: len input batch:  1  len target batch:  1  len train loader :  935
+debug: global_step :  1869  tokens seen:  107390
+
+out of inner input_batch loop..
+generate and print sample..
+
+Below is an instruction that describes a task. Write a response that appropriately completes the request.   ### Instruction: Convert the active sentence to passive: 'The chef cooks the meal every day.'  ### Response: The chef prepares the meal every day.<|endoftext|>The following is an instruction that describes a task. Write a response that appropriately completes the request.  ### Input: What is the opposite of 'ascend'? 
+model saved
+
+Training completed in 182.91 minutes.
+
+
+The end of Epoch 1 was more accurate:
+
+debug: global_step :  931  tokens seen:  53503
+debug: len input batch:  1  len target batch:  1  len train loader :  935
+debug: global_step :  932  tokens seen:  53576
+debug: len input batch:  1  len target batch:  1  len train loader :  935
+debug: global_step :  933  tokens seen:  53630
+debug: len input batch:  1  len target batch:  1  len train loader :  935
+debug: global_step :  934  tokens seen:  53695
+
+out of inner input_batch loop..
+generate and print sample..
+
+Below is an instruction that describes a task. Write a response that appropriately completes the request.   ### Instruction: Convert the active sentence to passive: 'The chef cooks the meal every day.'  ### Input: The meal is prepared every day by the chef.<|endoftext|>The following is an instruction that describes a task. Write a response that appropriately completes the request.  ### Input: Convert the active sentence to passive:
+
+
+Is this because of overfiting? what happened here?
+
+

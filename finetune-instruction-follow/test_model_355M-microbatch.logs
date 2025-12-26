@@ -1,0 +1,215 @@
+(anu-env) anupam@anupam-G75VW:~/akaul_git/demosthenes-llm/finetune-instruction-follow$ python test_model.py 
+Len of data:  1100
+Training set length: 935
+Test set length: 110
+Validation set length: 55
+[50256]
+Device: cpu
+device:  cpu
+device override (for my local ubuntu):  cpu
+loaded saved model (1.6G) in 0.03 minutes .. <enter>
+
+Response generated in 0.34 minutes .. <enter>
+Below is an instruction that describes a task. Write a response that appropriately completes the request. 
+
+### Instruction:
+Rewrite the sentence using a simile.
+
+### Input:
+The car is very fast.
+
+Correct response:
+>> The car is as fast as lightning.
+
+Model response:
+>> The car is as fast as a bull in a china shop.
+-------------------------------------
+
+Response generated in 0.23 minutes .. <enter>
+Below is an instruction that describes a task. Write a response that appropriately completes the request. 
+
+### Instruction:
+What type of cloud is typically associated with thunderstorms?
+
+Correct response:
+>> The type of cloud typically associated with thunderstorms is cumulonimbus.
+
+Model response:
+>> The type of cloud is typically associated with thunderstorms.
+-------------------------------------
+
+Response generated in 0.30 minutes .. <enter>
+Below is an instruction that describes a task. Write a response that appropriately completes the request. 
+
+### Instruction:
+Name the author of 'Pride and Prejudice'.
+
+Correct response:
+>> Jane Austen.
+
+Model response:
+>> The author of 'Pride and Prejudice' is Jane Austen.
+-------------------------------------
+
+Response generated in 0.18 minutes .. <enter>
+Below is an instruction that describes a task. Write a response that appropriately completes the request. 
+
+### Instruction:
+What is the periodic symbol for chlorine?
+
+Correct response:
+>> The periodic symbol for chlorine is Cl.
+
+Model response:
+>> The periodic symbol for chlorine is CH3.
+-------------------------------------
+
+Response generated in 0.32 minutes .. <enter>
+Below is an instruction that describes a task. Write a response that appropriately completes the request. 
+
+### Instruction:
+Correct the punctuation in the sentence.
+
+### Input:
+Its time to go home.
+
+Correct response:
+>> The corrected sentence should be: 'It's time to go home.'
+
+Model response:
+>> The corrected sentence should be: 'It's time to go home.'
+-------------------------------------
+
+Response generated in 0.23 minutes .. <enter>
+Below is an instruction that describes a task. Write a response that appropriately completes the request. 
+
+### Instruction:
+Rewrite the sentence.
+
+### Input:
+The lecture was delivered in a clear manner.
+
+Correct response:
+>> The lecture was delivered clearly.
+
+Model response:
+>> The lecture was delivered in a clear manner.
+-------------------------------------
+
+Response generated in 0.15 minutes .. <enter>
+Below is an instruction that describes a task. Write a response that appropriately completes the request. 
+
+### Instruction:
+Generate a humorous anecdote.
+
+Correct response:
+>> Why was the math book sad? Because it had too many problems!
+
+Model response:
+>> The cat sleeps on the couch.
+-------------------------------------
+
+Response generated in 0.20 minutes .. <enter>
+Below is an instruction that describes a task. Write a response that appropriately completes the request. 
+
+### Instruction:
+Identify the correct spelling: 'recieve' or 'receive'.
+
+Correct response:
+>> The correct spelling is 'receive'.
+
+Model response:
+>> The correct spelling is 'recieve'.
+-------------------------------------
+
+Response generated in 0.23 minutes .. <enter>
+Below is an instruction that describes a task. Write a response that appropriately completes the request. 
+
+### Instruction:
+Create a sentence using the word 'nostalgia'.
+
+Correct response:
+>> Nostalgia washed over her as she looked through the old photos.
+
+Model response:
+>> She is very nostalgic and always goes to the movies.
+-------------------------------------
+
+Response generated in 0.28 minutes .. <enter>
+Below is an instruction that describes a task. Write a response that appropriately completes the request. 
+
+### Instruction:
+Classify the following numbers as prime or composite.
+
+### Input:
+: 11, 14, 19.
+
+Correct response:
+>> Prime numbers: 11, 19
+Composite numbers: 14
+
+Model response:
+>> Prime numbers: 11
+Composite numbers: 14
+-------------------------------------
+
+Response generated in 0.16 minutes .. <enter>
+Below is an instruction that describes a task. Write a response that appropriately completes the request. 
+
+### Instruction:
+What is the capital of Denmark?
+
+Correct response:
+>> The capital of Denmark is Copenhagen.
+
+Model response:
+>> The capital of Denmark is Copenhagen.
+-------------------------------------
+
+Response generated in 0.23 minutes .. <enter>
+Below is an instruction that describes a task. Write a response that appropriately completes the request. 
+
+### Instruction:
+What is the opposite of 'wet'?
+
+Correct response:
+>> The opposite of 'wet' is 'dry'.
+
+Model response:
+>> The opposite of 'wet' is 'dry'.
+-------------------------------------
+
+Response generated in 0.20 minutes .. <enter>
+Below is an instruction that describes a task. Write a response that appropriately completes the request. 
+
+### Instruction:
+Identify the type of sentence.
+
+### Input:
+Did you finish the report?
+
+Correct response:
+>> The type of sentence is interrogative.
+
+Model response:
+>> The type of sentence is imperative.
+-------------------------------------
+
+Response generated in 0.18 minutes .. <enter>
+Below is an instruction that describes a task. Write a response that appropriately completes the request. 
+
+### Instruction:
+What is the chemical symbol for mercury?
+
+Correct response:
+>> Hg.
+
+Model response:
+>> The chemical symbol for mercury is Hg.
+-------------------------------------
+^CTraceback (most recent call last):
+  File "/home/anupam/akaul_git/demosthenes-llm/finetune-instruction-follow/test_model.py", line 126, in <module>
+    input() #let it flow
+    ^^^^^^^
+KeyboardInterrupt
+

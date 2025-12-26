@@ -21,6 +21,8 @@ for entry in test_data:
     input()
 '''
 
+print("Number of tests: ", len(test_data))
+
 import sys, os
 sys.path.append( os.path.join( os.path.dirname(os.path.abspath(__file__)),  '../pretraining/preloaded_weights/openai/scripts') )
 sys.path.append( os.path.join( os.path.dirname(os.path.abspath(__file__)),  '../llm-infra/') )
@@ -45,8 +47,8 @@ model_configs = {
     "gpt2-xl (1558M)": {"emb_dim": 1600, "n_layers": 48, "n_heads": 25},
 }
 
-#CHOOSE_MODEL = "gpt2-medium (355M)"
-CHOOSE_MODEL = "gpt2-small (124M)" # this is microbatched (batch_size=1)
+CHOOSE_MODEL = "gpt2-medium (355M)"
+#CHOOSE_MODEL = "gpt2-small (124M)" # this is microbatched (batch_size=1)
 BASE_CONFIG.update(model_configs[CHOOSE_MODEL])
 model_size = CHOOSE_MODEL.split(" ")[-1].lstrip("(").rstrip(")")
 
@@ -69,15 +71,23 @@ print("device override (for my local ubuntu): ", device)
 
 model.to(device)
 
+import subprocess
+def model_size():
+
+    cmd = ["du", "-sh", "./model/modelif.pth"]
+    result = subprocess.run(cmd, capture_output=True, text=True, check=True) 
+    return result.stdout.rstrip()
+
 try:
     import time
     start_time = time.time()
 
+    model_size()
     model.load_state_dict(torch.load("./model/modelif.pth", map_location=device))
 
     end_time = time.time()
     load_time_minutes = (end_time - start_time) / 60
-    print(f"loaded saved model (1.6G) in {load_time_minutes:.2f} minutes .. <enter>")
+    print(f"LOAD TIME: loaded saved model ({model_size()}) in {load_time_minutes:.2f} minutes .. <enter>")
     input()
 
 except FileNotFoundError:
@@ -118,10 +128,10 @@ for entry in test_data:    # iterate over all samples
     # actual response given during training is entry['output']
     # let's manually compare
 
-    print(f"Response generated in {exec_time:.2f} minutes .. <enter>")
+    print(f"EXEC TIME: Response generated in {exec_time:.2f} minutes")
     print(input_text)
     print(f"\nCorrect response:\n>> {entry['output']}")
     print(f"\nModel response:\n>> {response_text.strip()}")
     print("-------------------------------------")
-    input() #let it flow
+    input("<enter>..") #let it flow
 
