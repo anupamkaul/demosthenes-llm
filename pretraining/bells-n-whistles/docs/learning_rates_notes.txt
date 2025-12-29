@@ -1,0 +1,33 @@
+The learning rate (\(\alpha \)) in the Adam optimizer is a crucial hyperparameter (defaulting to 0.001) 
+that controls the step size for weight updates, but unlike standard SGD, Adam adapts it PER PARAMETER
+using momentum (1st moment) and squared gradients (2nd moment) for faster, more efficient convergence, 
+allowing for larger steps in flat regions and smaller steps in steep/noisy ones, though tuning it 
+(often with schedulers) is key for optimal results, says GeeksforGeeks. 
+
+What it is Step Size: It's the global step size (learning rate) that Adam uses to scale its adaptive adjustments 
+for each parameter.
+
+Default Value: Typically starts at 0.001 (or \(10^{-3}\)), a solid default for many problems.
+
+Adaptive Nature: Adam combines the benefits of RMSprop and Momentum; it calculates individual learning rates 
+for each weight by dividing the update by the square root of the moving average of past squared gradients (the second moment), 
+preventing oscillations and allowing faster learning. 
+
+How it works with Adam's internals Momentum (1st Moment): A moving average of past gradients (controlled by \(\beta _{1}\), 
+default 0.9) smooths updates.
+Squared Gradients (2nd Moment): A moving average of past squared gradients (controlled by \(\beta _{2}\), default 0.999) 
+scales the learning rate inversely, making steps smaller for parameters with large gradients and larger for those with small 
+gradients.
+
+Bias Correction: Early in training, these moments are biased, so Adam includes a bias-correction step to adjust them. 
+
+Tuning the learning rate 
+Too High: Can cause overshooting the minimum and unstable training (loss increases).
+Too Low: Can lead to very slow convergence.
+
+Tuning: Often requires experimentation (hyperparameter tuning) or using learning rate schedulers 
+(like ReduceLROnPlateau or cosine decay) to decrease it as training progresses, helping fine-tune the solution.
+
+Common Range: 0.001 to 0.0001 (or \(10^{-3}\) to \(10^{-4}\)) is a common range, with specific values depending 
+on data and model size, notes Stack Overflow. 
+

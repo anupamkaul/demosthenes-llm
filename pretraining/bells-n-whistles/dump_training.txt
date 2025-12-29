@@ -466,7 +466,12 @@ GPTModel(
 device:  cuda
 Training loss:  10.987583372328016
 Validation loss:  10.98110580444336
-debug: len input batch:  2  len target batch:  2  len train loader :  9
+len(train_loader):  9
+number of epochs:  20
+total steps:  180
+warmup steps:  36
+lr_increment:  0.000275
+enter<>debug: len input batch:  2  len target batch:  2  len train loader :  9
 debug: global_step :  0  tokens seen:  512
 debug: len input batch:  2  len target batch:  2  len train loader :  9
 debug: global_step :  1  tokens seen:  1024
