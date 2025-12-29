@@ -67,12 +67,15 @@ import torch
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 print("device: ", device)
 
+
+
 # an unfortunate hack for my local ubuntu 22.04 : even when cuda force it to CPU
 # (this is because memory requests to my GPU0 exceed its total mem available, needs debugging)
 
 device = torch.device("cpu")
 print("device override (for my local ubuntu): ", device)
 
+model = torch.compile(model)
 model.to(device)
 
 try:

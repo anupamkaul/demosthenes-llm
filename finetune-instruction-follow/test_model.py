@@ -69,6 +69,7 @@ print("device: ", device)
 device = torch.device("cpu")
 print("device override (for my local ubuntu): ", device)
 
+model = torch.compile(model)
 model.to(device)
 
 import subprocess
