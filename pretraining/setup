@@ -78,4 +78,5 @@ next, I needed git lfs to upload large files (e.g. model.ckpt.* which are about 
 brew install git-lfs
 git lfs install
 
+(see logs/error_upload.txt)
 
