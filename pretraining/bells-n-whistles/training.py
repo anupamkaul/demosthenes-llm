@@ -54,7 +54,7 @@ def train_model(model, train_loader, val_loader, optimizer, device, num_epochs,
     
         for input_batch, target_batch in train_loader:
 
-            print("debug: len input batch: ", len(input_batch), " len target batch: ", len(target_batch), " len train loader : ", len(train_loader))
+            #print("debug: len input batch: ", len(input_batch), " len target batch: ", len(target_batch), " len train loader : ", len(train_loader))
             # reset the loss gradient from the previous batch iteration
             optimizer.zero_grad()
             global_step += 1
@@ -85,7 +85,7 @@ def train_model(model, train_loader, val_loader, optimizer, device, num_epochs,
 
             optimizer.step()                                  # update weight model using loss gradients
             tokens_seen += input_batch.numel()
-            print("debug: global_step : ", global_step, " tokens seen: ", tokens_seen)
+            #print("debug: global_step : ", global_step, " tokens seen: ", tokens_seen)
 
             # optional evaluation step
             if global_step % eval_freq == 0:                  # optional evaluation step
