@@ -26,7 +26,7 @@ sys.path.append( os.path.join( os.path.dirname(os.path.abspath(__file__)),  '../
 
 from GPTModel import GPTModel  
 from dataloaderV1 import create_dataloader_v1
-from utils_loss import calc_loss_batch, evaluate_model, generate_and_print_sample, plot_losses
+from utils_loss import calc_loss_batch, evaluate_model, generate_and_print_sample, plot_losses, plot_lr_warmup
 
 
 def read_text_file(file_path):
@@ -106,22 +106,29 @@ sv_input_batch_counter = 1   # for current input and target batches
 sv_tokens_seen = 0         # for token_seen
 sv_global_step = 0         # the global step var in the training loop
 
-def train_model_simple(model, optimizer, device, n_epochs,
+import math # for lr cosine decay
+
+def train_model(model, optimizer, device, n_epochs,
                        eval_freq, eval_iter, print_sample_iter, start_context,
                        output_dir, save_ckpt_freq, tokenizer,
-                       batch_size=2, train_ratio=0.90):
+                       batch_size=2, train_ratio=0.90, 
+                       initial_lr=3e-05, min_lr = 1e-6):
 
-    train_losses, val_losses, track_tokens_seen = [], [], []
+    train_losses, val_losses, track_tokens_seen, track_lrs = [], [], [], []
     tokens_seen = 0
-    global_step = 0 
+    global_step = -1
     start_time = time.time()
+
+    # Retrieve the maximum learning rate from the optimizer
+    peak_lr = optimizer.param_groups[0]["lr"]
+    print("peak_lr: ", peak_lr)
 
     # batch_size of 4 is about 38K global_step iterations (to cover the entirety of training set data, via sliding window)
     # this hack is for shortening the data seen, albiet at the cost of accuracy. But I will get a fuller picture from all of the books
     # in a shorter amount of time (i.e. training should complete in number_epochs * max_eval_limit * number of new-indexed books)
     # additional TODO is to save the state of files, epochs, and actual input batches to prevent biasing when restarting the program
 
-    max_eval_limit = 1000
+    #max_eval_limit = 1000
     #max_eval_limit = 3 # for simulation
 
     global sv_global_step
@@ -139,7 +146,7 @@ def train_model_simple(model, optimizer, device, n_epochs,
 
             print("\ntraining for epoch ", epoch, " of ", n_epochs, "\n")
             print("batch size ", batch_size)
-            input("enter>")
+            #input("<enter>")
 
             # Iterate over the books in the training corpus
             for index, file_path in enumerate(all_files, 1):
@@ -214,6 +221,24 @@ def train_model_simple(model, optimizer, device, n_epochs,
                 # length of the loop or less than max_iter. In fact I can get rid of max_iter
                 # as well and do an actual training that is saved/restored...
 
+                # TODO warmup_steps will need an sv_variable for checkpointing
+
+                # Calculate the total number of iterations in the training process for current book
+                total_training_steps = len(train_loader) * n_epochs
+
+                # Calculate steps for lr warmup phase (followed by cosine decay phase)
+                warmup_steps = int(0.20 * total_training_steps) # 20% warmup
+
+                # Calculate the learning rate increment during the warmup phase
+                lr_increment = (peak_lr - initial_lr) / warmup_steps
+
+                # stats
+                print("\ntotal training steps: ", total_training_steps)
+                print("warmup_steps: ", warmup_steps)
+                print("peak lr: ", peak_lr, " initial lr: ", initial_lr, " lr_increment: ", lr_increment)
+                print("ready to commence training for epoch ", epoch, " book ", file_path)
+                input("<enter>") 
+
                 print("\nTraining ...")
                 model.train()  # set up training params
 
@@ -240,31 +265,63 @@ def train_model_simple(model, optimizer, device, n_epochs,
                     continue
                     '''
 
-                    '''
-                    # TEMP: Disable Training (scaffolding)
-
+                    # This is the basic scaffolding of the training primitives: 
                     print("optimizer setting")
+                    # reset accumulated parameter (weight) gradients for this batch's training
                     optimizer.zero_grad()
                     print("optimizer set")
 
+                    global_step += 1
+
+                    # adjust the learning rate based on the current phase (warmup or cosine annealing):
+                    if (global_step < warmup_steps):
+
+                        # lr warmup
+                        lr = initial_lr + global_step * lr_increment
+                    else:
+
+                        # cosine annealing
+                        progress = ((global_step - warmup_steps) / (total_training_steps - warmup_steps))
+                        lr = min_lr + (peak_lr - min_lr) * 0.5 * (1 + math.cos(math.pi * progress))
+
+                    # Apply the calculated learning rate to optimizer
+                    for param_group in optimizer.param_groups:
+                        param_group["lr"] = lr
+
+                    track_lrs.append(optimizer.param_groups[0]["lr"])
+
+
+                    '''
+                    # TEMP: Disable Training (scaffolding continues)
+
                     print("loss calculating")
+                    # flow the model and calculate loss (utilizing LLM arch: attention, transformers, ff, etc) 
                     loss = calc_loss_batch(input_batch, target_batch, model, device)
                     print("loss calculated")
 
                     print("backprop start")
+                    # compute derivative of loss w.r.t each parameter (weight) that requires a gradient
+                    # and store it in the *.grad* attribute of that parameter tensor
                     loss.backward()
                     print("backprop end")
 
+                    '''
+
+                    # Apply gradient clipping
+                    if global_step >= warmup_steps:
+                        torch.nn.utils.clip_grad_norm_(model.parameters(), max_norm=1.0)
+
+                    '''
+                    # TEMP: Disable Training (scaffolding continues) 
+
                     print("optimizer step start")
+                    # update the parameters (weights) 
                     optimizer.step()
                     print("optimizer step end")
 
                     '''
 
                     tokens_seen += input_batch.numel()
-                    print("we have tokens_seen")
-
-                    global_step += 1
                     print("global step: ", global_step, " tokens seen: ", tokens_seen)
 
                     '''
@@ -397,7 +454,7 @@ def train_model_simple(model, optimizer, device, n_epochs,
         save_training_state(epoch, index, input_batch_counter, tokens_seen, global_step)
         print(f"Saved training state")
 
-    return train_losses, val_losses, track_tokens_seen
+    return train_losses, val_losses, track_tokens_seen, track_lrs, total_training_steps
 
 if __name__ == "__main__":
 
@@ -420,7 +477,7 @@ if __name__ == "__main__":
     parser.add_argument('--save_ckpt_freq', type=int, default=10,
                         help='Frequency of saving model checkpoints during training')
     #parser.add_argument('--lr', type=float, default=5e-4,  #default value of lr is incorrect ! 
-    parser.add_argument('--lr', type=float, default=5e-4,
+    parser.add_argument('--lr', type=float, default=0.001,
                         help='Learning rate for the optimizer')
     parser.add_argument('--batch_size', type=int, default=2,
     #parser.add_argument('--batch_size', type=int, default=256,
@@ -498,8 +555,7 @@ if __name__ == "__main__":
         checkpoint = torch.load("model_checkpoints/model_and_optmzr_pg_final.pth", map_location=device)
         model.load_state_dict(checkpoint["model_state_dict"])
 
-        # TODO : incorrect default learning rate value ! 
-        optimizer = torch.optim.AdamW(model.parameters(), lr=5e-4, weight_decay=0.1)
+        optimizer = torch.optim.AdamW(model.parameters(), lr=0.001, weight_decay=0.1)
         optimizer.load_state_dict(checkpoint["optimizer_state_dict"])
 
         print("loaded previously saved model and optimizer to continue training..")
@@ -545,9 +601,7 @@ if __name__ == "__main__":
     output_dir = Path(args.output_dir)
     output_dir.mkdir(parents=True, exist_ok=True)
 
-    input("Ready to commence training! <enter>")
-
-    train_losses, val_losses, tokens_seen = train_model_simple(
+    train_losses, val_losses, tokens_seen, lrs, steps = train_model(
         model, optimizer, device,
         batch_size=args.batch_size,
         n_epochs=args.n_epochs,
@@ -557,13 +611,19 @@ if __name__ == "__main__":
         output_dir=output_dir,
         save_ckpt_freq=args.save_ckpt_freq,
         start_context="Every effort moves you", # once trained this can be user input
-        tokenizer=tokenizer
+        tokenizer=tokenizer,
+        initial_lr=1e-5,
+        min_lr=1e-5
     )
 
     # these are probably worth saving as well, for plotting (arrays)
-    print("tokens_seen[] = ", tokens_seen)
-    print("train_losses[] = ", train_losses)
-    print("val_losses[] = ", val_losses)
+    print("len (tokens_seen[]) = ", len(tokens_seen))
+    print("len (train_losses[]) = ", len(train_losses))
+    print("len (val_losses[]) = ", len(val_losses))
+    print("len of lrs[] = ", len(lrs))
+    print("steps: ", steps)
+
+    plot_lr_warmup(steps, lrs)
 
     epochs_tensor = torch.linspace(0, args.n_epochs, len(train_losses))
     plot_losses(epochs_tensor, tokens_seen, train_losses, val_losses)

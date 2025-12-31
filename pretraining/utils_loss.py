@@ -123,6 +123,18 @@ def generate_and_print_sample(model, tokenizer, device, start_context):
 import matplotlib.pyplot as plt
 from matplotlib.ticker import MaxNLocator
 
+def plot_lr_warmup(total_steps, track_lrs):
+    plt.figure(figsize=(5,3))
+    plt.ylabel("Learning Rate")
+    plt.xlabel("Step")
+    plt.plot(range(total_steps), track_lrs)
+    plt.tight_layout()
+
+    # TODO augment the pdf with timestamp
+    plt.savefig("new_lr_warmup_and_cosine_decay.pdf")
+
+    plt.show()
+
 def plot_losses(epochs_seen, tokens_seen, train_losses, val_losses):
 
     #print("In plot_losses\n")
