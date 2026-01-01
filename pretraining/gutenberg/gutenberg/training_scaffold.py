@@ -454,7 +454,7 @@ def train_model(model, optimizer, device, n_epochs,
         save_training_state(epoch, index, input_batch_counter, tokens_seen, global_step)
         print(f"Saved training state")
 
-    return train_losses, val_losses, track_tokens_seen, track_lrs, total_training_steps
+    return train_losses, val_losses, track_tokens_seen, track_lrs, (global_step - sv_global_step)
 
 if __name__ == "__main__":
 
