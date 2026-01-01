@@ -291,6 +291,8 @@ def train_model(model, optimizer, device, n_epochs,
                     track_lrs.append(optimizer.param_groups[0]["lr"])
 
 
+                    '''
+                    # TEMP: Disable Training (scaffolding continues)
 
                     print("loss calculating")
                     # flow the model and calculate loss (utilizing LLM arch: attention, transformers, ff, etc) 
@@ -303,20 +305,27 @@ def train_model(model, optimizer, device, n_epochs,
                     loss.backward()
                     print("backprop end")
 
+                    '''
 
                     # Apply gradient clipping
                     if global_step >= warmup_steps:
                         torch.nn.utils.clip_grad_norm_(model.parameters(), max_norm=1.0)
 
+                    '''
+                    # TEMP: Disable Training (scaffolding continues) 
 
                     print("optimizer step start")
                     # update the parameters (weights) 
                     optimizer.step()
                     print("optimizer step end")
 
+                    '''
+
                     tokens_seen += input_batch.numel()
                     print("global step: ", global_step, " tokens seen: ", tokens_seen)
 
+                    '''
+                    # TEMP: Disable evaluations, text generations
 
                     # Optional evaluation step
                     if global_step % eval_freq == 0:
@@ -349,8 +358,12 @@ def train_model(model, optimizer, device, n_epochs,
 
                         break # skip the rest of the iterations and exit loop
 
+                    '''
+
                 print("\nout of input_batch inner for loop\n")
 
+                '''
+                # TEMP: Disable saving of model
 
                 if global_step % save_ckpt_freq:
 
@@ -380,6 +393,7 @@ def train_model(model, optimizer, device, n_epochs,
 
                     print(f"Saved {file_name}")
                     print(f"Saved {model_file_name}")
+                '''
 
                 print("some stats: ")
                 print_eta(start_time, book_start_time, index, total_files)
@@ -397,6 +411,8 @@ def train_model(model, optimizer, device, n_epochs,
         # this is where the final for loop ends for training
         print("END OF TRAINING")
 
+        '''
+        # TEMP: Disable saving of model and state
         # save the model
         model_file_name = output_dir / "model_pg_final.pth"
         torch.save(model.state_dict(), model_file_name)
@@ -405,6 +421,7 @@ def train_model(model, optimizer, device, n_epochs,
         # save in-progress training state
         save_training_state(epoch, index, input_batch_counter, tokens_seen, global_step)
         print(f"Saved training state")
+        '''
 
 
     except KeyboardInterrupt:
