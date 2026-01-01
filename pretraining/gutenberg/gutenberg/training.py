@@ -338,6 +338,7 @@ def train_model(model, optimizer, device, n_epochs,
                         )
 
                     # if I am using colab I don't need this limit check
+                    '''
                     if global_step % max_eval_limit == 0:
 
                         print("reached max eval limit, moving to next book\n")
@@ -348,6 +349,7 @@ def train_model(model, optimizer, device, n_epochs,
                         )
 
                         break # skip the rest of the iterations and exit loop
+                    '''
 
                 print("\nout of input_batch inner for loop\n")
 
