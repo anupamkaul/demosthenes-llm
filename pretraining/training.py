@@ -157,7 +157,18 @@ input("enter..")
 device = torch.device("cpu")
 print("device override for my local ubuntu: ", device)
 
-model = torch.compile(model)
+# disable the compile option on macOS : upgrading to Tahoe 2.6 causes
+# multiple OMP load errors when the compiler pragma spins up 8 clang 
+# threads .. meaning I have to reinstall my anaconda env, so putting
+# it off for a while till I figure this out
+
+import platform
+print("OS: ", platform.system())
+
+if (platform.system() != "Darwin"):
+    print("compiling the model (non macOS")
+    model = torch.compile(model)
+
 model.to(device)
 
 optimizer = torch.optim.AdamW(
