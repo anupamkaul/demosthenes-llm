@@ -75,7 +75,13 @@ print("device: ", device)
 device = torch.device("cpu")
 print("device override (for my local ubuntu): ", device)
 
-model = torch.compile(model)
+import platform
+print("OS: ", platform.system())
+
+if (platform.system() != "Darwin"):
+    print("compiling the model (non macOS")
+    model = torch.compile(model)
+
 model.to(device)
 
 try:
