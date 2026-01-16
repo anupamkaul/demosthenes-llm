@@ -32,7 +32,11 @@ device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 device = torch.device("cpu")
 print("device override for my local ubuntu: ", device)
 
-model = torch.compile(model)
+import platform
+if (platform.system() != "Darwin"):
+    print("compiling the model (non macOS")
+    model = torch.compile(model)
+
 model.to(device)
 
 try:
