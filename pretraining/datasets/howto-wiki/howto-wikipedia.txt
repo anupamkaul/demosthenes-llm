@@ -1,0 +1,101 @@
+To use the Hugging Face Datasets library on your MacBook Pro for Wikipedia data, follow these steps to set up your environment, load a sample, and export it to a text file. 
+1. Installation
+Open your Terminal and run the following commands to install the library and its dependencies:
+bash
+# It is recommended to use a virtual environment, but you can install directly:
+pip install datasets
+pip install apache-beam  # Required for some large datasets like Wikipedia
+Use code with caution.
+
+2. Load the Wikipedia Dataset
+Wikipedia is a massive dataset, so you should specify a "configuration" (e.g., date and language) and a "split" (e.g., train). Use this Python script: 
+python
+from datasets import load_dataset
+
+# Load a specific version of English Wikipedia
+# Using 'streaming=True' is recommended for large datasets to avoid downloading 20GB+ at once
+dataset = load_dataset("wikipedia", "20220301.en", split='train', streaming=True)
+
+# Take a small sample (e.g., 5 articles) for testing
+sample_data = dataset.take(5)
+Use code with caution.
+
+3. Print the Contents
+Since the dataset is a collection of dictionaries, you can iterate through your sample to print the article titles and text: 
+python
+for i, article in enumerate(sample_data):
+    print(f"--- Article {i+1}: {article['title']} ---")
+    print(article['text'][:500])  # Print first 500 characters
+    print("\n")
+Use code with caution.
+
+4. Extract and Save to a Text File
+To extract the raw text into a non-encrypted .txt file, iterate through the dataset and write the text field to a local file:
+python
+with open("wikipedia_sample.txt", "w", encoding="utf-8") as f:
+    for article in sample_data:
+        # Write article title and content to the file
+        f.write(f"TITLE: {article['title']}\n")
+        f.write(article['text'])
+        f.write("\n\n" + "="*50 + "\n\n") # Separator between articles
+
+print("Extraction complete. Check 'wikipedia_sample.txt' in your current folder.")
+Use code with caution.
+
+Key Notes for Mac Users:
+Storage: The full Wikipedia dump is over 20GB. Using streaming=True as shown above allows you to work with samples without filling up your MacBook's SSD.
+Format: The Hugging Face Wikipedia loader automatically strips most Wikitext (HTML/Markdown), giving you clean plaintext suitable for training. 
+
+---
+
+To filter Wikipedia pages by keywords using the Hugging Face Datasets library on your Mac, you will use the .filter() method.
+Because Wikipedia is so large, this is best done using streaming mode. This allows you to inspect articles one by one without downloading the entire 20GB+ database to your MacBook. 
+1. The Filtering Code
+Add this block to your existing script. The filter function takes a "row" (a dictionary) and must return True to keep it or False to discard it. 
+python
+from datasets import load_dataset
+
+# 1. Load in streaming mode (no massive download)
+dataset = load_dataset("wikipedia", "20220301.en", split='train', streaming=True)
+
+# 2. Define your keywords
+keywords = ["Artificial Intelligence", "Machine Learning", "Neural Network"]
+
+# 3. Create the filter function
+# We convert text to lowercase to make the search case-insensitive
+def filter_by_keyword(example):
+    content = example['text'].lower()
+    return any(word.lower() in content for word in keywords)
+
+# 4. Apply the filter
+filtered_dataset = dataset.filter(filter_by_keyword)
+
+# 5. Take a specific number of matches (e.g., 5 articles)
+sample_matches = filtered_dataset.take(5)
+Use code with caution.
+
+2. Extracting to a Text File
+Once you have the filtered sample, use this loop to save it to your local drive:
+python
+with open("filtered_wikipedia.txt", "w", encoding="utf-8") as f:
+    for i, article in enumerate(sample_matches):
+        f.write(f"--- ARTICLE {i+1}: {article['title']} ---\n")
+        f.write(article['text'])
+        f.write("\n\n" + "="*60 + "\n\n")
+        print(f"Saved: {article['title']}")
+
+print("Extraction complete! Check 'filtered_wikipedia.txt'.")
+Use code with caution.
+
+Key Differences with Streaming
+Speed: The script might take a moment to find the first few matches because it has to skip over thousands of non-matching articles in the stream.
+Memory: This method uses virtually no RAM or disk space because it never stores more than one article at a time.
+Flexibility: You can update the filter_by_keyword function to use more complex logic, like checking for keywords only in the title (example['title']) instead of the full body text. 
+Pro-Tip for Mac Users: If your Terminal seems to "hang" while filtering, it’s just searching through the Wikipedia stream. You can add a print("Searching...") inside your filter function (every 1000 iterations) to see progress.
+
+--> some corrections, my python3 points to use/bin while my python is the one in anaconda. It wasn't upgrading datasets to the latest version and code was throwing errors, so:
+which python
+/opt/anaconda3/bin/python
+(base) anupkaul@147dda4c0851 datasets % python -m pip install --upgrade datasets
+
+
