@@ -20,11 +20,20 @@ dataset = load_dataset(
     streaming=True
 )
 
+# to skip the hanging, trigger more data (e.g. download 100 articles)
+num_articles_to_download=100 # increase this to download more data
+
+sample_data = dataset.take(num_articles_to_download)
+
+print(f"Starting download of {num_articles_to_download} articles...")
+
 # Test it
 for article in dataset.take(1):
     print(f"Success! Loaded: {article['title']}")
 
+'''
 # Take a small sample (e.g., 1 articles) for testing
+
 sample_data = dataset.take(1)
 
 # print the contents
@@ -36,8 +45,24 @@ for i, articles in enumerate(sample_data):
     print(f"--- Article {i+1}: {article['title']} ---")
     print(article['text'][:1200])  # Print first 1200 characters
     print("\n")
+'''
 
-print("done")
+# 3. Save to a single text file
+with open("wikipedia_corpus.txt", "w", encoding="utf-8") as f:
+    for i, article in enumerate(sample_data):
+        # Write content
+        f.write(f"--- {article['title']} ---\n")
+        f.write(article['text'])
+        f.write("\n\n" + "="*50 + "\n\n")
+        
+        # Print progress every 10 articles so you know it's working
+        if (i + 1) % 10 == 0:
+            print(f"Progress: {i+1}/{num_articles_to_download} articles saved.")
+
+print("Finished! The script will now exit.")
+exit()
+
+
 
 
 

@@ -1,4 +1,24 @@
 python load-dataset.py 
+Resolving data files: 100%|███████████████████████████████████████████████████████████████████████████████████████████████| 41/41 [00:00<00:00, 26350.98it/s]
+Starting download of 100 articles...
+Success! Loaded: Anarchism
+Progress: 10/100 articles saved.
+Progress: 20/100 articles saved.
+Progress: 30/100 articles saved.
+Progress: 40/100 articles saved.
+Progress: 50/100 articles saved.
+Progress: 60/100 articles saved.
+Progress: 70/100 articles saved.
+Progress: 80/100 articles saved.
+Progress: 90/100 articles saved.
+Progress: 100/100 articles saved.
+Finished! The script will now exit.
+^C
+
+
+
+
+python load-dataset.py 
 Resolving data files: 100%|███████████████████████████████████████████████████████████████████████████████████████████████| 41/41 [00:00<00:00, 20644.23it/s]
 Success! Loaded: Anarchism
 --- Article 1: Anarchism ---
