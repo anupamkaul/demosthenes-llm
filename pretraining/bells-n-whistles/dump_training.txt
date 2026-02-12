@@ -1,53 +1,4 @@
-device:  cuda
-mem analysis:
- |===========================================================================|
-|                  PyTorch CUDA memory summary, device ID 0                 |
-|---------------------------------------------------------------------------|
-|            CUDA OOMs: 0            |        cudaMalloc retries: 0         |
-|===========================================================================|
-|        Metric         | Cur Usage  | Peak Usage | Tot Alloc  | Tot Freed  |
-|---------------------------------------------------------------------------|
-| Allocated memory      |      0 B   |      0 B   |      0 B   |      0 B   |
-|       from large pool |      0 B   |      0 B   |      0 B   |      0 B   |
-|       from small pool |      0 B   |      0 B   |      0 B   |      0 B   |
-|---------------------------------------------------------------------------|
-| Active memory         |      0 B   |      0 B   |      0 B   |      0 B   |
-|       from large pool |      0 B   |      0 B   |      0 B   |      0 B   |
-|       from small pool |      0 B   |      0 B   |      0 B   |      0 B   |
-|---------------------------------------------------------------------------|
-| Requested memory      |      0 B   |      0 B   |      0 B   |      0 B   |
-|       from large pool |      0 B   |      0 B   |      0 B   |      0 B   |
-|       from small pool |      0 B   |      0 B   |      0 B   |      0 B   |
-|---------------------------------------------------------------------------|
-| GPU reserved memory   |      0 B   |      0 B   |      0 B   |      0 B   |
-|       from large pool |      0 B   |      0 B   |      0 B   |      0 B   |
-|       from small pool |      0 B   |      0 B   |      0 B   |      0 B   |
-|---------------------------------------------------------------------------|
-| Non-releasable memory |      0 B   |      0 B   |      0 B   |      0 B   |
-|       from large pool |      0 B   |      0 B   |      0 B   |      0 B   |
-|       from small pool |      0 B   |      0 B   |      0 B   |      0 B   |
-|---------------------------------------------------------------------------|
-| Allocations           |       0    |       0    |       0    |       0    |
-|       from large pool |       0    |       0    |       0    |       0    |
-|       from small pool |       0    |       0    |       0    |       0    |
-|---------------------------------------------------------------------------|
-| Active allocs         |       0    |       0    |       0    |       0    |
-|       from large pool |       0    |       0    |       0    |       0    |
-|       from small pool |       0    |       0    |       0    |       0    |
-|---------------------------------------------------------------------------|
-| GPU reserved segments |       0    |       0    |       0    |       0    |
-|       from large pool |       0    |       0    |       0    |       0    |
-|       from small pool |       0    |       0    |       0    |       0    |
-|---------------------------------------------------------------------------|
-| Non-releasable allocs |       0    |       0    |       0    |       0    |
-|       from large pool |       0    |       0    |       0    |       0    |
-|       from small pool |       0    |       0    |       0    |       0    |
-|---------------------------------------------------------------------------|
-| Oversize allocations  |       0    |       0    |       0    |       0    |
-|---------------------------------------------------------------------------|
-| Oversize GPU segments |       0    |       0    |       0    |       0    |
-|===========================================================================|
-
+device:  cpu
 enter..device override for my local ubuntu:  cpu
 model not found on disk. monitor as a one time thing, error out if repeats
 Characters: 20479
@@ -207,6 +158,8 @@ He placed them at my elbow and continued to wander up and down the room, stoppin
 "I turned back to my work, and went on groping and muddling; then I looked at the donkey again. I saw that, when Stroud laid in the first stroke, he knew just what the end would be. He had possessed his subject, absorbed it, recreated it. When had I done that with any of my things? They hadn't been born of me--I had just adopted them. . . .
 
 "Hang it, Rickham, with that face watching me I couldn't do another stroke. The plain truth was, I didn't know where to put it--_I had never known_. Only, with my sitters and my public, a showy splash of colour covered up the fact--I just threw paint into their faces. . . . Well, paint was the one medium those dead eyes could see through--see straight to the tottering foundations underneath. Don't you know how, in talking a foreign language, even fluently, one says half the time not what one wants to but what one can? Well--that was the way I painted; and as he lay there and watched me, the thing they called my 'techniq
+
+OS:  Darwin  batch size:  8  enter..
 GPTDatasetV1.py generated token IDs !
 GPTDatasetV1.py chunking tokens for max_length =  256  stride =  256
 GPTDatasetV1.py tokenization done!
@@ -214,15 +167,8 @@ GPTDatasetV1.py generated token IDs !
 GPTDatasetV1.py chunking tokens for max_length =  256  stride =  256
 GPTDatasetV1.py tokenization done!
 Train loader:
-torch.Size([2, 256]) torch.Size([2, 256])
-torch.Size([2, 256]) torch.Size([2, 256])
-torch.Size([2, 256]) torch.Size([2, 256])
-torch.Size([2, 256]) torch.Size([2, 256])
-torch.Size([2, 256]) torch.Size([2, 256])
-torch.Size([2, 256]) torch.Size([2, 256])
-torch.Size([2, 256]) torch.Size([2, 256])
-torch.Size([2, 256]) torch.Size([2, 256])
-torch.Size([2, 256]) torch.Size([2, 256])
+torch.Size([8, 256]) torch.Size([8, 256])
+torch.Size([8, 256]) torch.Size([8, 256])
 
 Validation loader:
 torch.Size([2, 256]) torch.Size([2, 256])
@@ -463,145 +409,117 @@ GPTModel(
   (final_norm): LayerNorm()
   (out_head): Linear(in_features=768, out_features=50257, bias=False)
 )
-device:  cuda
-Training loss:  10.987583372328016
+device:  cpu
+Training loss:  10.986782550811768
 Validation loss:  10.98110580444336
-Epoch 1 (Step 000000): Train loss 10.954, Val loss 10.946
-Epoch 1 (Step 000005): Train loss 9.401, Val loss 9.604
+Epoch 1 (Step 000000): Train loss 10.912, Val loss 10.929
 
 out of inner input_batch loop..
 generate and print sample..
 
-Every effort moves you,,,,,,,,,,,,,,,,,,,,,,,,,,,,, the,,,,,,,,,,,,,,,,,,,,
-Epoch 2 (Step 000010): Train loss 8.109, Val loss 8.588
-Epoch 2 (Step 000015): Train loss 7.111, Val loss 7.300
+Every effort moves you,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
 
 out of inner input_batch loop..
 generate and print sample..
 
-Every effort moves you the the, the of the of the of the the the of the of the of the the the, the the of the of the of the the of the the of the the the of the of the of the of the of the of the of
-Epoch 3 (Step 000020): Train loss 6.002, Val loss 6.670
-Epoch 3 (Step 000025): Train loss 5.725, Val loss 6.588
+Every effort moves you,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+Epoch 3 (Step 000005): Train loss 7.895, Val loss 8.259
 
 out of inner input_batch loop..
 generate and print sample..
 
-Every effort moves you Adjusted commands commands Adjusted bark commands Adjusted bark170Merc Console170 Collections commands ideals Adjusted THC accessibility170 commands disturbing accessibility commands commands bark Console Music Music martyr renowned170 unravel typed Music Music170 commands170170 enforced Console bark typed170abolic bark commands commands commands martyr
-Epoch 4 (Step 000030): Train loss 5.766, Val loss 6.597
-Epoch 4 (Step 000035): Train loss 5.724, Val loss 6.656
+Every effort moves you, the, the, the, the, the,, the, the, the, the,,, the,, the,,, the,, the, the, the, the,, the,, the,, the, the
 
 out of inner input_batch loop..
 generate and print sample..
 
-Every effort moves you his                                                 
-Epoch 5 (Step 000040): Train loss 5.443, Val loss 6.514
+Every effort moves you, the, the, the, the, the, the.                                     
 
 out of inner input_batch loop..
 generate and print sample..
 
-Every effort moves you had the " I had the end it was the fact. " I had the   "I was, and I had the the picture, I had the picture.   "I, and I had the picture, and
-Epoch 6 (Step 000045): Train loss 4.630, Val loss 6.429
-Epoch 6 (Step 000050): Train loss 4.110, Val loss 6.422
+Every effort moves you, the, the, I, I, I, I, I, I, I, I, I, I, the, I, I, I, I, I, I, I, the, I, the, I, I
+Epoch 6 (Step 000010): Train loss 5.640, Val loss 6.560
 
 out of inner input_batch loop..
 generate and print sample..
 
-Every effort moves you know the "I the donkey, and I felt to me. "I had been the donkey, and I felt, and I was his pictures--and, and I had been. "I, and I felt, and I was
-Epoch 7 (Step 000055): Train loss 3.590, Val loss 6.233
-Epoch 7 (Step 000060): Train loss 2.837, Val loss 6.105
+Every effort moves you. " to the to the. " to the. "--. " to the to the to to the to to the. "--. ". " to the of the to the. ", and
 
 out of inner input_batch loop..
 generate and print sample..
 
-Every effort moves you know it was not a little of the picture--I had a little of the picture to me--his, I felt's had been to the picture, I had the picture. Gisburn's his painting. Gisburn--and I had
-Epoch 8 (Step 000065): Train loss 2.428, Val loss 6.111
-Epoch 8 (Step 000070): Train loss 1.980, Val loss 6.200
+Every effort moves you, and, and           ", and, I had the, and, and, and, I had the the, and, and I had", and, and the, and, I had
+Epoch 8 (Step 000015): Train loss 5.323, Val loss 6.667
 
 out of inner input_batch loop..
 generate and print sample..
 
-Every effort moves you know," was one of the ax--I he had been the frame.                                   
-Epoch 9 (Step 000075): Train loss 1.398, Val loss 6.270
-Epoch 9 (Step 000080): Train loss 0.923, Val loss 6.320
+Every effort moves you the the of the the the of the of the the of the of the of the of the of the of the of the of the of the the of the the of the of the of the of the of the of the of the of the of
 
 out of inner input_batch loop..
 generate and print sample..
 
-Every effort moves you?"  "Yes--quite insensible to the fact with the Sevres and silver of the's past! The women had made him, and threw back his glory, and as once one had longed to say: "Be dissatisfied with your
-Epoch 10 (Step 000085): Train loss 0.499, Val loss 6.444
+Every effort moves you, and, and, and, and, and, and, and, and, and, and, and, and, and, and, and, and, and, and, and, and, and, and, and, and, and
 
 out of inner input_batch loop..
 generate and print sample..
 
-Every effort moves you?"  "Yes--quite insensible to the irony. She wanted him vindicated--and by me.  He laughed again, and threw back his head to look up at the honour being _mine_--because he didn't want
-Epoch 11 (Step 000090): Train loss 0.436, Val loss 6.568
-Epoch 11 (Step 000095): Train loss 0.325, Val loss 6.663
+Every effort moves you know to have to a little a little to the picture to the picture.          " to see a little to the my himburn's his pictures--I him, and my to the picture to the picture
+Epoch 11 (Step 000020): Train loss 4.562, Val loss 6.493
 
 out of inner input_batch loop..
 generate and print sample..
 
-Every effort moves you?"  "Yes--quite insensible to the irony. She wanted him vindicated--and by me!"  "I didn't the moment--as Jack himself, one might put it, had been the man of the hour. The
-Epoch 12 (Step 000100): Train loss 0.202, Val loss 6.679
-Epoch 12 (Step 000105): Train loss 0.204, Val loss 6.858
+Every effort moves you know the picture.  "I was his the fact the picture.          "I, and I had the picture, I had the picture the fact the picture, and I had been.  
 
 out of inner input_batch loop..
 generate and print sample..
 
-Every effort moves you?"  "Yes--quite insensible to the irony. She wanted him vindicated--and by me!"  He laughed again, and threw back his head to look up at the sketch of the donkey. "There were days when I
-Epoch 13 (Step 000110): Train loss 0.104, Val loss 6.924
-Epoch 13 (Step 000115): Train loss 0.109, Val loss 6.937
+Every effort moves you know he was not to have of his pictures--his, I felt of Jack's--his, I felt to have to have to have of the fact of his pictures--and it--and had been of Jack's--his, and I had
+Epoch 13 (Step 000025): Train loss 2.954, Val loss 6.289
 
 out of inner input_batch loop..
 generate and print sample..
 
-Every effort moves you?"  "Yes--quite insensible to the irony. She wanted him vindicated--and by me!"  He laughed again, and threw back his head to look up at the sketch of the donkey. "There were days when I
-Epoch 14 (Step 000120): Train loss 0.061, Val loss 7.030
-Epoch 14 (Step 000125): Train loss 0.079, Val loss 7.116
+Every effort moves you know to see my a little a little to me--and a little a little the house."      "--and a little a little the fact my, as his pictures--and a little a little the picture to me his
 
 out of inner input_batch loop..
 generate and print sample..
 
-Every effort moves you?"     I glanced after him, and uncertain. Stroud so when she began to me!"  He laughed again, and threw back his head to look up at the sketch of the donkey. "There were days when I
-Epoch 15 (Step 000130): Train loss 0.051, Val loss 7.106
+Every effort moves you know to see my a little of his pictures--and it.            "--and a little. I was dead my, as his pictures--and a little a little the donkey, in his
 
 out of inner input_batch loop..
 generate and print sample..
 
-Every effort moves you?"  "Yes--quite insensible to the irony. She wanted him vindicated--and by me!"  He laughed again, and threw back his head to look up at the sketch of the donkey. "There were days when I
-Epoch 16 (Step 000135): Train loss 0.031, Val loss 7.096
-Epoch 16 (Step 000140): Train loss 0.056, Val loss 7.131
+Every effort moves you know to see on a little of the picture--I must.  "--and--and I felt to me to the donkey, in the picture--and that he had married her.   "Oh, the donkey, I felt
+Epoch 16 (Step 000030): Train loss 2.394, Val loss 6.193
 
 out of inner input_batch loop..
 generate and print sample..
 
-Every effort moves you?"  "Yes--quite insensible to the irony. She wanted him vindicated--and by me!"  He laughed again, and threw back his head to look up at the sketch of the donkey. "There were days when I
-Epoch 17 (Step 000145): Train loss 0.042, Val loss 7.155
-Epoch 17 (Step 000150): Train loss 0.033, Val loss 7.155
+Every effort moves you know." "I must." "--and a good-t--and it was no I felt to me to the donkey, and I felt back his glory, and as once one had been the donkey, androud. "I
 
 out of inner input_batch loop..
 generate and print sample..
 
-Every effort moves you?"  "Yes--quite insensible to the irony. She wanted him vindicated--and by me!"  He laughed again, and threw back his head to look up at the sketch of the donkey. "There were days when I
-Epoch 18 (Step 000155): Train loss 0.028, Val loss 7.165
-Epoch 18 (Step 000160): Train loss 0.023, Val loss 7.177
+Every effort moves you know." "I must."  "--and a little. I felt to me--and--and here are the donkey, and he was his pictures--as he had married her.        "I
+Epoch 18 (Step 000035): Train loss 2.113, Val loss 6.164
 
 out of inner input_batch loop..
 generate and print sample..
 
-Every effort moves you?"  "Yes--quite insensible to the irony. She wanted him vindicated--and by me!"  He laughed again, and threw back his head to look up at the sketch of the donkey. "There were days when I
-Epoch 19 (Step 000165): Train loss 0.022, Val loss 7.182
-Epoch 19 (Step 000170): Train loss 0.024, Val loss 7.185
+Every effort moves you know." "I must."   I turned the donkey. I felt it was no I felt to me.           "--and I had the donkey. "There. I was his
 
 out of inner input_batch loop..
 generate and print sample..
 
-Every effort moves you?"  "Yes--quite insensible to the irony. She wanted him vindicated--and by me!"  He laughed again, and threw back his head to look up at the sketch of the donkey. "There were days when I
-Epoch 20 (Step 000175): Train loss 0.025, Val loss 7.186
+Every effort moves you know." "I must."   I turned the donkey. I felt it was no I felt to me to the donkey, and I was his painting.              "I
 
 out of inner input_batch loop..
 generate and print sample..
 
-Every effort moves you?"  "Yes--quite insensible to the irony. She wanted him vindicated--and by me!"  He laughed again, and threw back his head to look up at the sketch of the donkey. "There were days when I
+Every effort moves you know." "I must."   I turned the donkey. I felt it was no I felt to me to the donkey, and I was his painting.            "I was his
 model saved
 
-tokens seen:  [512, 3072, 5632, 8192, 10752, 13312, 15872, 18432, 20992, 23552, 26112, 28672, 31232, 33792, 36352, 38912, 41472, 44032, 46592, 49152, 51712, 54272, 56832, 59392, 61952, 64512, 67072, 69632, 72192, 74752, 77312, 79872, 82432, 84992, 87552, 90112]
+tokens seen:  [2048, 12288, 22528, 32768, 43008, 53248, 63488, 73728]
