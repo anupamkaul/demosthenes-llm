@@ -84,9 +84,19 @@ sys.path.append(module_path)
 
 import dataloaderV1 as dataloader
 
+# add flexibility for different batch size computes
+import platform
+if (platform.system() != "Darwin"):
+    batch_size=2
+else:
+    batch_size=8
+
+print("\nOS: ", platform.system(), " batch size: ", batch_size, " enter..")
+input()
+
 train_loader = dataloader.create_dataloader_v1(
     train_data,
-    batch_size=2,
+    batch_size=batch_size,
     max_length=GPT_CONFIG_124M["context_length"],
     stride=GPT_CONFIG_124M["context_length"],
     drop_last=True,
@@ -95,7 +105,7 @@ train_loader = dataloader.create_dataloader_v1(
 )
 val_loader = dataloader.create_dataloader_v1(
     val_data,
-    batch_size=2,
+    batch_size=batch_size,
     max_length=GPT_CONFIG_124M["context_length"],
     stride=GPT_CONFIG_124M["context_length"],
     drop_last=False,
