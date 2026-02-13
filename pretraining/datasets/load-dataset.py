@@ -21,7 +21,8 @@ dataset = load_dataset(
 )
 
 # to skip the hanging, trigger more data (e.g. download 100 articles)
-num_articles_to_download=100 # increase this to download more data
+num_articles_to_download=10 # increase this to download more data
+#num_articles_to_download=100 # increase this to download more data
 
 sample_data = dataset.take(num_articles_to_download)
 
@@ -48,7 +49,8 @@ for i, articles in enumerate(sample_data):
 '''
 
 # 3. Save to a single text file
-with open("wikipedia_corpus.txt", "w", encoding="utf-8") as f:
+#with open("wikipedia_corpus.txt", "w", encoding="utf-8") as f:
+with open("wikipedia_corpus_small.txt", "w", encoding="utf-8") as f:
     for i, article in enumerate(sample_data):
         # Write content
         f.write(f"--- {article['title']} ---\n")
