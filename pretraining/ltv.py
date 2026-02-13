@@ -16,7 +16,13 @@ The dataset size:
 import torch
 import tiktoken
 
-file_path = "the-verdict.txt"
+#file_path = "the-verdict.txt"
+
+#file_path = "./datasets/the-verdict.txt"
+#file_path = "./datasets/wikipedia_corpus.txt"
+
+file_path = "../datasets/wikipedia_corpus.txt"
+
 with open (file_path, "r", encoding="utf-8") as file:
     text_data = file.read()
 
@@ -47,7 +53,8 @@ print("90% of the split is from index ", split_idx)
 train_data = text_data[:split_idx]
 val_data = text_data[split_idx:]
 
-print("raw training data: \n", train_data)
+# comment this if we print wikipedia_corpus, just too big..
+# print("raw training data: \n", train_data)
 
 '''
 Now we use dataloaders (from my code) and create 
@@ -169,6 +176,7 @@ that are sampled by a given data loader
 
 def calc_loss_loader(data_loader, model, device, num_batches=None):
 
+    print("calc_loss_loader..")
     total_loss = 0
 
     # sanity checks
@@ -179,13 +187,20 @@ def calc_loss_loader(data_loader, model, device, num_batches=None):
     else:
         num_batches = min(num_batches, len(data_loader))
 
+    print("num_batches: ", num_batches, "len of data_loader: ", len(data_loader))
+
     for i, (input_batch, target_batch) in enumerate(data_loader):
+
+        # single line printing to show progress
+        print(f"\r{i} of {len(data_loader)}", end="", flush=True)
+
         if i < num_batches:
             loss = calc_loss_batch(input_batch, target_batch, model, device)    
             total_loss += loss.item() # sum the loss for each batch
         else:
             break
 
+    print("finish calc_loss_loader..")
     # return the average loss over all batches
     return total_loss / num_batches 
 
