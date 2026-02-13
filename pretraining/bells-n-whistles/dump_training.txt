@@ -330,7 +330,7 @@ num_batches:  1 len of data_loader:  39
 calc_loss_loader..
 num_batches:  1 len of data_loader:  5
 0 of 51 of 5finish calc_loss_loader..
-Epoch 1 (Step 000005): Train loss 8.985, Val loss 9.189
+Epoch 1 (Step 000005): Train loss 10.132, Val loss 10.209
 debug: len input batch:  8  len target batch:  8  len train loader :  39
 debug: global_step :  6  tokens seen:  14336
 debug: len input batch:  8  len target batch:  8  len train loader :  39
@@ -347,7 +347,7 @@ num_batches:  1 len of data_loader:  39
 calc_loss_loader..
 num_batches:  1 len of data_loader:  5
 0 of 51 of 5finish calc_loss_loader..
-Epoch 1 (Step 000010): Train loss 7.914, Val loss 8.081
+Epoch 1 (Step 000010): Train loss 9.447, Val loss 9.488
 debug: len input batch:  8  len target batch:  8  len train loader :  39
 debug: global_step :  11  tokens seen:  24576
 debug: len input batch:  8  len target batch:  8  len train loader :  39
@@ -364,7 +364,7 @@ num_batches:  1 len of data_loader:  39
 calc_loss_loader..
 num_batches:  1 len of data_loader:  5
 0 of 51 of 5finish calc_loss_loader..
-Epoch 1 (Step 000015): Train loss 7.663, Val loss 8.114
+Epoch 1 (Step 000015): Train loss 8.974, Val loss 9.104
 debug: len input batch:  8  len target batch:  8  len train loader :  39
 debug: global_step :  16  tokens seen:  34816
 debug: len input batch:  8  len target batch:  8  len train loader :  39
@@ -381,7 +381,7 @@ num_batches:  1 len of data_loader:  39
 calc_loss_loader..
 num_batches:  1 len of data_loader:  5
 0 of 51 of 5finish calc_loss_loader..
-Epoch 1 (Step 000020): Train loss 7.944, Val loss 8.231
+Epoch 1 (Step 000020): Train loss 8.749, Val loss 8.711
 debug: len input batch:  8  len target batch:  8  len train loader :  39
 debug: global_step :  21  tokens seen:  45056
 debug: len input batch:  8  len target batch:  8  len train loader :  39
@@ -398,7 +398,7 @@ num_batches:  1 len of data_loader:  39
 calc_loss_loader..
 num_batches:  1 len of data_loader:  5
 0 of 51 of 5finish calc_loss_loader..
-Epoch 1 (Step 000025): Train loss 7.328, Val loss 7.980
+Epoch 1 (Step 000025): Train loss 8.001, Val loss 8.326
 debug: len input batch:  8  len target batch:  8  len train loader :  39
 debug: global_step :  26  tokens seen:  55296
 debug: len input batch:  8  len target batch:  8  len train loader :  39
@@ -415,7 +415,7 @@ num_batches:  1 len of data_loader:  39
 calc_loss_loader..
 num_batches:  1 len of data_loader:  5
 0 of 51 of 5finish calc_loss_loader..
-Epoch 1 (Step 000030): Train loss 7.087, Val loss 7.944
+Epoch 1 (Step 000030): Train loss 7.479, Val loss 8.038
 debug: len input batch:  8  len target batch:  8  len train loader :  39
 debug: global_step :  31  tokens seen:  65536
 debug: len input batch:  8  len target batch:  8  len train loader :  39
@@ -432,7 +432,7 @@ num_batches:  1 len of data_loader:  39
 calc_loss_loader..
 num_batches:  1 len of data_loader:  5
 0 of 51 of 5finish calc_loss_loader..
-Epoch 1 (Step 000035): Train loss 7.108, Val loss 7.863
+Epoch 1 (Step 000035): Train loss 7.313, Val loss 7.847
 debug: len input batch:  8  len target batch:  8  len train loader :  39
 debug: global_step :  36  tokens seen:  75776
 debug: len input batch:  8  len target batch:  8  len train loader :  39
@@ -443,7 +443,7 @@ debug: global_step :  38  tokens seen:  79872
 out of inner input_batch loop..
 generate and print sample..
 
-Every effort moves you, the the the the the the the the the the the the the the the the the the the the the the the the the the the the the the the the the the the the the the the the the the the the the the the the the
+Every effort moves you the the the the the the the the the the the the the the the the the the the the the the the the the the the the the the the the the the the the the the the the the the the the the the the the the the
 debug: len input batch:  8  len target batch:  8  len train loader :  39
 debug: global_step :  39  tokens seen:  81920
 debug: len input batch:  8  len target batch:  8  len train loader :  39
@@ -454,7 +454,7 @@ num_batches:  1 len of data_loader:  39
 calc_loss_loader..
 num_batches:  1 len of data_loader:  5
 0 of 51 of 5finish calc_loss_loader..
-Epoch 2 (Step 000040): Train loss 7.149, Val loss 7.787
+Epoch 2 (Step 000040): Train loss 7.220, Val loss 7.740
 debug: len input batch:  8  len target batch:  8  len train loader :  39
 debug: global_step :  41  tokens seen:  86016
 debug: len input batch:  8  len target batch:  8  len train loader :  39
@@ -471,7 +471,7 @@ num_batches:  1 len of data_loader:  39
 calc_loss_loader..
 num_batches:  1 len of data_loader:  5
 0 of 51 of 5finish calc_loss_loader..
-Epoch 2 (Step 000045): Train loss 6.978, Val loss 7.696
+Epoch 2 (Step 000045): Train loss 7.074, Val loss 7.742
 debug: len input batch:  8  len target batch:  8  len train loader :  39
 debug: global_step :  46  tokens seen:  96256
 debug: len input batch:  8  len target batch:  8  len train loader :  39
@@ -488,7 +488,7 @@ num_batches:  1 len of data_loader:  39
 calc_loss_loader..
 num_batches:  1 len of data_loader:  5
 0 of 51 of 5finish calc_loss_loader..
-Epoch 2 (Step 000050): Train loss 6.885, Val loss 7.638
+Epoch 2 (Step 000050): Train loss 7.042, Val loss 7.731
 debug: len input batch:  8  len target batch:  8  len train loader :  39
 debug: global_step :  51  tokens seen:  106496
 debug: len input batch:  8  len target batch:  8  len train loader :  39
@@ -505,7 +505,7 @@ num_batches:  1 len of data_loader:  39
 calc_loss_loader..
 num_batches:  1 len of data_loader:  5
 0 of 51 of 5finish calc_loss_loader..
-Epoch 2 (Step 000055): Train loss 6.878, Val loss 7.622
+Epoch 2 (Step 000055): Train loss 7.002, Val loss 7.737
 debug: len input batch:  8  len target batch:  8  len train loader :  39
 debug: global_step :  56  tokens seen:  116736
 debug: len input batch:  8  len target batch:  8  len train loader :  39
@@ -522,7 +522,7 @@ num_batches:  1 len of data_loader:  39
 calc_loss_loader..
 num_batches:  1 len of data_loader:  5
 0 of 51 of 5finish calc_loss_loader..
-Epoch 2 (Step 000060): Train loss 6.931, Val loss 7.598
+Epoch 2 (Step 000060): Train loss 7.057, Val loss 7.665
 debug: len input batch:  8  len target batch:  8  len train loader :  39
 debug: global_step :  61  tokens seen:  126976
 debug: len input batch:  8  len target batch:  8  len train loader :  39
@@ -539,7 +539,7 @@ num_batches:  1 len of data_loader:  39
 calc_loss_loader..
 num_batches:  1 len of data_loader:  5
 0 of 51 of 5finish calc_loss_loader..
-Epoch 2 (Step 000065): Train loss 6.999, Val loss 7.602
+Epoch 2 (Step 000065): Train loss 7.006, Val loss 7.600
 debug: len input batch:  8  len target batch:  8  len train loader :  39
 debug: global_step :  66  tokens seen:  137216
 debug: len input batch:  8  len target batch:  8  len train loader :  39
@@ -556,7 +556,7 @@ num_batches:  1 len of data_loader:  39
 calc_loss_loader..
 num_batches:  1 len of data_loader:  5
 0 of 51 of 5finish calc_loss_loader..
-Epoch 2 (Step 000070): Train loss 6.838, Val loss 7.538
+Epoch 2 (Step 000070): Train loss 6.823, Val loss 7.576
 debug: len input batch:  8  len target batch:  8  len train loader :  39
 debug: global_step :  71  tokens seen:  147456
 debug: len input batch:  8  len target batch:  8  len train loader :  39
@@ -573,7 +573,7 @@ num_batches:  1 len of data_loader:  39
 calc_loss_loader..
 num_batches:  1 len of data_loader:  5
 0 of 51 of 5finish calc_loss_loader..
-Epoch 2 (Step 000075): Train loss 6.876, Val loss 7.542
+Epoch 2 (Step 000075): Train loss 6.870, Val loss 7.557
 debug: len input batch:  8  len target batch:  8  len train loader :  39
 debug: global_step :  76  tokens seen:  157696
 debug: len input batch:  8  len target batch:  8  len train loader :  39
@@ -582,7 +582,2481 @@ debug: global_step :  77  tokens seen:  159744
 out of inner input_batch loop..
 generate and print sample..
 
-Every effort moves you, and the state, and the state, and the state, and the state, and the state, and the state, and the state, and the state, and the state, and the state, and the state the state, and the state
+Every effort moves you of the state.                                              
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  78  tokens seen:  161792
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  79  tokens seen:  163840
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  80  tokens seen:  165888
+calc_loss_loader..
+num_batches:  1 len of data_loader:  39
+0 of 391 of 39finish calc_loss_loader..
+calc_loss_loader..
+num_batches:  1 len of data_loader:  5
+0 of 51 of 5finish calc_loss_loader..
+Epoch 3 (Step 000080): Train loss 6.867, Val loss 7.531
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  81  tokens seen:  167936
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  82  tokens seen:  169984
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  83  tokens seen:  172032
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  84  tokens seen:  174080
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  85  tokens seen:  176128
+calc_loss_loader..
+num_batches:  1 len of data_loader:  39
+0 of 391 of 39finish calc_loss_loader..
+calc_loss_loader..
+num_batches:  1 len of data_loader:  5
+0 of 51 of 5finish calc_loss_loader..
+Epoch 3 (Step 000085): Train loss 6.769, Val loss 7.458
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  86  tokens seen:  178176
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  87  tokens seen:  180224
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  88  tokens seen:  182272
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  89  tokens seen:  184320
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  90  tokens seen:  186368
+calc_loss_loader..
+num_batches:  1 len of data_loader:  39
+0 of 391 of 39finish calc_loss_loader..
+calc_loss_loader..
+num_batches:  1 len of data_loader:  5
+0 of 51 of 5finish calc_loss_loader..
+Epoch 3 (Step 000090): Train loss 6.644, Val loss 7.537
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  91  tokens seen:  188416
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  92  tokens seen:  190464
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  93  tokens seen:  192512
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  94  tokens seen:  194560
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  95  tokens seen:  196608
+calc_loss_loader..
+num_batches:  1 len of data_loader:  39
+0 of 391 of 39finish calc_loss_loader..
+calc_loss_loader..
+num_batches:  1 len of data_loader:  5
+0 of 51 of 5finish calc_loss_loader..
+Epoch 3 (Step 000095): Train loss 6.466, Val loss 7.483
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  96  tokens seen:  198656
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  97  tokens seen:  200704
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  98  tokens seen:  202752
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  99  tokens seen:  204800
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  100  tokens seen:  206848
+calc_loss_loader..
+num_batches:  1 len of data_loader:  39
+0 of 391 of 39finish calc_loss_loader..
+calc_loss_loader..
+num_batches:  1 len of data_loader:  5
+0 of 51 of 5finish calc_loss_loader..
+Epoch 3 (Step 000100): Train loss 6.652, Val loss 7.421
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  101  tokens seen:  208896
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  102  tokens seen:  210944
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  103  tokens seen:  212992
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  104  tokens seen:  215040
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  105  tokens seen:  217088
+calc_loss_loader..
+num_batches:  1 len of data_loader:  39
+0 of 391 of 39finish calc_loss_loader..
+calc_loss_loader..
+num_batches:  1 len of data_loader:  5
+0 of 51 of 5finish calc_loss_loader..
+Epoch 3 (Step 000105): Train loss 6.405, Val loss 7.391
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  106  tokens seen:  219136
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  107  tokens seen:  221184
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  108  tokens seen:  223232
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  109  tokens seen:  225280
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  110  tokens seen:  227328
+calc_loss_loader..
+num_batches:  1 len of data_loader:  39
+0 of 391 of 39finish calc_loss_loader..
+calc_loss_loader..
+num_batches:  1 len of data_loader:  5
+0 of 51 of 5finish calc_loss_loader..
+Epoch 3 (Step 000110): Train loss 6.346, Val loss 7.354
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  111  tokens seen:  229376
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  112  tokens seen:  231424
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  113  tokens seen:  233472
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  114  tokens seen:  235520
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  115  tokens seen:  237568
+calc_loss_loader..
+num_batches:  1 len of data_loader:  39
+0 of 391 of 39finish calc_loss_loader..
+calc_loss_loader..
+num_batches:  1 len of data_loader:  5
+0 of 51 of 5finish calc_loss_loader..
+Epoch 3 (Step 000115): Train loss 6.048, Val loss 7.349
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  116  tokens seen:  239616
+
+out of inner input_batch loop..
+generate and print sample..
+
+Every effort moves you, and the state, and the state, and the state.                                     
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  117  tokens seen:  241664
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  118  tokens seen:  243712
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  119  tokens seen:  245760
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  120  tokens seen:  247808
+calc_loss_loader..
+num_batches:  1 len of data_loader:  39
+0 of 391 of 39finish calc_loss_loader..
+calc_loss_loader..
+num_batches:  1 len of data_loader:  5
+0 of 51 of 5finish calc_loss_loader..
+Epoch 4 (Step 000120): Train loss 6.067, Val loss 7.335
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  121  tokens seen:  249856
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  122  tokens seen:  251904
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  123  tokens seen:  253952
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  124  tokens seen:  256000
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  125  tokens seen:  258048
+calc_loss_loader..
+num_batches:  1 len of data_loader:  39
+0 of 391 of 39finish calc_loss_loader..
+calc_loss_loader..
+num_batches:  1 len of data_loader:  5
+0 of 51 of 5finish calc_loss_loader..
+Epoch 4 (Step 000125): Train loss 5.720, Val loss 7.284
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  126  tokens seen:  260096
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  127  tokens seen:  262144
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  128  tokens seen:  264192
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  129  tokens seen:  266240
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  130  tokens seen:  268288
+calc_loss_loader..
+num_batches:  1 len of data_loader:  39
+0 of 391 of 39finish calc_loss_loader..
+calc_loss_loader..
+num_batches:  1 len of data_loader:  5
+0 of 51 of 5finish calc_loss_loader..
+Epoch 4 (Step 000130): Train loss 5.461, Val loss 7.248
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  131  tokens seen:  270336
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  132  tokens seen:  272384
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  133  tokens seen:  274432
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  134  tokens seen:  276480
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  135  tokens seen:  278528
+calc_loss_loader..
+num_batches:  1 len of data_loader:  39
+0 of 391 of 39finish calc_loss_loader..
+calc_loss_loader..
+num_batches:  1 len of data_loader:  5
+0 of 51 of 5finish calc_loss_loader..
+Epoch 4 (Step 000135): Train loss 5.323, Val loss 7.263
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  136  tokens seen:  280576
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  137  tokens seen:  282624
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  138  tokens seen:  284672
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  139  tokens seen:  286720
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  140  tokens seen:  288768
+calc_loss_loader..
+num_batches:  1 len of data_loader:  39
+0 of 391 of 39finish calc_loss_loader..
+calc_loss_loader..
+num_batches:  1 len of data_loader:  5
+0 of 51 of 5finish calc_loss_loader..
+Epoch 4 (Step 000140): Train loss 5.434, Val loss 7.160
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  141  tokens seen:  290816
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  142  tokens seen:  292864
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  143  tokens seen:  294912
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  144  tokens seen:  296960
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  145  tokens seen:  299008
+calc_loss_loader..
+num_batches:  1 len of data_loader:  39
+0 of 391 of 39finish calc_loss_loader..
+calc_loss_loader..
+num_batches:  1 len of data_loader:  5
+0 of 51 of 5finish calc_loss_loader..
+Epoch 4 (Step 000145): Train loss 5.604, Val loss 7.313
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  146  tokens seen:  301056
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  147  tokens seen:  303104
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  148  tokens seen:  305152
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  149  tokens seen:  307200
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  150  tokens seen:  309248
+calc_loss_loader..
+num_batches:  1 len of data_loader:  39
+0 of 391 of 39finish calc_loss_loader..
+calc_loss_loader..
+num_batches:  1 len of data_loader:  5
+0 of 51 of 5finish calc_loss_loader..
+Epoch 4 (Step 000150): Train loss 5.118, Val loss 7.248
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  151  tokens seen:  311296
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  152  tokens seen:  313344
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  153  tokens seen:  315392
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  154  tokens seen:  317440
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  155  tokens seen:  319488
+calc_loss_loader..
+num_batches:  1 len of data_loader:  39
+0 of 391 of 39finish calc_loss_loader..
+calc_loss_loader..
+num_batches:  1 len of data_loader:  5
+0 of 51 of 5finish calc_loss_loader..
+Epoch 4 (Step 000155): Train loss 5.243, Val loss 7.171
+
+out of inner input_batch loop..
+generate and print sample..
+
+Every effort moves you, and the first-old in the city to be a series, the city to be used in the most of the state, the state in the state in the state, the state in the state in the state, the state, the state in
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  156  tokens seen:  321536
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  157  tokens seen:  323584
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  158  tokens seen:  325632
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  159  tokens seen:  327680
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  160  tokens seen:  329728
+calc_loss_loader..
+num_batches:  1 len of data_loader:  39
+0 of 391 of 39finish calc_loss_loader..
+calc_loss_loader..
+num_batches:  1 len of data_loader:  5
+0 of 51 of 5finish calc_loss_loader..
+Epoch 5 (Step 000160): Train loss 5.005, Val loss 7.248
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  161  tokens seen:  331776
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  162  tokens seen:  333824
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  163  tokens seen:  335872
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  164  tokens seen:  337920
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  165  tokens seen:  339968
+calc_loss_loader..
+num_batches:  1 len of data_loader:  39
+0 of 391 of 39finish calc_loss_loader..
+calc_loss_loader..
+num_batches:  1 len of data_loader:  5
+0 of 51 of 5finish calc_loss_loader..
+Epoch 5 (Step 000165): Train loss 4.495, Val loss 7.289
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  166  tokens seen:  342016
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  167  tokens seen:  344064
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  168  tokens seen:  346112
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  169  tokens seen:  348160
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  170  tokens seen:  350208
+calc_loss_loader..
+num_batches:  1 len of data_loader:  39
+0 of 391 of 39finish calc_loss_loader..
+calc_loss_loader..
+num_batches:  1 len of data_loader:  5
+0 of 51 of 5finish calc_loss_loader..
+Epoch 5 (Step 000170): Train loss 4.967, Val loss 7.316
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  171  tokens seen:  352256
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  172  tokens seen:  354304
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  173  tokens seen:  356352
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  174  tokens seen:  358400
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  175  tokens seen:  360448
+calc_loss_loader..
+num_batches:  1 len of data_loader:  39
+0 of 391 of 39finish calc_loss_loader..
+calc_loss_loader..
+num_batches:  1 len of data_loader:  5
+0 of 51 of 5finish calc_loss_loader..
+Epoch 5 (Step 000175): Train loss 4.750, Val loss 7.309
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  176  tokens seen:  362496
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  177  tokens seen:  364544
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  178  tokens seen:  366592
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  179  tokens seen:  368640
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  180  tokens seen:  370688
+calc_loss_loader..
+num_batches:  1 len of data_loader:  39
+0 of 391 of 39finish calc_loss_loader..
+calc_loss_loader..
+num_batches:  1 len of data_loader:  5
+0 of 51 of 5finish calc_loss_loader..
+Epoch 5 (Step 000180): Train loss 4.289, Val loss 7.293
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  181  tokens seen:  372736
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  182  tokens seen:  374784
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  183  tokens seen:  376832
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  184  tokens seen:  378880
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  185  tokens seen:  380928
+calc_loss_loader..
+num_batches:  1 len of data_loader:  39
+0 of 391 of 39finish calc_loss_loader..
+calc_loss_loader..
+num_batches:  1 len of data_loader:  5
+0 of 51 of 5finish calc_loss_loader..
+Epoch 5 (Step 000185): Train loss 3.933, Val loss 7.268
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  186  tokens seen:  382976
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  187  tokens seen:  385024
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  188  tokens seen:  387072
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  189  tokens seen:  389120
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  190  tokens seen:  391168
+calc_loss_loader..
+num_batches:  1 len of data_loader:  39
+0 of 391 of 39finish calc_loss_loader..
+calc_loss_loader..
+num_batches:  1 len of data_loader:  5
+0 of 51 of 5finish calc_loss_loader..
+Epoch 5 (Step 000190): Train loss 4.178, Val loss 7.238
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  191  tokens seen:  393216
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  192  tokens seen:  395264
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  193  tokens seen:  397312
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  194  tokens seen:  399360
+
+out of inner input_batch loop..
+generate and print sample..
+
+Every effort moves you, the U.                                              
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  195  tokens seen:  401408
+calc_loss_loader..
+num_batches:  1 len of data_loader:  39
+0 of 391 of 39finish calc_loss_loader..
+calc_loss_loader..
+num_batches:  1 len of data_loader:  5
+0 of 51 of 5finish calc_loss_loader..
+Epoch 6 (Step 000195): Train loss 3.640, Val loss 7.111
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  196  tokens seen:  403456
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  197  tokens seen:  405504
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  198  tokens seen:  407552
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  199  tokens seen:  409600
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  200  tokens seen:  411648
+calc_loss_loader..
+num_batches:  1 len of data_loader:  39
+0 of 391 of 39finish calc_loss_loader..
+calc_loss_loader..
+num_batches:  1 len of data_loader:  5
+0 of 51 of 5finish calc_loss_loader..
+Epoch 6 (Step 000200): Train loss 3.611, Val loss 7.192
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  201  tokens seen:  413696
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  202  tokens seen:  415744
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  203  tokens seen:  417792
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  204  tokens seen:  419840
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  205  tokens seen:  421888
+calc_loss_loader..
+num_batches:  1 len of data_loader:  39
+0 of 391 of 39finish calc_loss_loader..
+calc_loss_loader..
+num_batches:  1 len of data_loader:  5
+0 of 51 of 5finish calc_loss_loader..
+Epoch 6 (Step 000205): Train loss 3.826, Val loss 7.273
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  206  tokens seen:  423936
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  207  tokens seen:  425984
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  208  tokens seen:  428032
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  209  tokens seen:  430080
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  210  tokens seen:  432128
+calc_loss_loader..
+num_batches:  1 len of data_loader:  39
+0 of 391 of 39finish calc_loss_loader..
+calc_loss_loader..
+num_batches:  1 len of data_loader:  5
+0 of 51 of 5finish calc_loss_loader..
+Epoch 6 (Step 000210): Train loss 3.341, Val loss 7.256
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  211  tokens seen:  434176
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  212  tokens seen:  436224
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  213  tokens seen:  438272
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  214  tokens seen:  440320
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  215  tokens seen:  442368
+calc_loss_loader..
+num_batches:  1 len of data_loader:  39
+0 of 391 of 39finish calc_loss_loader..
+calc_loss_loader..
+num_batches:  1 len of data_loader:  5
+0 of 51 of 5finish calc_loss_loader..
+Epoch 6 (Step 000215): Train loss 3.228, Val loss 7.266
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  216  tokens seen:  444416
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  217  tokens seen:  446464
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  218  tokens seen:  448512
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  219  tokens seen:  450560
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  220  tokens seen:  452608
+calc_loss_loader..
+num_batches:  1 len of data_loader:  39
+0 of 391 of 39finish calc_loss_loader..
+calc_loss_loader..
+num_batches:  1 len of data_loader:  5
+0 of 51 of 5finish calc_loss_loader..
+Epoch 6 (Step 000220): Train loss 2.896, Val loss 7.323
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  221  tokens seen:  454656
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  222  tokens seen:  456704
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  223  tokens seen:  458752
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  224  tokens seen:  460800
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  225  tokens seen:  462848
+calc_loss_loader..
+num_batches:  1 len of data_loader:  39
+0 of 391 of 39finish calc_loss_loader..
+calc_loss_loader..
+num_batches:  1 len of data_loader:  5
+0 of 51 of 5finish calc_loss_loader..
+Epoch 6 (Step 000225): Train loss 2.860, Val loss 7.350
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  226  tokens seen:  464896
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  227  tokens seen:  466944
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  228  tokens seen:  468992
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  229  tokens seen:  471040
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  230  tokens seen:  473088
+calc_loss_loader..
+num_batches:  1 len of data_loader:  39
+0 of 391 of 39finish calc_loss_loader..
+calc_loss_loader..
+num_batches:  1 len of data_loader:  5
+0 of 51 of 5finish calc_loss_loader..
+Epoch 6 (Step 000230): Train loss 2.738, Val loss 7.252
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  231  tokens seen:  475136
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  232  tokens seen:  477184
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  233  tokens seen:  479232
+
+out of inner input_batch loop..
+generate and print sample..
+
+Every effort moves you, and that the state as a true of the state's claim that the state.                                 
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  234  tokens seen:  481280
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  235  tokens seen:  483328
+calc_loss_loader..
+num_batches:  1 len of data_loader:  39
+0 of 391 of 39finish calc_loss_loader..
+calc_loss_loader..
+num_batches:  1 len of data_loader:  5
+0 of 51 of 5finish calc_loss_loader..
+Epoch 7 (Step 000235): Train loss 2.286, Val loss 7.310
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  236  tokens seen:  485376
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  237  tokens seen:  487424
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  238  tokens seen:  489472
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  239  tokens seen:  491520
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  240  tokens seen:  493568
+calc_loss_loader..
+num_batches:  1 len of data_loader:  39
+0 of 391 of 39finish calc_loss_loader..
+calc_loss_loader..
+num_batches:  1 len of data_loader:  5
+0 of 51 of 5finish calc_loss_loader..
+Epoch 7 (Step 000240): Train loss 2.265, Val loss 7.403
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  241  tokens seen:  495616
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  242  tokens seen:  497664
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  243  tokens seen:  499712
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  244  tokens seen:  501760
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  245  tokens seen:  503808
+calc_loss_loader..
+num_batches:  1 len of data_loader:  39
+0 of 391 of 39finish calc_loss_loader..
+calc_loss_loader..
+num_batches:  1 len of data_loader:  5
+0 of 51 of 5finish calc_loss_loader..
+Epoch 7 (Step 000245): Train loss 2.234, Val loss 7.488
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  246  tokens seen:  505856
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  247  tokens seen:  507904
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  248  tokens seen:  509952
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  249  tokens seen:  512000
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  250  tokens seen:  514048
+calc_loss_loader..
+num_batches:  1 len of data_loader:  39
+0 of 391 of 39finish calc_loss_loader..
+calc_loss_loader..
+num_batches:  1 len of data_loader:  5
+0 of 51 of 5finish calc_loss_loader..
+Epoch 7 (Step 000250): Train loss 1.552, Val loss 7.517
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  251  tokens seen:  516096
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  252  tokens seen:  518144
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  253  tokens seen:  520192
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  254  tokens seen:  522240
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  255  tokens seen:  524288
+calc_loss_loader..
+num_batches:  1 len of data_loader:  39
+0 of 391 of 39finish calc_loss_loader..
+calc_loss_loader..
+num_batches:  1 len of data_loader:  5
+0 of 51 of 5finish calc_loss_loader..
+Epoch 7 (Step 000255): Train loss 1.898, Val loss 7.529
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  256  tokens seen:  526336
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  257  tokens seen:  528384
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  258  tokens seen:  530432
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  259  tokens seen:  532480
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  260  tokens seen:  534528
+calc_loss_loader..
+num_batches:  1 len of data_loader:  39
+0 of 391 of 39finish calc_loss_loader..
+calc_loss_loader..
+num_batches:  1 len of data_loader:  5
+0 of 51 of 5finish calc_loss_loader..
+Epoch 7 (Step 000260): Train loss 1.416, Val loss 7.575
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  261  tokens seen:  536576
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  262  tokens seen:  538624
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  263  tokens seen:  540672
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  264  tokens seen:  542720
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  265  tokens seen:  544768
+calc_loss_loader..
+num_batches:  1 len of data_loader:  39
+0 of 391 of 39finish calc_loss_loader..
+calc_loss_loader..
+num_batches:  1 len of data_loader:  5
+0 of 51 of 5finish calc_loss_loader..
+Epoch 7 (Step 000265): Train loss 1.502, Val loss 7.624
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  266  tokens seen:  546816
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  267  tokens seen:  548864
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  268  tokens seen:  550912
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  269  tokens seen:  552960
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  270  tokens seen:  555008
+calc_loss_loader..
+num_batches:  1 len of data_loader:  39
+0 of 391 of 39finish calc_loss_loader..
+calc_loss_loader..
+num_batches:  1 len of data_loader:  5
+0 of 51 of 5finish calc_loss_loader..
+Epoch 7 (Step 000270): Train loss 1.201, Val loss 7.594
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  271  tokens seen:  557056
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  272  tokens seen:  559104
+
+out of inner input_batch loop..
+generate and print sample..
+
+Every effort moves you, but uneventful life, which explains why surfaces with a low albedo, and the high albedo is that there are much of the effects of a reputation as a teen, and can be motivated effect a change, and in the
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  273  tokens seen:  561152
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  274  tokens seen:  563200
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  275  tokens seen:  565248
+calc_loss_loader..
+num_batches:  1 len of data_loader:  39
+0 of 391 of 39finish calc_loss_loader..
+calc_loss_loader..
+num_batches:  1 len of data_loader:  5
+0 of 51 of 5finish calc_loss_loader..
+Epoch 8 (Step 000275): Train loss 1.265, Val loss 7.698
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  276  tokens seen:  567296
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  277  tokens seen:  569344
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  278  tokens seen:  571392
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  279  tokens seen:  573440
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  280  tokens seen:  575488
+calc_loss_loader..
+num_batches:  1 len of data_loader:  39
+0 of 391 of 39finish calc_loss_loader..
+calc_loss_loader..
+num_batches:  1 len of data_loader:  5
+0 of 51 of 5finish calc_loss_loader..
+Epoch 8 (Step 000280): Train loss 1.530, Val loss 7.730
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  281  tokens seen:  577536
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  282  tokens seen:  579584
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  283  tokens seen:  581632
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  284  tokens seen:  583680
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  285  tokens seen:  585728
+calc_loss_loader..
+num_batches:  1 len of data_loader:  39
+0 of 391 of 39finish calc_loss_loader..
+calc_loss_loader..
+num_batches:  1 len of data_loader:  5
+0 of 51 of 5finish calc_loss_loader..
+Epoch 8 (Step 000285): Train loss 1.130, Val loss 7.822
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  286  tokens seen:  587776
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  287  tokens seen:  589824
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  288  tokens seen:  591872
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  289  tokens seen:  593920
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  290  tokens seen:  595968
+calc_loss_loader..
+num_batches:  1 len of data_loader:  39
+0 of 391 of 39finish calc_loss_loader..
+calc_loss_loader..
+num_batches:  1 len of data_loader:  5
+0 of 51 of 5finish calc_loss_loader..
+Epoch 8 (Step 000290): Train loss 1.004, Val loss 7.863
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  291  tokens seen:  598016
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  292  tokens seen:  600064
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  293  tokens seen:  602112
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  294  tokens seen:  604160
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  295  tokens seen:  606208
+calc_loss_loader..
+num_batches:  1 len of data_loader:  39
+0 of 391 of 39finish calc_loss_loader..
+calc_loss_loader..
+num_batches:  1 len of data_loader:  5
+0 of 51 of 5finish calc_loss_loader..
+Epoch 8 (Step 000295): Train loss 0.798, Val loss 7.942
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  296  tokens seen:  608256
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  297  tokens seen:  610304
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  298  tokens seen:  612352
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  299  tokens seen:  614400
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  300  tokens seen:  616448
+calc_loss_loader..
+num_batches:  1 len of data_loader:  39
+0 of 391 of 39finish calc_loss_loader..
+calc_loss_loader..
+num_batches:  1 len of data_loader:  5
+0 of 51 of 5finish calc_loss_loader..
+Epoch 8 (Step 000300): Train loss 0.757, Val loss 7.943
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  301  tokens seen:  618496
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  302  tokens seen:  620544
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  303  tokens seen:  622592
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  304  tokens seen:  624640
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  305  tokens seen:  626688
+calc_loss_loader..
+num_batches:  1 len of data_loader:  39
+0 of 391 of 39finish calc_loss_loader..
+calc_loss_loader..
+num_batches:  1 len of data_loader:  5
+0 of 51 of 5finish calc_loss_loader..
+Epoch 8 (Step 000305): Train loss 0.993, Val loss 7.908
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  306  tokens seen:  628736
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  307  tokens seen:  630784
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  308  tokens seen:  632832
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  309  tokens seen:  634880
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  310  tokens seen:  636928
+calc_loss_loader..
+num_batches:  1 len of data_loader:  39
+0 of 391 of 39finish calc_loss_loader..
+calc_loss_loader..
+num_batches:  1 len of data_loader:  5
+0 of 51 of 5finish calc_loss_loader..
+Epoch 8 (Step 000310): Train loss 0.647, Val loss 7.902
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  311  tokens seen:  638976
+
+out of inner input_batch loop..
+generate and print sample..
+
+Every effort moves you is "covered with the young man dressed as a certain category during the qualifying (telos) has set (COE), and the Accrediting Council for Independent Colleges and Schools (ACICS).          
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  312  tokens seen:  641024
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  313  tokens seen:  643072
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  314  tokens seen:  645120
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  315  tokens seen:  647168
+calc_loss_loader..
+num_batches:  1 len of data_loader:  39
+0 of 391 of 39finish calc_loss_loader..
+calc_loss_loader..
+num_batches:  1 len of data_loader:  5
+0 of 51 of 5finish calc_loss_loader..
+Epoch 9 (Step 000315): Train loss 0.653, Val loss 8.110
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  316  tokens seen:  649216
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  317  tokens seen:  651264
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  318  tokens seen:  653312
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  319  tokens seen:  655360
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  320  tokens seen:  657408
+calc_loss_loader..
+num_batches:  1 len of data_loader:  39
+0 of 391 of 39finish calc_loss_loader..
+calc_loss_loader..
+num_batches:  1 len of data_loader:  5
+0 of 51 of 5finish calc_loss_loader..
+Epoch 9 (Step 000320): Train loss 0.537, Val loss 8.124
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  321  tokens seen:  659456
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  322  tokens seen:  661504
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  323  tokens seen:  663552
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  324  tokens seen:  665600
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  325  tokens seen:  667648
+calc_loss_loader..
+num_batches:  1 len of data_loader:  39
+0 of 391 of 39finish calc_loss_loader..
+calc_loss_loader..
+num_batches:  1 len of data_loader:  5
+0 of 51 of 5finish calc_loss_loader..
+Epoch 9 (Step 000325): Train loss 0.477, Val loss 8.193
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  326  tokens seen:  669696
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  327  tokens seen:  671744
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  328  tokens seen:  673792
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  329  tokens seen:  675840
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  330  tokens seen:  677888
+calc_loss_loader..
+num_batches:  1 len of data_loader:  39
+0 of 391 of 39finish calc_loss_loader..
+calc_loss_loader..
+num_batches:  1 len of data_loader:  5
+0 of 51 of 5finish calc_loss_loader..
+Epoch 9 (Step 000330): Train loss 0.433, Val loss 8.177
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  331  tokens seen:  679936
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  332  tokens seen:  681984
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  333  tokens seen:  684032
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  334  tokens seen:  686080
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  335  tokens seen:  688128
+calc_loss_loader..
+num_batches:  1 len of data_loader:  39
+0 of 391 of 39finish calc_loss_loader..
+calc_loss_loader..
+num_batches:  1 len of data_loader:  5
+0 of 51 of 5finish calc_loss_loader..
+Epoch 9 (Step 000335): Train loss 0.388, Val loss 8.275
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  336  tokens seen:  690176
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  337  tokens seen:  692224
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  338  tokens seen:  694272
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  339  tokens seen:  696320
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  340  tokens seen:  698368
+calc_loss_loader..
+num_batches:  1 len of data_loader:  39
+0 of 391 of 39finish calc_loss_loader..
+calc_loss_loader..
+num_batches:  1 len of data_loader:  5
+0 of 51 of 5finish calc_loss_loader..
+Epoch 9 (Step 000340): Train loss 0.393, Val loss 8.240
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  341  tokens seen:  700416
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  342  tokens seen:  702464
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  343  tokens seen:  704512
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  344  tokens seen:  706560
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  345  tokens seen:  708608
+calc_loss_loader..
+num_batches:  1 len of data_loader:  39
+0 of 391 of 39finish calc_loss_loader..
+calc_loss_loader..
+num_batches:  1 len of data_loader:  5
+0 of 51 of 5finish calc_loss_loader..
+Epoch 9 (Step 000345): Train loss 0.262, Val loss 8.264
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  346  tokens seen:  710656
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  347  tokens seen:  712704
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  348  tokens seen:  714752
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  349  tokens seen:  716800
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  350  tokens seen:  718848
+calc_loss_loader..
+num_batches:  1 len of data_loader:  39
+0 of 391 of 39finish calc_loss_loader..
+calc_loss_loader..
+num_batches:  1 len of data_loader:  5
+0 of 51 of 5finish calc_loss_loader..
+Epoch 9 (Step 000350): Train loss 0.296, Val loss 8.255
+
+out of inner input_batch loop..
+generate and print sample..
+
+Every effort moves you is an open back rounded vowel in the IPA ᶛ (aka reflectivity) and oppose the Gettysburg battlefield cemetery on November 19, an obsolete or non-third of the New World Report, an enticement Gershwin knew
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  351  tokens seen:  720896
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  352  tokens seen:  722944
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  353  tokens seen:  724992
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  354  tokens seen:  727040
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  355  tokens seen:  729088
+calc_loss_loader..
+num_batches:  1 len of data_loader:  39
+0 of 391 of 39finish calc_loss_loader..
+calc_loss_loader..
+num_batches:  1 len of data_loader:  5
+0 of 51 of 5finish calc_loss_loader..
+Epoch 10 (Step 000355): Train loss 0.274, Val loss 8.471
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  356  tokens seen:  731136
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  357  tokens seen:  733184
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  358  tokens seen:  735232
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  359  tokens seen:  737280
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  360  tokens seen:  739328
+calc_loss_loader..
+num_batches:  1 len of data_loader:  39
+0 of 391 of 39finish calc_loss_loader..
+calc_loss_loader..
+num_batches:  1 len of data_loader:  5
+0 of 51 of 5finish calc_loss_loader..
+Epoch 10 (Step 000360): Train loss 0.255, Val loss 8.427
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  361  tokens seen:  741376
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  362  tokens seen:  743424
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  363  tokens seen:  745472
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  364  tokens seen:  747520
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  365  tokens seen:  749568
+calc_loss_loader..
+num_batches:  1 len of data_loader:  39
+0 of 391 of 39finish calc_loss_loader..
+calc_loss_loader..
+num_batches:  1 len of data_loader:  5
+0 of 51 of 5finish calc_loss_loader..
+Epoch 10 (Step 000365): Train loss 0.216, Val loss 8.492
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  366  tokens seen:  751616
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  367  tokens seen:  753664
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  368  tokens seen:  755712
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  369  tokens seen:  757760
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  370  tokens seen:  759808
+calc_loss_loader..
+num_batches:  1 len of data_loader:  39
+0 of 391 of 39finish calc_loss_loader..
+calc_loss_loader..
+num_batches:  1 len of data_loader:  5
+0 of 51 of 5finish calc_loss_loader..
+Epoch 10 (Step 000370): Train loss 0.226, Val loss 8.456
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  371  tokens seen:  761856
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  372  tokens seen:  763904
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  373  tokens seen:  765952
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  374  tokens seen:  768000
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  375  tokens seen:  770048
+calc_loss_loader..
+num_batches:  1 len of data_loader:  39
+0 of 391 of 39finish calc_loss_loader..
+calc_loss_loader..
+num_batches:  1 len of data_loader:  5
+0 of 51 of 5finish calc_loss_loader..
+Epoch 10 (Step 000375): Train loss 0.104, Val loss 8.500
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  376  tokens seen:  772096
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  377  tokens seen:  774144
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  378  tokens seen:  776192
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  379  tokens seen:  778240
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  380  tokens seen:  780288
+calc_loss_loader..
+num_batches:  1 len of data_loader:  39
+0 of 391 of 39finish calc_loss_loader..
+calc_loss_loader..
+num_batches:  1 len of data_loader:  5
+0 of 51 of 5finish calc_loss_loader..
+Epoch 10 (Step 000380): Train loss 0.259, Val loss 8.539
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  381  tokens seen:  782336
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  382  tokens seen:  784384
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  383  tokens seen:  786432
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  384  tokens seen:  788480
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  385  tokens seen:  790528
+calc_loss_loader..
+num_batches:  1 len of data_loader:  39
+0 of 391 of 39finish calc_loss_loader..
+calc_loss_loader..
+num_batches:  1 len of data_loader:  5
+0 of 51 of 5finish calc_loss_loader..
+Epoch 10 (Step 000385): Train loss 0.170, Val loss 8.569
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  386  tokens seen:  792576
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  387  tokens seen:  794624
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  388  tokens seen:  796672
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  389  tokens seen:  798720
+
+out of inner input_batch loop..
+generate and print sample..
+
+Every effort moves you can lead a proper assault on the city of the city's victories of the state's surface at creating dichotomies between the bulk density sensations and its own. The city was moved to avoid collision in what became part of the late twentieth century, in
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  390  tokens seen:  800768
+calc_loss_loader..
+num_batches:  1 len of data_loader:  39
+0 of 391 of 39finish calc_loss_loader..
+calc_loss_loader..
+num_batches:  1 len of data_loader:  5
+0 of 51 of 5finish calc_loss_loader..
+Epoch 11 (Step 000390): Train loss 0.169, Val loss 8.544
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  391  tokens seen:  802816
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  392  tokens seen:  804864
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  393  tokens seen:  806912
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  394  tokens seen:  808960
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  395  tokens seen:  811008
+calc_loss_loader..
+num_batches:  1 len of data_loader:  39
+0 of 391 of 39finish calc_loss_loader..
+calc_loss_loader..
+num_batches:  1 len of data_loader:  5
+0 of 51 of 5finish calc_loss_loader..
+Epoch 11 (Step 000395): Train loss 0.116, Val loss 8.725
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  396  tokens seen:  813056
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  397  tokens seen:  815104
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  398  tokens seen:  817152
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  399  tokens seen:  819200
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  400  tokens seen:  821248
+calc_loss_loader..
+num_batches:  1 len of data_loader:  39
+0 of 391 of 39finish calc_loss_loader..
+calc_loss_loader..
+num_batches:  1 len of data_loader:  5
+0 of 51 of 5finish calc_loss_loader..
+Epoch 11 (Step 000400): Train loss 0.114, Val loss 8.753
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  401  tokens seen:  823296
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  402  tokens seen:  825344
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  403  tokens seen:  827392
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  404  tokens seen:  829440
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  405  tokens seen:  831488
+calc_loss_loader..
+num_batches:  1 len of data_loader:  39
+0 of 391 of 39finish calc_loss_loader..
+calc_loss_loader..
+num_batches:  1 len of data_loader:  5
+0 of 51 of 5finish calc_loss_loader..
+Epoch 11 (Step 000405): Train loss 0.141, Val loss 8.612
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  406  tokens seen:  833536
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  407  tokens seen:  835584
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  408  tokens seen:  837632
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  409  tokens seen:  839680
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  410  tokens seen:  841728
+calc_loss_loader..
+num_batches:  1 len of data_loader:  39
+0 of 391 of 39finish calc_loss_loader..
+calc_loss_loader..
+num_batches:  1 len of data_loader:  5
+0 of 51 of 5finish calc_loss_loader..
+Epoch 11 (Step 000410): Train loss 0.090, Val loss 8.635
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  411  tokens seen:  843776
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  412  tokens seen:  845824
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  413  tokens seen:  847872
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  414  tokens seen:  849920
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  415  tokens seen:  851968
+calc_loss_loader..
+num_batches:  1 len of data_loader:  39
+0 of 391 of 39finish calc_loss_loader..
+calc_loss_loader..
+num_batches:  1 len of data_loader:  5
+0 of 51 of 5finish calc_loss_loader..
+Epoch 11 (Step 000415): Train loss 0.119, Val loss 8.690
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  416  tokens seen:  854016
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  417  tokens seen:  856064
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  418  tokens seen:  858112
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  419  tokens seen:  860160
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  420  tokens seen:  862208
+calc_loss_loader..
+num_batches:  1 len of data_loader:  39
+0 of 391 of 39finish calc_loss_loader..
+calc_loss_loader..
+num_batches:  1 len of data_loader:  5
+0 of 51 of 5finish calc_loss_loader..
+Epoch 11 (Step 000420): Train loss 0.072, Val loss 8.680
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  421  tokens seen:  864256
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  422  tokens seen:  866304
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  423  tokens seen:  868352
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  424  tokens seen:  870400
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  425  tokens seen:  872448
+calc_loss_loader..
+num_batches:  1 len of data_loader:  39
+0 of 391 of 39finish calc_loss_loader..
+calc_loss_loader..
+num_batches:  1 len of data_loader:  5
+0 of 51 of 5finish calc_loss_loader..
+Epoch 11 (Step 000425): Train loss 0.058, Val loss 8.623
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  426  tokens seen:  874496
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  427  tokens seen:  876544
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  428  tokens seen:  878592
+
+out of inner input_batch loop..
+generate and print sample..
+
+Every effort moves youitudes (e.g., Siberia) were neutral or perhaps warming.  Water  Water reflects light very differently from typical terrestrial materials. The reflectivity of a water surface is calculated using the Fresnel equations.  At the scale of
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  429  tokens seen:  880640
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  430  tokens seen:  882688
+calc_loss_loader..
+num_batches:  1 len of data_loader:  39
+0 of 391 of 39finish calc_loss_loader..
+calc_loss_loader..
+num_batches:  1 len of data_loader:  5
+0 of 51 of 5finish calc_loss_loader..
+Epoch 12 (Step 000430): Train loss 0.056, Val loss 8.682
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  431  tokens seen:  884736
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  432  tokens seen:  886784
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  433  tokens seen:  888832
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  434  tokens seen:  890880
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  435  tokens seen:  892928
+calc_loss_loader..
+num_batches:  1 len of data_loader:  39
+0 of 391 of 39finish calc_loss_loader..
+calc_loss_loader..
+num_batches:  1 len of data_loader:  5
+0 of 51 of 5finish calc_loss_loader..
+Epoch 12 (Step 000435): Train loss 0.079, Val loss 8.804
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  436  tokens seen:  894976
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  437  tokens seen:  897024
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  438  tokens seen:  899072
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  439  tokens seen:  901120
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  440  tokens seen:  903168
+calc_loss_loader..
+num_batches:  1 len of data_loader:  39
+0 of 391 of 39finish calc_loss_loader..
+calc_loss_loader..
+num_batches:  1 len of data_loader:  5
+0 of 51 of 5finish calc_loss_loader..
+Epoch 12 (Step 000440): Train loss 0.054, Val loss 8.873
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  441  tokens seen:  905216
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  442  tokens seen:  907264
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  443  tokens seen:  909312
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  444  tokens seen:  911360
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  445  tokens seen:  913408
+calc_loss_loader..
+num_batches:  1 len of data_loader:  39
+0 of 391 of 39finish calc_loss_loader..
+calc_loss_loader..
+num_batches:  1 len of data_loader:  5
+0 of 51 of 5finish calc_loss_loader..
+Epoch 12 (Step 000445): Train loss 0.059, Val loss 8.763
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  446  tokens seen:  915456
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  447  tokens seen:  917504
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  448  tokens seen:  919552
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  449  tokens seen:  921600
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  450  tokens seen:  923648
+calc_loss_loader..
+num_batches:  1 len of data_loader:  39
+0 of 391 of 39finish calc_loss_loader..
+calc_loss_loader..
+num_batches:  1 len of data_loader:  5
+0 of 51 of 5finish calc_loss_loader..
+Epoch 12 (Step 000450): Train loss 0.047, Val loss 8.772
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  451  tokens seen:  925696
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  452  tokens seen:  927744
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  453  tokens seen:  929792
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  454  tokens seen:  931840
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  455  tokens seen:  933888
+calc_loss_loader..
+num_batches:  1 len of data_loader:  39
+0 of 391 of 39finish calc_loss_loader..
+calc_loss_loader..
+num_batches:  1 len of data_loader:  5
+0 of 51 of 5finish calc_loss_loader..
+Epoch 12 (Step 000455): Train loss 0.051, Val loss 8.833
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  456  tokens seen:  935936
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  457  tokens seen:  937984
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  458  tokens seen:  940032
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  459  tokens seen:  942080
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  460  tokens seen:  944128
+calc_loss_loader..
+num_batches:  1 len of data_loader:  39
+0 of 391 of 39finish calc_loss_loader..
+calc_loss_loader..
+num_batches:  1 len of data_loader:  5
+0 of 51 of 5finish calc_loss_loader..
+Epoch 12 (Step 000460): Train loss 0.035, Val loss 8.867
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  461  tokens seen:  946176
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  462  tokens seen:  948224
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  463  tokens seen:  950272
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  464  tokens seen:  952320
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  465  tokens seen:  954368
+calc_loss_loader..
+num_batches:  1 len of data_loader:  39
+0 of 391 of 39finish calc_loss_loader..
+calc_loss_loader..
+num_batches:  1 len of data_loader:  5
+0 of 51 of 5finish calc_loss_loader..
+Epoch 12 (Step 000465): Train loss 0.020, Val loss 8.795
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  466  tokens seen:  956416
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  467  tokens seen:  958464
+
+out of inner input_batch loop..
+generate and print sample..
+
+Every effort moves youitudes (e.g., Siberia) were neutral or perhaps warming.  Water  Water reflects light very differently from typical terrestrial materials. The reflectivity of a water surface is calculated using the Fresnel equations.  At the scale of
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  468  tokens seen:  960512
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  469  tokens seen:  962560
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  470  tokens seen:  964608
+calc_loss_loader..
+num_batches:  1 len of data_loader:  39
+0 of 391 of 39finish calc_loss_loader..
+calc_loss_loader..
+num_batches:  1 len of data_loader:  5
+0 of 51 of 5finish calc_loss_loader..
+Epoch 13 (Step 000470): Train loss 0.019, Val loss 8.826
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  471  tokens seen:  966656
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  472  tokens seen:  968704
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  473  tokens seen:  970752
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  474  tokens seen:  972800
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  475  tokens seen:  974848
+calc_loss_loader..
+num_batches:  1 len of data_loader:  39
+0 of 391 of 39finish calc_loss_loader..
+calc_loss_loader..
+num_batches:  1 len of data_loader:  5
+0 of 51 of 5finish calc_loss_loader..
+Epoch 13 (Step 000475): Train loss 0.050, Val loss 8.918
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  476  tokens seen:  976896
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  477  tokens seen:  978944
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  478  tokens seen:  980992
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  479  tokens seen:  983040
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  480  tokens seen:  985088
+calc_loss_loader..
+num_batches:  1 len of data_loader:  39
+0 of 391 of 39finish calc_loss_loader..
+calc_loss_loader..
+num_batches:  1 len of data_loader:  5
+0 of 51 of 5finish calc_loss_loader..
+Epoch 13 (Step 000480): Train loss 0.022, Val loss 8.913
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  481  tokens seen:  987136
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  482  tokens seen:  989184
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  483  tokens seen:  991232
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  484  tokens seen:  993280
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  485  tokens seen:  995328
+calc_loss_loader..
+num_batches:  1 len of data_loader:  39
+0 of 391 of 39finish calc_loss_loader..
+calc_loss_loader..
+num_batches:  1 len of data_loader:  5
+0 of 51 of 5finish calc_loss_loader..
+Epoch 13 (Step 000485): Train loss 0.037, Val loss 8.865
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  486  tokens seen:  997376
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  487  tokens seen:  999424
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  488  tokens seen:  1001472
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  489  tokens seen:  1003520
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  490  tokens seen:  1005568
+calc_loss_loader..
+num_batches:  1 len of data_loader:  39
+0 of 391 of 39finish calc_loss_loader..
+calc_loss_loader..
+num_batches:  1 len of data_loader:  5
+0 of 51 of 5finish calc_loss_loader..
+Epoch 13 (Step 000490): Train loss 0.032, Val loss 8.883
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  491  tokens seen:  1007616
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  492  tokens seen:  1009664
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  493  tokens seen:  1011712
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  494  tokens seen:  1013760
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  495  tokens seen:  1015808
+calc_loss_loader..
+num_batches:  1 len of data_loader:  39
+0 of 391 of 39finish calc_loss_loader..
+calc_loss_loader..
+num_batches:  1 len of data_loader:  5
+0 of 51 of 5finish calc_loss_loader..
+Epoch 13 (Step 000495): Train loss 0.023, Val loss 8.923
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  496  tokens seen:  1017856
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  497  tokens seen:  1019904
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  498  tokens seen:  1021952
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  499  tokens seen:  1024000
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  500  tokens seen:  1026048
+calc_loss_loader..
+num_batches:  1 len of data_loader:  39
+0 of 391 of 39finish calc_loss_loader..
+calc_loss_loader..
+num_batches:  1 len of data_loader:  5
+0 of 51 of 5finish calc_loss_loader..
+Epoch 13 (Step 000500): Train loss 0.014, Val loss 8.956
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  501  tokens seen:  1028096
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  502  tokens seen:  1030144
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  503  tokens seen:  1032192
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  504  tokens seen:  1034240
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  505  tokens seen:  1036288
+calc_loss_loader..
+num_batches:  1 len of data_loader:  39
+0 of 391 of 39finish calc_loss_loader..
+calc_loss_loader..
+num_batches:  1 len of data_loader:  5
+0 of 51 of 5finish calc_loss_loader..
+Epoch 13 (Step 000505): Train loss 0.012, Val loss 8.968
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  506  tokens seen:  1038336
+
+out of inner input_batch loop..
+generate and print sample..
+
+Every effort moves youitudes (e.g., Siberia) were neutral or perhaps warming.  Water  Water reflects light very differently from typical terrestrial materials. The reflectivity of a water surface is calculated using the Fresnel equations.  At the scale of
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  507  tokens seen:  1040384
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  508  tokens seen:  1042432
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  509  tokens seen:  1044480
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  510  tokens seen:  1046528
+calc_loss_loader..
+num_batches:  1 len of data_loader:  39
+0 of 391 of 39finish calc_loss_loader..
+calc_loss_loader..
+num_batches:  1 len of data_loader:  5
+0 of 51 of 5finish calc_loss_loader..
+Epoch 14 (Step 000510): Train loss 0.011, Val loss 8.971
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  511  tokens seen:  1048576
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  512  tokens seen:  1050624
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  513  tokens seen:  1052672
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  514  tokens seen:  1054720
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  515  tokens seen:  1056768
+calc_loss_loader..
+num_batches:  1 len of data_loader:  39
+0 of 391 of 39finish calc_loss_loader..
+calc_loss_loader..
+num_batches:  1 len of data_loader:  5
+0 of 51 of 5finish calc_loss_loader..
+Epoch 14 (Step 000515): Train loss 0.007, Val loss 8.986
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  516  tokens seen:  1058816
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  517  tokens seen:  1060864
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  518  tokens seen:  1062912
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  519  tokens seen:  1064960
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  520  tokens seen:  1067008
+calc_loss_loader..
+num_batches:  1 len of data_loader:  39
+0 of 391 of 39finish calc_loss_loader..
+calc_loss_loader..
+num_batches:  1 len of data_loader:  5
+0 of 51 of 5finish calc_loss_loader..
+Epoch 14 (Step 000520): Train loss 0.012, Val loss 9.016
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  521  tokens seen:  1069056
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  522  tokens seen:  1071104
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  523  tokens seen:  1073152
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  524  tokens seen:  1075200
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  525  tokens seen:  1077248
+calc_loss_loader..
+num_batches:  1 len of data_loader:  39
+0 of 391 of 39finish calc_loss_loader..
+calc_loss_loader..
+num_batches:  1 len of data_loader:  5
+0 of 51 of 5finish calc_loss_loader..
+Epoch 14 (Step 000525): Train loss 0.010, Val loss 9.051
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  526  tokens seen:  1079296
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  527  tokens seen:  1081344
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  528  tokens seen:  1083392
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  529  tokens seen:  1085440
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  530  tokens seen:  1087488
+calc_loss_loader..
+num_batches:  1 len of data_loader:  39
+0 of 391 of 39finish calc_loss_loader..
+calc_loss_loader..
+num_batches:  1 len of data_loader:  5
+0 of 51 of 5finish calc_loss_loader..
+Epoch 14 (Step 000530): Train loss 0.010, Val loss 9.045
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  531  tokens seen:  1089536
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  532  tokens seen:  1091584
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  533  tokens seen:  1093632
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  534  tokens seen:  1095680
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  535  tokens seen:  1097728
+calc_loss_loader..
+num_batches:  1 len of data_loader:  39
+0 of 391 of 39finish calc_loss_loader..
+calc_loss_loader..
+num_batches:  1 len of data_loader:  5
+0 of 51 of 5finish calc_loss_loader..
+Epoch 14 (Step 000535): Train loss 0.008, Val loss 9.037
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  536  tokens seen:  1099776
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  537  tokens seen:  1101824
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  538  tokens seen:  1103872
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  539  tokens seen:  1105920
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  540  tokens seen:  1107968
+calc_loss_loader..
+num_batches:  1 len of data_loader:  39
+0 of 391 of 39finish calc_loss_loader..
+calc_loss_loader..
+num_batches:  1 len of data_loader:  5
+0 of 51 of 5finish calc_loss_loader..
+Epoch 14 (Step 000540): Train loss 0.010, Val loss 9.032
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  541  tokens seen:  1110016
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  542  tokens seen:  1112064
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  543  tokens seen:  1114112
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  544  tokens seen:  1116160
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  545  tokens seen:  1118208
+calc_loss_loader..
+num_batches:  1 len of data_loader:  39
+0 of 391 of 39finish calc_loss_loader..
+calc_loss_loader..
+num_batches:  1 len of data_loader:  5
+0 of 51 of 5finish calc_loss_loader..
+Epoch 14 (Step 000545): Train loss 0.007, Val loss 9.033
+
+out of inner input_batch loop..
+generate and print sample..
+
+Every effort moves you can lead a proper assault on the city of Troy.  After receiving the news of the death of Patroclus from Antilochus, the son of Nestor, Achilles grieves over his beloved companion's death. His mother The
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  546  tokens seen:  1120256
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  547  tokens seen:  1122304
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  548  tokens seen:  1124352
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  549  tokens seen:  1126400
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  550  tokens seen:  1128448
+calc_loss_loader..
+num_batches:  1 len of data_loader:  39
+0 of 391 of 39finish calc_loss_loader..
+calc_loss_loader..
+num_batches:  1 len of data_loader:  5
+0 of 51 of 5finish calc_loss_loader..
+Epoch 15 (Step 000550): Train loss 0.009, Val loss 9.039
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  551  tokens seen:  1130496
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  552  tokens seen:  1132544
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  553  tokens seen:  1134592
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  554  tokens seen:  1136640
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  555  tokens seen:  1138688
+calc_loss_loader..
+num_batches:  1 len of data_loader:  39
+0 of 391 of 39finish calc_loss_loader..
+calc_loss_loader..
+num_batches:  1 len of data_loader:  5
+0 of 51 of 5finish calc_loss_loader..
+Epoch 15 (Step 000555): Train loss 0.006, Val loss 9.045
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  556  tokens seen:  1140736
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  557  tokens seen:  1142784
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  558  tokens seen:  1144832
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  559  tokens seen:  1146880
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  560  tokens seen:  1148928
+calc_loss_loader..
+num_batches:  1 len of data_loader:  39
+0 of 391 of 39finish calc_loss_loader..
+calc_loss_loader..
+num_batches:  1 len of data_loader:  5
+0 of 51 of 5finish calc_loss_loader..
+Epoch 15 (Step 000560): Train loss 0.006, Val loss 9.044
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  561  tokens seen:  1150976
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  562  tokens seen:  1153024
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  563  tokens seen:  1155072
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  564  tokens seen:  1157120
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  565  tokens seen:  1159168
+calc_loss_loader..
+num_batches:  1 len of data_loader:  39
+0 of 391 of 39finish calc_loss_loader..
+calc_loss_loader..
+num_batches:  1 len of data_loader:  5
+0 of 51 of 5finish calc_loss_loader..
+Epoch 15 (Step 000565): Train loss 0.007, Val loss 9.048
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  566  tokens seen:  1161216
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  567  tokens seen:  1163264
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  568  tokens seen:  1165312
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  569  tokens seen:  1167360
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  570  tokens seen:  1169408
+calc_loss_loader..
+num_batches:  1 len of data_loader:  39
+0 of 391 of 39finish calc_loss_loader..
+calc_loss_loader..
+num_batches:  1 len of data_loader:  5
+0 of 51 of 5finish calc_loss_loader..
+Epoch 15 (Step 000570): Train loss 0.009, Val loss 9.057
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  571  tokens seen:  1171456
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  572  tokens seen:  1173504
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  573  tokens seen:  1175552
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  574  tokens seen:  1177600
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  575  tokens seen:  1179648
+calc_loss_loader..
+num_batches:  1 len of data_loader:  39
+0 of 391 of 39finish calc_loss_loader..
+calc_loss_loader..
+num_batches:  1 len of data_loader:  5
+0 of 51 of 5finish calc_loss_loader..
+Epoch 15 (Step 000575): Train loss 0.006, Val loss 9.063
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  576  tokens seen:  1181696
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  577  tokens seen:  1183744
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  578  tokens seen:  1185792
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  579  tokens seen:  1187840
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  580  tokens seen:  1189888
+calc_loss_loader..
+num_batches:  1 len of data_loader:  39
+0 of 391 of 39finish calc_loss_loader..
+calc_loss_loader..
+num_batches:  1 len of data_loader:  5
+0 of 51 of 5finish calc_loss_loader..
+Epoch 15 (Step 000580): Train loss 0.012, Val loss 9.069
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  581  tokens seen:  1191936
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  582  tokens seen:  1193984
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  583  tokens seen:  1196032
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  584  tokens seen:  1198080
+
+out of inner input_batch loop..
+generate and print sample..
+
+Every effort moves you can lead a proper assault on the city of Troy.  After receiving the news of the death of Patroclus from Antilochus, the son of Nestor, Achilles grieves over his beloved companion's death. His mother The
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  585  tokens seen:  1200128
+calc_loss_loader..
+num_batches:  1 len of data_loader:  39
+0 of 391 of 39finish calc_loss_loader..
+calc_loss_loader..
+num_batches:  1 len of data_loader:  5
+0 of 51 of 5finish calc_loss_loader..
+Epoch 16 (Step 000585): Train loss 0.005, Val loss 9.070
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  586  tokens seen:  1202176
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  587  tokens seen:  1204224
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  588  tokens seen:  1206272
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  589  tokens seen:  1208320
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  590  tokens seen:  1210368
+calc_loss_loader..
+num_batches:  1 len of data_loader:  39
+0 of 391 of 39finish calc_loss_loader..
+calc_loss_loader..
+num_batches:  1 len of data_loader:  5
+0 of 51 of 5finish calc_loss_loader..
+Epoch 16 (Step 000590): Train loss 0.006, Val loss 9.071
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  591  tokens seen:  1212416
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  592  tokens seen:  1214464
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  593  tokens seen:  1216512
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  594  tokens seen:  1218560
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  595  tokens seen:  1220608
+calc_loss_loader..
+num_batches:  1 len of data_loader:  39
+0 of 391 of 39finish calc_loss_loader..
+calc_loss_loader..
+num_batches:  1 len of data_loader:  5
+0 of 51 of 5finish calc_loss_loader..
+Epoch 16 (Step 000595): Train loss 0.008, Val loss 9.074
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  596  tokens seen:  1222656
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  597  tokens seen:  1224704
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  598  tokens seen:  1226752
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  599  tokens seen:  1228800
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  600  tokens seen:  1230848
+calc_loss_loader..
+num_batches:  1 len of data_loader:  39
+0 of 391 of 39finish calc_loss_loader..
+calc_loss_loader..
+num_batches:  1 len of data_loader:  5
+0 of 51 of 5finish calc_loss_loader..
+Epoch 16 (Step 000600): Train loss 0.006, Val loss 9.081
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  601  tokens seen:  1232896
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  602  tokens seen:  1234944
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  603  tokens seen:  1236992
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  604  tokens seen:  1239040
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  605  tokens seen:  1241088
+calc_loss_loader..
+num_batches:  1 len of data_loader:  39
+0 of 391 of 39finish calc_loss_loader..
+calc_loss_loader..
+num_batches:  1 len of data_loader:  5
+0 of 51 of 5finish calc_loss_loader..
+Epoch 16 (Step 000605): Train loss 0.006, Val loss 9.075
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  606  tokens seen:  1243136
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  607  tokens seen:  1245184
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  608  tokens seen:  1247232
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  609  tokens seen:  1249280
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  610  tokens seen:  1251328
+calc_loss_loader..
+num_batches:  1 len of data_loader:  39
+0 of 391 of 39finish calc_loss_loader..
+calc_loss_loader..
+num_batches:  1 len of data_loader:  5
+0 of 51 of 5finish calc_loss_loader..
+Epoch 16 (Step 000610): Train loss 0.008, Val loss 9.072
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  611  tokens seen:  1253376
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  612  tokens seen:  1255424
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  613  tokens seen:  1257472
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  614  tokens seen:  1259520
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  615  tokens seen:  1261568
+calc_loss_loader..
+num_batches:  1 len of data_loader:  39
+0 of 391 of 39finish calc_loss_loader..
+calc_loss_loader..
+num_batches:  1 len of data_loader:  5
+0 of 51 of 5finish calc_loss_loader..
+Epoch 16 (Step 000615): Train loss 0.006, Val loss 9.071
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  616  tokens seen:  1263616
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  617  tokens seen:  1265664
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  618  tokens seen:  1267712
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  619  tokens seen:  1269760
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  620  tokens seen:  1271808
+calc_loss_loader..
+num_batches:  1 len of data_loader:  39
+0 of 391 of 39finish calc_loss_loader..
+calc_loss_loader..
+num_batches:  1 len of data_loader:  5
+0 of 51 of 5finish calc_loss_loader..
+Epoch 16 (Step 000620): Train loss 0.006, Val loss 9.075
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  621  tokens seen:  1273856
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  622  tokens seen:  1275904
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  623  tokens seen:  1277952
+
+out of inner input_batch loop..
+generate and print sample..
+
+Every effort moves youitudes (e.g., Siberia) were neutral or perhaps warming.  Water  Water reflects light very differently from typical terrestrial materials. The reflectivity of a water surface is calculated using the Fresnel equations.  At the scale of
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  624  tokens seen:  1280000
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  625  tokens seen:  1282048
+calc_loss_loader..
+num_batches:  1 len of data_loader:  39
+0 of 391 of 39finish calc_loss_loader..
+calc_loss_loader..
+num_batches:  1 len of data_loader:  5
+0 of 51 of 5finish calc_loss_loader..
+Epoch 17 (Step 000625): Train loss 0.005, Val loss 9.081
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  626  tokens seen:  1284096
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  627  tokens seen:  1286144
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  628  tokens seen:  1288192
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  629  tokens seen:  1290240
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  630  tokens seen:  1292288
+calc_loss_loader..
+num_batches:  1 len of data_loader:  39
+0 of 391 of 39finish calc_loss_loader..
+calc_loss_loader..
+num_batches:  1 len of data_loader:  5
+0 of 51 of 5finish calc_loss_loader..
+Epoch 17 (Step 000630): Train loss 0.005, Val loss 9.089
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  631  tokens seen:  1294336
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  632  tokens seen:  1296384
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  633  tokens seen:  1298432
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  634  tokens seen:  1300480
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  635  tokens seen:  1302528
+calc_loss_loader..
+num_batches:  1 len of data_loader:  39
+0 of 391 of 39finish calc_loss_loader..
+calc_loss_loader..
+num_batches:  1 len of data_loader:  5
+0 of 51 of 5finish calc_loss_loader..
+Epoch 17 (Step 000635): Train loss 0.005, Val loss 9.095
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  636  tokens seen:  1304576
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  637  tokens seen:  1306624
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  638  tokens seen:  1308672
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  639  tokens seen:  1310720
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  640  tokens seen:  1312768
+calc_loss_loader..
+num_batches:  1 len of data_loader:  39
+0 of 391 of 39finish calc_loss_loader..
+calc_loss_loader..
+num_batches:  1 len of data_loader:  5
+0 of 51 of 5finish calc_loss_loader..
+Epoch 17 (Step 000640): Train loss 0.007, Val loss 9.098
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  641  tokens seen:  1314816
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  642  tokens seen:  1316864
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  643  tokens seen:  1318912
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  644  tokens seen:  1320960
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  645  tokens seen:  1323008
+calc_loss_loader..
+num_batches:  1 len of data_loader:  39
+0 of 391 of 39finish calc_loss_loader..
+calc_loss_loader..
+num_batches:  1 len of data_loader:  5
+0 of 51 of 5finish calc_loss_loader..
+Epoch 17 (Step 000645): Train loss 0.006, Val loss 9.099
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  646  tokens seen:  1325056
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  647  tokens seen:  1327104
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  648  tokens seen:  1329152
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  649  tokens seen:  1331200
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  650  tokens seen:  1333248
+calc_loss_loader..
+num_batches:  1 len of data_loader:  39
+0 of 391 of 39finish calc_loss_loader..
+calc_loss_loader..
+num_batches:  1 len of data_loader:  5
+0 of 51 of 5finish calc_loss_loader..
+Epoch 17 (Step 000650): Train loss 0.004, Val loss 9.100
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  651  tokens seen:  1335296
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  652  tokens seen:  1337344
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  653  tokens seen:  1339392
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  654  tokens seen:  1341440
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  655  tokens seen:  1343488
+calc_loss_loader..
+num_batches:  1 len of data_loader:  39
+0 of 391 of 39finish calc_loss_loader..
+calc_loss_loader..
+num_batches:  1 len of data_loader:  5
+0 of 51 of 5finish calc_loss_loader..
+Epoch 17 (Step 000655): Train loss 0.005, Val loss 9.101
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  656  tokens seen:  1345536
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  657  tokens seen:  1347584
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  658  tokens seen:  1349632
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  659  tokens seen:  1351680
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  660  tokens seen:  1353728
+calc_loss_loader..
+num_batches:  1 len of data_loader:  39
+0 of 391 of 39finish calc_loss_loader..
+calc_loss_loader..
+num_batches:  1 len of data_loader:  5
+0 of 51 of 5finish calc_loss_loader..
+Epoch 17 (Step 000660): Train loss 0.006, Val loss 9.103
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  661  tokens seen:  1355776
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  662  tokens seen:  1357824
+
+out of inner input_batch loop..
+generate and print sample..
+
+Every effort moves youitudes (e.g., Siberia) were neutral or perhaps warming.  Water  Water reflects light very differently from typical terrestrial materials. The reflectivity of a water surface is calculated using the Fresnel equations.  At the scale of
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  663  tokens seen:  1359872
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  664  tokens seen:  1361920
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  665  tokens seen:  1363968
+calc_loss_loader..
+num_batches:  1 len of data_loader:  39
+0 of 391 of 39finish calc_loss_loader..
+calc_loss_loader..
+num_batches:  1 len of data_loader:  5
+0 of 51 of 5finish calc_loss_loader..
+Epoch 18 (Step 000665): Train loss 0.005, Val loss 9.105
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  666  tokens seen:  1366016
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  667  tokens seen:  1368064
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  668  tokens seen:  1370112
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  669  tokens seen:  1372160
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  670  tokens seen:  1374208
+calc_loss_loader..
+num_batches:  1 len of data_loader:  39
+0 of 391 of 39finish calc_loss_loader..
+calc_loss_loader..
+num_batches:  1 len of data_loader:  5
+0 of 51 of 5finish calc_loss_loader..
+Epoch 18 (Step 000670): Train loss 0.005, Val loss 9.107
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  671  tokens seen:  1376256
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  672  tokens seen:  1378304
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  673  tokens seen:  1380352
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  674  tokens seen:  1382400
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  675  tokens seen:  1384448
+calc_loss_loader..
+num_batches:  1 len of data_loader:  39
+0 of 391 of 39finish calc_loss_loader..
+calc_loss_loader..
+num_batches:  1 len of data_loader:  5
+0 of 51 of 5finish calc_loss_loader..
+Epoch 18 (Step 000675): Train loss 0.004, Val loss 9.110
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  676  tokens seen:  1386496
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  677  tokens seen:  1388544
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  678  tokens seen:  1390592
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  679  tokens seen:  1392640
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  680  tokens seen:  1394688
+calc_loss_loader..
+num_batches:  1 len of data_loader:  39
+0 of 391 of 39finish calc_loss_loader..
+calc_loss_loader..
+num_batches:  1 len of data_loader:  5
+0 of 51 of 5finish calc_loss_loader..
+Epoch 18 (Step 000680): Train loss 0.005, Val loss 9.114
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  681  tokens seen:  1396736
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  682  tokens seen:  1398784
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  683  tokens seen:  1400832
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  684  tokens seen:  1402880
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  685  tokens seen:  1404928
+calc_loss_loader..
+num_batches:  1 len of data_loader:  39
+0 of 391 of 39finish calc_loss_loader..
+calc_loss_loader..
+num_batches:  1 len of data_loader:  5
+0 of 51 of 5finish calc_loss_loader..
+Epoch 18 (Step 000685): Train loss 0.004, Val loss 9.117
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  686  tokens seen:  1406976
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  687  tokens seen:  1409024
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  688  tokens seen:  1411072
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  689  tokens seen:  1413120
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  690  tokens seen:  1415168
+calc_loss_loader..
+num_batches:  1 len of data_loader:  39
+0 of 391 of 39finish calc_loss_loader..
+calc_loss_loader..
+num_batches:  1 len of data_loader:  5
+0 of 51 of 5finish calc_loss_loader..
+Epoch 18 (Step 000690): Train loss 0.004, Val loss 9.119
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  691  tokens seen:  1417216
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  692  tokens seen:  1419264
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  693  tokens seen:  1421312
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  694  tokens seen:  1423360
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  695  tokens seen:  1425408
+calc_loss_loader..
+num_batches:  1 len of data_loader:  39
+0 of 391 of 39finish calc_loss_loader..
+calc_loss_loader..
+num_batches:  1 len of data_loader:  5
+0 of 51 of 5finish calc_loss_loader..
+Epoch 18 (Step 000695): Train loss 0.004, Val loss 9.120
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  696  tokens seen:  1427456
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  697  tokens seen:  1429504
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  698  tokens seen:  1431552
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  699  tokens seen:  1433600
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  700  tokens seen:  1435648
+calc_loss_loader..
+num_batches:  1 len of data_loader:  39
+0 of 391 of 39finish calc_loss_loader..
+calc_loss_loader..
+num_batches:  1 len of data_loader:  5
+0 of 51 of 5finish calc_loss_loader..
+Epoch 18 (Step 000700): Train loss 0.007, Val loss 9.121
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  701  tokens seen:  1437696
+
+out of inner input_batch loop..
+generate and print sample..
+
+Every effort moves youitudes (e.g., Siberia) were neutral or perhaps warming.  Water  Water reflects light very differently from typical terrestrial materials. The reflectivity of a water surface is calculated using the Fresnel equations.  At the scale of
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  702  tokens seen:  1439744
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  703  tokens seen:  1441792
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  704  tokens seen:  1443840
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  705  tokens seen:  1445888
+calc_loss_loader..
+num_batches:  1 len of data_loader:  39
+0 of 391 of 39finish calc_loss_loader..
+calc_loss_loader..
+num_batches:  1 len of data_loader:  5
+0 of 51 of 5finish calc_loss_loader..
+Epoch 19 (Step 000705): Train loss 0.005, Val loss 9.121
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  706  tokens seen:  1447936
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  707  tokens seen:  1449984
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  708  tokens seen:  1452032
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  709  tokens seen:  1454080
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  710  tokens seen:  1456128
+calc_loss_loader..
+num_batches:  1 len of data_loader:  39
+0 of 391 of 39finish calc_loss_loader..
+calc_loss_loader..
+num_batches:  1 len of data_loader:  5
+0 of 51 of 5finish calc_loss_loader..
+Epoch 19 (Step 000710): Train loss 0.004, Val loss 9.122
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  711  tokens seen:  1458176
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  712  tokens seen:  1460224
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  713  tokens seen:  1462272
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  714  tokens seen:  1464320
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  715  tokens seen:  1466368
+calc_loss_loader..
+num_batches:  1 len of data_loader:  39
+0 of 391 of 39finish calc_loss_loader..
+calc_loss_loader..
+num_batches:  1 len of data_loader:  5
+0 of 51 of 5finish calc_loss_loader..
+Epoch 19 (Step 000715): Train loss 0.007, Val loss 9.123
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  716  tokens seen:  1468416
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  717  tokens seen:  1470464
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  718  tokens seen:  1472512
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  719  tokens seen:  1474560
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  720  tokens seen:  1476608
+calc_loss_loader..
+num_batches:  1 len of data_loader:  39
+0 of 391 of 39finish calc_loss_loader..
+calc_loss_loader..
+num_batches:  1 len of data_loader:  5
+0 of 51 of 5finish calc_loss_loader..
+Epoch 19 (Step 000720): Train loss 0.003, Val loss 9.124
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  721  tokens seen:  1478656
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  722  tokens seen:  1480704
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  723  tokens seen:  1482752
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  724  tokens seen:  1484800
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  725  tokens seen:  1486848
+calc_loss_loader..
+num_batches:  1 len of data_loader:  39
+0 of 391 of 39finish calc_loss_loader..
+calc_loss_loader..
+num_batches:  1 len of data_loader:  5
+0 of 51 of 5finish calc_loss_loader..
+Epoch 19 (Step 000725): Train loss 0.006, Val loss 9.124
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  726  tokens seen:  1488896
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  727  tokens seen:  1490944
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  728  tokens seen:  1492992
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  729  tokens seen:  1495040
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  730  tokens seen:  1497088
+calc_loss_loader..
+num_batches:  1 len of data_loader:  39
+0 of 391 of 39finish calc_loss_loader..
+calc_loss_loader..
+num_batches:  1 len of data_loader:  5
+0 of 51 of 5finish calc_loss_loader..
+Epoch 19 (Step 000730): Train loss 0.003, Val loss 9.125
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  731  tokens seen:  1499136
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  732  tokens seen:  1501184
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  733  tokens seen:  1503232
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  734  tokens seen:  1505280
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  735  tokens seen:  1507328
+calc_loss_loader..
+num_batches:  1 len of data_loader:  39
+0 of 391 of 39finish calc_loss_loader..
+calc_loss_loader..
+num_batches:  1 len of data_loader:  5
+0 of 51 of 5finish calc_loss_loader..
+Epoch 19 (Step 000735): Train loss 0.005, Val loss 9.126
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  736  tokens seen:  1509376
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  737  tokens seen:  1511424
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  738  tokens seen:  1513472
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  739  tokens seen:  1515520
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  740  tokens seen:  1517568
+calc_loss_loader..
+num_batches:  1 len of data_loader:  39
+0 of 391 of 39finish calc_loss_loader..
+calc_loss_loader..
+num_batches:  1 len of data_loader:  5
+0 of 51 of 5finish calc_loss_loader..
+Epoch 19 (Step 000740): Train loss 0.005, Val loss 9.127
+
+out of inner input_batch loop..
+generate and print sample..
+
+Every effort moves youitudes (e.g., Siberia) were neutral or perhaps warming.  Water  Water reflects light very differently from typical terrestrial materials. The reflectivity of a water surface is calculated using the Fresnel equations.  At the scale of
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  741  tokens seen:  1519616
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  742  tokens seen:  1521664
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  743  tokens seen:  1523712
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  744  tokens seen:  1525760
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  745  tokens seen:  1527808
+calc_loss_loader..
+num_batches:  1 len of data_loader:  39
+0 of 391 of 39finish calc_loss_loader..
+calc_loss_loader..
+num_batches:  1 len of data_loader:  5
+0 of 51 of 5finish calc_loss_loader..
+Epoch 20 (Step 000745): Train loss 0.004, Val loss 9.127
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  746  tokens seen:  1529856
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  747  tokens seen:  1531904
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  748  tokens seen:  1533952
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  749  tokens seen:  1536000
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  750  tokens seen:  1538048
+calc_loss_loader..
+num_batches:  1 len of data_loader:  39
+0 of 391 of 39finish calc_loss_loader..
+calc_loss_loader..
+num_batches:  1 len of data_loader:  5
+0 of 51 of 5finish calc_loss_loader..
+Epoch 20 (Step 000750): Train loss 0.005, Val loss 9.128
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  751  tokens seen:  1540096
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  752  tokens seen:  1542144
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  753  tokens seen:  1544192
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  754  tokens seen:  1546240
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  755  tokens seen:  1548288
+calc_loss_loader..
+num_batches:  1 len of data_loader:  39
+0 of 391 of 39finish calc_loss_loader..
+calc_loss_loader..
+num_batches:  1 len of data_loader:  5
+0 of 51 of 5finish calc_loss_loader..
+Epoch 20 (Step 000755): Train loss 0.008, Val loss 9.129
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  756  tokens seen:  1550336
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  757  tokens seen:  1552384
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  758  tokens seen:  1554432
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  759  tokens seen:  1556480
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  760  tokens seen:  1558528
+calc_loss_loader..
+num_batches:  1 len of data_loader:  39
+0 of 391 of 39finish calc_loss_loader..
+calc_loss_loader..
+num_batches:  1 len of data_loader:  5
+0 of 51 of 5finish calc_loss_loader..
+Epoch 20 (Step 000760): Train loss 0.008, Val loss 9.129
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  761  tokens seen:  1560576
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  762  tokens seen:  1562624
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  763  tokens seen:  1564672
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  764  tokens seen:  1566720
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  765  tokens seen:  1568768
+calc_loss_loader..
+num_batches:  1 len of data_loader:  39
+0 of 391 of 39finish calc_loss_loader..
+calc_loss_loader..
+num_batches:  1 len of data_loader:  5
+0 of 51 of 5finish calc_loss_loader..
+Epoch 20 (Step 000765): Train loss 0.006, Val loss 9.130
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  766  tokens seen:  1570816
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  767  tokens seen:  1572864
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  768  tokens seen:  1574912
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  769  tokens seen:  1576960
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  770  tokens seen:  1579008
+calc_loss_loader..
+num_batches:  1 len of data_loader:  39
+0 of 391 of 39finish calc_loss_loader..
+calc_loss_loader..
+num_batches:  1 len of data_loader:  5
+0 of 51 of 5finish calc_loss_loader..
+Epoch 20 (Step 000770): Train loss 0.004, Val loss 9.130
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  771  tokens seen:  1581056
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  772  tokens seen:  1583104
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  773  tokens seen:  1585152
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  774  tokens seen:  1587200
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  775  tokens seen:  1589248
+calc_loss_loader..
+num_batches:  1 len of data_loader:  39
+0 of 391 of 39finish calc_loss_loader..
+calc_loss_loader..
+num_batches:  1 len of data_loader:  5
+0 of 51 of 5finish calc_loss_loader..
+Epoch 20 (Step 000775): Train loss 0.005, Val loss 9.131
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  776  tokens seen:  1591296
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  777  tokens seen:  1593344
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  778  tokens seen:  1595392
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  779  tokens seen:  1597440
+
+out of inner input_batch loop..
+generate and print sample..
+
+Every effort moves youitudes (e.g., Siberia) were neutral or perhaps warming.  Water  Water reflects light very differently from typical terrestrial materials. The reflectivity of a water surface is calculated using the Fresnel equations.  At the scale of
 model saved
 
-tokens seen:  [2048, 12288, 22528, 32768, 43008, 53248, 63488, 73728, 83968, 94208, 104448, 114688, 124928, 135168, 145408, 155648]
+tokens seen:  [2048, 12288, 22528, 32768, 43008, 53248, 63488, 73728, 83968, 94208, 104448, 114688, 124928, 135168, 145408, 155648, 165888, 176128, 186368, 196608, 206848, 217088, 227328, 237568, 247808, 258048, 268288, 278528, 288768, 299008, 309248, 319488, 329728, 339968, 350208, 360448, 370688, 380928, 391168, 401408, 411648, 421888, 432128, 442368, 452608, 462848, 473088, 483328, 493568, 503808, 514048, 524288, 534528, 544768, 555008, 565248, 575488, 585728, 595968, 606208, 616448, 626688, 636928, 647168, 657408, 667648, 677888, 688128, 698368, 708608, 718848, 729088, 739328, 749568, 759808, 770048, 780288, 790528, 800768, 811008, 821248, 831488, 841728, 851968, 862208, 872448, 882688, 892928, 903168, 913408, 923648, 933888, 944128, 954368, 964608, 974848, 985088, 995328, 1005568, 1015808, 1026048, 1036288, 1046528, 1056768, 1067008, 1077248, 1087488, 1097728, 1107968, 1118208, 1128448, 1138688, 1148928, 1159168, 1169408, 1179648, 1189888, 1200128, 1210368, 1220608, 1230848, 1241088, 1251328, 1261568, 1271808, 1282048, 1292288, 1302528, 1312768, 1323008, 1333248, 1343488, 1353728, 1363968, 1374208, 1384448, 1394688, 1404928, 1415168, 1425408, 1435648, 1445888, 1456128, 1466368, 1476608, 1486848, 1497088, 1507328, 1517568, 1527808, 1538048, 1548288, 1558528, 1568768, 1579008, 1589248]

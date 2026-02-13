@@ -211,7 +211,7 @@ try:
 except FileNotFoundError:
     print("model not found on disk. monitor as a one time thing, error out if repeats")
 
-num_epochs=2
+num_epochs=20 # if we are training on the smaller corpus, we can increase epochs to 20 
 peak_lr = 0.001      
 
 optimizer = torch.optim.AdamW(
