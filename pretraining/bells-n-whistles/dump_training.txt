@@ -1,9 +1,9 @@
 device:  cpu
 enter..device override for my local ubuntu:  cpu
 model not found on disk. monitor as a one time thing, error out if repeats
-Characters: 3250945
-Tokens: 708333
-90% of the split is from index  2925850
+Characters: 425885
+Tokens: 90514
+90% of the split is from index  383296
 
 OS:  Darwin  batch size:  8  enter..
 GPTDatasetV1.py generated token IDs !
@@ -52,314 +52,13 @@ torch.Size([8, 256]) torch.Size([8, 256])
 torch.Size([8, 256]) torch.Size([8, 256])
 torch.Size([8, 256]) torch.Size([8, 256])
 torch.Size([8, 256]) torch.Size([8, 256])
-torch.Size([8, 256]) torch.Size([8, 256])
-torch.Size([8, 256]) torch.Size([8, 256])
-torch.Size([8, 256]) torch.Size([8, 256])
-torch.Size([8, 256]) torch.Size([8, 256])
-torch.Size([8, 256]) torch.Size([8, 256])
-torch.Size([8, 256]) torch.Size([8, 256])
-torch.Size([8, 256]) torch.Size([8, 256])
-torch.Size([8, 256]) torch.Size([8, 256])
-torch.Size([8, 256]) torch.Size([8, 256])
-torch.Size([8, 256]) torch.Size([8, 256])
-torch.Size([8, 256]) torch.Size([8, 256])
-torch.Size([8, 256]) torch.Size([8, 256])
-torch.Size([8, 256]) torch.Size([8, 256])
-torch.Size([8, 256]) torch.Size([8, 256])
-torch.Size([8, 256]) torch.Size([8, 256])
-torch.Size([8, 256]) torch.Size([8, 256])
-torch.Size([8, 256]) torch.Size([8, 256])
-torch.Size([8, 256]) torch.Size([8, 256])
-torch.Size([8, 256]) torch.Size([8, 256])
-torch.Size([8, 256]) torch.Size([8, 256])
-torch.Size([8, 256]) torch.Size([8, 256])
-torch.Size([8, 256]) torch.Size([8, 256])
-torch.Size([8, 256]) torch.Size([8, 256])
-torch.Size([8, 256]) torch.Size([8, 256])
-torch.Size([8, 256]) torch.Size([8, 256])
-torch.Size([8, 256]) torch.Size([8, 256])
-torch.Size([8, 256]) torch.Size([8, 256])
-torch.Size([8, 256]) torch.Size([8, 256])
-torch.Size([8, 256]) torch.Size([8, 256])
-torch.Size([8, 256]) torch.Size([8, 256])
-torch.Size([8, 256]) torch.Size([8, 256])
-torch.Size([8, 256]) torch.Size([8, 256])
-torch.Size([8, 256]) torch.Size([8, 256])
-torch.Size([8, 256]) torch.Size([8, 256])
-torch.Size([8, 256]) torch.Size([8, 256])
-torch.Size([8, 256]) torch.Size([8, 256])
-torch.Size([8, 256]) torch.Size([8, 256])
-torch.Size([8, 256]) torch.Size([8, 256])
-torch.Size([8, 256]) torch.Size([8, 256])
-torch.Size([8, 256]) torch.Size([8, 256])
-torch.Size([8, 256]) torch.Size([8, 256])
-torch.Size([8, 256]) torch.Size([8, 256])
-torch.Size([8, 256]) torch.Size([8, 256])
-torch.Size([8, 256]) torch.Size([8, 256])
-torch.Size([8, 256]) torch.Size([8, 256])
-torch.Size([8, 256]) torch.Size([8, 256])
-torch.Size([8, 256]) torch.Size([8, 256])
-torch.Size([8, 256]) torch.Size([8, 256])
-torch.Size([8, 256]) torch.Size([8, 256])
-torch.Size([8, 256]) torch.Size([8, 256])
-torch.Size([8, 256]) torch.Size([8, 256])
-torch.Size([8, 256]) torch.Size([8, 256])
-torch.Size([8, 256]) torch.Size([8, 256])
-torch.Size([8, 256]) torch.Size([8, 256])
-torch.Size([8, 256]) torch.Size([8, 256])
-torch.Size([8, 256]) torch.Size([8, 256])
-torch.Size([8, 256]) torch.Size([8, 256])
-torch.Size([8, 256]) torch.Size([8, 256])
-torch.Size([8, 256]) torch.Size([8, 256])
-torch.Size([8, 256]) torch.Size([8, 256])
-torch.Size([8, 256]) torch.Size([8, 256])
-torch.Size([8, 256]) torch.Size([8, 256])
-torch.Size([8, 256]) torch.Size([8, 256])
-torch.Size([8, 256]) torch.Size([8, 256])
-torch.Size([8, 256]) torch.Size([8, 256])
-torch.Size([8, 256]) torch.Size([8, 256])
-torch.Size([8, 256]) torch.Size([8, 256])
-torch.Size([8, 256]) torch.Size([8, 256])
-torch.Size([8, 256]) torch.Size([8, 256])
-torch.Size([8, 256]) torch.Size([8, 256])
-torch.Size([8, 256]) torch.Size([8, 256])
-torch.Size([8, 256]) torch.Size([8, 256])
-torch.Size([8, 256]) torch.Size([8, 256])
-torch.Size([8, 256]) torch.Size([8, 256])
-torch.Size([8, 256]) torch.Size([8, 256])
-torch.Size([8, 256]) torch.Size([8, 256])
-torch.Size([8, 256]) torch.Size([8, 256])
-torch.Size([8, 256]) torch.Size([8, 256])
-torch.Size([8, 256]) torch.Size([8, 256])
-torch.Size([8, 256]) torch.Size([8, 256])
-torch.Size([8, 256]) torch.Size([8, 256])
-torch.Size([8, 256]) torch.Size([8, 256])
-torch.Size([8, 256]) torch.Size([8, 256])
-torch.Size([8, 256]) torch.Size([8, 256])
-torch.Size([8, 256]) torch.Size([8, 256])
-torch.Size([8, 256]) torch.Size([8, 256])
-torch.Size([8, 256]) torch.Size([8, 256])
-torch.Size([8, 256]) torch.Size([8, 256])
-torch.Size([8, 256]) torch.Size([8, 256])
-torch.Size([8, 256]) torch.Size([8, 256])
-torch.Size([8, 256]) torch.Size([8, 256])
-torch.Size([8, 256]) torch.Size([8, 256])
-torch.Size([8, 256]) torch.Size([8, 256])
-torch.Size([8, 256]) torch.Size([8, 256])
-torch.Size([8, 256]) torch.Size([8, 256])
-torch.Size([8, 256]) torch.Size([8, 256])
-torch.Size([8, 256]) torch.Size([8, 256])
-torch.Size([8, 256]) torch.Size([8, 256])
-torch.Size([8, 256]) torch.Size([8, 256])
-torch.Size([8, 256]) torch.Size([8, 256])
-torch.Size([8, 256]) torch.Size([8, 256])
-torch.Size([8, 256]) torch.Size([8, 256])
-torch.Size([8, 256]) torch.Size([8, 256])
-torch.Size([8, 256]) torch.Size([8, 256])
-torch.Size([8, 256]) torch.Size([8, 256])
-torch.Size([8, 256]) torch.Size([8, 256])
-torch.Size([8, 256]) torch.Size([8, 256])
-torch.Size([8, 256]) torch.Size([8, 256])
-torch.Size([8, 256]) torch.Size([8, 256])
-torch.Size([8, 256]) torch.Size([8, 256])
-torch.Size([8, 256]) torch.Size([8, 256])
-torch.Size([8, 256]) torch.Size([8, 256])
-torch.Size([8, 256]) torch.Size([8, 256])
-torch.Size([8, 256]) torch.Size([8, 256])
-torch.Size([8, 256]) torch.Size([8, 256])
-torch.Size([8, 256]) torch.Size([8, 256])
-torch.Size([8, 256]) torch.Size([8, 256])
-torch.Size([8, 256]) torch.Size([8, 256])
-torch.Size([8, 256]) torch.Size([8, 256])
-torch.Size([8, 256]) torch.Size([8, 256])
-torch.Size([8, 256]) torch.Size([8, 256])
-torch.Size([8, 256]) torch.Size([8, 256])
-torch.Size([8, 256]) torch.Size([8, 256])
-torch.Size([8, 256]) torch.Size([8, 256])
-torch.Size([8, 256]) torch.Size([8, 256])
-torch.Size([8, 256]) torch.Size([8, 256])
-torch.Size([8, 256]) torch.Size([8, 256])
-torch.Size([8, 256]) torch.Size([8, 256])
-torch.Size([8, 256]) torch.Size([8, 256])
-torch.Size([8, 256]) torch.Size([8, 256])
-torch.Size([8, 256]) torch.Size([8, 256])
-torch.Size([8, 256]) torch.Size([8, 256])
-torch.Size([8, 256]) torch.Size([8, 256])
-torch.Size([8, 256]) torch.Size([8, 256])
-torch.Size([8, 256]) torch.Size([8, 256])
-torch.Size([8, 256]) torch.Size([8, 256])
-torch.Size([8, 256]) torch.Size([8, 256])
-torch.Size([8, 256]) torch.Size([8, 256])
-torch.Size([8, 256]) torch.Size([8, 256])
-torch.Size([8, 256]) torch.Size([8, 256])
-torch.Size([8, 256]) torch.Size([8, 256])
-torch.Size([8, 256]) torch.Size([8, 256])
-torch.Size([8, 256]) torch.Size([8, 256])
-torch.Size([8, 256]) torch.Size([8, 256])
-torch.Size([8, 256]) torch.Size([8, 256])
-torch.Size([8, 256]) torch.Size([8, 256])
-torch.Size([8, 256]) torch.Size([8, 256])
-torch.Size([8, 256]) torch.Size([8, 256])
-torch.Size([8, 256]) torch.Size([8, 256])
-torch.Size([8, 256]) torch.Size([8, 256])
-torch.Size([8, 256]) torch.Size([8, 256])
-torch.Size([8, 256]) torch.Size([8, 256])
-torch.Size([8, 256]) torch.Size([8, 256])
-torch.Size([8, 256]) torch.Size([8, 256])
-torch.Size([8, 256]) torch.Size([8, 256])
-torch.Size([8, 256]) torch.Size([8, 256])
-torch.Size([8, 256]) torch.Size([8, 256])
-torch.Size([8, 256]) torch.Size([8, 256])
-torch.Size([8, 256]) torch.Size([8, 256])
-torch.Size([8, 256]) torch.Size([8, 256])
-torch.Size([8, 256]) torch.Size([8, 256])
-torch.Size([8, 256]) torch.Size([8, 256])
-torch.Size([8, 256]) torch.Size([8, 256])
-torch.Size([8, 256]) torch.Size([8, 256])
-torch.Size([8, 256]) torch.Size([8, 256])
-torch.Size([8, 256]) torch.Size([8, 256])
-torch.Size([8, 256]) torch.Size([8, 256])
-torch.Size([8, 256]) torch.Size([8, 256])
-torch.Size([8, 256]) torch.Size([8, 256])
-torch.Size([8, 256]) torch.Size([8, 256])
-torch.Size([8, 256]) torch.Size([8, 256])
-torch.Size([8, 256]) torch.Size([8, 256])
-torch.Size([8, 256]) torch.Size([8, 256])
-torch.Size([8, 256]) torch.Size([8, 256])
-torch.Size([8, 256]) torch.Size([8, 256])
-torch.Size([8, 256]) torch.Size([8, 256])
-torch.Size([8, 256]) torch.Size([8, 256])
-torch.Size([8, 256]) torch.Size([8, 256])
-torch.Size([8, 256]) torch.Size([8, 256])
-torch.Size([8, 256]) torch.Size([8, 256])
-torch.Size([8, 256]) torch.Size([8, 256])
-torch.Size([8, 256]) torch.Size([8, 256])
-torch.Size([8, 256]) torch.Size([8, 256])
-torch.Size([8, 256]) torch.Size([8, 256])
-torch.Size([8, 256]) torch.Size([8, 256])
-torch.Size([8, 256]) torch.Size([8, 256])
-torch.Size([8, 256]) torch.Size([8, 256])
-torch.Size([8, 256]) torch.Size([8, 256])
-torch.Size([8, 256]) torch.Size([8, 256])
-torch.Size([8, 256]) torch.Size([8, 256])
-torch.Size([8, 256]) torch.Size([8, 256])
-torch.Size([8, 256]) torch.Size([8, 256])
-torch.Size([8, 256]) torch.Size([8, 256])
-torch.Size([8, 256]) torch.Size([8, 256])
-torch.Size([8, 256]) torch.Size([8, 256])
-torch.Size([8, 256]) torch.Size([8, 256])
-torch.Size([8, 256]) torch.Size([8, 256])
-torch.Size([8, 256]) torch.Size([8, 256])
-torch.Size([8, 256]) torch.Size([8, 256])
-torch.Size([8, 256]) torch.Size([8, 256])
-torch.Size([8, 256]) torch.Size([8, 256])
-torch.Size([8, 256]) torch.Size([8, 256])
-torch.Size([8, 256]) torch.Size([8, 256])
-torch.Size([8, 256]) torch.Size([8, 256])
-torch.Size([8, 256]) torch.Size([8, 256])
-torch.Size([8, 256]) torch.Size([8, 256])
-torch.Size([8, 256]) torch.Size([8, 256])
-torch.Size([8, 256]) torch.Size([8, 256])
-torch.Size([8, 256]) torch.Size([8, 256])
-torch.Size([8, 256]) torch.Size([8, 256])
-torch.Size([8, 256]) torch.Size([8, 256])
-torch.Size([8, 256]) torch.Size([8, 256])
-torch.Size([8, 256]) torch.Size([8, 256])
-torch.Size([8, 256]) torch.Size([8, 256])
-torch.Size([8, 256]) torch.Size([8, 256])
-torch.Size([8, 256]) torch.Size([8, 256])
-torch.Size([8, 256]) torch.Size([8, 256])
-torch.Size([8, 256]) torch.Size([8, 256])
-torch.Size([8, 256]) torch.Size([8, 256])
-torch.Size([8, 256]) torch.Size([8, 256])
-torch.Size([8, 256]) torch.Size([8, 256])
-torch.Size([8, 256]) torch.Size([8, 256])
-torch.Size([8, 256]) torch.Size([8, 256])
-torch.Size([8, 256]) torch.Size([8, 256])
-torch.Size([8, 256]) torch.Size([8, 256])
-torch.Size([8, 256]) torch.Size([8, 256])
-torch.Size([8, 256]) torch.Size([8, 256])
-torch.Size([8, 256]) torch.Size([8, 256])
-torch.Size([8, 256]) torch.Size([8, 256])
-torch.Size([8, 256]) torch.Size([8, 256])
-torch.Size([8, 256]) torch.Size([8, 256])
-torch.Size([8, 256]) torch.Size([8, 256])
-torch.Size([8, 256]) torch.Size([8, 256])
-torch.Size([8, 256]) torch.Size([8, 256])
-torch.Size([8, 256]) torch.Size([8, 256])
-torch.Size([8, 256]) torch.Size([8, 256])
-torch.Size([8, 256]) torch.Size([8, 256])
-torch.Size([8, 256]) torch.Size([8, 256])
-torch.Size([8, 256]) torch.Size([8, 256])
-torch.Size([8, 256]) torch.Size([8, 256])
-torch.Size([8, 256]) torch.Size([8, 256])
-torch.Size([8, 256]) torch.Size([8, 256])
-torch.Size([8, 256]) torch.Size([8, 256])
-torch.Size([8, 256]) torch.Size([8, 256])
-torch.Size([8, 256]) torch.Size([8, 256])
-torch.Size([8, 256]) torch.Size([8, 256])
-torch.Size([8, 256]) torch.Size([8, 256])
-torch.Size([8, 256]) torch.Size([8, 256])
-torch.Size([8, 256]) torch.Size([8, 256])
-torch.Size([8, 256]) torch.Size([8, 256])
-torch.Size([8, 256]) torch.Size([8, 256])
-torch.Size([8, 256]) torch.Size([8, 256])
-torch.Size([8, 256]) torch.Size([8, 256])
-torch.Size([8, 256]) torch.Size([8, 256])
-torch.Size([8, 256]) torch.Size([8, 256])
-torch.Size([8, 256]) torch.Size([8, 256])
-torch.Size([8, 256]) torch.Size([8, 256])
-torch.Size([8, 256]) torch.Size([8, 256])
-torch.Size([8, 256]) torch.Size([8, 256])
-torch.Size([8, 256]) torch.Size([8, 256])
-torch.Size([8, 256]) torch.Size([8, 256])
-torch.Size([8, 256]) torch.Size([8, 256])
-torch.Size([8, 256]) torch.Size([8, 256])
-torch.Size([8, 256]) torch.Size([8, 256])
-torch.Size([8, 256]) torch.Size([8, 256])
-torch.Size([8, 256]) torch.Size([8, 256])
-torch.Size([8, 256]) torch.Size([8, 256])
-torch.Size([8, 256]) torch.Size([8, 256])
-torch.Size([8, 256]) torch.Size([8, 256])
-torch.Size([8, 256]) torch.Size([8, 256])
-torch.Size([8, 256]) torch.Size([8, 256])
-torch.Size([8, 256]) torch.Size([8, 256])
 
 Validation loader:
 torch.Size([8, 256]) torch.Size([8, 256])
 torch.Size([8, 256]) torch.Size([8, 256])
 torch.Size([8, 256]) torch.Size([8, 256])
 torch.Size([8, 256]) torch.Size([8, 256])
-torch.Size([8, 256]) torch.Size([8, 256])
-torch.Size([8, 256]) torch.Size([8, 256])
-torch.Size([8, 256]) torch.Size([8, 256])
-torch.Size([8, 256]) torch.Size([8, 256])
-torch.Size([8, 256]) torch.Size([8, 256])
-torch.Size([8, 256]) torch.Size([8, 256])
-torch.Size([8, 256]) torch.Size([8, 256])
-torch.Size([8, 256]) torch.Size([8, 256])
-torch.Size([8, 256]) torch.Size([8, 256])
-torch.Size([8, 256]) torch.Size([8, 256])
-torch.Size([8, 256]) torch.Size([8, 256])
-torch.Size([8, 256]) torch.Size([8, 256])
-torch.Size([8, 256]) torch.Size([8, 256])
-torch.Size([8, 256]) torch.Size([8, 256])
-torch.Size([8, 256]) torch.Size([8, 256])
-torch.Size([8, 256]) torch.Size([8, 256])
-torch.Size([8, 256]) torch.Size([8, 256])
-torch.Size([8, 256]) torch.Size([8, 256])
-torch.Size([8, 256]) torch.Size([8, 256])
-torch.Size([8, 256]) torch.Size([8, 256])
-torch.Size([8, 256]) torch.Size([8, 256])
-torch.Size([8, 256]) torch.Size([8, 256])
-torch.Size([8, 256]) torch.Size([8, 256])
-torch.Size([8, 256]) torch.Size([8, 256])
-torch.Size([8, 256]) torch.Size([8, 256])
-torch.Size([8, 256]) torch.Size([8, 256])
-torch.Size([8, 256]) torch.Size([8, 256])
-torch.Size([8, 256]) torch.Size([8, 256])
-torch.Size([8, 256]) torch.Size([8, 256])
-torch.Size([7, 256]) torch.Size([7, 256])
+torch.Size([2, 256]) torch.Size([2, 256])
 GPTModel(
   (tok_emb): Embedding(50257, 768)
   (pos_emb): Embedding(256, 768)
@@ -599,258 +298,291 @@ GPTModel(
 )
 device:  cpu
 calc_loss_loader..
-num_batches:  311 len of data_loader:  311
-0 of 3111 of 3112 of 3113 of 3114 of 3115 of 3116 of 3117 of 3118 of 3119 of 31110 of 31111 of 31112 of 31113 of 31114 of 31115 of 31116 of 31117 of 31118 of 31119 of 31120 of 31121 of 31122 of 31123 of 31124 of 31125 of 31126 of 31127 of 31128 of 31129 of 31130 of 31131 of 31132 of 31133 of 31134 of 31135 of 31136 of 31137 of 31138 of 31139 of 31140 of 31141 of 31142 of 31143 of 31144 of 31145 of 31146 of 31147 of 31148 of 31149 of 31150 of 31151 of 31152 of 31153 of 31154 of 31155 of 31156 of 31157 of 31158 of 31159 of 31160 of 31161 of 31162 of 31163 of 31164 of 31165 of 31166 of 31167 of 31168 of 31169 of 31170 of 31171 of 31172 of 31173 of 31174 of 31175 of 31176 of 31177 of 31178 of 31179 of 31180 of 31181 of 31182 of 31183 of 31184 of 31185 of 31186 of 31187 of 31188 of 31189 of 31190 of 31191 of 31192 of 31193 of 31194 of 31195 of 31196 of 31197 of 31198 of 31199 of 311100 of 311101 of 311102 of 311103 of 311104 of 311105 of 311106 of 311107 of 311108 of 311109 of 311110 of 311111 of 311112 of 311113 of 311114 of 311115 of 311116 of 311117 of 311118 of 311119 of 311120 of 311121 of 311122 of 311123 of 311124 of 311125 of 311126 of 311127 of 311128 of 311129 of 311130 of 311131 of 311132 of 311133 of 311134 of 311135 of 311136 of 311137 of 311138 of 311139 of 311140 of 311141 of 311142 of 311143 of 311144 of 311145 of 311146 of 311147 of 311148 of 311149 of 311150 of 311151 of 311152 of 311153 of 311154 of 311155 of 311156 of 311157 of 311158 of 311159 of 311160 of 311161 of 311162 of 311163 of 311164 of 311165 of 311166 of 311167 of 311168 of 311169 of 311170 of 311171 of 311172 of 311173 of 311174 of 311175 of 311176 of 311177 of 311178 of 311179 of 311180 of 311181 of 311182 of 311183 of 311184 of 311185 of 311186 of 311187 of 311188 of 311189 of 311190 of 311191 of 311192 of 311193 of 311194 of 311195 of 311196 of 311197 of 311198 of 311199 of 311200 of 311201 of 311202 of 311203 of 311204 of 311205 of 311206 of 311207 of 311208 of 311209 of 311210 of 311211 of 311212 of 311213 of 311214 of 311215 of 311216 of 311217 of 311218 of 311219 of 311220 of 311221 of 311222 of 311223 of 311224 of 311225 of 311226 of 311227 of 311228 of 311229 of 311230 of 311231 of 311232 of 311233 of 311234 of 311235 of 311236 of 311237 of 311238 of 311239 of 311240 of 311241 of 311242 of 311243 of 311244 of 311245 of 311246 of 311247 of 311248 of 311249 of 311250 of 311251 of 311252 of 311253 of 311254 of 311255 of 311256 of 311257 of 311258 of 311259 of 311260 of 311261 of 311262 of 311263 of 311264 of 311265 of 311266 of 311267 of 311268 of 311269 of 311270 of 311271 of 311272 of 311273 of 311274 of 311275 of 311276 of 311277 of 311278 of 311279 of 311280 of 311281 of 311282 of 311283 of 311284 of 311285 of 311286 of 311287 of 311288 of 311289 of 311290 of 311291 of 311292 of 311293 of 311294 of 311295 of 311296 of 311297 of 311298 of 311299 of 311300 of 311301 of 311302 of 311303 of 311304 of 311305 of 311306 of 311307 of 311308 of 311309 of 311310 of 311finish calc_loss_loader..
+num_batches:  39 len of data_loader:  39
+0 of 391 of 392 of 393 of 394 of 395 of 396 of 397 of 398 of 399 of 3910 of 3911 of 3912 of 3913 of 3914 of 3915 of 3916 of 3917 of 3918 of 3919 of 3920 of 3921 of 3922 of 3923 of 3924 of 3925 of 3926 of 3927 of 3928 of 3929 of 3930 of 3931 of 3932 of 3933 of 3934 of 3935 of 3936 of 3937 of 3938 of 39finish calc_loss_loader..
 calc_loss_loader..
-num_batches:  34 len of data_loader:  34
-0 of 341 of 342 of 343 of 344 of 345 of 346 of 347 of 348 of 349 of 3410 of 3411 of 3412 of 3413 of 3414 of 3415 of 3416 of 3417 of 3418 of 3419 of 3420 of 3421 of 3422 of 3423 of 3424 of 3425 of 3426 of 3427 of 3428 of 3429 of 3430 of 3431 of 3432 of 3433 of 34finish calc_loss_loader..
-Training loss:  10.978707512858596
-Validation loss:  10.980284718906178
-debug: len input batch:  8  len target batch:  8  len train loader :  311
+num_batches:  5 len of data_loader:  5
+0 of 51 of 52 of 53 of 54 of 5finish calc_loss_loader..
+Training loss:  10.979951247190817
+Validation loss:  10.9568115234375
+debug: len input batch:  8  len target batch:  8  len train loader :  39
 debug: global_step :  0  tokens seen:  2048
 calc_loss_loader..
-num_batches:  1 len of data_loader:  311
-0 of 3111 of 311finish calc_loss_loader..
+num_batches:  1 len of data_loader:  39
+0 of 391 of 39finish calc_loss_loader..
 calc_loss_loader..
-num_batches:  1 len of data_loader:  34
-0 of 341 of 34finish calc_loss_loader..
-Epoch 1 (Step 000000): Train loss 10.943, Val loss 10.938
-debug: len input batch:  8  len target batch:  8  len train loader :  311
+num_batches:  1 len of data_loader:  5
+0 of 51 of 5finish calc_loss_loader..
+Epoch 1 (Step 000000): Train loss 10.943, Val loss 10.900
+debug: len input batch:  8  len target batch:  8  len train loader :  39
 debug: global_step :  1  tokens seen:  4096
-debug: len input batch:  8  len target batch:  8  len train loader :  311
+debug: len input batch:  8  len target batch:  8  len train loader :  39
 debug: global_step :  2  tokens seen:  6144
-debug: len input batch:  8  len target batch:  8  len train loader :  311
+debug: len input batch:  8  len target batch:  8  len train loader :  39
 debug: global_step :  3  tokens seen:  8192
-debug: len input batch:  8  len target batch:  8  len train loader :  311
+debug: len input batch:  8  len target batch:  8  len train loader :  39
 debug: global_step :  4  tokens seen:  10240
-debug: len input batch:  8  len target batch:  8  len train loader :  311
+debug: len input batch:  8  len target batch:  8  len train loader :  39
 debug: global_step :  5  tokens seen:  12288
 calc_loss_loader..
-num_batches:  1 len of data_loader:  311
-0 of 3111 of 311finish calc_loss_loader..
+num_batches:  1 len of data_loader:  39
+0 of 391 of 39finish calc_loss_loader..
 calc_loss_loader..
-num_batches:  1 len of data_loader:  34
-0 of 341 of 34finish calc_loss_loader..
-Epoch 1 (Step 000005): Train loss 10.619, Val loss 10.620
-debug: len input batch:  8  len target batch:  8  len train loader :  311
+num_batches:  1 len of data_loader:  5
+0 of 51 of 5finish calc_loss_loader..
+Epoch 1 (Step 000005): Train loss 8.985, Val loss 9.189
+debug: len input batch:  8  len target batch:  8  len train loader :  39
 debug: global_step :  6  tokens seen:  14336
-debug: len input batch:  8  len target batch:  8  len train loader :  311
+debug: len input batch:  8  len target batch:  8  len train loader :  39
 debug: global_step :  7  tokens seen:  16384
-debug: len input batch:  8  len target batch:  8  len train loader :  311
+debug: len input batch:  8  len target batch:  8  len train loader :  39
 debug: global_step :  8  tokens seen:  18432
-debug: len input batch:  8  len target batch:  8  len train loader :  311
+debug: len input batch:  8  len target batch:  8  len train loader :  39
 debug: global_step :  9  tokens seen:  20480
-debug: len input batch:  8  len target batch:  8  len train loader :  311
+debug: len input batch:  8  len target batch:  8  len train loader :  39
 debug: global_step :  10  tokens seen:  22528
 calc_loss_loader..
-num_batches:  1 len of data_loader:  311
-0 of 3111 of 311finish calc_loss_loader..
+num_batches:  1 len of data_loader:  39
+0 of 391 of 39finish calc_loss_loader..
 calc_loss_loader..
-num_batches:  1 len of data_loader:  34
-0 of 341 of 34finish calc_loss_loader..
-Epoch 1 (Step 000010): Train loss 10.242, Val loss 10.208
-debug: len input batch:  8  len target batch:  8  len train loader :  311
+num_batches:  1 len of data_loader:  5
+0 of 51 of 5finish calc_loss_loader..
+Epoch 1 (Step 000010): Train loss 7.914, Val loss 8.081
+debug: len input batch:  8  len target batch:  8  len train loader :  39
 debug: global_step :  11  tokens seen:  24576
-debug: len input batch:  8  len target batch:  8  len train loader :  311
+debug: len input batch:  8  len target batch:  8  len train loader :  39
 debug: global_step :  12  tokens seen:  26624
-debug: len input batch:  8  len target batch:  8  len train loader :  311
+debug: len input batch:  8  len target batch:  8  len train loader :  39
 debug: global_step :  13  tokens seen:  28672
-debug: len input batch:  8  len target batch:  8  len train loader :  311
+debug: len input batch:  8  len target batch:  8  len train loader :  39
 debug: global_step :  14  tokens seen:  30720
-debug: len input batch:  8  len target batch:  8  len train loader :  311
+debug: len input batch:  8  len target batch:  8  len train loader :  39
 debug: global_step :  15  tokens seen:  32768
 calc_loss_loader..
-num_batches:  1 len of data_loader:  311
-0 of 3111 of 311finish calc_loss_loader..
+num_batches:  1 len of data_loader:  39
+0 of 391 of 39finish calc_loss_loader..
 calc_loss_loader..
-num_batches:  1 len of data_loader:  34
-0 of 341 of 34finish calc_loss_loader..
-Epoch 1 (Step 000015): Train loss 9.754, Val loss 9.816
-debug: len input batch:  8  len target batch:  8  len train loader :  311
+num_batches:  1 len of data_loader:  5
+0 of 51 of 5finish calc_loss_loader..
+Epoch 1 (Step 000015): Train loss 7.663, Val loss 8.114
+debug: len input batch:  8  len target batch:  8  len train loader :  39
 debug: global_step :  16  tokens seen:  34816
-debug: len input batch:  8  len target batch:  8  len train loader :  311
+debug: len input batch:  8  len target batch:  8  len train loader :  39
 debug: global_step :  17  tokens seen:  36864
-debug: len input batch:  8  len target batch:  8  len train loader :  311
+debug: len input batch:  8  len target batch:  8  len train loader :  39
 debug: global_step :  18  tokens seen:  38912
-debug: len input batch:  8  len target batch:  8  len train loader :  311
+debug: len input batch:  8  len target batch:  8  len train loader :  39
 debug: global_step :  19  tokens seen:  40960
-debug: len input batch:  8  len target batch:  8  len train loader :  311
+debug: len input batch:  8  len target batch:  8  len train loader :  39
 debug: global_step :  20  tokens seen:  43008
 calc_loss_loader..
-num_batches:  1 len of data_loader:  311
-0 of 3111 of 311finish calc_loss_loader..
+num_batches:  1 len of data_loader:  39
+0 of 391 of 39finish calc_loss_loader..
 calc_loss_loader..
-num_batches:  1 len of data_loader:  34
-0 of 341 of 34finish calc_loss_loader..
-Epoch 1 (Step 000020): Train loss 9.626, Val loss 9.543
-debug: len input batch:  8  len target batch:  8  len train loader :  311
+num_batches:  1 len of data_loader:  5
+0 of 51 of 5finish calc_loss_loader..
+Epoch 1 (Step 000020): Train loss 7.944, Val loss 8.231
+debug: len input batch:  8  len target batch:  8  len train loader :  39
 debug: global_step :  21  tokens seen:  45056
-debug: len input batch:  8  len target batch:  8  len train loader :  311
+debug: len input batch:  8  len target batch:  8  len train loader :  39
 debug: global_step :  22  tokens seen:  47104
-debug: len input batch:  8  len target batch:  8  len train loader :  311
+debug: len input batch:  8  len target batch:  8  len train loader :  39
 debug: global_step :  23  tokens seen:  49152
-debug: len input batch:  8  len target batch:  8  len train loader :  311
+debug: len input batch:  8  len target batch:  8  len train loader :  39
 debug: global_step :  24  tokens seen:  51200
-debug: len input batch:  8  len target batch:  8  len train loader :  311
+debug: len input batch:  8  len target batch:  8  len train loader :  39
 debug: global_step :  25  tokens seen:  53248
 calc_loss_loader..
-num_batches:  1 len of data_loader:  311
-0 of 3111 of 311finish calc_loss_loader..
+num_batches:  1 len of data_loader:  39
+0 of 391 of 39finish calc_loss_loader..
 calc_loss_loader..
-num_batches:  1 len of data_loader:  34
-0 of 341 of 34finish calc_loss_loader..
-Epoch 1 (Step 000025): Train loss 9.327, Val loss 9.347
-debug: len input batch:  8  len target batch:  8  len train loader :  311
+num_batches:  1 len of data_loader:  5
+0 of 51 of 5finish calc_loss_loader..
+Epoch 1 (Step 000025): Train loss 7.328, Val loss 7.980
+debug: len input batch:  8  len target batch:  8  len train loader :  39
 debug: global_step :  26  tokens seen:  55296
-debug: len input batch:  8  len target batch:  8  len train loader :  311
+debug: len input batch:  8  len target batch:  8  len train loader :  39
 debug: global_step :  27  tokens seen:  57344
-debug: len input batch:  8  len target batch:  8  len train loader :  311
+debug: len input batch:  8  len target batch:  8  len train loader :  39
 debug: global_step :  28  tokens seen:  59392
-debug: len input batch:  8  len target batch:  8  len train loader :  311
+debug: len input batch:  8  len target batch:  8  len train loader :  39
 debug: global_step :  29  tokens seen:  61440
-debug: len input batch:  8  len target batch:  8  len train loader :  311
+debug: len input batch:  8  len target batch:  8  len train loader :  39
 debug: global_step :  30  tokens seen:  63488
 calc_loss_loader..
-num_batches:  1 len of data_loader:  311
-0 of 3111 of 311finish calc_loss_loader..
+num_batches:  1 len of data_loader:  39
+0 of 391 of 39finish calc_loss_loader..
 calc_loss_loader..
-num_batches:  1 len of data_loader:  34
-0 of 341 of 34finish calc_loss_loader..
-Epoch 1 (Step 000030): Train loss 9.218, Val loss 9.185
-debug: len input batch:  8  len target batch:  8  len train loader :  311
+num_batches:  1 len of data_loader:  5
+0 of 51 of 5finish calc_loss_loader..
+Epoch 1 (Step 000030): Train loss 7.087, Val loss 7.944
+debug: len input batch:  8  len target batch:  8  len train loader :  39
 debug: global_step :  31  tokens seen:  65536
-debug: len input batch:  8  len target batch:  8  len train loader :  311
+debug: len input batch:  8  len target batch:  8  len train loader :  39
 debug: global_step :  32  tokens seen:  67584
-debug: len input batch:  8  len target batch:  8  len train loader :  311
+debug: len input batch:  8  len target batch:  8  len train loader :  39
 debug: global_step :  33  tokens seen:  69632
-debug: len input batch:  8  len target batch:  8  len train loader :  311
+debug: len input batch:  8  len target batch:  8  len train loader :  39
 debug: global_step :  34  tokens seen:  71680
-debug: len input batch:  8  len target batch:  8  len train loader :  311
+debug: len input batch:  8  len target batch:  8  len train loader :  39
 debug: global_step :  35  tokens seen:  73728
 calc_loss_loader..
-num_batches:  1 len of data_loader:  311
-0 of 3111 of 311finish calc_loss_loader..
+num_batches:  1 len of data_loader:  39
+0 of 391 of 39finish calc_loss_loader..
 calc_loss_loader..
-num_batches:  1 len of data_loader:  34
-0 of 341 of 34finish calc_loss_loader..
-Epoch 1 (Step 000035): Train loss 9.234, Val loss 9.035
-debug: len input batch:  8  len target batch:  8  len train loader :  311
+num_batches:  1 len of data_loader:  5
+0 of 51 of 5finish calc_loss_loader..
+Epoch 1 (Step 000035): Train loss 7.108, Val loss 7.863
+debug: len input batch:  8  len target batch:  8  len train loader :  39
 debug: global_step :  36  tokens seen:  75776
-debug: len input batch:  8  len target batch:  8  len train loader :  311
+debug: len input batch:  8  len target batch:  8  len train loader :  39
 debug: global_step :  37  tokens seen:  77824
-debug: len input batch:  8  len target batch:  8  len train loader :  311
+debug: len input batch:  8  len target batch:  8  len train loader :  39
 debug: global_step :  38  tokens seen:  79872
-debug: len input batch:  8  len target batch:  8  len train loader :  311
+
+out of inner input_batch loop..
+generate and print sample..
+
+Every effort moves you, the the the the the the the the the the the the the the the the the the the the the the the the the the the the the the the the the the the the the the the the the the the the the the the the the
+debug: len input batch:  8  len target batch:  8  len train loader :  39
 debug: global_step :  39  tokens seen:  81920
-debug: len input batch:  8  len target batch:  8  len train loader :  311
+debug: len input batch:  8  len target batch:  8  len train loader :  39
 debug: global_step :  40  tokens seen:  83968
 calc_loss_loader..
-num_batches:  1 len of data_loader:  311
-0 of 3111 of 311finish calc_loss_loader..
+num_batches:  1 len of data_loader:  39
+0 of 391 of 39finish calc_loss_loader..
 calc_loss_loader..
-num_batches:  1 len of data_loader:  34
-0 of 341 of 34finish calc_loss_loader..
-Epoch 1 (Step 000040): Train loss 8.796, Val loss 8.887
-debug: len input batch:  8  len target batch:  8  len train loader :  311
+num_batches:  1 len of data_loader:  5
+0 of 51 of 5finish calc_loss_loader..
+Epoch 2 (Step 000040): Train loss 7.149, Val loss 7.787
+debug: len input batch:  8  len target batch:  8  len train loader :  39
 debug: global_step :  41  tokens seen:  86016
-debug: len input batch:  8  len target batch:  8  len train loader :  311
+debug: len input batch:  8  len target batch:  8  len train loader :  39
 debug: global_step :  42  tokens seen:  88064
-debug: len input batch:  8  len target batch:  8  len train loader :  311
+debug: len input batch:  8  len target batch:  8  len train loader :  39
 debug: global_step :  43  tokens seen:  90112
-debug: len input batch:  8  len target batch:  8  len train loader :  311
+debug: len input batch:  8  len target batch:  8  len train loader :  39
 debug: global_step :  44  tokens seen:  92160
-debug: len input batch:  8  len target batch:  8  len train loader :  311
+debug: len input batch:  8  len target batch:  8  len train loader :  39
 debug: global_step :  45  tokens seen:  94208
 calc_loss_loader..
-num_batches:  1 len of data_loader:  311
-0 of 3111 of 311finish calc_loss_loader..
+num_batches:  1 len of data_loader:  39
+0 of 391 of 39finish calc_loss_loader..
 calc_loss_loader..
-num_batches:  1 len of data_loader:  34
-0 of 341 of 34finish calc_loss_loader..
-Epoch 1 (Step 000045): Train loss 8.895, Val loss 8.734
-debug: len input batch:  8  len target batch:  8  len train loader :  311
+num_batches:  1 len of data_loader:  5
+0 of 51 of 5finish calc_loss_loader..
+Epoch 2 (Step 000045): Train loss 6.978, Val loss 7.696
+debug: len input batch:  8  len target batch:  8  len train loader :  39
 debug: global_step :  46  tokens seen:  96256
-debug: len input batch:  8  len target batch:  8  len train loader :  311
+debug: len input batch:  8  len target batch:  8  len train loader :  39
 debug: global_step :  47  tokens seen:  98304
-debug: len input batch:  8  len target batch:  8  len train loader :  311
+debug: len input batch:  8  len target batch:  8  len train loader :  39
 debug: global_step :  48  tokens seen:  100352
-debug: len input batch:  8  len target batch:  8  len train loader :  311
+debug: len input batch:  8  len target batch:  8  len train loader :  39
 debug: global_step :  49  tokens seen:  102400
-debug: len input batch:  8  len target batch:  8  len train loader :  311
+debug: len input batch:  8  len target batch:  8  len train loader :  39
 debug: global_step :  50  tokens seen:  104448
 calc_loss_loader..
-num_batches:  1 len of data_loader:  311
-0 of 3111 of 311finish calc_loss_loader..
+num_batches:  1 len of data_loader:  39
+0 of 391 of 39finish calc_loss_loader..
 calc_loss_loader..
-num_batches:  1 len of data_loader:  34
-0 of 341 of 34finish calc_loss_loader..
-Epoch 1 (Step 000050): Train loss 8.649, Val loss 8.581
-debug: len input batch:  8  len target batch:  8  len train loader :  311
+num_batches:  1 len of data_loader:  5
+0 of 51 of 5finish calc_loss_loader..
+Epoch 2 (Step 000050): Train loss 6.885, Val loss 7.638
+debug: len input batch:  8  len target batch:  8  len train loader :  39
 debug: global_step :  51  tokens seen:  106496
-debug: len input batch:  8  len target batch:  8  len train loader :  311
+debug: len input batch:  8  len target batch:  8  len train loader :  39
 debug: global_step :  52  tokens seen:  108544
-debug: len input batch:  8  len target batch:  8  len train loader :  311
+debug: len input batch:  8  len target batch:  8  len train loader :  39
 debug: global_step :  53  tokens seen:  110592
-debug: len input batch:  8  len target batch:  8  len train loader :  311
+debug: len input batch:  8  len target batch:  8  len train loader :  39
 debug: global_step :  54  tokens seen:  112640
-debug: len input batch:  8  len target batch:  8  len train loader :  311
+debug: len input batch:  8  len target batch:  8  len train loader :  39
 debug: global_step :  55  tokens seen:  114688
 calc_loss_loader..
-num_batches:  1 len of data_loader:  311
-0 of 3111 of 311finish calc_loss_loader..
+num_batches:  1 len of data_loader:  39
+0 of 391 of 39finish calc_loss_loader..
 calc_loss_loader..
-num_batches:  1 len of data_loader:  34
-0 of 341 of 34finish calc_loss_loader..
-Epoch 1 (Step 000055): Train loss 8.636, Val loss 8.431
-debug: len input batch:  8  len target batch:  8  len train loader :  311
+num_batches:  1 len of data_loader:  5
+0 of 51 of 5finish calc_loss_loader..
+Epoch 2 (Step 000055): Train loss 6.878, Val loss 7.622
+debug: len input batch:  8  len target batch:  8  len train loader :  39
 debug: global_step :  56  tokens seen:  116736
-debug: len input batch:  8  len target batch:  8  len train loader :  311
+debug: len input batch:  8  len target batch:  8  len train loader :  39
 debug: global_step :  57  tokens seen:  118784
-debug: len input batch:  8  len target batch:  8  len train loader :  311
+debug: len input batch:  8  len target batch:  8  len train loader :  39
 debug: global_step :  58  tokens seen:  120832
-debug: len input batch:  8  len target batch:  8  len train loader :  311
+debug: len input batch:  8  len target batch:  8  len train loader :  39
 debug: global_step :  59  tokens seen:  122880
-debug: len input batch:  8  len target batch:  8  len train loader :  311
+debug: len input batch:  8  len target batch:  8  len train loader :  39
 debug: global_step :  60  tokens seen:  124928
 calc_loss_loader..
-num_batches:  1 len of data_loader:  311
-0 of 3111 of 311finish calc_loss_loader..
+num_batches:  1 len of data_loader:  39
+0 of 391 of 39finish calc_loss_loader..
 calc_loss_loader..
-num_batches:  1 len of data_loader:  34
-0 of 341 of 34finish calc_loss_loader..
-Epoch 1 (Step 000060): Train loss 8.341, Val loss 8.289
-debug: len input batch:  8  len target batch:  8  len train loader :  311
+num_batches:  1 len of data_loader:  5
+0 of 51 of 5finish calc_loss_loader..
+Epoch 2 (Step 000060): Train loss 6.931, Val loss 7.598
+debug: len input batch:  8  len target batch:  8  len train loader :  39
 debug: global_step :  61  tokens seen:  126976
-debug: len input batch:  8  len target batch:  8  len train loader :  311
+debug: len input batch:  8  len target batch:  8  len train loader :  39
 debug: global_step :  62  tokens seen:  129024
-debug: len input batch:  8  len target batch:  8  len train loader :  311
+debug: len input batch:  8  len target batch:  8  len train loader :  39
 debug: global_step :  63  tokens seen:  131072
-debug: len input batch:  8  len target batch:  8  len train loader :  311
+debug: len input batch:  8  len target batch:  8  len train loader :  39
 debug: global_step :  64  tokens seen:  133120
-debug: len input batch:  8  len target batch:  8  len train loader :  311
+debug: len input batch:  8  len target batch:  8  len train loader :  39
 debug: global_step :  65  tokens seen:  135168
 calc_loss_loader..
-num_batches:  1 len of data_loader:  311
-0 of 3111 of 311finish calc_loss_loader..
+num_batches:  1 len of data_loader:  39
+0 of 391 of 39finish calc_loss_loader..
 calc_loss_loader..
-num_batches:  1 len of data_loader:  34
-0 of 341 of 34finish calc_loss_loader..
-Epoch 1 (Step 000065): Train loss 8.328, Val loss 8.156
-debug: len input batch:  8  len target batch:  8  len train loader :  311
+num_batches:  1 len of data_loader:  5
+0 of 51 of 5finish calc_loss_loader..
+Epoch 2 (Step 000065): Train loss 6.999, Val loss 7.602
+debug: len input batch:  8  len target batch:  8  len train loader :  39
 debug: global_step :  66  tokens seen:  137216
-debug: len input batch:  8  len target batch:  8  len train loader :  311
+debug: len input batch:  8  len target batch:  8  len train loader :  39
 debug: global_step :  67  tokens seen:  139264
-debug: len input batch:  8  len target batch:  8  len train loader :  311
+debug: len input batch:  8  len target batch:  8  len train loader :  39
 debug: global_step :  68  tokens seen:  141312
-debug: len input batch:  8  len target batch:  8  len train loader :  311
+debug: len input batch:  8  len target batch:  8  len train loader :  39
 debug: global_step :  69  tokens seen:  143360
-debug: len input batch:  8  len target batch:  8  len train loader :  311
+debug: len input batch:  8  len target batch:  8  len train loader :  39
 debug: global_step :  70  tokens seen:  145408
 calc_loss_loader..
-num_batches:  1 len of data_loader:  311
-0 of 3111 of 311finish calc_loss_loader..
+num_batches:  1 len of data_loader:  39
+0 of 391 of 39finish calc_loss_loader..
 calc_loss_loader..
-num_batches:  1 len of data_loader:  34
-0 of 341 of 34finish calc_loss_loader..
-Epoch 1 (Step 000070): Train loss 8.389, Val loss 8.037
-debug: len input batch:  8  len target batch:  8 
+num_batches:  1 len of data_loader:  5
+0 of 51 of 5finish calc_loss_loader..
+Epoch 2 (Step 000070): Train loss 6.838, Val loss 7.538
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  71  tokens seen:  147456
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  72  tokens seen:  149504
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  73  tokens seen:  151552
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  74  tokens seen:  153600
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  75  tokens seen:  155648
+calc_loss_loader..
+num_batches:  1 len of data_loader:  39
+0 of 391 of 39finish calc_loss_loader..
+calc_loss_loader..
+num_batches:  1 len of data_loader:  5
+0 of 51 of 5finish calc_loss_loader..
+Epoch 2 (Step 000075): Train loss 6.876, Val loss 7.542
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  76  tokens seen:  157696
+debug: len input batch:  8  len target batch:  8  len train loader :  39
+debug: global_step :  77  tokens seen:  159744
+
+out of inner input_batch loop..
+generate and print sample..
+
+Every effort moves you, and the state, and the state, and the state, and the state, and the state, and the state, and the state, and the state, and the state, and the state, and the state the state, and the state
+model saved
+
+tokens seen:  [2048, 12288, 22528, 32768, 43008, 53248, 63488, 73728, 83968, 94208, 104448, 114688, 124928, 135168, 145408, 155648]

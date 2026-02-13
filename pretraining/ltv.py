@@ -21,7 +21,8 @@ import tiktoken
 #file_path = "./datasets/the-verdict.txt"
 #file_path = "./datasets/wikipedia_corpus.txt"
 
-file_path = "../datasets/wikipedia_corpus.txt"
+#file_path = "../datasets/wikipedia_corpus.txt"
+file_path = "../datasets/wikipedia_corpus_small.txt"
 
 with open (file_path, "r", encoding="utf-8") as file:
     text_data = file.read()
