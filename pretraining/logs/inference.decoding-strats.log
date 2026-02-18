@@ -1,0 +1,47 @@
+# this is the output with 'generate' function (llm_infra/text_generate.py generate function)
+# with temperature params and top-k params applied. Doesn't repeat output but the output itself
+# doesn't make much sense, meaning more optimizations are due
+
+python inference.py 
+device override for my local ubuntu:  cpu
+
+model loaded .. <enter>
+
+
+chat output:  Every effort moves you know; and to have the picture for The "Yes--as he was him. Poor he neg by me!"
+"
+
+chat with me: (and press enter) Every effort moves you
+
+chat output:  Every effort moves you know how bitterness, and pushed one of the donkey arm-chairs such--had not existed dis began to an awful as his
+
+chat output:  Every effort moves you know how bitterness, and pushed one of the donkey arm-chairs such--had not existed dis began to an awful as his
+
+chat with me: (and press enter) Every effort moves you
+
+chat output:  Every effort moves you know," Mrs. He found the Riviera one-- told--_ thereity.
+As no great me!
+Well
+
+chat output:  Every effort moves you know," Mrs. He found the Riviera one-- told--_ thereity.
+As no great me!
+Well
+
+chat with me: (and press enter) and then he said -
+
+chat output:  and then he said - he never have of my dear? I can, so inevitably the last Gisburn--because he _ went me to saw
+
+chat output:  and then he said - he never have of my dear? I can, so inevitably the last Gisburn--because he _ went me to saw
+
+chat with me: (and press enter) and then he said -
+
+chat output:  and then he said -! I done--and by one after him done--as me out--so it was to me out in the latter seemed
+
+chat output:  and then he said -! I done--and by one after him done--as me out--so it was to me out in the latter seemed
+
+chat with me: (and press enter) ^CTraceback (most recent call last):
+  File "/Users/anupkaul/akaul_git/demosthenes-llm/pretraining/inference.py", line 83, in <module>
+    user_input = input("\nchat with me: (and press enter) ")
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+KeyboardInterrupt
+

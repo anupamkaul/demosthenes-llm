@@ -8,7 +8,7 @@ import tiktoken
 tokenizer = tiktoken.get_encoding("gpt2")
 
 import textgenerate
-from textgenerate import text_to_token_ids, generate_text_simple, token_ids_to_text
+from textgenerate import text_to_token_ids, generate_text_simple, token_ids_to_text, generate
 
 # load previously saved instance of the model (to check inference) 
 #(start with the simple model generated from a single file (the verdict))
@@ -51,14 +51,28 @@ except FileNotFoundError:
     print("model not found on disk. monitor as a one time thing, error out if repeats")
     exit
 
+'''
 # benchmark a string (every effort moves you)
 token_ids = generate_text_simple(
     model          = model,
     idx            = text_to_token_ids("Every effort moves you", tokenizer), # or the user's input (for a chat)
     max_new_tokens = 25,
-    context_size   = GPT_CONFIG_124M["context_length"]     
+    context_size   = GPT_CONFIG_124M["context_length"]
+       
+)
+'''
+
+# benchmark a string (every effort moves you)
+token_ids = generate(
+    model          = model,
+    idx            = text_to_token_ids("Every effort moves you", tokenizer), # or the user's input (for a chat)
+    max_new_tokens = 25,
+    context_size   = GPT_CONFIG_124M["context_length"],
+    top_k = 25,
+    temperature=1.4     
 
 )
+
 
 print("\nchat output: ", token_ids_to_text(token_ids, tokenizer))
 
@@ -68,6 +82,7 @@ print("\nchat output: ", token_ids_to_text(token_ids, tokenizer))
 while(True):
     user_input = input("\nchat with me: (and press enter) ")
 
+    '''
     token_ids = generate_text_simple(
         model          = model,
         idx            = text_to_token_ids(user_input, tokenizer), # or the user's input (for a chat)
@@ -75,6 +90,17 @@ while(True):
         context_size   = GPT_CONFIG_124M["context_length"]     
 
     )
+    '''
+
+    token_ids = generate(
+        model          = model,
+        idx            = text_to_token_ids(user_input, tokenizer), # or the user's input (for a chat)
+        max_new_tokens = 25,
+        context_size   = GPT_CONFIG_124M["context_length"],
+        top_k = 25,     
+        temperature=1.4
+    )
+    print("\nchat output: ", token_ids_to_text(token_ids, tokenizer))
     print("\nchat output: ", token_ids_to_text(token_ids, tokenizer))
 
 

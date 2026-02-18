@@ -6,7 +6,7 @@ sys.path.append( os.path.join( os.path.dirname(os.path.abspath(__file__)),  '../
 # add utility functions for text to tokenID conversion
 
 import tiktoken
-from generate_text_simple import generate_text_simple
+from generate_text_simple import generate_text_simple, generate
 
 def text_to_token_ids(text, tokenizer):
     encoded = tokenizer.encode(text, allowed_special={'<|endoftext|>'})
