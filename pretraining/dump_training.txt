@@ -1,164 +1,9 @@
-device:  cpu
-enter..device override for my local ubuntu:  cpu
-OS:  Darwin
+MacOS: MPS device found. Using GPU.
+enter..OS:  Darwin
 model not found on disk. monitor as a one time thing, error out if repeats
 Characters: 20479
 Tokens: 5145
 90% of the split is from index  18431
-raw training data: 
- I HAD always thought Jack Gisburn rather a cheap genius--though a good fellow enough--so it was no great surprise to me to hear that, in the height of his glory, he had dropped his painting, married a rich widow, and established himself in a villa on the Riviera. (Though I rather thought it would have been Rome or Florence.)
-
-"The height of his glory"--that was what the women called it. I can hear Mrs. Gideon Thwing--his last Chicago sitter--deploring his unaccountable abdication. "Of course it's going to send the value of my picture 'way up; but I don't think of that, Mr. Rickham--the loss to Arrt is all I think of." The word, on Mrs. Thwing's lips, multiplied its _rs_ as though they were reflected in an endless vista of mirrors. And it was not only the Mrs. Thwings who mourned. Had not the exquisite Hermia Croft, at the last Grafton Gallery show, stopped me before Gisburn's "Moon-dancers" to say, with tears in her eyes: "We shall not look upon its like again"?
-
-Well!--even through the prism of Hermia's tears I felt able to face the fact with equanimity. Poor Jack Gisburn! The women had made him--it was fitting that they should mourn him. Among his own sex fewer regrets were heard, and in his own trade hardly a murmur. Professional jealousy? Perhaps. If it were, the honour of the craft was vindicated by little Claude Nutley, who, in all good faith, brought out in the Burlington a very handsome "obituary" on Jack--one of those showy articles stocked with random technicalities that I have heard (I won't say by whom) compared to Gisburn's painting. And so--his resolve being apparently irrevocable--the discussion gradually died out, and, as Mrs. Thwing had predicted, the price of "Gisburns" went up.
-
-It was not till three years later that, in the course of a few weeks' idling on the Riviera, it suddenly occurred to me to wonder why Gisburn had given up his painting. On reflection, it really was a tempting problem. To accuse his wife would have been too easy--his fair sitters had been denied the solace of saying that Mrs. Gisburn had "dragged him down." For Mrs. Gisburn--as such--had not existed till nearly a year after Jack's resolve had been taken. It might be that he had married her--since he liked his ease--because he didn't want to go on painting; but it would have been hard to prove that he had given up his painting because he had married her.
-
-Of course, if she had not dragged him down, she had equally, as Miss Croft contended, failed to "lift him up"--she had not led him back to the easel. To put the brush into his hand again--what a vocation for a wife! But Mrs. Gisburn appeared to have disdained it--and I felt it might be interesting to find out why.
-
-The desultory life of the Riviera lends itself to such purely academic speculations; and having, on my way to Monte Carlo, caught a glimpse of Jack's balustraded terraces between the pines, I had myself borne thither the next day.
-
-I found the couple at tea beneath their palm-trees; and Mrs. Gisburn's welcome was so genial that, in the ensuing weeks, I claimed it frequently. It was not that my hostess was "interesting": on that point I could have given Miss Croft the fullest reassurance. It was just because she was _not_ interesting--if I may be pardoned the bull--that I found her so. For Jack, all his life, had been surrounded by interesting women: they had fostered his art, it had been reared in the hot-house of their adulation. And it was therefore instructive to note what effect the "deadening atmosphere of mediocrity" (I quote Miss Croft) was having on him.
-
-I have mentioned that Mrs. Gisburn was rich; and it was immediately perceptible that her husband was extracting from this circumstance a delicate but substantial satisfaction. It is, as a rule, the people who scorn money who get most out of it; and Jack's elegant disdain of his wife's big balance enabled him, with an appearance of perfect good-breeding, to transmute it into objects of art and luxury. To the latter, I must add, he remained relatively indifferent; but he was buying Renaissance bronzes and eighteenth-century pictures with a discrimination that bespoke the amplest resources.
-
-"Money's only excuse is to put beauty into circulation," was one of the axioms he laid down across the Sevres and silver of an exquisitely appointed luncheon-table, when, on a later day, I had again run over from Monte Carlo; and Mrs. Gisburn, beaming on him, added for my enlightenment: "Jack is so morbidly sensitive to every form of beauty."
-
-Poor Jack! It had always been his fate to have women say such things of him: the fact should be set down in extenuation. What struck me now was that, for the first time, he resented the tone. I had seen him, so often, basking under similar tributes--was it the conjugal note that robbed them of their savour? No--for, oddly enough, it became apparent that he was fond of Mrs. Gisburn--fond enough not to see her absurdity. It was his own absurdity he seemed to be wincing under--his own attitude as an object for garlands and incense.
-
-"My dear, since I've chucked painting people don't say that stuff about me--they say it about Victor Grindle," was his only protest, as he rose from the table and strolled out onto the sunlit terrace.
-
-I glanced after him, struck by his last word. Victor Grindle was, in fact, becoming the man of the moment--as Jack himself, one might put it, had been the man of the hour. The younger artist was said to have formed himself at my friend's feet, and I wondered if a tinge of jealousy underlay the latter's mysterious abdication. But no--for it was not till after that event that the _rose Dubarry_ drawing-rooms had begun to display their "Grindles."
-
-I turned to Mrs. Gisburn, who had lingered to give a lump of sugar to her spaniel in the dining-room.
-
-"Why _has_ he chucked painting?" I asked abruptly.
-
-She raised her eyebrows with a hint of good-humoured surprise.
-
-"Oh, he doesn't _have_ to now, you know; and I want him to enjoy himself," she said quite simply.
-
-I looked about the spacious white-panelled room, with its _famille-verte_ vases repeating the tones of the pale damask curtains, and its eighteenth-century pastels in delicate faded frames.
-
-"Has he chucked his pictures too? I haven't seen a single one in the house."
-
-A slight shade of constraint crossed Mrs. Gisburn's open countenance. "It's his ridiculous modesty, you know. He says they're not fit to have about; he's sent them all away except one--my portrait--and that I have to keep upstairs."
-
-His ridiculous modesty--Jack's modesty about his pictures? My curiosity was growing like the bean-stalk. I said persuasively to my hostess: "I must really see your portrait, you know."
-
-She glanced out almost timorously at the terrace where her husband, lounging in a hooded chair, had lit a cigar and drawn the Russian deerhound's head between his knees.
-
-"Well, come while he's not looking," she said, with a laugh that tried to hide her nervousness; and I followed her between the marble Emperors of the hall, and up the wide stairs with terra-cotta nymphs poised among flowers at each landing.
-
-In the dimmest corner of her boudoir, amid a profusion of delicate and distinguished objects, hung one of the familiar oval canvases, in the inevitable garlanded frame. The mere outline of the frame called up all Gisburn's past!
-
-Mrs. Gisburn drew back the window-curtains, moved aside a _jardiniere_ full of pink azaleas, pushed an arm-chair away, and said: "If you stand here you can just manage to see it. I had it over the mantel-piece, but he wouldn't let it stay."
-
-Yes--I could just manage to see it--the first portrait of Jack's I had ever had to strain my eyes over! Usually they had the place of honour--say the central panel in a pale yellow or _rose Dubarry_ drawing-room, or a monumental easel placed so that it took the light through curtains of old Venetian point. The more modest place became the picture better; yet, as my eyes grew accustomed to the half-light, all the characteristic qualities came out--all the hesitations disguised as audacities, the tricks of prestidigitation by which, with such consummate skill, he managed to divert attention from the real business of the picture to some pretty irrelevance of detail. Mrs. Gisburn, presenting a neutral surface to work on--forming, as it were, so inevitably the background of her own picture--had lent herself in an unusual degree to the display of this false virtuosity. The picture was one of Jack's "strongest," as his admirers would have put it--it represented, on his part, a swelling of muscles, a congesting of veins, a balancing, straddling and straining, that reminded one of the circus-clown's ironic efforts to lift a feather. It met, in short, at every point the demand of lovely woman to be painted "strongly" because she was tired of being painted "sweetly"--and yet not to lose an atom of the sweetness.
-
-"It's the last he painted, you know," Mrs. Gisburn said with pardonable pride. "The last but one," she corrected herself--"but the other doesn't count, because he destroyed it."
-
-"Destroyed it?" I was about to follow up this clue when I heard a footstep and saw Jack himself on the threshold.
-
-As he stood there, his hands in the pockets of his velveteen coat, the thin brown waves of hair pushed back from his white forehead, his lean sunburnt cheeks furrowed by a smile that lifted the tips of a self-confident moustache, I felt to what a degree he had the same quality as his pictures--the quality of looking cleverer than he was.
-
-His wife glanced at him deprecatingly, but his eyes travelled past her to the portrait.
-
-"Mr. Rickham wanted to see it," she began, as if excusing herself. He shrugged his shoulders, still smiling.
-
-"Oh, Rickham found me out long ago," he said lightly; then, passing his arm through mine: "Come and see the rest of the house."
-
-He showed it to me with a kind of naive suburban pride: the bath-rooms, the speaking-tubes, the dress-closets, the trouser-presses--all the complex simplifications of the millionaire's domestic economy. And whenever my wonder paid the expected tribute he said, throwing out his chest a little: "Yes, I really don't see how people manage to live without that."
-
-Well--it was just the end one might have foreseen for him. Only he was, through it all and in spite of it all--as he had been through, and in spite of, his pictures--so handsome, so charming, so disarming, that one longed to cry out: "Be dissatisfied with your leisure!" as once one had longed to say: "Be dissatisfied with your work!"
-
-But, with the cry on my lips, my diagnosis suffered an unexpected check.
-
-"This is my own lair," he said, leading me into a dark plain room at the end of the florid vista. It was square and brown and leathery: no "effects"; no bric-a-brac, none of the air of posing for reproduction in a picture weekly--above all, no least sign of ever having been used as a studio.
-
-The fact brought home to me the absolute finality of Jack's break with his old life.
-
-"Don't you ever dabble with paint any more?" I asked, still looking about for a trace of such activity.
-
-"Never," he said briefly.
-
-"Or water-colour--or etching?"
-
-His confident eyes grew dim, and his cheeks paled a little under their handsome sunburn.
-
-"Never think of it, my dear fellow--any more than if I'd never touched a brush."
-
-And his tone told me in a flash that he never thought of anything else.
-
-I moved away, instinctively embarrassed by my unexpected discovery; and as I turned, my eye fell on a small picture above the mantel-piece--the only object breaking the plain oak panelling of the room.
-
-"Oh, by Jove!" I said.
-
-It was a sketch of a donkey--an old tired donkey, standing in the rain under a wall.
-
-"By Jove--a Stroud!" I cried.
-
-He was silent; but I felt him close behind me, breathing a little quickly.
-
-"What a wonder! Made with a dozen lines--but on everlasting foundations. You lucky chap, where did you get it?"
-
-He answered slowly: "Mrs. Stroud gave it to me."
-
-"Ah--I didn't know you even knew the Strouds. He was such an inflexible hermit."
-
-"I didn't--till after. . . . She sent for me to paint him when he was dead."
-
-"When he was dead? You?"
-
-I must have let a little too much amazement escape through my surprise, for he answered with a deprecating laugh: "Yes--she's an awful simpleton, you know, Mrs. Stroud. Her only idea was to have him done by a fashionable painter--ah, poor Stroud! She thought it the surest way of proclaiming his greatness--of forcing it on a purblind public. And at the moment I was _the_ fashionable painter."
-
-"Ah, poor Stroud--as you say. Was _that_ his history?"
-
-"That was his history. She believed in him, gloried in him--or thought she did. But she couldn't bear not to have all the drawing-rooms with her. She couldn't bear the fact that, on varnishing days, one could always get near enough to see his pictures. Poor woman! She's just a fragment groping for other fragments. Stroud is the only whole I ever knew."
-
-"You ever knew? But you just said--"
-
-Gisburn had a curious smile in his eyes.
-
-"Oh, I knew him, and he knew me--only it happened after he was dead."
-
-I dropped my voice instinctively. "When she sent for you?"
-
-"Yes--quite insensible to the irony. She wanted him vindicated--and by me!"
-
-He laughed again, and threw back his head to look up at the sketch of the donkey. "There were days when I couldn't look at that thing--couldn't face it. But I forced myself to put it here; and now it's cured me--cured me. That's the reason why I don't dabble any more, my dear Rickham; or rather Stroud himself is the reason."
-
-For the first time my idle curiosity about my companion turned into a serious desire to understand him better.
-
-"I wish you'd tell me how it happened," I said.
-
-He stood looking up at the sketch, and twirling between his fingers a cigarette he had forgotten to light. Suddenly he turned toward me.
-
-"I'd rather like to tell you--because I've always suspected you of loathing my work."
-
-I made a deprecating gesture, which he negatived with a good-humoured shrug.
-
-"Oh, I didn't care a straw when I believed in myself--and now it's an added tie between us!"
-
-He laughed slightly, without bitterness, and pushed one of the deep arm-chairs forward. "There: make yourself comfortable--and here are the cigars you like."
-
-He placed them at my elbow and continued to wander up and down the room, stopping now and then beneath the picture.
-
-"How it happened? I can tell you in five minutes--and it didn't take much longer to happen. . . . I can remember now how surprised and pleased I was when I got Mrs. Stroud's note. Of course, deep down, I had always _felt_ there was no one like him--only I had gone with the stream, echoed the usual platitudes about him, till I half got to think he was a failure, one of the kind that are left behind. By Jove, and he _was_ left behind--because he had come to stay! The rest of us had to let ourselves be swept along or go under, but he was high above the current--on everlasting foundations, as you say.
-
-"Well, I went off to the house in my most egregious mood--rather moved, Lord forgive me, at the pathos of poor Stroud's career of failure being crowned by the glory of my painting him! Of course I meant to do the picture for nothing--I told Mrs. Stroud so when she began to stammer something about her poverty. I remember getting off a prodigious phrase about the honour being _mine_--oh, I was princely, my dear Rickham! I was posing to myself like one of my own sitters.
-
-"Then I was taken up and left alone with him. I had sent all my traps in advance, and I had only to set up the easel and get to work. He had been dead only twenty-four hours, and he died suddenly, of heart disease, so that there had been no preliminary work of destruction--his face was clear and untouched. I had met him once or twice, years before, and thought him insignificant and dingy. Now I saw that he was superb.
-
-"I was glad at first, with a merely aesthetic satisfaction: glad to have my hand on such a 'subject.' Then his strange life-likeness began to affect me queerly--as I blocked the head in I felt as if he were watching me do it. The sensation was followed by the thought: if he _were_ watching me, what would he say to my way of working? My strokes began to go a little wild--I felt nervous and uncertain.
-
-"Once, when I looked up, I seemed to see a smile behind his close grayish beard--as if he had the secret, and were amusing himself by holding it back from me. That exasperated me still more. The secret? Why, I had a secret worth twenty of his! I dashed at the canvas furiously, and tried some of my bravura tricks. But they failed me, they crumbled. I saw that he wasn't watching the showy bits--I couldn't distract his attention; he just kept his eyes on the hard passages between. Those were the ones I had always shirked, or covered up with some lying paint. And how he saw through my lies!
-
-"I looked up again, and caught sight of that sketch of the donkey hanging on the wall near his bed. His wife told me afterward it was the last thing he had done--just a note taken with a shaking hand, when he was down in Devonshire recovering from a previous heart attack. Just a note! But it tells his whole history. There are years of patient scornful persistence in every line. A man who had swum with the current could never have learned that mighty up-stream stroke. . . .
-
-"I turned back to my work, and went on groping and muddling; then I looked at the donkey again. I saw that, when Stroud laid in the first stroke, he knew just what the end would be. He had possessed his subject, absorbed it, recreated it. When had I done that with any of my things? They hadn't been born of me--I had just adopted them. . . .
-
-"Hang it, Rickham, with that face watching me I couldn't do another stroke. The plain truth was, I didn't know where to put it--_I had never known_. Only, with my sitters and my public, a showy splash of colour covered up the fact--I just threw paint into their faces. . . . Well, paint was the one medium those dead eyes could see through--see straight to the tottering foundations underneath. Don't you know how, in talking a foreign language, even fluently, one says half the time not what one wants to but what one can? Well--that was the way I painted; and as he lay there and watched me, the thing they called my 'techniq
 
 OS:  Darwin  batch size:  8  enter..
 GPTDatasetV1.py generated token IDs !
@@ -411,11 +256,23 @@ GPTModel(
   (out_head): Linear(in_features=768, out_features=50257, bias=False)
 )
 device:  cpu
-Training loss:  10.986782550811768
-Validation loss:  10.98110580444336
+calc_loss_loader..
+num_batches:  2 len of data_loader:  2
+0 of 21 of 2finish calc_loss_loader..
+calc_loss_loader..
+num_batches:  1 len of data_loader:  1
+0 of 1finish calc_loss_loader..
+Training loss:  10.98678207397461
+Validation loss:  10.981106758117676
 debug: len input batch:  8  len target batch:  8  len train loader :  2
 debug: global_step :  0  tokens seen:  2048
-Epoch 1 (Step 000000): Train loss 9.566, Val loss 9.855
+calc_loss_loader..
+num_batches:  2 len of data_loader:  2
+0 of 21 of 2finish calc_loss_loader..
+calc_loss_loader..
+num_batches:  1 len of data_loader:  1
+0 of 1finish calc_loss_loader..
+Epoch 1 (Step 000000): Train loss 9.604, Val loss 9.857
 debug: len input batch:  8  len target batch:  8  len train loader :  2
 debug: global_step :  1  tokens seen:  4096
 
@@ -431,17 +288,23 @@ debug: global_step :  3  tokens seen:  8192
 out of inner input_batch loop..
 generate and print sample..
 
-Every effort moves you, the, the the, the the, the, the the, the, the, the the, the,, the, the, the the, the the, the, the the, the, the, the, the, the, the
+Every effort moves you the the, the the the the the the the the the the.                                    
 debug: len input batch:  8  len target batch:  8  len train loader :  2
 debug: global_step :  4  tokens seen:  10240
 debug: len input batch:  8  len target batch:  8  len train loader :  2
 debug: global_step :  5  tokens seen:  12288
-Epoch 3 (Step 000005): Train loss 7.406, Val loss 7.887
+calc_loss_loader..
+num_batches:  2 len of data_loader:  2
+0 of 21 of 2finish calc_loss_loader..
+calc_loss_loader..
+num_batches:  1 len of data_loader:  1
+0 of 1finish calc_loss_loader..
+Epoch 3 (Step 000005): Train loss 7.402, Val loss 7.885
 
 out of inner input_batch loop..
 generate and print sample..
 
-Every effort moves you, the, the, the, the, the, the, the, the,, the, the, the, the, the, the the, the, the, the, the, the, the, the, the, the, the
+Every effort moves you, the, the, the, the, the, the, the, the,, the,,, the,, the,,, the,, the,, the, the,,, the,, the,, the, the
 debug: len input batch:  8  len target batch:  8  len train loader :  2
 debug: global_step :  6  tokens seen:  14336
 debug: len input batch:  8  len target batch:  8  len train loader :  2
@@ -459,17 +322,23 @@ debug: global_step :  9  tokens seen:  20480
 out of inner input_batch loop..
 generate and print sample..
 
-Every effort moves you. " " " " " " " " " " " " " " " " " " " """ " " " 
+Every effort moves you. ", and the, and, and, and I had. ", and, and, and, I had the, and the, and the, and, and the, I had the, and the, and, and of
 debug: len input batch:  8  len target batch:  8  len train loader :  2
 debug: global_step :  10  tokens seen:  22528
-Epoch 6 (Step 000010): Train loss 5.748, Val loss 6.735
+calc_loss_loader..
+num_batches:  2 len of data_loader:  2
+0 of 21 of 2finish calc_loss_loader..
+calc_loss_loader..
+num_batches:  1 len of data_loader:  1
+0 of 1finish calc_loss_loader..
+Epoch 6 (Step 000010): Train loss 5.591, Val loss 6.719
 debug: len input batch:  8  len target batch:  8  len train loader :  2
 debug: global_step :  11  tokens seen:  24576
 
 out of inner input_batch loop..
 generate and print sample..
 
-Every effort moves you. I had the, and, and, and, and I had. I had, I had, and the, I had. I had the, and the of the, and of the, and of the, and, and, and of
+Every effort moves you. " " ", and I had the of the. I had, I had, and I had ", and I had. ", and I had the, I had the, and I had. " I
 debug: len input batch:  8  len target batch:  8  len train loader :  2
 debug: global_step :  12  tokens seen:  26624
 debug: len input batch:  8  len target batch:  8  len train loader :  2
@@ -478,17 +347,23 @@ debug: global_step :  13  tokens seen:  28672
 out of inner input_batch loop..
 generate and print sample..
 
-Every effort moves you. I had been. I had been. I had been. Gisburn. I had to me, and I had been. I had the of the of the to the his pictures--I had the, and I had been. I had
+Every effort moves you know  "I had been--I he was a little the. I had been--I had been the, and had been to the the of the his pictures--I had been. I had the, and I had been. I had
 debug: len input batch:  8  len target batch:  8  len train loader :  2
 debug: global_step :  14  tokens seen:  30720
 debug: len input batch:  8  len target batch:  8  len train loader :  2
 debug: global_step :  15  tokens seen:  32768
-Epoch 8 (Step 000015): Train loss 4.393, Val loss 6.449
+calc_loss_loader..
+num_batches:  2 len of data_loader:  2
+0 of 21 of 2finish calc_loss_loader..
+calc_loss_loader..
+num_batches:  1 len of data_loader:  1
+0 of 1finish calc_loss_loader..
+Epoch 8 (Step 000015): Train loss 4.321, Val loss 6.340
 
 out of inner input_batch loop..
 generate and print sample..
 
-Every effort moves you know the, and I had been. Gisburn was the picture. Gisburn, I had been the, I had been to the the of the the fact--I had been. Gisburn, and I had been. Gis
+Every effort moves you know the, and in the of his pictures--I had the of the of the, and I had been the, I had been to the the, and I had been the his pictures--I had the, and he was, and I had
 debug: len input batch:  8  len target batch:  8  len train loader :  2
 debug: global_step :  16  tokens seen:  34816
 debug: len input batch:  8  len target batch:  8  len train loader :  2
@@ -497,7 +372,7 @@ debug: global_step :  17  tokens seen:  36864
 out of inner input_batch loop..
 generate and print sample..
 
-Every effort moves you know, and in a little to have to me--I had been.           "I. Gisburn's his pictures--I had been his pictures--I, and I had been--I
+Every effort moves you know.  "I the.  I had the.  "I was his pictures--I, I had been to the the, in the fact--I had been.       I he was his
 debug: len input batch:  8  len target batch:  8  len train loader :  2
 debug: global_step :  18  tokens seen:  38912
 debug: len input batch:  8  len target batch:  8  len train loader :  2
@@ -506,17 +381,23 @@ debug: global_step :  19  tokens seen:  40960
 out of inner input_batch loop..
 generate and print sample..
 
-Every effort moves you know the, and in the fact of his pictures--I had been.            "--I, in the donkey, and my the picture.  "I had been.   
+Every effort moves you know the, and in a little of his pictures--his a little of my and I was, with a little to see it to see a little of his pictures--I had been--his, and a little, and I felt, in his
 debug: len input batch:  8  len target batch:  8  len train loader :  2
 debug: global_step :  20  tokens seen:  43008
-Epoch 11 (Step 000020): Train loss 3.370, Val loss 6.206
+calc_loss_loader..
+num_batches:  2 len of data_loader:  2
+0 of 21 of 2finish calc_loss_loader..
+calc_loss_loader..
+num_batches:  1 len of data_loader:  1
+0 of 1finish calc_loss_loader..
+Epoch 11 (Step 000020): Train loss 3.266, Val loss 6.240
 debug: len input batch:  8  len target batch:  8  len train loader :  2
 debug: global_step :  21  tokens seen:  45056
 
 out of inner input_batch loop..
 generate and print sample..
 
-Every effort moves you know he was not to the picture--I he had been the picture.             "I he had the his pictures--and it--and he had been the--and--and I felt
+Every effort moves you know the, and in the picture.     "I turned.    "I, I felt to see a little, the his pictures--and him.    "Oh, the, he was his
 debug: len input batch:  8  len target batch:  8  len train loader :  2
 debug: global_step :  22  tokens seen:  47104
 debug: len input batch:  8  len target batch:  8  len train loader :  2
@@ -525,17 +406,23 @@ debug: global_step :  23  tokens seen:  49152
 out of inner input_batch loop..
 generate and print sample..
 
-Every effort moves you know he was not that, and he was not, so.   "I was no I felt to me.   "Oh, in his pictures--and it.    "Oh, the, and in his
+Every effort moves you know it was not that my hostess was not that, with the of a little to me--and that the fact, and. "Oh, and I had been at the donkey, I felt of the picture--and that he was his
 debug: len input batch:  8  len target batch:  8  len train loader :  2
 debug: global_step :  24  tokens seen:  51200
 debug: len input batch:  8  len target batch:  8  len train loader :  2
 debug: global_step :  25  tokens seen:  53248
-Epoch 13 (Step 000025): Train loss 2.460, Val loss 6.189
+calc_loss_loader..
+num_batches:  2 len of data_loader:  2
+0 of 21 of 2finish calc_loss_loader..
+calc_loss_loader..
+num_batches:  1 len of data_loader:  1
+0 of 1finish calc_loss_loader..
+Epoch 13 (Step 000025): Train loss 2.373, Val loss 6.186
 
 out of inner input_batch loop..
 generate and print sample..
 
-Every effort moves you know he was not that, and he was to the fact with the of a little to my work, and the fact, and that, and he had been his pictures--and him.            
+Every effort moves you know," was not that my hostess was not that, a little. Gisburn--and a--and here of the to see a smile behind his pictures--and it. The--the, a little a--and that, I had
 debug: len input batch:  8  len target batch:  8  len train loader :  2
 debug: global_step :  26  tokens seen:  55296
 debug: len input batch:  8  len target batch:  8  len train loader :  2
@@ -544,7 +431,7 @@ debug: global_step :  27  tokens seen:  57344
 out of inner input_batch loop..
 generate and print sample..
 
-Every effort moves you know," was not that my hostess was to the fact with the last I had been his eyes's an awful simpleton, and Mrs. I was his pictures.                
+Every effort moves you know," was one of the ax.     "I turned back to my work, and the fact, and that, and he was his pictures--and at my elbow and I had the, and--because he was a little
 debug: len input batch:  8  len target batch:  8  len train loader :  2
 debug: global_step :  28  tokens seen:  59392
 debug: len input batch:  8  len target batch:  8  len train loader :  2
@@ -553,17 +440,23 @@ debug: global_step :  29  tokens seen:  61440
 out of inner input_batch loop..
 generate and print sample..
 
-Every effort moves you know," was not that my hostess was "interesting of the that I had not to my work, and the fact, and that, in the; but his glory, as his pictures--the, the fact, and were, and in his
+Every effort moves you know," was one of the ax he was "interesting, with the Sevres and silver of an exquisburn, I had been to the display of his own that he had married her--the, a, and--because he had always his
 debug: len input batch:  8  len target batch:  8  len train loader :  2
 debug: global_step :  30  tokens seen:  63488
-Epoch 16 (Step 000030): Train loss 1.695, Val loss 6.202
+calc_loss_loader..
+num_batches:  2 len of data_loader:  2
+0 of 21 of 2finish calc_loss_loader..
+calc_loss_loader..
+num_batches:  1 len of data_loader:  1
+0 of 1finish calc_loss_loader..
+Epoch 16 (Step 000030): Train loss 1.555, Val loss 6.217
 debug: len input batch:  8  len target batch:  8  len train loader :  2
 debug: global_step :  31  tokens seen:  65536
 
 out of inner input_batch loop..
 generate and print sample..
 
-Every effort moves you know," was one of the ax he was "interesting": on the Sev I could have given Miss Croft the fact, had been through--it was fitting that I had been his pictures--the, the donkey. "strongest," she was
+Every effort moves you know," was one of the ax he was "interesting": on the Sevres and silver of an exquisburn, I had been to the display of his painting.      "I had been the bull--that I had
 debug: len input batch:  8  len target batch:  8  len train loader :  2
 debug: global_step :  32  tokens seen:  67584
 debug: len input batch:  8  len target batch:  8  len train loader :  2
@@ -572,17 +465,23 @@ debug: global_step :  33  tokens seen:  69632
 out of inner input_batch loop..
 generate and print sample..
 
-Every effort moves you know," was one of the ax? I felt nervous and uncertain.  "I looked up, and!    I was the; and I looked at the donkey.            
+Every effort moves you?"  "Yes--quite insensible to the irony. Gisburn's an--and by me to me to have to see a smile behind his pictures.      "I had a--because he had always his
 debug: len input batch:  8  len target batch:  8  len train loader :  2
 debug: global_step :  34  tokens seen:  71680
 debug: len input batch:  8  len target batch:  8  len train loader :  2
 debug: global_step :  35  tokens seen:  73728
-Epoch 18 (Step 000035): Train loss 1.055, Val loss 6.298
+calc_loss_loader..
+num_batches:  2 len of data_loader:  2
+0 of 21 of 2finish calc_loss_loader..
+calc_loss_loader..
+num_batches:  1 len of data_loader:  1
+0 of 1finish calc_loss_loader..
+Epoch 18 (Step 000035): Train loss 0.939, Val loss 6.255
 
 out of inner input_batch loop..
 generate and print sample..
 
-Every effort moves you?"  "Yes--quite insensible to the fact with a laugh: "Yes--and by me to me to have to see a smile behind his close grayish beard--as if he had the donkey. "There were days when I
+Every effort moves you?"  "Yes--quite insensible to the fact with a laugh: "Yes--and by me to me to have to see a smile behind his pictures.      "I had a fashionable painter--that I found
 debug: len input batch:  8  len target batch:  8  len train loader :  2
 debug: global_step :  36  tokens seen:  75776
 debug: len input batch:  8  len target batch:  8  len train loader :  2
@@ -591,7 +490,7 @@ debug: global_step :  37  tokens seen:  77824
 out of inner input_batch loop..
 generate and print sample..
 
-Every effort moves you?"  "Yes--quite insensible to the fact with equanimity.        He laughed again, and threw back his glory, and my elbow and as I turned, and down the room, when I
+Every effort moves you?"  "Yes--quite insensible to the fact with equanimity.    "I looked up his pictures. " because she was _not_ his pictures--the quality of Jack's "There were days when I
 debug: len input batch:  8  len target batch:  8  len train loader :  2
 debug: global_step :  38  tokens seen:  79872
 debug: len input batch:  8  len target batch:  8  len train loader :  2
@@ -600,7 +499,7 @@ debug: global_step :  39  tokens seen:  81920
 out of inner input_batch loop..
 generate and print sample..
 
-Every effort moves you?"  "Yes--quite insensible to the fact with equanimity.  "I looked up, I seemed to see a smile behind his close grayish beard--as if he had the donkey. "There were days when I
+Every effort moves you?"  "Yes--quite insensible to the irony. She wanted him vindicated--and by me!"  He laughed again, and threw back his glory, he had dropped his painting, had been the man of the hour. The
 model saved
 
 tokens seen:  [2048, 12288, 22528, 32768, 43008, 53248, 63488, 73728]

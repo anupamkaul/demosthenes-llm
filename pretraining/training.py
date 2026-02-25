@@ -140,22 +140,35 @@ torch.manual_seed(123)
 
 model = GPTModel(GPT_CONFIG_124M)
 
-device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
-print("device: ", device)
+import platform
+if (platform.system() != "Darwin"):
 
-if "cuda" in device.type:
-    print("mem analysis:\n", torch.cuda.memory_summary(device=None, abbreviated=False))
+    device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+    print("device: ", device)
+
+    if "cuda" in device.type:
+        print("mem analysis:\n", torch.cuda.memory_summary(device=None, abbreviated=False))
+
+    # enabled cuda on ubuntu 22.04 but GPU mem allocation (148MiB) 
+    # is greater than what's available on GPU0(23.69MiB out of 3.94GiB) 
+    # on an NVidia GEForce-GTX so explicitly and sadly setting this to CPU
+    # until solved
+
+    # Comment out the following 2 lines when GPU works..
+
+    device = torch.device("cpu")
+    print("device override for my local ubuntu: ", device)
+
+else:
+
+    if torch.backends.mps.is_available():
+        print("MacOS: MPS device found. Using GPU.")
+        device = torch.device("mps")
+    else:
+        print("MacOS: MPS device not found. Using CPU")
+        device = torch.device("cpu")
 
 input("enter..")
-
-# enabled cuda on ubuntu 22.04 but GPU mem allocation (148MiB) 
-# is greater than what's available on GPU0(23.69MiB out of 3.94GiB) 
-# on an NVidia GEForce-GTX so explicitly and sadly setting this to CPU
-#  until solved
-
-# Comment out the following 2 lines when GPU works..
-device = torch.device("cpu")
-print("device override for my local ubuntu: ", device)
 
 # disable the compile option on macOS : upgrading to Tahoe 2.6 causes
 # multiple OMP load errors when the compiler pragma spins up 8 clang 
