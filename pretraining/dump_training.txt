@@ -1,4 +1,4 @@
-MacOS: MPS device found. Using GPU.
+MacOS: MPS device found. Using MPS.
 enter..OS:  Darwin
 model not found on disk. monitor as a one time thing, error out if repeats
 Characters: 20479

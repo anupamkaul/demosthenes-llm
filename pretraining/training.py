@@ -162,7 +162,7 @@ if (platform.system() != "Darwin"):
 else:
 
     if torch.backends.mps.is_available():
-        print("MacOS: MPS device found. Using GPU.")
+        print("MacOS: MPS device found. Using MPS.")
         device = torch.device("mps")
     else:
         print("MacOS: MPS device not found. Using CPU")
