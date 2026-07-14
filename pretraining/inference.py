@@ -101,6 +101,5 @@ while(True):
         temperature=1.4
     )
     print("\nchat output: ", token_ids_to_text(token_ids, tokenizer))
-    print("\nchat output: ", token_ids_to_text(token_ids, tokenizer))
 
 
