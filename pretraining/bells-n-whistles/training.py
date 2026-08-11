@@ -181,11 +181,23 @@ GPT_CONFIG_124M = {
 torch.manual_seed(123)
 model = GPTModel(GPT_CONFIG_124M)
 
-device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
-print("device: ", device)
+import platform
+if (platform.system() != "Darwin"):
 
-if "cuda" in device.type:
-    print("mem analysis:\n", torch.cuda.memory_summary(device=None, abbreviated=False))
+    device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+    print("device: ", device)
+
+    if "cuda" in device.type:
+        print("mem analysis:\n", torch.cuda.memory_summary(device=None, abbreviated=False))
+
+else:
+
+    if torch.backends.mps.is_available():
+        print("MacOS: MPS device found. Using MPS.")
+        device = torch.device("mps")
+    else:
+        print("MacOS: MPS device not found. Using CPU")
+        device = torch.device("cpu")
 
 input("enter..")
 

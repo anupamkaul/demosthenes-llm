@@ -1,6 +1,7 @@
-MacOS: MPS device found. Using MPS.
+Platform is:  Darwin
+enter..MacOS: MPS device found. Using MPS.
 enter..OS:  Darwin
-model not found on disk. monitor as a one time thing, error out if repeats
+loaded previously saved model to continue training..<enter>
 Characters: 20479
 Tokens: 5145
 90% of the split is from index  18431
@@ -272,14 +273,14 @@ num_batches:  2 len of data_loader:  2
 calc_loss_loader..
 num_batches:  1 len of data_loader:  1
 0 of 1finish calc_loss_loader..
-Epoch 1 (Step 000000): Train loss 9.604, Val loss 9.857
+Epoch 1 (Step 000000): Train loss 1.967, Val loss 6.945
 debug: len input batch:  8  len target batch:  8  len train loader :  2
 debug: global_step :  1  tokens seen:  4096
 
 out of inner input_batch loop..
 generate and print sample..
 
-Every effort moves you,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+Every effort moves you know," was one of the, as it were, so inevitably the background of her own picture--had lent herself in an unusual degree he was, he had the, he had married her--the quality of, the, the, he was.
 debug: len input batch:  8  len target batch:  8  len train loader :  2
 debug: global_step :  2  tokens seen:  6144
 debug: len input batch:  8  len target batch:  8  len train loader :  2
@@ -288,7 +289,7 @@ debug: global_step :  3  tokens seen:  8192
 out of inner input_batch loop..
 generate and print sample..
 
-Every effort moves you the the, the the the the the the the the the the.                                    
+Every effort moves you know to work on--I felt able to face the fact with equanimity. Gisburn's past!  I had been taken. It might be that he had married her--the, had been the man of the hour. The
 debug: len input batch:  8  len target batch:  8  len train loader :  2
 debug: global_step :  4  tokens seen:  10240
 debug: len input batch:  8  len target batch:  8  len train loader :  2
@@ -299,12 +300,12 @@ num_batches:  2 len of data_loader:  2
 calc_loss_loader..
 num_batches:  1 len of data_loader:  1
 0 of 1finish calc_loss_loader..
-Epoch 3 (Step 000005): Train loss 7.402, Val loss 7.885
+Epoch 3 (Step 000005): Train loss 0.570, Val loss 6.453
 
 out of inner input_batch loop..
 generate and print sample..
 
-Every effort moves you, the, the, the, the, the, the, the, the,, the,,, the,, the,,, the,, the,, the, the,,, the,, the,, the, the
+Every effort moves you?" "Oh, my hostess was "interesting": on that point I could have given Miss Croft the fullest reassurance. "Oh, on a later day, one might put it, married a rich widow, and established himself in
 debug: len input batch:  8  len target batch:  8  len train loader :  2
 debug: global_step :  6  tokens seen:  14336
 debug: len input batch:  8  len target batch:  8  len train loader :  2
@@ -313,7 +314,7 @@ debug: global_step :  7  tokens seen:  16384
 out of inner input_batch loop..
 generate and print sample..
 
-Every effort moves you.                                                 
+Every effort moves you?"  "Yes--quite insensible to the fact with equanimity.        He laughed again, and threw back the window-curtains, and I had been the man of the hour. The
 debug: len input batch:  8  len target batch:  8  len train loader :  2
 debug: global_step :  8  tokens seen:  18432
 debug: len input batch:  8  len target batch:  8  len train loader :  2
@@ -322,7 +323,7 @@ debug: global_step :  9  tokens seen:  20480
 out of inner input_batch loop..
 generate and print sample..
 
-Every effort moves you. ", and the, and, and, and I had. ", and, and, and, I had the, and the, and the, and, and the, I had the, and the, and, and of
+Every effort moves you?"  "Yes--quite insensible to the irony. She wanted him vindicated--and by me!"  He laughed again, and threw back his head to look up at the sketch of the donkey. "There were days when I
 debug: len input batch:  8  len target batch:  8  len train loader :  2
 debug: global_step :  10  tokens seen:  22528
 calc_loss_loader..
@@ -331,14 +332,14 @@ num_batches:  2 len of data_loader:  2
 calc_loss_loader..
 num_batches:  1 len of data_loader:  1
 0 of 1finish calc_loss_loader..
-Epoch 6 (Step 000010): Train loss 5.591, Val loss 6.719
+Epoch 6 (Step 000010): Train loss 0.272, Val loss 6.503
 debug: len input batch:  8  len target batch:  8  len train loader :  2
 debug: global_step :  11  tokens seen:  24576
 
 out of inner input_batch loop..
 generate and print sample..
 
-Every effort moves you. " " ", and I had the of the. I had, I had, and I had ", and I had. ", and I had the, I had the, and I had. " I
+Every effort moves you?"  "Yes--quite insensible to the irony. She wanted him vindicated--and by me!"  He laughed again, and threw back his head to look up at the sketch of the donkey. "There were days when I
 debug: len input batch:  8  len target batch:  8  len train loader :  2
 debug: global_step :  12  tokens seen:  26624
 debug: len input batch:  8  len target batch:  8  len train loader :  2
@@ -347,7 +348,7 @@ debug: global_step :  13  tokens seen:  28672
 out of inner input_batch loop..
 generate and print sample..
 
-Every effort moves you know  "I had been--I he was a little the. I had been--I had been the, and had been to the the of the his pictures--I had been. I had the, and I had been. I had
+Every effort moves you?"  "Yes--quite insensible to the irony. She wanted him vindicated--and by me!"  He laughed again, and threw back his head to look up at the sketch of the donkey. "There were days when I
 debug: len input batch:  8  len target batch:  8  len train loader :  2
 debug: global_step :  14  tokens seen:  30720
 debug: len input batch:  8  len target batch:  8  len train loader :  2
@@ -358,12 +359,12 @@ num_batches:  2 len of data_loader:  2
 calc_loss_loader..
 num_batches:  1 len of data_loader:  1
 0 of 1finish calc_loss_loader..
-Epoch 8 (Step 000015): Train loss 4.321, Val loss 6.340
+Epoch 8 (Step 000015): Train loss 0.149, Val loss 6.662
 
 out of inner input_batch loop..
 generate and print sample..
 
-Every effort moves you know the, and in the of his pictures--I had the of the of the, and I had been the, I had been to the the, and I had been the his pictures--I had the, and he was, and I had
+Every effort moves you?"  "Yes--quite insensible to the irony. She wanted him vindicated--and by me!"  Mrs. Gisburn drew back his head to look up at the sketch of the donkey. "There were days when I
 debug: len input batch:  8  len target batch:  8  len train loader :  2
 debug: global_step :  16  tokens seen:  34816
 debug: len input batch:  8  len target batch:  8  len train loader :  2
@@ -372,7 +373,7 @@ debug: global_step :  17  tokens seen:  36864
 out of inner input_batch loop..
 generate and print sample..
 
-Every effort moves you know.  "I the.  I had the.  "I was his pictures--I, I had been to the the, in the fact--I had been.       I he was his
+Every effort moves you?"  "Yes--quite insensible to the irony. She wanted him vindicated--and by me!"  Mrs. It was just threw back his head to look up at the sketch of the donkey. "There were days when I
 debug: len input batch:  8  len target batch:  8  len train loader :  2
 debug: global_step :  18  tokens seen:  38912
 debug: len input batch:  8  len target batch:  8  len train loader :  2
@@ -381,7 +382,7 @@ debug: global_step :  19  tokens seen:  40960
 out of inner input_batch loop..
 generate and print sample..
 
-Every effort moves you know the, and in a little of his pictures--his a little of my and I was, with a little to see it to see a little of his pictures--I had been--his, and a little, and I felt, in his
+Every effort moves you?"  "Yes--quite insensible to the irony. She wanted him vindicated--and by me!"  He laughed again, and threw back his head to look up at the sketch of the donkey. "There were days when I
 debug: len input batch:  8  len target batch:  8  len train loader :  2
 debug: global_step :  20  tokens seen:  43008
 calc_loss_loader..
@@ -390,14 +391,14 @@ num_batches:  2 len of data_loader:  2
 calc_loss_loader..
 num_batches:  1 len of data_loader:  1
 0 of 1finish calc_loss_loader..
-Epoch 11 (Step 000020): Train loss 3.266, Val loss 6.240
+Epoch 11 (Step 000020): Train loss 0.088, Val loss 6.816
 debug: len input batch:  8  len target batch:  8  len train loader :  2
 debug: global_step :  21  tokens seen:  45056
 
 out of inner input_batch loop..
 generate and print sample..
 
-Every effort moves you know the, and in the picture.     "I turned.    "I, I felt to see a little, the his pictures--and him.    "Oh, the, he was his
+Every effort moves you?"  "Yes--quite insensible to the irony. She wanted him vindicated--and by me!"  He laughed again, and threw back his head to look up at the sketch of the donkey. "There were days when I
 debug: len input batch:  8  len target batch:  8  len train loader :  2
 debug: global_step :  22  tokens seen:  47104
 debug: len input batch:  8  len target batch:  8  len train loader :  2
@@ -406,7 +407,7 @@ debug: global_step :  23  tokens seen:  49152
 out of inner input_batch loop..
 generate and print sample..
 
-Every effort moves you know it was not that my hostess was not that, with the of a little to me--and that the fact, and. "Oh, and I had been at the donkey, I felt of the picture--and that he was his
+Every effort moves you?"  "Yes--quite insensible to the irony. She wanted him vindicated--and by me!"  He laughed again, and threw back his head to look up at the sketch of the donkey. "There were days when I
 debug: len input batch:  8  len target batch:  8  len train loader :  2
 debug: global_step :  24  tokens seen:  51200
 debug: len input batch:  8  len target batch:  8  len train loader :  2
@@ -417,12 +418,12 @@ num_batches:  2 len of data_loader:  2
 calc_loss_loader..
 num_batches:  1 len of data_loader:  1
 0 of 1finish calc_loss_loader..
-Epoch 13 (Step 000025): Train loss 2.373, Val loss 6.186
+Epoch 13 (Step 000025): Train loss 0.057, Val loss 6.955
 
 out of inner input_batch loop..
 generate and print sample..
 
-Every effort moves you know," was not that my hostess was not that, a little. Gisburn--and a--and here of the to see a smile behind his pictures--and it. The--the, a little a--and that, I had
+Every effort moves you?"  "Yes--quite insensible to the irony. She wanted him vindicated--and by me!"  He laughed again, and threw back his head to look up at the sketch of the donkey. "There were days when I
 debug: len input batch:  8  len target batch:  8  len train loader :  2
 debug: global_step :  26  tokens seen:  55296
 debug: len input batch:  8  len target batch:  8  len train loader :  2
@@ -431,7 +432,7 @@ debug: global_step :  27  tokens seen:  57344
 out of inner input_batch loop..
 generate and print sample..
 
-Every effort moves you know," was one of the ax.     "I turned back to my work, and the fact, and that, and he was his pictures--and at my elbow and I had the, and--because he was a little
+Every effort moves you?"  "Yes--quite insensible to the irony. She wanted him vindicated--and by me!"  He laughed again, and threw back his head to look up at the sketch of the donkey. "There were days when I
 debug: len input batch:  8  len target batch:  8  len train loader :  2
 debug: global_step :  28  tokens seen:  59392
 debug: len input batch:  8  len target batch:  8  len train loader :  2
@@ -440,7 +441,7 @@ debug: global_step :  29  tokens seen:  61440
 out of inner input_batch loop..
 generate and print sample..
 
-Every effort moves you know," was one of the ax he was "interesting, with the Sevres and silver of an exquisburn, I had been to the display of his own that he had married her--the, a, and--because he had always his
+Every effort moves you?"  "Yes--quite insensible to the irony. She wanted him vindicated--and by me!"  He laughed again, and threw back his head to look up at the sketch of the donkey. "There were days when I
 debug: len input batch:  8  len target batch:  8  len train loader :  2
 debug: global_step :  30  tokens seen:  63488
 calc_loss_loader..
@@ -449,14 +450,14 @@ num_batches:  2 len of data_loader:  2
 calc_loss_loader..
 num_batches:  1 len of data_loader:  1
 0 of 1finish calc_loss_loader..
-Epoch 16 (Step 000030): Train loss 1.555, Val loss 6.217
+Epoch 16 (Step 000030): Train loss 0.037, Val loss 7.087
 debug: len input batch:  8  len target batch:  8  len train loader :  2
 debug: global_step :  31  tokens seen:  65536
 
 out of inner input_batch loop..
 generate and print sample..
 
-Every effort moves you know," was one of the ax he was "interesting": on the Sevres and silver of an exquisburn, I had been to the display of his painting.      "I had been the bull--that I had
+Every effort moves you?"  "Yes--quite insensible to the irony. She wanted him vindicated--and by me!"  He laughed again, and threw back his head to look up at the sketch of the donkey. "There were days when I
 debug: len input batch:  8  len target batch:  8  len train loader :  2
 debug: global_step :  32  tokens seen:  67584
 debug: len input batch:  8  len target batch:  8  len train loader :  2
@@ -465,7 +466,7 @@ debug: global_step :  33  tokens seen:  69632
 out of inner input_batch loop..
 generate and print sample..
 
-Every effort moves you?"  "Yes--quite insensible to the irony. Gisburn's an--and by me to me to have to see a smile behind his pictures.      "I had a--because he had always his
+Every effort moves you?"  "Yes--quite insensible to the irony. She wanted him vindicated--and by me!"  He laughed again, and threw back his head to look up at the sketch of the donkey. "There were days when I
 debug: len input batch:  8  len target batch:  8  len train loader :  2
 debug: global_step :  34  tokens seen:  71680
 debug: len input batch:  8  len target batch:  8  len train loader :  2
@@ -476,12 +477,12 @@ num_batches:  2 len of data_loader:  2
 calc_loss_loader..
 num_batches:  1 len of data_loader:  1
 0 of 1finish calc_loss_loader..
-Epoch 18 (Step 000035): Train loss 0.939, Val loss 6.255
+Epoch 18 (Step 000035): Train loss 0.025, Val loss 7.214
 
 out of inner input_batch loop..
 generate and print sample..
 
-Every effort moves you?"  "Yes--quite insensible to the fact with a laugh: "Yes--and by me to me to have to see a smile behind his pictures.      "I had a fashionable painter--that I found
+Every effort moves you?"  "Yes--quite insensible to the irony. She wanted him vindicated--and by me!"  He laughed again, and threw back his head to look up at the sketch of the donkey. "There were days when I
 debug: len input batch:  8  len target batch:  8  len train loader :  2
 debug: global_step :  36  tokens seen:  75776
 debug: len input batch:  8  len target batch:  8  len train loader :  2
@@ -490,7 +491,7 @@ debug: global_step :  37  tokens seen:  77824
 out of inner input_batch loop..
 generate and print sample..
 
-Every effort moves you?"  "Yes--quite insensible to the fact with equanimity.    "I looked up his pictures. " because she was _not_ his pictures--the quality of Jack's "There were days when I
+Every effort moves you?"  "Yes--quite insensible to the irony. She wanted him vindicated--and by me!"  He laughed again, and threw back his head to look up at the sketch of the donkey. "There were days when I
 debug: len input batch:  8  len target batch:  8  len train loader :  2
 debug: global_step :  38  tokens seen:  79872
 debug: len input batch:  8  len target batch:  8  len train loader :  2
@@ -499,7 +500,7 @@ debug: global_step :  39  tokens seen:  81920
 out of inner input_batch loop..
 generate and print sample..
 
-Every effort moves you?"  "Yes--quite insensible to the irony. She wanted him vindicated--and by me!"  He laughed again, and threw back his glory, he had dropped his painting, had been the man of the hour. The
+Every effort moves you?"  "Yes--quite insensible to the irony. She wanted him vindicated--and by me!"  He laughed again, and threw back his head to look up at the sketch of the donkey. "There were days when I
 model saved
 
 tokens seen:  [2048, 12288, 22528, 32768, 43008, 53248, 63488, 73728]

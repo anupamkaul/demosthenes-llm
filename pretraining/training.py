@@ -141,6 +141,9 @@ torch.manual_seed(123)
 model = GPTModel(GPT_CONFIG_124M)
 
 import platform
+print("Platform is: ", platform.system())
+input("enter..")
+
 if (platform.system() != "Darwin"):
 
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
