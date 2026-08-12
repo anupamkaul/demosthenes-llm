@@ -279,9 +279,6 @@ Let's use the above function to determine the classification accuracies from a b
 of 10 batches from the 3 datasets, for efficiency:
 '''
 
-device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
-model.to(device)
-
 import platform
 if (platform.system() != "Darwin"):
 
@@ -309,6 +306,9 @@ else:
     else:
         print("MacOS: MPS device not found. Using CPU")
         device = torch.device("cpu")
+
+model.to(device)
+
 
 input("enter..")
 
