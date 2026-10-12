@@ -12,8 +12,11 @@ sys.path.append( os.path.join( os.path.dirname(os.path.abspath(__file__)),  '../
 import time
 start_time = time.time()
 
+# specify device to "load" the model
 #device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
-device = torch.device("mps")
+device = torch.device("mps" if torch.backends.mps.is_available() else "cpu")
+print(device)
+input()
 
 CHOOSE_MODEL = "gpt2-small (124M)"
 INPUT_PROMPT = "Every effort moves"
@@ -42,8 +45,12 @@ model.out_head = torch.nn.Linear(
 model_state_dict = torch.load("./review_classifier.pth", map_location=device)
 #print(model_state_dict)
 
+# explicity set the device for the model
 model.load_state_dict(model_state_dict)
-model.to(device) 
+device = torch.device("mps" if torch.backends.mps.is_available() else "cpu")
+print(device)
+model.to(device)
+input()
 
 end_time = time.time()
 execution_time_minutes = (end_time - start_time) / 60
