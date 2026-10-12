@@ -12,7 +12,8 @@ sys.path.append( os.path.join( os.path.dirname(os.path.abspath(__file__)),  '../
 import time
 start_time = time.time()
 
-device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+#device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+device = torch.device("mps")
 
 CHOOSE_MODEL = "gpt2-small (124M)"
 INPUT_PROMPT = "Every effort moves"
