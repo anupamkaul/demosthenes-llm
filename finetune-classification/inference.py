@@ -43,6 +43,7 @@ model_state_dict = torch.load("./review_classifier.pth", map_location=device)
 #print(model_state_dict)
 
 model.load_state_dict(model_state_dict)
+model.to(device) 
 
 end_time = time.time()
 execution_time_minutes = (end_time - start_time) / 60
