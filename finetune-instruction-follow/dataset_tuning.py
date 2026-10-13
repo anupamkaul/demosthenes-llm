@@ -274,10 +274,11 @@ the data to the maximum context length supported by the GPT-2 model, which we wi
 
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
-# if torch.backends.mps.is_available():
-#     device = torch.device("mps")"      
+if torch.backends.mps.is_available():
+     device = torch.device("mps")      
 
-print("Device:", device)
+print("Device (dataloader):", device)
+input()
 
 from functools import partial
 
@@ -295,8 +296,8 @@ use our custom collate function for the batching process.
 from torch.utils.data import DataLoader
 
 num_workers = 0
-#batch_size = 8
-batch_size = 1 #ubuntu machines have only 16GB RAM, crash at batch_size=8
+batch_size = 8 # re-enable batchsize of 8 for my m5 macbook pro
+#batch_size = 1 #ubuntu machines have only 16GB RAM, crash at batch_size=8
 
 torch.manual_seed(123)
 

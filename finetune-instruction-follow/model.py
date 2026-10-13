@@ -64,23 +64,34 @@ load_weights_into_gpt(model, params)
 model.eval()
 
 import torch
-device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
-print("device: ", device)
-
-
-
-# an unfortunate hack for my local ubuntu 22.04 : even when cuda force it to CPU
-# (this is because memory requests to my GPU0 exceed its total mem available, needs debugging)
-
-device = torch.device("cpu")
-print("device override (for my local ubuntu): ", device)
 
 import platform
-print("OS: ", platform.system())
-
 if (platform.system() != "Darwin"):
-    print("compiling the model (non macOS")
-    model = torch.compile(model)
+
+    device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+    print("device: ", device)
+
+    if "cuda" in device.type:
+        print("mem analysis:\n", torch.cuda.memory_summary(device=None, abbreviated=False))
+
+    # enabled cuda on ubuntu 22.04 but GPU mem allocation (148MiB) 
+    # is greater than what's available on GPU0(23.69MiB out of 3.94GiB) 
+    # on an NVidia GEForce-GTX so explicitly and sadly setting this to CPU
+    # until solved
+
+    # Comment out the following 2 lines when GPU works..
+
+    device = torch.device("cpu")
+    print("device override for my local ubuntu: ", device)
+
+else:
+
+    if torch.backends.mps.is_available():
+        print("MacOS: MPS device found. Using MPS.")
+        device = torch.device("mps")
+    else:
+        print("MacOS: MPS device not found. Using CPU")
+        device = torch.device("cpu")
 
 model.to(device)
 
