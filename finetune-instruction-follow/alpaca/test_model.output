@@ -1,0 +1,252 @@
+# brief manual outputs from the alpaca fine tuned model
+# it does get quite a few things wrong...
+
+(dllm_env) anupamkaul@anupamkauls-MacBook-Pro alpaca % python test_model.py 
+Len of data:  52002
+Training set length: 44201
+Test set length: 5200
+Validation set length: 2601
+[50256]
+Device (dataset tuning alpaca): mps
+
+Number of alpaca tests:  5200
+
+MacOS: MPS device found. Using MPS.
+device:  mps
+LOAD TIME: loaded saved alpaca model (1.6G	./model/modelif.pth) in 0.01 minutes .. <enter>
+
+EXEC TIME: Response generated in 0.00 minutes
+Below is an instruction that describes a task. Write a response that appropriately completes the request. 
+
+### Instruction:
+Name a famous movie with the input name
+
+### Input:
+Grace
+
+Correct response:
+>> Grace Unplugged (2013)
+
+Model response:
+>> The Godfather (1972)
+-------------------------------------
+<enter>..
+EXEC TIME: Response generated in 0.00 minutes
+Below is an instruction that describes a task. Write a response that appropriately completes the request. 
+
+### Instruction:
+Name a popular singer from the US
+
+Correct response:
+>> Taylor Swift
+
+Model response:
+>> .
+
+
+Miley Cyrus.
+-------------------------------------
+<enter>..
+EXEC TIME: Response generated in 0.00 minutes
+Below is an instruction that describes a task. Write a response that appropriately completes the request. 
+
+### Instruction:
+Make up a new word using the following letters
+
+### Input:
+erdnx
+
+Correct response:
+>> erdnxology: the study of the nature and process of change.
+
+Model response:
+>> Erdnx
+-------------------------------------
+<enter>..
+EXEC TIME: Response generated in 0.04 minutes
+Below is an instruction that describes a task. Write a response that appropriately completes the request. 
+
+### Instruction:
+Summarize the article "Cats vs Dogs: The classic pet debate"
+
+### Input:
+https://www.livescience.com/54891-cats-dogs-pet-debate.html
+
+Correct response:
+>> The age-old debate of cats vs dogs remains a hot topic among animal lovers. Dogs often require more attention and are better for families with kids, but cats are usually more independent and don't need as much exercise or training. Both cats and dogs have their pros and cons and have unique personalities, meaning there is no right or wrong pet. Ultimately, it comes down to personal preference.
+
+Model response:
+>> The classic pet debate has been ongoing for decades, with both cats and dogs being considered pets. Cats are typically more independent and prefer to be indoors, while dogs are typically more active and prefer to be outdoors. The debate has been largely driven by the fact that cats are typically more affectionate and require more attention than dogs. However, cats are also more independent and prefer to be alone. In recent years, the debate has shifted to favor dogs, with cats being seen as more independent and preferring to be indoors.
+-------------------------------------
+<enter>..
+EXEC TIME: Response generated in 0.00 minutes
+Below is an instruction that describes a task. Write a response that appropriately completes the request. 
+
+### Instruction:
+Convert the phrase "I had a great time" into present tense.
+
+Correct response:
+>> I am having a great time.
+
+Model response:
+>> I have had a great time.
+-------------------------------------
+<enter>..
+EXEC TIME: Response generated in 0.01 minutes
+Below is an instruction that describes a task. Write a response that appropriately completes the request. 
+
+### Instruction:
+Name two evidence-based benefits that sound therapy brings to people.
+
+Correct response:
+>> Studies have shown that sound therapy can help alleviate stress and anxiety, improve mood, boost concentration and productivity, and promote relaxation.
+
+Model response:
+>> Two evidence-based benefits that sound therapy brings to people are improved mental health and a sense of wellbeing.
+-------------------------------------
+<enter>..
+EXEC TIME: Response generated in 0.01 minutes
+Below is an instruction that describes a task. Write a response that appropriately completes the request. 
+
+### Instruction:
+Edit the following sentence to increase readability: "He made a huge effort and was so successful."
+
+Correct response:
+>> He exerted a tremendous effort, and thus enjoyed great success.
+
+Model response:
+>> ### Input:
+He made a huge effort and was so successful.
+
+
+He was so successful that he made a huge effort.
+-------------------------------------
+<enter>..
+EXEC TIME: Response generated in 0.03 minutes
+Below is an instruction that describes a task. Write a response that appropriately completes the request. 
+
+### Instruction:
+Compare the differences between HTML and JSON formats.
+
+Correct response:
+>> HTML (HyperText Markup Language) is a markup language used to display data, while JSON (JavaScript Object Notation) is a lightweight data-interchange format. HTML is designed to display data in a structured format, while JSON is designed to transmit data between a server and a web application. HTML documents contain tags, while JSON objects contain data in name/value pairs. HTML documents are usually rendered in the browser, while JSON is primarily used to transfer data between a server and web application.
+
+Model response:
+>> HTML and JSON are both object-oriented programming languages. However, they have different features. HTML is a markup language, which allows for the manipulation of data and the creation of forms and other forms of data. JSON is a JSON format, which allows for the manipulation of data and the creation of objects. HTML is a declarative language, while JSON is a data-oriented language. HTML is a markup language, while JSON is a data-oriented language.
+-------------------------------------
+<enter>..
+EXEC TIME: Response generated in 0.00 minutes
+Below is an instruction that describes a task. Write a response that appropriately completes the request. 
+
+### Instruction:
+Classify the following sentence as a statement, question or command:
+"Can you help me?"
+
+Correct response:
+>> Question
+
+Model response:
+>> Question
+-------------------------------------
+<enter>..
+EXEC TIME: Response generated in 0.00 minutes
+Below is an instruction that describes a task. Write a response that appropriately completes the request. 
+
+### Instruction:
+Construct a mathematical equation that represents a linear relationship between two variables.
+
+Correct response:
+>> y = mx + b
+
+Model response:
+>> y = mx + b
+-------------------------------------
+<enter>..
+EXEC TIME: Response generated in 0.00 minutes
+Below is an instruction that describes a task. Write a response that appropriately completes the request. 
+
+### Instruction:
+Rewrite the following sentence to make it more concise: "I was displeased with the result of the experiment that I conducted."
+
+Correct response:
+>> I was unhappy with my experiment's outcome.
+
+Model response:
+>> I was displeased with the results of the experiment.
+-------------------------------------
+<enter>..
+EXEC TIME: Response generated in 0.00 minutes
+Below is an instruction that describes a task. Write a response that appropriately completes the request. 
+
+### Instruction:
+Modify the following sentence to include a specific company or product.
+
+### Input:
+The product is an affordable solution for small businesses.
+
+Correct response:
+>> Shopify is an affordable solution for small businesses.
+
+Model response:
+>> The product is an affordable solution for small businesses.
+-------------------------------------
+<enter>..
+EXEC TIME: Response generated in 0.03 minutes
+Below is an instruction that describes a task. Write a response that appropriately completes the request. 
+
+### Instruction:
+What could be the advantage of using a GPT language model?
+
+Correct response:
+>> The main advantage of using a GPT language model is that it can generate more natural language than traditional models. A GPT model can generate a new text with the same meaning, similar writing style and coherent structure as the original sentence. Furthermore, it can quickly adapt to new datasets and understand nuances like context, sentiment and sentiment. This makes the GPT model useful in a variety of applications, such as machine translation, speech recognition, and text summarization.
+
+Model response:
+>> The advantage of using a GPT language model is that it can generate natural-sounding responses to natural language questions. It can also be used to generate natural-sounding responses to complex questions, such as “What is the capital of France?” or “What is the capital of the United States?”. Additionally, GPT language models can generate natural-sounding responses to complex questions, such as “What is the capital of France?” or “What is the capital of the United States?”.
+-------------------------------------
+<enter>..
+EXEC TIME: Response generated in 0.00 minutes
+Below is an instruction that describes a task. Write a response that appropriately completes the request. 
+
+### Instruction:
+Convert this binary number into decimal number.
+
+### Input:
+1000
+
+Correct response:
+>> 8
+
+Model response:
+>> 1010
+-------------------------------------
+<enter>..
+EXEC TIME: Response generated in 0.03 minutes
+Below is an instruction that describes a task. Write a response that appropriately completes the request. 
+
+### Instruction:
+What do you understand by AI explainability?
+
+Correct response:
+>> AI explainability is the study of how artificial intelligence algorithms work and how to interpret the decisions they make. AI explainability techniques help researchers and practitioners to better understand and debug models, identify potential bias and errors in AI predictions, and ultimately make systems more transparent and trustworthy.
+
+Model response:
+>> AI explainability is the ability of a system to explain its behavior to a human observer. It is the ability of a system to explain its behavior to a human observer in a way that is understandable and understandable. It is the ability of a system to explain its behavior to a human observer in a way that is consistent and understandable. It is the ability of a system to explain its behavior to a human observer in a way that is consistent and understandable.
+-------------------------------------
+<enter>..
+EXEC TIME: Response generated in 0.01 minutes
+Below is an instruction that describes a task. Write a response that appropriately completes the request. 
+
+### Instruction:
+What is the term used to describe a bias where groups of people with some particular background or attributes are more likely to interact with the model in a certain way?
+
+Correct response:
+>> The term used to describe this kind of bias is "algorithmic bias" or "representational bias." Algorithmic bias occurs when a machine learning model predicts outcomes differently due to the target population's particular background or characteristics. This type of bias can harm those affected by it, as it can be based on gender, racial, and other demographic factors.
+
+Model response:
+>> The term used to describe a bias where groups of people with some particular background or attributes are more likely to interact with the model in a certain way is "group bias".
+-------------------------------------
+<enter>..^CTraceback (most recent call last):
+  File "/Users/anupamkaul/akaul_git/demosthenes-llm/finetune-instruction-follow/alpaca/test_model.py", line 145, in <module>
+    input("<enter>..") #let it flow --> UNCOMMENT this to observe manually
+    ~~~~~^^^^^^^^^^^^^
+KeyboardInterrupt
