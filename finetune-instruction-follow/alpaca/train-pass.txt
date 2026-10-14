@@ -1,0 +1,28 @@
+Epoch 2 (Step 011040): Train loss 0.850, Val loss 1.411
+debug: len input batch:  8  len target batch:  8  len train loader :  5525
+debug: global_step :  11041  tokens seen:  18165624
+debug: len input batch:  8  len target batch:  8  len train loader :  5525
+debug: global_step :  11042  tokens seen:  18166640
+debug: len input batch:  8  len target batch:  8  len train loader :  5525
+debug: global_step :  11043  tokens seen:  18168144
+debug: len input batch:  8  len target batch:  8  len train loader :  5525
+debug: global_step :  11044  tokens seen:  18169440
+debug: len input batch:  8  len target batch:  8  len train loader :  5525
+debug: global_step :  11045  tokens seen:  18171160
+Epoch 2 (Step 011045): Train loss 0.960, Val loss 1.412
+debug: len input batch:  8  len target batch:  8  len train loader :  5525
+debug: global_step :  11046  tokens seen:  18172440
+debug: len input batch:  8  len target batch:  8  len train loader :  5525
+debug: global_step :  11047  tokens seen:  18174000
+debug: len input batch:  8  len target batch:  8  len train loader :  5525
+debug: global_step :  11048  tokens seen:  18176048
+debug: len input batch:  8  len target batch:  8  len train loader :  5525
+debug: global_step :  11049  tokens seen:  18177584
+
+out of inner input_batch loop..
+generate and print sample..
+
+Below is an instruction that describes a task. Write a response that appropriately completes the request.   ### Instruction: Explain how using transitional words help in writing  ### Input: "<noinput>"  ### Response: Using transitional words helps to make the sentence more concise and easier to understand. By using the same words in different places, it makes the sentence easier to remember and understand.<|endoftext|>The following is an instruction that describes a task
+model saved
+
+Training completed in 470.40 minutes.
