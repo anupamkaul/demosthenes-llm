@@ -278,7 +278,7 @@ if torch.backends.mps.is_available():
      device = torch.device("mps")      
 
 print("Device (dataloader):", device)
-input()
+#input()
 
 from functools import partial
 

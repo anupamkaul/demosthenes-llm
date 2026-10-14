@@ -61,13 +61,22 @@ model.eval()
 
 import torch
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+
+
+if torch.backends.mps.is_available():
+    print("MacOS: MPS device found. Using MPS.")
+    device = torch.device("mps")
+else:
+    print("MacOS: MPS device not found. Using CPU")
+    device = torch.device("cpu")
+
 print("device: ", device)
  
 # an unfortunate hack for my local ubuntu 22.04 : even when cuda force it to CPU
 # (this is because memory requests to my GPU0 exceed its total mem available, needs debugging)
 
-device = torch.device("cpu")
-print("device override (for my local ubuntu): ", device)
+# device = torch.device("cpu")
+# print("device override (for my local ubuntu): ", device)
 
 import platform
 if (platform.system() != "Darwin"):
@@ -93,7 +102,7 @@ try:
     end_time = time.time()
     load_time_minutes = (end_time - start_time) / 60
     print(f"LOAD TIME: loaded saved model ({model_size()}) in {load_time_minutes:.2f} minutes .. <enter>")
-    input()
+    #input()
 
 except FileNotFoundError:
     print("model not found on disk. please point to location, or train from scratch for instruction-follow")
@@ -138,5 +147,5 @@ for entry in test_data:    # iterate over all samples
     print(f"\nCorrect response:\n>> {entry['output']}")
     print(f"\nModel response:\n>> {response_text.strip()}")
     print("-------------------------------------")
-    input("<enter>..") #let it flow
+    # input("<enter>..") #let it flow --> UNCOMMENT this to observe manually
 
