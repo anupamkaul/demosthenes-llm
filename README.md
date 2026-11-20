@@ -6,3 +6,4 @@ my llm from scratch for experimental purposes
 3. llm-infra
 4. pretraining
 5. finetune for classification
+6. finetune for instruction follow

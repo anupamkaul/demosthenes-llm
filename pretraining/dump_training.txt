@@ -273,14 +273,14 @@ num_batches:  2 len of data_loader:  2
 calc_loss_loader..
 num_batches:  1 len of data_loader:  1
 0 of 1finish calc_loss_loader..
-Epoch 1 (Step 000000): Train loss 1.746, Val loss 6.906
+Epoch 1 (Step 000000): Train loss 0.404, Val loss 7.581
 debug: len input batch:  8  len target batch:  8  len train loader :  2
 debug: global_step :  1  tokens seen:  4096
 
 out of inner input_batch loop..
 generate and print sample..
 
-Every effort moves you know. Gisburn rather a--I felt nervous and uncertain.             I--it was, in a my unexpected his pictures--the his ridiculous modesty, you know. He says they
+Every effort moves you?" I meant to do the picture for nothing--I told Mrs. I had been surrounded by my way of anything else. I had been taken. I had been _not_ interesting--if I may be pardoned the bull--that I had
 debug: len input batch:  8  len target batch:  8  len train loader :  2
 debug: global_step :  2  tokens seen:  6144
 debug: len input batch:  8  len target batch:  8  len train loader :  2
@@ -289,7 +289,7 @@ debug: global_step :  3  tokens seen:  8192
 out of inner input_batch loop..
 generate and print sample..
 
-Every effort moves you?"  "Yes--quite insensible to the fact with his last word. Gisburn's an awful simpleton, you know, Mrs. Stroud.     I his ridiculous modesty, you know. He says they
+Every effort moves you?"  "Yes--quite insensible to the irony. She wanted him vindicated--and by me!"  He laughed again, and threw back his head to look up at the sketch of _mine_--because he didn't want
 debug: len input batch:  8  len target batch:  8  len train loader :  2
 debug: global_step :  4  tokens seen:  10240
 debug: len input batch:  8  len target batch:  8  len train loader :  2
@@ -300,12 +300,12 @@ num_batches:  2 len of data_loader:  2
 calc_loss_loader..
 num_batches:  1 len of data_loader:  1
 0 of 1finish calc_loss_loader..
-Epoch 3 (Step 000005): Train loss 0.546, Val loss 6.477
+Epoch 3 (Step 000005): Train loss 0.127, Val loss 7.348
 
 out of inner input_batch loop..
 generate and print sample..
 
-Every effort moves you?" " on a little wild--I felt nervous and uncertain. "Oh, my work, that one longed to have been taken. "Oh, my unexpected discovery; and as I had been the man of the hour. The
+Every effort moves you?"      I I I haven't seen a single one in a sketch of an exquisburn's I seemed to see a smile behind his close grayish beard--as if he had the donkey. "There were days when I
 debug: len input batch:  8  len target batch:  8  len train loader :  2
 debug: global_step :  6  tokens seen:  14336
 debug: len input batch:  8  len target batch:  8  len train loader :  2
@@ -314,7 +314,7 @@ debug: global_step :  7  tokens seen:  16384
 out of inner input_batch loop..
 generate and print sample..
 
-Every effort moves you?"     He--I felt nervous and uncertain.       He laughed again, and and muddling; then I looked at the donkey again. I saw that, my eye fell on a small picture
+Every effort moves you?"  "Yes--quite insensible to the irony. She wanted him vindicated--and by me!"  He laughed again, and threw back his head to look up at the sketch of the donkey. "There were days when I
 debug: len input batch:  8  len target batch:  8  len train loader :  2
 debug: global_step :  8  tokens seen:  18432
 debug: len input batch:  8  len target batch:  8  len train loader :  2
@@ -332,7 +332,7 @@ num_batches:  2 len of data_loader:  2
 calc_loss_loader..
 num_batches:  1 len of data_loader:  1
 0 of 1finish calc_loss_loader..
-Epoch 6 (Step 000010): Train loss 0.274, Val loss 6.546
+Epoch 6 (Step 000010): Train loss 0.047, Val loss 7.320
 debug: len input batch:  8  len target batch:  8  len train loader :  2
 debug: global_step :  11  tokens seen:  24576
 
@@ -359,12 +359,12 @@ num_batches:  2 len of data_loader:  2
 calc_loss_loader..
 num_batches:  1 len of data_loader:  1
 0 of 1finish calc_loss_loader..
-Epoch 8 (Step 000015): Train loss 0.151, Val loss 6.717
+Epoch 8 (Step 000015): Train loss 0.025, Val loss 7.611
 
 out of inner input_batch loop..
 generate and print sample..
 
-Every effort moves you?"  "Yes--quite insensible to the irony. She wanted him vindicated--and by me!"  Mrs. Gisburn drew back his head to look up at the sketch of the donkey. "There were days when I
+Every effort moves you?"  "Yes--quite insensible to the irony. She wanted him vindicated--and by me!"  He laughed again, and threw back his head to look up at the sketch of the donkey. "There were days when I
 debug: len input batch:  8  len target batch:  8  len train loader :  2
 debug: global_step :  16  tokens seen:  34816
 debug: len input batch:  8  len target batch:  8  len train loader :  2
@@ -373,7 +373,7 @@ debug: global_step :  17  tokens seen:  36864
 out of inner input_batch loop..
 generate and print sample..
 
-Every effort moves you?"  "Yes--quite insensible to the irony. She wanted him vindicated--and by me!"  Mrs. It was just threw back his head to look up at the sketch of the donkey. "There were days when I
+Every effort moves you?"  "Yes--quite insensible to the irony. She wanted him vindicated--and by me!"  He laughed again, and threw back his head to look up at the sketch of the donkey. "There were days when I
 debug: len input batch:  8  len target batch:  8  len train loader :  2
 debug: global_step :  18  tokens seen:  38912
 debug: len input batch:  8  len target batch:  8  len train loader :  2
@@ -391,7 +391,7 @@ num_batches:  2 len of data_loader:  2
 calc_loss_loader..
 num_batches:  1 len of data_loader:  1
 0 of 1finish calc_loss_loader..
-Epoch 11 (Step 000020): Train loss 0.092, Val loss 6.870
+Epoch 11 (Step 000020): Train loss 0.015, Val loss 7.668
 debug: len input batch:  8  len target batch:  8  len train loader :  2
 debug: global_step :  21  tokens seen:  45056
 
@@ -418,7 +418,7 @@ num_batches:  2 len of data_loader:  2
 calc_loss_loader..
 num_batches:  1 len of data_loader:  1
 0 of 1finish calc_loss_loader..
-Epoch 13 (Step 000025): Train loss 0.057, Val loss 6.994
+Epoch 13 (Step 000025): Train loss 0.008, Val loss 7.887
 
 out of inner input_batch loop..
 generate and print sample..
@@ -450,7 +450,7 @@ num_batches:  2 len of data_loader:  2
 calc_loss_loader..
 num_batches:  1 len of data_loader:  1
 0 of 1finish calc_loss_loader..
-Epoch 16 (Step 000030): Train loss 0.037, Val loss 7.114
+Epoch 16 (Step 000030): Train loss 0.005, Val loss 7.975
 debug: len input batch:  8  len target batch:  8  len train loader :  2
 debug: global_step :  31  tokens seen:  65536
 
@@ -477,7 +477,7 @@ num_batches:  2 len of data_loader:  2
 calc_loss_loader..
 num_batches:  1 len of data_loader:  1
 0 of 1finish calc_loss_loader..
-Epoch 18 (Step 000035): Train loss 0.025, Val loss 7.249
+Epoch 18 (Step 000035): Train loss 0.004, Val loss 8.085
 
 out of inner input_batch loop..
 generate and print sample..

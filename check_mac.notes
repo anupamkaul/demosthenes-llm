@@ -128,3 +128,15 @@ Required-by: torchvision
 # execute on mac
 python3 mac-torch.py 
 Success! Sub-tensor initialized on GPU: tensor([1.], device='mps:0')
+
+---
+
+source dllm_env/bin/activate
+python -m pip freeze > requirements.legacy-mac.txt
+python -m pip check
+python -c "import platform, sys; print(sys.version); print(platform.platform()); print(platform.machine())"
+python -c "import torch; print(torch.__version__); print(torch.backends.mps.is_available())"
+deactivate
+___
+
+
