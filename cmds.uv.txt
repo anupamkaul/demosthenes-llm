@@ -1,0 +1,207 @@
+Phase A - the very first time
+mkdir -p ~/Development
+cd ~/Development
+
+git clone https://github.com/anupamkaul/demosthenes-llm.git
+cd demosthenes-llm
+
+git status
+git branch -a
+
+You should see that you're on main and the working tree is clean.
+
+Ensure it is up to date:
+git switch main
+git pull --ff-only origin main
+
+Now create the branch:
+git switch -c infra/uv-migration
+
+Verify:
+git branch --show-current
+
+Expected:
+infra/uv-migration
+
+At this point, nothing has changed on GitHub. You have only created a local branch.
+
+Phase B — Implement the uv migration
+
+The main commands are:
+uv python install 3.14
+
+uv init --bare --name demosthenes-llm \
+  --python ">=3.14,<3.15"
+
+uv python pin 3.14
+
+Copy requirements.legacy-mac.txt to the repository root, then:
+uv add -r requirements.legacy-mac.txt
+
+
+This is the initial migration approach, preserving the existing pins.
+
+If dependency resolution fails, investigate before changing versions.
+
+Add .gitignore with:
+.venv/
+dllm_env/
+venv/
+
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.ruff_cache/
+
+.env
+.env.*
+!.env.example
+
+.ipynb_checkpoints/
+.DS_Store
+
+
+If your repository already has a .gitignore, extend it rather than overwriting it.
+Verify the environment
+uv sync --locked
+
+uv run --locked python --version
+
+uv run --locked python -c \
+  "import torch; print(torch.__version__)"
+
+uv run --locked python -c \
+  "import torch; print(torch.backends.mps.is_available())"
+
+
+Then run your known working Demosthenes scripts using uv run.
+
+For example, if your test script is mac-torch.py:
+uv run --locked python mac-torch.py
+(or cd pretraining ; uv run --locked python training.py) 
+
+
+If the script has a different location in your clean clone, use that path instead.
+
+Do not commit yet if the environment cannot run the code that worked before migration.
+
+Phase C — Inspect what Git will commit
+Run:
+git status --short
+git diff
+git diff --check
+
+
+Check the files you intend to version:
+git status --short --untracked-files=all
+
+
+You should see files such as:
+?? .gitignore
+?? .python-version
+?? pyproject.toml
+?? uv.lock
+?? requirements.legacy-mac.txt
+
+
+Some may already exist or appear as modified rather than untracked.
+
+Your .venv directory should not appear.
+
+Also check whether any Python environment files were previously tracked:
+git ls-files | grep -E '(^|/)(dllm_env|\.venv|venv)/' || true
+
+
+If this produces no output, that's good.
+
+If it does, we should remove those paths from Git's index without deleting the local files. Merely adding .gitignore does not untrack files already committed.
+Phase D — Commit locally
+Stage only the intended infrastructure files:
+git add .gitignore .python-version \
+  pyproject.toml uv.lock \
+  requirements.legacy-mac.txt
+
+
+Inspect the staged changes:
+git diff --cached --stat
+git diff --cached
+
+
+Then commit:
+git commit -m "Migrate Demosthenes Python environment to uv"
+
+
+This creates a commit on your local infra/uv-migration branch.
+
+Your main branch remains unchanged.
+Phase E — Push the branch to GitHub
+Run:
+git push -u origin infra/uv-migration
+
+
+This creates the corresponding branch on GitHub.
+
+The -u establishes the upstream tracking relationship, so future updates can simply use:
+git push
+
+
+GitHub branches after pushing
+
+main
+Unchanged
+
+
+infra/uv-migration
+Published
+
+
+
+Your changes are now backed up remotely, but they are not yet part of main.
+
+3. Merge the migration into main
+I recommend using a GitHub Pull Request rather than directly merging from the terminal.
+
+Open:
+Demosthenes Pull Requests on GitHubClick New pull request.
+
+Select:
+Field	Value
+Base branch	main
+Compare branch	infra/uv-migration
+Title	Migrate Python environment to uv
+
+In the description, document the migration, Python version, dependency lockfile, MPS validation and any remaining limitations.
+
+Before merging, inspect the changed files and verify that the branch contains no virtual environments, credentials, accidental datasets or large training artifacts.
+
+Then choose Squash and merge.
+
+I recommend squash merging for this migration because it produces one clean commit on main, even if you made several experimental commits on the feature branch.
+
+After GitHub confirms the merge, the remote main contains your uv changes.
+
+4. Update your local main branch
+Return to Terminal:
+git switch main
+git pull --ff-only origin main
+
+
+Verify:
+git log --oneline -5
+git status
+
+
+You should see the merged migration commit in your recent history.
+
+Now run:
+uv sync --locked
+
+
+Then:
+uv run --locked python -c \
+  "import torch; print(torch.backends.mps.is_available())"
+
+
+And run your Demosthenes smoke tests again.
+
+This confirms that your updated local main works independently of the feature branch.
