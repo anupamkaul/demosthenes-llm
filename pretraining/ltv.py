@@ -16,10 +16,10 @@ The dataset size:
 import torch
 import tiktoken
 
-file_path = "the-verdict.txt"
+#file_path = "the-verdict.txt"
 
 #file_path = "./datasets/the-verdict.txt"
-#file_path = "./datasets/wikipedia_corpus.txt"
+file_path = "./datasets/wikipedia_corpus.txt"
 
 #file_path = "../datasets/wikipedia_corpus.txt"
 #file_path = "../datasets/wikipedia_corpus_small.txt"
@@ -97,7 +97,9 @@ import platform
 if (platform.system() != "Darwin"):
     batch_size=2
 else:
-    batch_size=8
+    #batch_size=8
+    #batch_size=1024
+    batch_size=128
 
 print("\nOS: ", platform.system(), " batch size: ", batch_size, " enter..")
 input()
