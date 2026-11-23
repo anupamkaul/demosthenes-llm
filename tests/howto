@@ -1,0 +1,34 @@
+uv run --locked test*.py
+
+---
+
+If python points to a global interpreter and not the one in this .venv at root of project
+
+uv python find --managed-python 3.14
+
+We want the path to CPython 3.14.10 under uv's managed Python directory.
+
+Then, from the project root:
+deactivate 2>/dev/null || true
+conda deactivate 2>/dev/null || true
+
+Remove only the uv project's generated virtual environment:
+rm -rf .venv
+
+Do not remove dllm_env, your source files, uv.lock or pyproject.toml.
+
+Recreate it explicitly:
+uv venv --python 3.14 --managed-python .venv
+
+Then synchronize your locked dependencies:
+uv sync --locked --python 3.14 --managed-python
+
+This should select the uv-managed Python rather than a system or Conda interpreter.
+
+Verify:
+uv run --locked python -c \
+'import sys; print(sys.version); print(sys.executable); print(sys.base_prefix)'
+
+uv run --locked test1.py
+
+---
