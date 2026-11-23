@@ -1,0 +1,47 @@
+experiment:
+  name: wiki-124m-baseline
+  seed: 123
+  output_dir: runs/wiki-124m-baseline
+
+data:
+  path: pretraining/datasets/wikipedia_corpus.txt
+  tokenizer: gpt2
+  split_strategy: article
+  train_fraction: 0.90
+  val_fraction: 0.05
+  test_fraction: 0.05
+  split_seed: 123
+  context_length: 256
+  stride: 256
+  batch_size: 128
+  num_workers: 0
+
+model:
+  vocab_size: 50257
+  embedding_dim: 768
+  num_layers: 12
+  num_heads: 12
+  dropout: 0.1
+  qkv_bias: false
+
+optimizer:
+  name: adamw
+  learning_rate: 0.0003
+  weight_decay: 0.1
+  gradient_clip_norm: 1.0
+
+scheduler:
+  name: warmup_cosine
+  warmup_fraction: 0.02
+  min_learning_rate: 0.00003
+
+training:
+  device: mps
+  precision: float32
+  max_epochs: 20
+  gradient_accumulation_steps: 1
+  eval_every_steps: 10
+  early_stopping_patience: 5
+  save_best: true
+  save_last: true
+  resume_from: null
