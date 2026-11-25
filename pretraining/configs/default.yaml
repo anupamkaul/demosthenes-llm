@@ -1,0 +1,66 @@
+
+experiment:
+  name: default
+  seed: 123
+  output_dir: runs
+
+data:
+  path: pretraining/datasets/the-verdict.txt
+  tokenizer: gpt2
+  split_strategy: contiguous_char
+  train_fraction: 0.90
+  val_fraction: 0.10
+  test_fraction: 0.0
+
+  context_length: 256
+  stride: 256
+  batch_size: 128
+  num_workers: 0
+
+  shuffle_train: true
+  shuffle_val: false
+  drop_last_train: true
+  drop_last_val: false
+
+model:
+  vocab_size: 50257
+  embedding_dim: 768
+  num_layers: 12
+  num_heads: 12
+  dropout: 0.1
+  qkv_bias: false
+
+optimizer:
+  name: adamw
+  learning_rate: 0.0004
+  weight_decay: 0.1
+  gradient_clip_norm: null
+
+scheduler:
+  name: constant
+
+training:
+  device: mps
+  precision: float32
+  max_epochs: 20
+  gradient_accumulation_steps: 1
+  compile_model: false
+
+  eval_every_steps: 5
+  eval_max_batches: 5
+  eval_aggregation: legacy_batch_mean
+
+  early_stopping_patience: null
+
+  save_best: false
+  save_last: true
+
+  initial_weights: null
+  resume_from: null
+
+generation:
+  enabled: true
+  prompt: Every effort moves you
+  max_new_tokens: 50
+  every_epochs: 1
+
